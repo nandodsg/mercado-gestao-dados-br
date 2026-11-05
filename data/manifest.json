@@ -1,0 +1,29 @@
+{
+  "contrato": "v1",
+  "gerado_em": "2026-11-05T05:13:46.775Z",
+  "contagens": {
+    "vagas": 87,
+    "requisitos": 1282,
+    "benchmarks": 366
+  },
+  "arquivos": {
+    "vagas.csv": {
+      "sha256": "5a3c11aac2db0c2d059f12eaf87300e1486666295f3d2a7f7400a151af59029b",
+      "linhas": 87
+    },
+    "requisitos.csv": {
+      "sha256": "852b8d8781018e2e02a2641e5f5a8f99dcc5bb6ba68c7b0674799a3f92c6d89b",
+      "linhas": 1282
+    },
+    "benchmarks.csv": {
+      "sha256": "703d992631da937145e1e2b040f2d1e692799318c8495bb95ad6fc61a2298acf",
+      "linhas": 366
+    }
+  },
+  "notas": [
+    "Universo: vagas de liderança no Brasil analisadas no tracker de uma pessoa, set–nov/2026 (amostra de funil, não do mercado inteiro).",
+    "modo, geografia, regime, cidade, contrato e salario_* são derivados da análise da vaga, não campos do posting.",
+    "benchmarks.csv é referência de mercado pesquisada por vaga (fonte e nota), nunca o que a vaga paga.",
+    "url é a do posting no dia da captura; postings do LinkedIn expiram."
+  ]
+}
