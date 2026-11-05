@@ -9,15 +9,15 @@ Registro de decisões do pipeline do repo público: o que mudou o desenho e por 
 |---|---|
 | Esqueleto (README, licenças, `.gitignore`) | pronto |
 | `pipeline/check_data.py` (contrato, manifest, sigilo) | pronto, testado sobre `tests/fixtures` |
-| `dbt/` (staging, marts por nível, testes) | `dbt build` verde **sobre os dados fictícios**; **não rodado sobre dado real** |
-| CI `pipeline.yml` | pronta; roda sobre `data/` quando existir e sobre `tests/fixtures` antes disso |
+| `dbt/` (staging, marts por nível, testes) | `dbt build` verde sobre os dados fictícios e **sobre o dado real da 1ª publicação** |
+| CI `pipeline.yml` | verde sobre `data/` (1ª publicação, 2026-11-05); sem `data/`, roda sobre `tests/fixtures` |
 | Pages `pages.yml` + `site/` | pronto; `site/` é um marcador até a página de verdade |
 | Seeds `setores.csv`, `taxonomia.csv`, `overrides.csv` | ainda não existem: nascem junto com o conjunto de referência e a classificação |
-| Pasta `data/` | não existe: só a publicação automática escreve, na 1ª vez |
+| Pasta `data/` | publicada pela automação (1 commit por publicação) |
 
-Pendência: o 1º `dbt build` com dado real depende da 1ª publicação. Na 1ª rodada, conferir (a) os valores de `regime`
-contra `presencial | hibrido | remoto` (o teste só avisa) e (b) se as regras de `niveis.csv` que citam `empresa` casam: elas
-comparam o nome da empresa sem acento e em minúsculas, então um nome escrito diferente cairia em `outros` sem erro.
+Conferido na 1ª publicação com dado real: os valores de `regime` batem com `presencial | hibrido | remoto` (sem avisos) e
+as regras de `niveis.csv` que citam `empresa` casam (as contagens por nível bateram com as da origem). Observação: `regime`
+vem vazio em parte das vagas (o teste de valores aceitos ignora vazio); análises por regime devem informar o `n` com regime.
 
 ## Decisões
 
