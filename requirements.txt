@@ -1,0 +1,3 @@
+# dbt sobre DuckDB: sem warehouse, sem credencial. Versões pinadas; atualizar de propósito, nunca por acaso.
+dbt-core==1.10.13
+dbt-duckdb==1.10.0

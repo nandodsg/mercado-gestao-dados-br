@@ -1,0 +1,10 @@
+ordem,padrao,empresa,bucket,nota
+10,backoffice franquias,grupo boticario,outros,"Tech Manager de engenharia de software (JS/Node/React), não de dados: pelo texto da vaga"
+15,manager. product|inovacao de produto,,outros,"gestão de time de produto/software, não de dados. Data Product Manager com gestão de pessoas no texto da vaga fica em gerente"
+20,tech manager,grupo boticario,coordenador,"o texto da vaga descreve o cargo como ""Tech Manager I (coordenadora)"", 1º degrau da gestão técnica da empresa"
+30,\bhead\b,,alta_gestao,
+40,\bdiretor|\bdirector\b|\bchief\b|\bcdo\b|\bvp\b|vice.president,,alta_gestao,
+50,coorden|coordinator,,coordenador,"inclui ""pessoa coordenadora"" e ""coordenação"""
+60,supervis,,coordenador,"o supervisor de BI lidera a equipe de BI, no texto da vaga"
+70,lider de equipe,,coordenador,"líder de equipe de dados, no texto da vaga"
+80,gerente|manager,,gerente,"inclui senior manager, gerente executivo, gerente geral e Tech Manager de dados"

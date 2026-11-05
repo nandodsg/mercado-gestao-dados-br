@@ -1,0 +1,26 @@
+{
+  "contrato": "v1",
+  "gerado_em": "2026-01-01T00:00:00.000Z",
+  "contagens": {
+    "vagas": 6,
+    "requisitos": 9,
+    "benchmarks": 2
+  },
+  "arquivos": {
+    "vagas.csv": {
+      "sha256": "7d55b2710fd06df5769531481d8e4a2b7028ccbb6ec5736e374f03f943c94233",
+      "linhas": 6
+    },
+    "requisitos.csv": {
+      "sha256": "9441949e2fc19f667e8daff22ff1449b9f09b04e93617c6c1748de824a60357c",
+      "linhas": 9
+    },
+    "benchmarks.csv": {
+      "sha256": "81e2d422954bcc0af9143fe0e2239dab068b9bd9abb27eb86a08198fb85c7d0e",
+      "linhas": 2
+    }
+  },
+  "notas": [
+    "FIXTURE: dados fictícios pra testar o pipeline, não são vagas reais."
+  ]
+}

@@ -1,0 +1,12 @@
+Os arquivos de data/ (vagas.csv, requisitos.csv, benchmarks.csv, manifest.json) e os seeds de dbt/seeds/ são
+licenciados sob Creative Commons Attribution 4.0 International (CC BY 4.0).
+
+Texto completo: https://creativecommons.org/licenses/by/4.0/legalcode
+Resumo:         https://creativecommons.org/licenses/by/4.0/
+
+Pode copiar, redistribuir e adaptar, inclusive comercialmente, desde que dê o crédito:
+
+    Fernando Guimarães, "Mercado de gestão de dados no Brasil" (nandodsg/mercado-gestao-dados-br), CC BY 4.0.
+
+Os textos dos requisitos e os cargos vêm de postings públicos de terceiros (as empresas); a licença cobre a seleção, a
+estruturação e as colunas derivadas feitas aqui, não concede direitos sobre o texto original de cada posting.

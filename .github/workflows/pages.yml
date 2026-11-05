@@ -1,0 +1,38 @@
+# Publica site/ e data/ no GitHub Pages (repo público, plano gratuito). Roda quando muda a página, o dado ou este arquivo
+# (o commit da Vercel em data/ também dispara). Antes do Item 9 a página é um marcador com os links do dado bruto.
+name: pages
+
+on:
+  push:
+    branches: [main]
+    paths: ["site/**", "data/**", ".github/workflows/pages.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Montar a pasta do site
+        run: |
+          mkdir _site
+          cp -r site/. _site/
+          if [ -d data ]; then cp -r data _site/data; fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

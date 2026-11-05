@@ -1,0 +1,8 @@
+# Sem credencial: DuckDB em arquivo local, criado pela própria execução (caminho relativo à raiz do repo).
+mercado_gestao_dados:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: dbt/target/mercado.duckdb
+      threads: 4

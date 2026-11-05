@@ -1,0 +1,34 @@
+# dbt sobre DuckDB. Roda da RAIZ do repo (`dbt build --project-dir dbt --profiles-dir dbt`): os caminhos de data/ são
+# relativos à raiz. `data_dir` aponta pra outra pasta quando a CI roda sobre os dados fictícios de tests/fixtures.
+name: mercado_gestao_dados
+version: "1.0.0"
+config-version: 2
+profile: mercado_gestao_dados
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+target-path: "target"
+clean-targets: ["target"]
+
+vars:
+  data_dir: data
+  # cobertura mínima de cidade (fração das vagas)
+  cobertura_minima_cidade: 0.70
+
+seeds:
+  mercado_gestao_dados:
+    niveis:
+      +column_types:
+        ordem: integer
+        padrao: varchar
+        empresa: varchar
+        bucket: varchar
+        nota: varchar
+
+models:
+  mercado_gestao_dados:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

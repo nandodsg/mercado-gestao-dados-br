@@ -1,0 +1,51 @@
+# CI sem credencial de banco e sem chave nenhuma (por enquanto): confere o contrato de data/ e roda `dbt build` em DuckDB,
+# tudo dentro do runner. O único secret que este repo vai ter é a chave do gateway de LLM da classificação (Item 7), com
+# teto de gasto; ela entra aqui só quando o pipeline/ de classificação existir.
+#
+# data/ é escrito só pela publicação automática (1 commit por publicação, a partir do app privado), e esse commit dispara este
+# workflow. Antes da 1ª publicação data/ não existe: o job roda sobre os dados fictícios de tests/fixtures, pra o
+# esqueleto continuar testado.
+name: pipeline
+
+on:
+  push:
+    paths: ["data/**", "pipeline/**", "dbt/**", "tests/**", "requirements.txt", ".github/workflows/pipeline.yml"]
+  pull_request:
+  schedule:
+    - cron: "0 9 * * 1" # segunda 09h UTC, 3h depois do cron semanal de publicação
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Escolher a pasta de dados
+        id: dados
+        run: |
+          if [ -f data/manifest.json ]; then
+            echo "dir=data" >> "$GITHUB_OUTPUT"
+            echo "Dados reais de data/"
+          else
+            echo "dir=tests/fixtures" >> "$GITHUB_OUTPUT"
+            echo "::notice::data/ ainda não existe (1ª publicação pendente): rodando sobre tests/fixtures (dados fictícios)"
+          fi
+      - name: Python compila
+        run: python -m compileall -q pipeline
+      - name: Contrato v1, manifest e sigilo
+        env:
+          DATA_DIR: ${{ steps.dados.outputs.dir }}
+        run: python pipeline/check_data.py "$DATA_DIR"
+      - name: dbt build (DuckDB, sem warehouse)
+        env:
+          DATA_DIR: ${{ steps.dados.outputs.dir }}
+        run: |
+          dbt build --project-dir dbt --profiles-dir dbt --vars "{data_dir: $DATA_DIR}"

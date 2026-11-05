@@ -1,0 +1,86 @@
+version: 2
+
+models:
+  - name: stg_vagas
+    description: "Vagas publicadas (contrato v1). Fatos do posting e colunas derivadas da leitura da vaga (regime, cidade, contrato, salario_*)."
+    columns:
+      - name: id_publico
+        description: "12 hex do sha256 da url normalizada (ou empresa|cargo quando a vaga não tem URL). Nunca um identificador interno do app de origem."
+        data_tests: [not_null, unique]
+      - name: empresa
+        data_tests: [not_null]
+      - name: cargo_oficial
+        data_tests: [not_null]
+      - name: modo
+        description: "Recorte do dataset: vagas de liderança (único valor publicado)."
+        data_tests:
+          - accepted_values: {arguments: {values: ["lideranca"]}}
+      - name: geografia
+        data_tests:
+          - accepted_values: {arguments: {values: ["br"]}}
+      - name: regime
+        description: "Derivado do posting. Cidade listada sem a palavra remoto = híbrido ou presencial."
+        data_tests:
+          - accepted_values:
+              arguments: {values: ["presencial", "hibrido", "remoto"]}
+              config: {severity: warn}
+      - name: uf
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [AC, AL, AP, AM, BA, CE, DF, ES, GO, MA, MT, MS, MG, PA, PB, PR, PE, PI, RJ, RN, RS, RO, RR, SC, SP, SE, TO]
+      - name: contrato
+        description: "Normalizado no export (D17): CLT | PJ | vazio."
+        data_tests:
+          - accepted_values: {arguments: {values: ["CLT", "PJ"]}}
+      - name: salario_tipo
+        description: "Normalizado no export (D17): base | total | vazio."
+        data_tests:
+          - accepted_values: {arguments: {values: ["base", "total"]}}
+
+  - name: stg_requisitos
+    description: "Linhas de requisito dos postings, texto literal."
+    columns:
+      - name: id_publico
+        data_tests:
+          - not_null
+          - relationships: {arguments: {to: ref('stg_vagas'), field: id_publico}}
+      - name: ordem
+        data_tests: [not_null]
+      - name: texto
+        data_tests: [not_null]
+
+  - name: stg_benchmarks
+    description: "Fontes de benchmark salarial por vaga. Referência pesquisada, nunca salário do posting."
+    columns:
+      - name: id_publico
+        data_tests:
+          - not_null
+          - relationships: {arguments: {to: ref('stg_vagas'), field: id_publico}}
+      - name: fonte_url
+        data_tests: [not_null]
+
+  - name: mart_vagas
+    description: "Vaga + bucket de nível (seed niveis, regra determinística)."
+    columns:
+      - name: id_publico
+        data_tests: [not_null, unique]
+      - name: nivel
+        data_tests:
+          - not_null
+          - accepted_values: {arguments: {values: ["coordenador", "gerente", "alta_gestao", "outros"]}}
+
+  - name: mart_resumo_nivel
+    description: "Contagem de vagas por nível."
+
+seeds:
+  - name: niveis
+    description: "Regra título → bucket de nível (coordenador, gerente, alta_gestao, outros). Seed público, escrito pra leitor externo."
+    columns:
+      - name: ordem
+        data_tests: [not_null, unique]
+      - name: padrao
+        data_tests: [not_null]
+      - name: bucket
+        data_tests:
+          - accepted_values: {arguments: {values: ["coordenador", "gerente", "alta_gestao", "outros"]}}
