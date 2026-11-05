@@ -34,7 +34,8 @@ comparam o nome da empresa sem acento e em minúsculas, então um nome escrito d
 | 2026-11-04 | Licenças: CC BY 4.0 pro dado, MIT pro código | CC BY pede só crédito, o que serve a quem quer citar |
 | 2026-11-04 | Único secret futuro: chave do gateway de LLM (classificação), com teto de gasto | tudo o mais dispensa credencial |
 | 2026-11-05 | README sem vocabulário interno do app de origem e sem retrato de data (contagens, concentrações) | o leitor externo não conhece o app; o dado se atualiza toda semana, então número só vem do `manifest.json`, do mart ou da página |
-| 2026-11-05 | Arquitetura: **lake = CSVs no git; warehouse = DuckDB só como motor, reconstruído a cada execução; dbt = transformação**; sem DuckLake | um escritor, rodada semanal, git já guarda os snapshots; catálogo + Parquet seria infraestrutura sem problema a resolver |
+| 2026-11-05 | Arquitetura: **armazenamento = CSVs no git; DuckDB só como motor de consulta, reconstruído a cada execução; dbt = transformação**; sem catálogo nem formato de lakehouse | um escritor, rodada semanal, git já guarda os snapshots; "data lake" seria nome grande demais pra poucos CSVs pequenos |
+| 2026-11-05 | Análise geográfica fora do foco: o README diz que a distribuição por local não é representativa (reflete a preferência de busca do autor) e recomenda a composição dos requisitos como fato principal | a amostra não pretende refletir a distribuição nacional; qualquer estudo de mercado mostraria concentração em São Paulo de qualquer forma |
 | 2026-11-05 | Orquestração = GitHub Actions encadeadas por commit em `data/`; **sem Dagster por enquanto** | uma transformação (o DAG é o do dbt) e um encadeamento simples; reavaliar quando entrar a classificação por modelo de linguagem (custo, cache, reprocesso parcial) |
 
 ## Próximos passos (gatilhos)
@@ -42,5 +43,5 @@ comparam o nome da empresa sem acento e em minúsculas, então um nome escrito d
 - **Taxonomia, setores e conjunto de referência** → seeds `taxonomia.csv`, `setores.csv`, `overrides.csv` e o teste "100% dos
   requisitos classificados". Gatilho: método do conjunto de referência decidido.
 - **Classificação em produção** (`pipeline/`, cache por sha256 do texto, `overrides.csv` vence o modelo). Gatilho: modelo
-  escolhido por comparação num conjunto rotulado. **Aqui reavaliar Dagster** (ativos com cache e reprocesso) e DuckLake.
+  escolhido por comparação num conjunto rotulado. **Aqui reavaliar Dagster** (ativos com cache e reprocesso).
 - **Página com números e consultas** (`site/`, DuckDB-WASM sobre os marts). Gatilho: achados revisados.

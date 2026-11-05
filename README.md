@@ -43,16 +43,12 @@ flowchart LR
 
 **O que cada peça faz, e o que ela não faz**
 
-- **Data lake: os próprios CSVs em `data/`.** São o armazenamento durável, versionado no git, de forma que cada commit
-  é um snapshot do dataset e o histórico dá a série temporal no futuro. Ninguém edita à mão.
-- **Data warehouse: DuckDB, só como motor de consulta.** O DuckDB lê os CSVs no lugar (`read_csv`) e materializa
-  staging e marts num arquivo local (`dbt/target/mercado.duckdb`) que é **descartado e reconstruído do zero a cada
-  execução**. Não é um banco persistente: o que persiste é o CSV. Escala (milhares de linhas, um escritor, rodada
-  semanal) não pede mais que isso.
-- **Por que não DuckLake nem outro formato de lakehouse.** DuckLake (catálogo em banco + arquivos Parquet) resolve
-  concorrência de escritores, evolução de schema e time travel em volume. Aqui há um escritor, uma rodada por semana e o
-  git já guarda os snapshots; entrar com catálogo e Parquet seria infraestrutura a manter sem problema a resolver.
-  Reavaliar se o volume ou a necessidade de consulta histórica crescer.
+- **Armazenamento: arquivos CSV em `data/`, versionados no git.** São poucos arquivos pequenos, e cada commit é um
+  snapshot do dataset (o histórico dá a série temporal no futuro). Ninguém edita à mão.
+- **Motor de consulta: DuckDB.** Ele lê os CSVs no lugar (`read_csv`) e materializa staging e marts num arquivo local
+  (`dbt/target/mercado.duckdb`) que é **descartado e reconstruído do zero a cada execução**. Não é um banco
+  persistente: o que persiste é o CSV. O volume (milhares de linhas, um escritor, rodada semanal) não pede mais que
+  isso.
 - **dbt: a camada de transformação sobre o DuckDB.** O adaptador `dbt-duckdb` compila os modelos SQL, resolve a ordem
   pelas dependências (`ref()`), roda os testes e documenta a linhagem. O DuckDB executa; o dbt organiza e testa.
 - **Orquestração: GitHub Actions, encadeada por eventos.** A publicação semanal faz um commit em `data/`; esse commit
@@ -95,15 +91,15 @@ flowchart LR
   sorteio, não é censo.
 - **Janela curta e crescente.** A coleta começou em setembro de 2026. Com poucas semanas de dados, **não há tendência**,
   só retrato do período acumulado; série temporal só depois de meses de snapshots em `data/`.
-- **Filtros de busca.** A busca privilegiou Porto Alegre e região e a Grande São Paulo, e vagas de dados, analytics e
-  IA. Cidade e regime refletem onde se procurou, não a distribuição nacional; outras capitais e outros setores
-  aparecem pouco ou nada.
+- **A distribuição geográfica não é representativa.** Ela não tem a intenção de refletir a distribuição nacional: mostra
+  apenas a preferência de busca do autor. Por isso **não recomendamos análises extensas pela localização da vaga**; o
+  principal fato de análise deste dataset é a **composição dos requisitos**.
 - **Só vagas lidas por completo.** Uma vaga que chegou ao app e não foi analisada não está aqui.
 - **Nível pelo título.** Títulos variam por empresa (um "Tech Manager" pode ser coordenação). As exceções resolvidas à
   mão estão em `niveis.csv`, cada uma com o motivo na coluna `nota`.
 - **Postings expiram.** A `url` é a do dia da captura; as do LinkedIn costumam sair do ar. O texto do requisito
   continua aqui.
-- **n pequeno por fatia.** Quebrar por nível e por cidade deixa fatias de poucas vagas. Todo número publicado deve
+- **n pequeno por fatia.** Quebrar por nível (ou por qualquer outra dimensão) deixa fatias de poucas vagas. Todo número publicado deve
   carregar o tamanho da amostra ao lado.
 - **Empresas nomeadas.** As empresas aparecem pelo nome, como nos postings públicos. Nenhum dado pessoal da busca
   (candidaturas, resultados, avaliações) sai do app.
