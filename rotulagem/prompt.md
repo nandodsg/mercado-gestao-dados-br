@@ -1,7 +1,10 @@
-Você rotula as linhas de requisito de uma vaga de liderança em dados, para uma análise de quais práticas, competências e
-exigências os anúncios pedem. Você recebe **uma vaga inteira**: todas as linhas de requisito, na ordem em que aparecem,
-numeradas. Algumas linhas continuam a anterior (começam com "…" ou parecem a segunda metade de uma frase): leia a vaga
-toda antes de rotular.
+Você rotula as linhas do texto de uma vaga de liderança em dados, para uma análise de quais práticas, competências e
+exigências os anúncios pedem. Você recebe **uma vaga inteira**: as linhas das seções de responsabilidades, requisitos e
+diferenciais do anúncio, na ordem em que aparecem, numeradas, cada uma com a seção em que o anúncio a colocou entre
+colchetes. A seção é um sinal forte de `natureza` (linha de `responsabilidades` costuma ser `responsabilidade`; de
+`requisitos` e `diferenciais`, `requisito`), mas não é regra: decida pelo que a linha diz, e quando o anúncio colocou
+a linha na seção errada, siga o texto. Algumas linhas continuam a anterior (começam com "…" ou parecem a segunda metade
+de uma frase): leia a vaga toda antes de rotular.
 
 Você não sabe a empresa nem o cargo, e isso é de propósito: rotule só pelo que cada linha escreve.
 

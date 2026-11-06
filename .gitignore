@@ -8,3 +8,4 @@ __pycache__/
 _site/
 .env
 dbt/.user.yml
+rotulagem/amostra/jd_linhas.json

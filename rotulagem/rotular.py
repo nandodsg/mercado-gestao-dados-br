@@ -40,8 +40,8 @@ def prompt_sistema() -> str:
 
 
 def render_vaga(vaga: dict) -> str:
-    linhas = "\n".join(f"{l['ordem']}. {l['texto']}" for l in vaga["linhas"])
-    return f"A vaga tem {len(vaga['linhas'])} linhas de requisito:\n\n{linhas}"
+    linhas = "\n".join(f"{l['ordem']}. [{l['secao']}] {l['texto']}" for l in vaga["linhas"])
+    return f"A vaga tem {len(vaga['linhas'])} linhas de responsabilidades, requisitos e diferenciais:\n\n{linhas}"
 
 
 def esquema() -> dict:
