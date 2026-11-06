@@ -14,11 +14,12 @@ Salve o CSV em rotulagem/referencia/<conjunto>_revisado.csv.
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 import sys
 
 import taxonomia
-from common import AMOSTRA, ROTULADORES_GATEWAY, OPUS, SAIDA, ler_json, slug
+from common import RAIZ, AMOSTRA, ROTULADORES_GATEWAY, OPUS, SAIDA, ler_json, slug
 from rotular import setores
 
 CURTO = {OPUS: "opus", "google/gemini-4-argon": "gemini", "spacexai/grok-4.7": "grok"}
@@ -31,6 +32,8 @@ def montar(conjunto: str) -> tuple[dict, int]:
     if len(rotuladores) < 2:
         sys.exit("Faltam rótulos: a página precisa de pelo menos dois rotuladores em rotulagem/saida/.")
     saidas = {m: ler_json(SAIDA / f"{slug(m)}_{conjunto}.json") for m in rotuladores}
+    with (RAIZ / "data" / "vagas.csv").open(encoding="utf-8") as f:
+        urls = {r["id_publico"]: r["url"] for r in csv.DictReader(f)}
     versao = taxonomia.versao()
     for m, s in saidas.items():
         faltam = [v["id_publico"] for v in amostra["vagas"] if v["id_publico"] not in s]
@@ -49,6 +52,7 @@ def montar(conjunto: str) -> tuple[dict, int]:
                   for i in taxonomia.itens()],
         "vagas": [{
             "id": v["id_publico"], "nivel": v["nivel"], "empresa": v["empresa"], "cargo": v["cargo"],
+            "url": urls.get(v["id_publico"], ""),
             "linhas": [{
                 "ordem": l["ordem"], "texto": l["texto"], "peso": l["peso"], "anos": l["anos"],
                 "ferramentas": l["ferramentas"],
@@ -118,6 +122,14 @@ h2 { font-size:16px; margin:0 0 8px; } h3 { font-size:13px; margin:14px 0 6px; t
 details summary { cursor:pointer; color:var(--muted); font-size:12.5px; }
 .def { font-size:12.5px; color:var(--muted); margin-top:4px; }
 textarea { width:100%; min-height:50px; font:inherit; font-size:13px; color:var(--text); background:var(--bg); border:1px solid var(--line); border-radius:6px; padding:6px; }
+#modal { display:none; position:fixed; inset:0; z-index:5; background:rgba(0,0,0,.5); align-items:flex-start; justify-content:center; padding:48px 16px; overflow:auto; }
+#modal.aberto { display:flex; }
+#modal .caixa { background:var(--panel); border:1px solid var(--line); border-radius:10px; width:min(820px,100%); padding:18px 22px; }
+#modal .caixa .topo { display:flex; gap:10px; align-items:baseline; } #modal h2 { margin:0; font-size:18px; }
+#modal ol { padding-left:0; list-style:none; margin:12px 0 0; }
+#modal li { display:flex; gap:10px; padding:6px 8px; border-radius:6px; }
+#modal li .n { width:26px; flex:none; text-align:right; color:var(--muted); }
+#modal li.atual { background:var(--soft); outline:1px solid var(--accent); }
 kbd { border:1px solid var(--line); border-bottom-width:2px; border-radius:4px; padding:0 4px; font-size:11px; }
 </style>
 </head>
@@ -126,6 +138,7 @@ kbd { border:1px solid var(--line); border-bottom-width:2px; border-radius:4px; 
   <h1>Desempate · <span id="conj"></span></h1>
   <span class="muted">taxonomia <span id="versao"></span></span>
   <select id="vaga"></select>
+  <button id="verVaga">Ver a vaga <kbd>V</kbd></button>
   <span class="grow"></span>
   <span id="progresso" class="muted"></span>
   <button id="ant">◀</button><button id="prox">▶</button><button id="proxAberta">Próxima em aberto</button>
@@ -136,6 +149,11 @@ kbd { border:1px solid var(--line); border-bottom-width:2px; border-radius:4px; 
   <section><div id="lista"></div></section>
   <section id="painel"></section>
 </main>
+<div id="modal"><div class="caixa">
+  <div class="topo"><h2 id="mTitulo"></h2><span class="grow"></span><button id="mFechar">Fechar <kbd>Esc</kbd></button></div>
+  <div class="muted" id="mMeta"></div>
+  <ol id="mLinhas"></ol>
+</div></div>
 <script id="dados" type="application/json">__DADOS__</script>
 <script>
 const D = JSON.parse(document.getElementById('dados').textContent);
@@ -230,7 +248,7 @@ function desenharItem(vg, ln, c, vi) {
   topo.appendChild(op); box.appendChild(topo);
   if (!unanime && ks.length) box.appendChild(motivos(ln, ks));
   else if (ks.length) { const d = document.createElement('details'); d.innerHTML = '<summary>motivos</summary>'; d.appendChild(motivos(ln, ks)); box.appendChild(d); }
-  const df = document.createElement('div'); df.className = 'def'; df.textContent = `${CH[c].definicao}${CH[c].borda !== '—' ? ' · borda: ' + CH[c].borda : ''}`;
+  const df = document.createElement('div'); df.className = 'def'; df.textContent = `${CH[c].definicao}${CH[c].borda !== '—' ? ' · borda: ' + CH[c].borda : ''}`.replace(/\*\*/g, '');
   const dd = document.createElement('details'); dd.innerHTML = '<summary>definição</summary>'; dd.appendChild(df); box.appendChild(dd);
   return box;
 }
@@ -329,11 +347,34 @@ document.getElementById('salvar').onclick = async () => {
   }
   const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([texto], { type: 'text/csv' })); a.download = nome; a.click();
 };
+// Modal com todas as linhas de requisito da vaga, na ordem do posting, com a linha atual destacada.
+const modal = document.getElementById('modal');
+function abrirVaga() {
+  const vg = D.vagas[v];
+  document.getElementById('mTitulo').textContent = `${vg.empresa} — ${vg.cargo}`;
+  const meta = document.getElementById('mMeta'); meta.textContent = `nível ${vg.nivel} · ${vg.linhas.length} linhas de requisito, na ordem do posting · `;
+  if (vg.url) { const a = document.createElement('a'); a.href = vg.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = 'abrir o posting original'; meta.appendChild(a); }
+  const ol = document.getElementById('mLinhas'); ol.innerHTML = '';
+  vg.linhas.forEach((ln, i) => {
+    const li = document.createElement('li'); if (i === l) li.className = 'atual';
+    li.innerHTML = '<span class="n"></span><span></span>'; li.firstChild.textContent = ln.ordem; li.lastChild.textContent = ln.texto;
+    ol.appendChild(li);
+  });
+  modal.classList.add('aberto');
+  const at = ol.querySelector('.atual'); if (at) at.scrollIntoView({ block: 'center' });
+}
+const fecharVaga = () => modal.classList.remove('aberto');
+document.getElementById('verVaga').onclick = abrirVaga;
+document.getElementById('mFechar').onclick = fecharVaga;
+modal.onclick = ev => { if (ev.target === modal) fecharVaga(); };
 document.getElementById('confirmar').onclick = confirmar;
 document.getElementById('ant').onclick = () => ir(-1);
 document.getElementById('prox').onclick = () => ir(1);
 document.getElementById('proxAberta').onclick = proximaAberta;
 document.addEventListener('keydown', ev => {
+  if (ev.key === 'Escape') { fecharVaga(); return; }
+  if (ev.target.tagName === 'TEXTAREA' || ev.target.tagName === 'SELECT' || ev.ctrlKey || ev.metaKey || ev.altKey) return;
+  if (ev.key === 'v' || ev.key === 'V') { modal.classList.contains('aberto') ? fecharVaga() : abrirVaga(); ev.preventDefault(); return; }
   if (ev.target.tagName === 'TEXTAREA' || ev.target.tagName === 'SELECT' || ev.ctrlKey || ev.metaKey || ev.altKey) return;
   if (ev.key === 'Enter') { confirmar(); ev.preventDefault(); }
   else if (ev.key === 'ArrowRight' || ev.key === 'ArrowDown') { ir(1); ev.preventDefault(); }
