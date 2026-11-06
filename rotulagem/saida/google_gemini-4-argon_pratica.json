@@ -1,0 +1,440 @@
+{
+  "0d9a1314b72a": {
+    "versao_taxonomia": "c96b721d6bd1",
+    "rotulador": "google/gemini-4-argon",
+    "servido_por": "google/gemini-4-argon",
+    "esforco": "medium",
+    "usd": 0.0211,
+    "uso": {
+      "completion_tokens": 577,
+      "prompt_tokens": 7645,
+      "total_tokens": 8222,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.02106,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.02106,
+      "gateway_cost": 0.02106
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "responsabilidade",
+        "itens": [
+          "eng.integracao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita 'consolidação e integração de dados de diferentes fontes'."
+      },
+      {
+        "ordem": 2,
+        "natureza": "responsabilidade",
+        "itens": [
+          "gov.qualidade",
+          "gov.governanca",
+          "eng.observabilidade_operacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita 'qualidade, consistência' (qualidade), 'disponibilidade' (observabilidade/operação) e 'governança'."
+      },
+      {
+        "ordem": 3,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.bi_dashboards",
+          "analytics.kpis_metricas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita 'dashboards executivos e operacionais' e 'indicadores de performance'."
+      },
+      {
+        "ordem": 4,
+        "natureza": "requisito",
+        "itens": [
+          "eng.modelagem"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Pede 'modelagem — avançado'; ferramentas (Power BI, SQL) ficam para o dicionário."
+      },
+      {
+        "ordem": 5,
+        "natureza": "requisito",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita apenas a ferramenta 'Excel', que é marcada pelo dicionário."
+      },
+      {
+        "ordem": 6,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.automacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Pede 'automação de relatórios e processos analíticos'."
+      },
+      {
+        "ordem": 7,
+        "natureza": "requisito",
+        "itens": [
+          "ia.ia_produtividade",
+          "analytics.analise_insights"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Pede uso de 'ferramentas de IA aplicadas à análise' no trabalho."
+      },
+      {
+        "ordem": 8,
+        "natureza": "requisito",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita apenas as linguagens/ferramentas 'Python ou R'."
+      },
+      {
+        "ordem": 9,
+        "natureza": "requisito",
+        "itens": [
+          "experiencia.setor"
+        ],
+        "outro": "",
+        "setor": "varejo e e-commerce",
+        "motivo": "Pede vivência desejável em 'e-commerce ou operações comerciais'."
+      }
+    ]
+  },
+  "322d2c7e5ca0": {
+    "versao_taxonomia": "c96b721d6bd1",
+    "rotulador": "google/gemini-4-argon",
+    "servido_por": "google/gemini-4-argon",
+    "esforco": "medium",
+    "usd": 0.0262,
+    "uso": {
+      "completion_tokens": 1089,
+      "prompt_tokens": 7638,
+      "total_tokens": 8727,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 482,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.026166,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.026166,
+      "gateway_cost": 0.026166
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.liderar_time",
+          "experiencia.dados"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Pede experiência em gestão de áreas de MIS, BI ou inteligência operacional."
+      },
+      {
+        "ordem": 2,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.desenvolver_pessoas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita 'Liderar o time de MIS', 'desenvolvimento técnico e gestão de performance'."
+      },
+      {
+        "ordem": 3,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.kpis_metricas",
+          "experiencia.setor"
+        ],
+        "outro": "",
+        "setor": "serviços",
+        "motivo": "Pede vivência com 'indicadores' específicos de 'Contact Center, Operações de Atendimento'."
+      },
+      {
+        "ordem": 4,
+        "natureza": "requisito",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita apenas ferramentas pelo nome (Power BI, Tableau, Excel), marcadas pelo dicionário."
+      },
+      {
+        "ordem": 5,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.automacao",
+          "eng.modelagem",
+          "analytics.kpis_metricas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita explicitamente 'automação, modelagem de dados e construção de indicadores'."
+      },
+      {
+        "ordem": 6,
+        "natureza": "requisito",
+        "itens": [
+          "ia.ciencia_dados_ml",
+          "analytics.analise_insights"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Pede 'análises preditivas' e análises de 'capacidade, produtividade, dimensionamento e tendências'."
+      },
+      {
+        "ordem": 7,
+        "natureza": "requisito",
+        "itens": [
+          "gov.governanca"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita diretamente 'governança dos dados'."
+      },
+      {
+        "ordem": 8,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.comunicacao_executiva"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Atuação em 'fóruns executivos' e condução de 'apresentações gerenciais'."
+      },
+      {
+        "ordem": 9,
+        "natureza": "requisito",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita apenas linguagens/ferramentas pelo nome (SQL, Python), sem conceito adicional."
+      }
+    ]
+  },
+  "39f7c53fa832": {
+    "versao_taxonomia": "c96b721d6bd1",
+    "rotulador": "google/gemini-4-argon",
+    "servido_por": "google/gemini-4-argon",
+    "esforco": "medium",
+    "usd": 0.0243,
+    "uso": {
+      "completion_tokens": 875,
+      "prompt_tokens": 7759,
+      "total_tokens": 8634,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.024268,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.024268,
+      "gateway_cost": 0.024268
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.multidisciplinar"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Pede para 'Liderar as áreas de Dados, Business Intelligence, Processos e Automação', juntando disciplinas distintas."
+      },
+      {
+        "ordem": 2,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.estrategia"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita diretamente 'Desenvolver e executar a estratégia de dados'."
+      },
+      {
+        "ordem": 3,
+        "natureza": "responsabilidade",
+        "itens": [
+          "gov.governanca",
+          "gov.qualidade"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Pede para 'Garantir a governança, qualidade … e integridade das informações'."
+      },
+      {
+        "ordem": 4,
+        "natureza": "responsabilidade",
+        "itens": [
+          "gov.seguranca"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Continuação da linha anterior pedindo para garantir a 'segurança … das informações'."
+      },
+      {
+        "ordem": 5,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.bi_dashboards",
+          "analytics.kpis_metricas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita 'Evoluir dashboards, indicadores' e ferramentas de visualização correlatas."
+      },
+      {
+        "ordem": 6,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.analise_insights",
+          "negocio.visao_negocio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Pede para 'Transformar dados em inteligência de negócios, identificando oportunidades'."
+      },
+      {
+        "ordem": 7,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.automacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita 'Liderar iniciativas de automação de … RPAs'."
+      },
+      {
+        "ordem": 8,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.automacao",
+          "eng.integracao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Continuação citando 'automação de processos, workflows' e 'integrações sistêmicas'."
+      },
+      {
+        "ordem": 9,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.processos_melhoria"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita 'redesenho e a melhoria contínua dos processos corporativos'."
+      },
+      {
+        "ordem": 10,
+        "natureza": "responsabilidade",
+        "itens": [
+          "ia.ia_aplicada",
+          "negocio.transformacao_inovacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita 'inteligência artificial e novas tecnologias aplicadas ao negócio'."
+      },
+      {
+        "ordem": 11,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.stakeholders",
+          "negocio.processos_melhoria"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita 'Atuar em parceria com as áreas' buscando 'eficiência e qualidade operacional'."
+      },
+      {
+        "ordem": 12,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.desenvolver_pessoas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita 'Desenvolver e engajar equipes' e 'gestão e desenvolvimento de equipes'."
+      },
+      {
+        "ordem": 13,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Apenas informa o reporte hierárquico ('responderá diretamente à Diretoria de Operações')."
+      }
+    ]
+  }
+}

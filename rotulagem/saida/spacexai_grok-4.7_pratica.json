@@ -1,0 +1,435 @@
+{
+  "0d9a1314b72a": {
+    "versao_taxonomia": "c96b721d6bd1",
+    "rotulador": "spacexai/grok-4.7",
+    "servido_por": "spacexai/grok-4.7",
+    "esforco": "medium",
+    "usd": 0.0538,
+    "uso": {
+      "completion_tokens": 6410,
+      "prompt_tokens": 8558,
+      "total_tokens": 14968,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 5967,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 1152,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.053848,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.053848,
+      "gateway_cost": 0.053848
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "requisito",
+        "itens": [
+          "eng.integracao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Pede consolidação e integração de dados de diferentes fontes."
+      },
+      {
+        "ordem": 2,
+        "natureza": "requisito",
+        "itens": [
+          "gov.qualidade",
+          "gov.governanca"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita qualidade, consistência e governança, além de fonte única e confiável."
+      },
+      {
+        "ordem": 3,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.bi_dashboards",
+          "analytics.kpis_metricas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita dashboards executivos e operacionais e indicadores de performance."
+      },
+      {
+        "ordem": 4,
+        "natureza": "requisito",
+        "itens": [
+          "eng.modelagem"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Além das ferramentas nomeadas, a linha pede modelagem avançada."
+      },
+      {
+        "ordem": 5,
+        "natureza": "requisito",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Só cita a ferramenta Excel, marcada em outra etapa."
+      },
+      {
+        "ordem": 6,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.automacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Pede automação de relatórios e processos analíticos."
+      },
+      {
+        "ordem": 7,
+        "natureza": "requisito",
+        "itens": [
+          "ia.ia_aplicada"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Pede IA aplicada à análise, sem nomear modelo ou LLM."
+      },
+      {
+        "ordem": 8,
+        "natureza": "requisito",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Só cita Python ou R, ferramentas de outra etapa."
+      },
+      {
+        "ordem": 9,
+        "natureza": "requisito",
+        "itens": [
+          "experiencia.setor"
+        ],
+        "outro": "",
+        "setor": "varejo e e-commerce",
+        "motivo": "Pede experiência em e-commerce, B2B, digitais ou operações comerciais."
+      }
+    ]
+  },
+  "322d2c7e5ca0": {
+    "versao_taxonomia": "c96b721d6bd1",
+    "rotulador": "spacexai/grok-4.7",
+    "servido_por": "spacexai/grok-4.7",
+    "esforco": "medium",
+    "usd": 0.0523,
+    "uso": {
+      "completion_tokens": 6151,
+      "prompt_tokens": 8552,
+      "total_tokens": 14703,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 5665,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 1152,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.052282,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.052282,
+      "gateway_cost": 0.052282
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.liderar_time",
+          "experiencia.dados"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Pede gestão das áreas de MIS e BI, sem prática específica de painéis."
+      },
+      {
+        "ordem": 2,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.desenvolver_pessoas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Manda liderar o time de MIS, com desenvolvimento técnico e gestão de performance."
+      },
+      {
+        "ordem": 3,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.kpis_metricas",
+          "experiencia.setor"
+        ],
+        "outro": "",
+        "setor": "serviços",
+        "motivo": "Cita indicadores de contact center, atendimento e experiência do cliente."
+      },
+      {
+        "ordem": 4,
+        "natureza": "requisito",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Só nomeia ferramentas, sem conceito ao redor para rotular."
+      },
+      {
+        "ordem": 5,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.automacao",
+          "eng.modelagem",
+          "analytics.kpis_metricas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita automação, modelagem de dados e construção de indicadores."
+      },
+      {
+        "ordem": 6,
+        "natureza": "requisito",
+        "itens": [
+          "ia.ciencia_dados_ml",
+          "analytics.analise_insights"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita análises preditivas e temas de capacidade, produtividade, dimensionamento e tendências."
+      },
+      {
+        "ordem": 7,
+        "natureza": "requisito",
+        "itens": [
+          "gov.governanca"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita governança dos dados, sem qualidade ou outros controles."
+      },
+      {
+        "ordem": 8,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.comunicacao_executiva"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita fóruns executivos e apresentações gerenciais."
+      },
+      {
+        "ordem": 9,
+        "natureza": "requisito",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Diferencial que só nomeia ferramentas, sem conceito ao redor."
+      }
+    ]
+  },
+  "39f7c53fa832": {
+    "versao_taxonomia": "c96b721d6bd1",
+    "rotulador": "spacexai/grok-4.7",
+    "servido_por": "spacexai/grok-4.7",
+    "esforco": "medium",
+    "usd": 0.0716,
+    "uso": {
+      "completion_tokens": 9333,
+      "prompt_tokens": 8665,
+      "total_tokens": 17998,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 8654,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 1152,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.0716,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.0716,
+      "gateway_cost": 0.0716
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.liderar_time"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Liderar as áreas indica gestão de time; os nomes das áreas não marcam prática."
+      },
+      {
+        "ordem": 2,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.estrategia"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Desenvolver e executar a estratégia de dados marca estratégia e visão."
+      },
+      {
+        "ordem": 3,
+        "natureza": "responsabilidade",
+        "itens": [
+          "gov.governanca",
+          "gov.qualidade"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Pede garantir governança, qualidade e integridade das informações."
+      },
+      {
+        "ordem": 4,
+        "natureza": "responsabilidade",
+        "itens": [
+          "gov.seguranca"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Trecho continuado pede segurança das informações."
+      },
+      {
+        "ordem": 5,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.bi_dashboards",
+          "analytics.kpis_metricas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Evoluir dashboards e indicadores marca BI e KPIs; ferramentas nomeadas não são rotuladas."
+      },
+      {
+        "ordem": 6,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.analise_insights",
+          "negocio.visao_negocio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Transformar dados em inteligência e identificar oportunidades marca análise e visão de negócio."
+      },
+      {
+        "ordem": 7,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.automacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Liderar iniciativas de automação e RPAs marca automação."
+      },
+      {
+        "ordem": 8,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.automacao",
+          "eng.integracao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Continuação cita automação de processos, workflows e integrações sistêmicas."
+      },
+      {
+        "ordem": 9,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.processos_melhoria"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Redesenho, modelagem e melhoria de processos marcam melhoria contínua."
+      },
+      {
+        "ordem": 10,
+        "natureza": "responsabilidade",
+        "itens": [
+          "ia.ia_aplicada"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Fomentar analytics e IA aplicadas ao negócio marca IA aplicada."
+      },
+      {
+        "ordem": 11,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.stakeholders"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Atuar em parceria com as áreas marca stakeholders."
+      },
+      {
+        "ordem": 12,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.desenvolver_pessoas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Desenvolver equipes e experiência em gestão marcam liderar time e desenvolver pessoas."
+      },
+      {
+        "ordem": 13,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Informa subordinação à diretoria, sem pedir competência ou entrega."
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+registrado_em_utc,rodada,passo,modelo,tokens_entrada,tokens_saida,tokens_cache,usd
+2026-11-06T11:36:01+00:00,pratica-google_gemini-4-argon-c96b721d6bd1,0d9a1314b72a,google/gemini-4-argon,7645,577,0,0.0211
+2026-11-06T11:36:35+00:00,pratica-google_gemini-4-argon-c96b721d6bd1,322d2c7e5ca0,google/gemini-4-argon,7638,1089,0,0.0262
+2026-11-06T11:36:50+00:00,pratica-google_gemini-4-argon-c96b721d6bd1,39f7c53fa832,google/gemini-4-argon,7759,875,0,0.0243
+2026-11-06T11:38:14+00:00,pratica-spacexai_grok-4.7-c96b721d6bd1,0d9a1314b72a,spacexai/grok-4.7,7406,6410,1152,0.0538
+2026-11-06T11:39:28+00:00,pratica-spacexai_grok-4.7-c96b721d6bd1,322d2c7e5ca0,spacexai/grok-4.7,7400,6151,1152,0.0523
+2026-11-06T11:41:17+00:00,pratica-spacexai_grok-4.7-c96b721d6bd1,39f7c53fa832,spacexai/grok-4.7,7513,9333,1152,0.0716
