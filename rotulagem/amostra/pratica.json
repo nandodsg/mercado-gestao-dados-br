@@ -1,0 +1,272 @@
+{
+  "conjunto": "pratica",
+  "semente": 20261106,
+  "criterio": {
+    "coordenador": 1,
+    "gerente": 1,
+    "qualquer": 1
+  },
+  "vagas": [
+    {
+      "id_publico": "0d9a1314b72a",
+      "nivel": "coordenador",
+      "empresa": "Coca-Cola FEMSA",
+      "cargo": "Coordenador(a) de Data & Business Intelligence",
+      "impressao": "d095ce79e00a",
+      "linhas": [
+        {
+          "ordem": 1,
+          "texto": "consolidação e integração de dados de diferentes fontes",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 2,
+          "texto": "qualidade, consistência, disponibilidade e governança; fonte única e confiável",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 3,
+          "texto": "dashboards executivos e operacionais; indicadores de performance",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 4,
+          "texto": "Power BI — avançado; SQL — avançado; modelagem — avançado",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "SQL",
+            "Power BI"
+          ]
+        },
+        {
+          "ordem": 5,
+          "texto": "Excel — avançado",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Excel"
+          ]
+        },
+        {
+          "ordem": 6,
+          "texto": "automação de relatórios e processos analíticos — intermediário",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 7,
+          "texto": "ferramentas de IA aplicadas à análise — intermediário",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 8,
+          "texto": "Python ou R — básico desejável",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": [
+            "Python"
+          ]
+        },
+        {
+          "ordem": 9,
+          "texto": "B2B, digitais, e-commerce ou operações comerciais\" (desejável)",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        }
+      ]
+    },
+    {
+      "id_publico": "322d2c7e5ca0",
+      "nivel": "gerente",
+      "empresa": "Vivo",
+      "cargo": "Gerente MIS Operações",
+      "impressao": "2804e1b759d2",
+      "linhas": [
+        {
+          "ordem": 1,
+          "texto": "gestão de MIS, BI, Planejamento ou Inteligência Operacional",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 2,
+          "texto": "Liderar o time de MIS… desenvolvimento técnico e gestão de performance",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 3,
+          "texto": "indicadores de Contact Center, Operações de Atendimento ou Experiência do Cliente",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 4,
+          "texto": "Power BI, Tableau; Excel avançado",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Power BI",
+            "Tableau",
+            "Excel"
+          ]
+        },
+        {
+          "ordem": 5,
+          "texto": "automação, modelagem de dados e construção de indicadores",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 6,
+          "texto": "análises preditivas; capacidade, produtividade, dimensionamento e tendências",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 7,
+          "texto": "governança dos dados",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 8,
+          "texto": "fóruns executivos… apresentações gerenciais",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 9,
+          "texto": "Dif.: \"SQL, Python",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": [
+            "SQL",
+            "Python"
+          ]
+        }
+      ]
+    },
+    {
+      "id_publico": "39f7c53fa832",
+      "nivel": "gerente",
+      "empresa": "Sicredi Aliança",
+      "cargo": "Gerente de Dados, BI e Automação",
+      "impressao": "3750c8da68bd",
+      "linhas": [
+        {
+          "ordem": 1,
+          "texto": "Liderar as áreas de Dados, Business Intelligence, Processos e Automação",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 2,
+          "texto": "Desenvolver e executar a estratégia de dados da Cooperativa",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 3,
+          "texto": "Garantir a governança, qualidade … e integridade das informações",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 4,
+          "texto": "… segurança … das informações",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 5,
+          "texto": "Evoluir dashboards, indicadores e soluções analíticas\" + \"Conhecimento em Power BI, SQL ou ferramentas correlatas",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "SQL",
+            "Power BI"
+          ]
+        },
+        {
+          "ordem": 6,
+          "texto": "Transformar dados em inteligência de negócios, identificando oportunidades",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 7,
+          "texto": "Liderar iniciativas de automação de … RPAs",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 8,
+          "texto": "… automação de processos, workflows, integrações sistêmicas",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 9,
+          "texto": "Promover o redesenho e a melhoria contínua dos processos corporativos\" + \"Conhecimento em modelagem e melhoria de processos",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 10,
+          "texto": "Fomentar a utilização de analytics, inteligência artificial e novas tecnologias aplicadas ao negócio",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 11,
+          "texto": "Atuar em parceria com as áreas … produtividade, eficiência e qualidade operacional",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 12,
+          "texto": "Desenvolver e engajar equipes de alta performance\" + \"Experiência em gestão e desenvolvimento de equipes",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 13,
+          "texto": "O(a) profissional responderá diretamente à Diretoria de Operações",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        }
+      ]
+    }
+  ]
+}

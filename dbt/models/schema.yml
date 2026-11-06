@@ -74,6 +74,33 @@ models:
     description: "Contagem de vagas por nível."
 
 seeds:
+  - name: taxonomia
+    description: "Itens da taxonomia de requisitos, gerados de rotulagem/taxonomia.md por rotulagem/gerar_seeds.py. Não editar à mão."
+    columns:
+      - name: chave
+        data_tests: [not_null, unique]
+      - name: dimensao
+        data_tests: [not_null]
+  - name: setores
+    description: "Empresa como aparece em vagas.csv, nome normalizado (grafias repetidas viram uma) e setor de atuação. Lista de setores fechada."
+    columns:
+      - name: empresa
+        data_tests: [not_null, unique]
+      - name: setor
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ["financeiro", "seguros e previdência", "saúde", "educação", "varejo e e-commerce", "bens de consumo (CPG)", "indústria", "tecnologia e software", "consultoria", "mídia, marketing e publicidade", "telecom", "logística e mobilidade", "energia e saneamento", "imobiliário", "serviços"]
+  - name: ferramentas
+    description: "Dicionário de ferramentas: regex (sobre o texto sem acento e em minúsculas) por nome canônico. `remover` é apagado do texto antes de casar."
+    columns:
+      - name: ordem
+        data_tests: [not_null, unique]
+      - name: ferramenta
+        data_tests: [not_null]
+      - name: padrao
+        data_tests: [not_null]
   - name: niveis
     description: "Regra título → bucket de nível (coordenador, gerente, alta_gestao, outros). Seed público, escrito pra leitor externo."
     columns:

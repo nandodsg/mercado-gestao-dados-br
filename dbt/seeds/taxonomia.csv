@@ -1,0 +1,70 @@
+ordem,dimensao,chave,item,definicao,borda
+1,Gestão de pessoas,pessoas.liderar_time,Liderar time,"liderar, gerir ou coordenar um time ou uma área com gente","""liderar projetos"" sem time não conta (vai em gestão de projetos); ""liderança técnica sem gestão formal"" conta, e marca também ""referência técnica / hands-on"""
+2,Gestão de pessoas,pessoas.multidisciplinar,Time multidisciplinar,"o time ou a liderança junta perfis diferentes (engenharia + ciência + BI, POs + devs)","só quando a linha diz que é misto; ""time de dados"" sozinho não"
+3,Gestão de pessoas,pessoas.desenvolver_pessoas,Desenvolver pessoas,"PDI, feedback, 1:1, mentoria, coaching, avaliação de desempenho, carreira, capacitação do time","""desenvolver soluções"" não é desenvolver pessoas"
+4,Gestão de pessoas,pessoas.contratar_estruturar,Contratar e estruturar time,"recrutar, dimensionar headcount, montar ou crescer um time ou uma área","""estruturar processos"" não conta"
+5,Gestão de pessoas,pessoas.liderar_lideres,Liderar líderes,"gerir quem também lidera (coordenações, tech leads, líderes técnicos), formar lideranças",—
+6,Gestão de pessoas,pessoas.operacao_time,Operação do time,"capacidade, alocação, rituais, distribuição de demandas, acompanhamento de entregas, remover impedimentos","priorização da área/roadmap vai em ""roadmap e priorização"""
+7,Gestão de pessoas,pessoas.hands_on,Referência técnica / hands-on,"a liderança precisa pôr a mão, revisar código, tomar ou guiar decisão técnica, ser referência técnica","""base técnica para dialogar, não precisa construir"" conta (é profundidade técnica pedida da liderança)"
+8,"Estratégia, negócio e gestão",negocio.estrategia,Estratégia e visão,"definir ou executar estratégia/visão de dados, IA ou BI; pensamento estratégico","""alinhado aos objetivos estratégicos"" sozinho não conta"
+9,"Estratégia, negócio e gestão",negocio.roadmap_priorizacao,Roadmap e priorização,"roadmap, backlog, priorização de demandas e iniciativas por valor",—
+10,"Estratégia, negócio e gestão",negocio.projetos_portfolio,Projetos e portfólio,"gestão de projetos, cronograma, portfólio de iniciativas, condução de várias frentes",—
+11,"Estratégia, negócio e gestão",negocio.stakeholders,Stakeholders e influência,"parceria com áreas, influenciar sem autoridade, negociar escopo e prioridade, articulação entre áreas","apresentação pra diretoria vai em ""comunicação executiva"""
+12,"Estratégia, negócio e gestão",negocio.comunicacao_executiva,Comunicação executiva,"apresentar pra diretoria, C-level, conselho, fóruns executivos; storytelling com dados","comunicação em geral vai em ""comunicação"" (comportamental)"
+13,"Estratégia, negócio e gestão",negocio.visao_negocio,Visão de negócio,"traduzir necessidade de negócio em solução, ligar dado a impacto/valor/ROI, business acumen, business case",—
+14,"Estratégia, negócio e gestão",negocio.orcamento_fornecedores,Orçamento e fornecedores,"orçamento da área, OPEX/CAPEX, contratos, licenças, fornecedores, parceiros e consultorias contratadas",custo de nuvem/infra vai em FinOps
+15,"Estratégia, negócio e gestão",negocio.finops,FinOps e custo de plataforma,"custo de nuvem, compute, ML ou inferência; otimização de custo da plataforma",—
+16,"Estratégia, negócio e gestão",negocio.cultura_dados,Cultura de dados e adoção,"cultura data-driven, letramento, democratizar acesso, self-service, adoção pelas áreas",—
+17,"Estratégia, negócio e gestão",negocio.transformacao_inovacao,Transformação e inovação,"transformação digital, inovação, PoC/MVP, prospectar tecnologias","migração de plataforma legada vai em ""migração e modernização"""
+18,"Estratégia, negócio e gestão",negocio.ageis,Métodos ágeis,"Scrum, Kanban, Lean, metodologias ágeis",—
+19,"Estratégia, negócio e gestão",negocio.produto_dados,Produto e data products,"gestão de produto, mentalidade de produto, data products, ciclo de vida de produtos de dados, discovery",—
+20,"Estratégia, negócio e gestão",negocio.clientes_consultoria,Clientes e consultoria,"atender clientes externos, perfil consultivo, prospecção, desenvolvimento de negócios, propostas","""clientes internos"" não conta"
+21,"Estratégia, negócio e gestão",negocio.processos_melhoria,Processos e melhoria contínua,"redesenho de processos, padronização, melhoria contínua","padronizar **métricas** vai em ""KPIs e métricas"""
+22,Analytics e BI,analytics.bi_dashboards,"BI, dashboards e relatórios","construir ou evoluir BI, painéis, relatórios, visualização","""time de BI"" sozinho não marca (regra 1)"
+23,Analytics e BI,analytics.analise_insights,Análise e insights,"análises (exploratórias, diagnósticas, ad hoc), transformar dado em insight e recomendação",—
+24,Analytics e BI,analytics.kpis_metricas,KPIs e métricas,"definir, padronizar e acompanhar KPIs, métricas, OKRs, BSC","métricas de modelo (erro, drift) vão em ciência de dados / MLOps"
+25,Analytics e BI,analytics.experimentacao,Experimentação e causalidade,"testes A/B, desenho de experimento, inferência causal, uplift, incrementalidade",—
+26,Analytics e BI,analytics.digital_analytics,Digital analytics e tagueamento,"web/product analytics, tracking, tagueamento, arquitetura de eventos",o nome GA/GTM vem do dicionário
+27,Analytics e BI,analytics.marketing_cliente,Analytics de marketing e cliente,"MMM, atribuição, segmentação, CRM analytics, ciclo de vida, churn, LTV, insights de consumidor",—
+28,Analytics e BI,analytics.inteligencia_mercado,Inteligência comercial e de mercado,"inteligência comercial, pesquisa e inteligência de mercado, pricing, benchmarking de concorrência",—
+29,Analytics e BI,analytics.financeiro_pl,Planejamento financeiro e P&L,"FP&A, orçamento e forecast do negócio, P&L, rentabilidade, finanças corporativas","orçamento **da área de dados** vai em ""orçamento e fornecedores"""
+30,Analytics e BI,analytics.automacao,Automação,"automação de relatórios e processos, RPA, workflows",automação **com IA** marca também o item de IA
+31,Engenharia e plataforma de dados,eng.arquitetura,Arquitetura de dados,"arquitetura de dados; DW, data lake, lakehouse, data mesh, medalhão",—
+32,Engenharia e plataforma de dados,eng.pipelines,Engenharia de dados e pipelines,"pipelines, ETL/ELT, ingestão, orquestração, engenharia de dados como disciplina","""time de engenharia de dados"" sozinho marca só liderar time"
+33,Engenharia e plataforma de dados,eng.modelagem,Modelagem de dados,"modelagem dimensional, analítica, corporativa; data vault; analytics engineering",modelagem **estatística/preditiva** vai em ciência de dados
+34,Engenharia e plataforma de dados,eng.integracao,Integração de fontes e sistemas,"integrar múltiplas fontes, sistemas, APIs, conectores",—
+35,Engenharia e plataforma de dados,eng.plataforma_cloud,Plataforma de dados e nuvem,evoluir ou sustentar a plataforma de dados; nuvem como conceito,"o provedor (AWS, Azure, GCP) vem do dicionário"
+36,Engenharia e plataforma de dados,eng.big_data,Big data e processamento distribuído,"grandes volumes, processamento distribuído, larga escala",—
+37,Engenharia e plataforma de dados,eng.streaming,Streaming e tempo real,"streaming, tempo real, baixa latência",—
+38,Engenharia e plataforma de dados,eng.boas_praticas,Boas práticas de engenharia (DevOps/DataOps),"versionamento, Git, CI/CD, testes, code review, documentação, DataOps",—
+39,Engenharia e plataforma de dados,eng.observabilidade_operacao,Observabilidade e operação,"monitoramento, SLA/SLO, incidentes, sustentação, confiabilidade e disponibilidade da plataforma","qualidade **do dado** vai em ""qualidade de dados"""
+40,Engenharia e plataforma de dados,eng.migracao_modernizacao,Migração e modernização,migrar ou modernizar plataforma ou arquitetura legada,—
+41,Engenharia e plataforma de dados,eng.camada_semantica,Camada semântica,"camada semântica, métricas governadas como produto, data contracts",—
+42,Engenharia e plataforma de dados,eng.software_sistemas,Software e sistemas (fora de dados),"desenvolvimento de software, arquitetura de software, sistemas como ERP/WMS/CRM, front/back-end",—
+43,"Governança, qualidade e segurança",gov.governanca,Governança de dados,"políticas, papéis (owners, stewards), padrões, frameworks (DAMA), programa de governança","""governança de modelos/IA"" vai no item próprio"
+44,"Governança, qualidade e segurança",gov.qualidade,Qualidade de dados,"qualidade, consistência, integridade, acuracidade do dado",—
+45,"Governança, qualidade e segurança",gov.catalogo_linhagem,"Catálogo, metadados e linhagem","catálogo de dados, metadados, linhagem, dicionário de dados/métricas",—
+46,"Governança, qualidade e segurança",gov.mdm,Dados mestres (MDM),master data management,—
+47,"Governança, qualidade e segurança",gov.privacidade_regulacao,Privacidade e regulação,"LGPD, privacidade, PII, compliance, regulação setorial (SOX, HIPAA)",—
+48,"Governança, qualidade e segurança",gov.seguranca,Segurança da informação e acesso,"segurança da informação, controle de acesso",—
+49,"Governança, qualidade e segurança",gov.governanca_ia,Governança de IA e de modelos,"governança de modelos e agentes, risco de modelo, IA responsável, guardrails, ética de uso",—
+50,IA e ciência de dados,ia.genai_llm,IA generativa e LLMs,"GenAI, LLMs, RAG, embeddings, bancos vetoriais, dados preparados pra IA",—
+51,IA e ciência de dados,ia.agentes,Agentes de IA,"agentes, sistemas agênticos, multi-agente, copilotos conversacionais",—
+52,IA e ciência de dados,ia.ciencia_dados_ml,Ciência de dados e machine learning,"modelos preditivos, ML, estatística aplicada, forecast, séries temporais","""IA"" genérica sem ML vai em ""IA aplicada ao negócio"""
+53,IA e ciência de dados,ia.mlops,MLOps e LLMOps,"colocar e manter modelo em produção, monitorar drift, ciclo de vida de modelo, feature store",—
+54,IA e ciência de dados,ia.ia_aplicada,IA aplicada ao negócio,"aplicar IA a problemas ou áreas, estratégia/portfólio de IA, casos de uso, ROI de IA",—
+55,IA e ciência de dados,ia.ia_produtividade,IA na produtividade do time,"usar IA no próprio trabalho do time: AI-first engineering, copilots, acelerar entrega",—
+56,"Formação, idioma e experiência",formacao.graduacao,Graduação,ensino superior (qualquer área ou áreas listadas),—
+57,"Formação, idioma e experiência",formacao.pos,"Pós-graduação, MBA, mestrado","pós, MBA, mestrado, doutorado",—
+58,"Formação, idioma e experiência",formacao.certificacao,Certificação,"certificação (cloud, BI, Scrum, governança)",—
+59,"Formação, idioma e experiência",idioma.ingles,Inglês,"inglês, em qualquer nível",—
+60,"Formação, idioma e experiência",idioma.espanhol,Espanhol,"espanhol, em qualquer nível",—
+61,"Formação, idioma e experiência",experiencia.anos,Tempo de experiência,"pede N anos (na área, em liderança); o número vai no rótulo `anos`",—
+62,"Formação, idioma e experiência",experiencia.dados,Experiência prévia na área de dados,"pede trajetória ou experiência sólida em dados, BI, engenharia ou ciência (sem nomear prática específica)","se nomeia a prática (""experiência com pipelines""), marca a prática"
+63,"Formação, idioma e experiência",experiencia.setor,Experiência setorial,"pede experiência num setor ou negócio; o **setor** vai num 2º campo, com a mesma lista de `setores.csv`","conhecimento de negócio específico (""crédito e cobrança"", ""chargeback"", ""folha de pagamento"") conta, com o setor dele"
+64,Comportamental e condições,comportamento.comunicacao,Comunicação e colaboração,"comunicação clara, colaboração, interação com níveis diferentes","apresentação executiva vai em ""comunicação executiva"""
+65,Comportamental e condições,comportamento.analitico,Pensamento analítico e resolução de problemas,"capacidade analítica, pensamento crítico, estruturar problema, causa raiz",—
+66,Comportamental e condições,comportamento.autonomia,Autonomia e iniciativa,"autonomia, perfil empreendedor, inquieto, curiosidade, proatividade",—
+67,Comportamental e condições,comportamento.organizacao,Organização e ambiente de pressão,"organização, prioridades concorrentes, pressão, adaptabilidade, ritmo acelerado",—
+68,Comportamental e condições,condicao.trabalho,Condição de trabalho,"viagens, presencial/híbrido, mudança de cidade",—
+69,Comportamental e condições,outro,Outro,nada acima cabe; escrever 3–6 palavras,—

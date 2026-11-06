@@ -1,0 +1,48 @@
+{
+  "0d9a1314b72a": {
+    "versao_taxonomia": "c96b721d6bd1", "rotulador": "claude-opus-5-5", "servido_por": "claude-opus-5-5", "esforco": "sessao", "usd": 0,
+    "linhas": [
+      {"ordem": 1, "natureza": "requisito", "itens": ["eng.integracao"], "outro": "", "setor": "nenhum", "motivo": "integração de dados de diferentes fontes"},
+      {"ordem": 2, "natureza": "requisito", "itens": ["gov.qualidade", "gov.governanca", "eng.observabilidade_operacao"], "outro": "", "setor": "nenhum", "motivo": "qualidade e consistência, governança, disponibilidade do dado"},
+      {"ordem": 3, "natureza": "requisito", "itens": ["analytics.bi_dashboards", "analytics.kpis_metricas"], "outro": "", "setor": "nenhum", "motivo": "dashboards executivos e indicadores de performance"},
+      {"ordem": 4, "natureza": "requisito", "itens": ["eng.modelagem"], "outro": "", "setor": "nenhum", "motivo": "modelagem avançado; ferramentas ficam pro dicionário"},
+      {"ordem": 5, "natureza": "requisito", "itens": [], "outro": "", "setor": "nenhum", "motivo": "só ferramenta nomeada (Excel), marcada pelo dicionário"},
+      {"ordem": 6, "natureza": "requisito", "itens": ["analytics.automacao"], "outro": "", "setor": "nenhum", "motivo": "automação de relatórios e processos analíticos"},
+      {"ordem": 7, "natureza": "requisito", "itens": ["ia.ia_produtividade"], "outro": "", "setor": "nenhum", "motivo": "ferramentas de IA usadas no próprio trabalho de análise"},
+      {"ordem": 8, "natureza": "requisito", "itens": [], "outro": "", "setor": "nenhum", "motivo": "só linguagens nomeadas (Python, R), marcadas pelo dicionário"},
+      {"ordem": 9, "natureza": "requisito", "itens": ["experiencia.setor"], "outro": "", "setor": "varejo e e-commerce", "motivo": "vivência em e-commerce, digitais ou operações comerciais"}
+    ]
+  },
+  "322d2c7e5ca0": {
+    "versao_taxonomia": "c96b721d6bd1", "rotulador": "claude-opus-5-5", "servido_por": "claude-opus-5-5", "esforco": "sessao", "usd": 0,
+    "linhas": [
+      {"ordem": 1, "natureza": "requisito", "itens": ["pessoas.liderar_time", "experiencia.dados"], "outro": "", "setor": "nenhum", "motivo": "experiência em gestão de MIS, BI ou inteligência operacional"},
+      {"ordem": 2, "natureza": "responsabilidade", "itens": ["pessoas.liderar_time", "pessoas.desenvolver_pessoas"], "outro": "", "setor": "nenhum", "motivo": "liderar o time; desenvolvimento técnico e gestão de performance"},
+      {"ordem": 3, "natureza": "requisito", "itens": ["analytics.kpis_metricas", "experiencia.setor"], "outro": "", "setor": "serviços", "motivo": "indicadores de Contact Center e atendimento, negócio específico"},
+      {"ordem": 4, "natureza": "requisito", "itens": [], "outro": "", "setor": "nenhum", "motivo": "só ferramentas nomeadas, marcadas pelo dicionário"},
+      {"ordem": 5, "natureza": "requisito", "itens": ["analytics.automacao", "eng.modelagem", "analytics.kpis_metricas"], "outro": "", "setor": "nenhum", "motivo": "automação, modelagem de dados, construção de indicadores"},
+      {"ordem": 6, "natureza": "requisito", "itens": ["ia.ciencia_dados_ml", "analytics.analise_insights"], "outro": "", "setor": "nenhum", "motivo": "análises preditivas e de tendências, dimensionamento"},
+      {"ordem": 7, "natureza": "requisito", "itens": ["gov.governanca"], "outro": "", "setor": "nenhum", "motivo": "governança dos dados"},
+      {"ordem": 8, "natureza": "requisito", "itens": ["negocio.comunicacao_executiva"], "outro": "", "setor": "nenhum", "motivo": "fóruns executivos e apresentações gerenciais"},
+      {"ordem": 9, "natureza": "requisito", "itens": [], "outro": "", "setor": "nenhum", "motivo": "só ferramentas nomeadas (SQL, Python)"}
+    ]
+  },
+  "39f7c53fa832": {
+    "versao_taxonomia": "c96b721d6bd1", "rotulador": "claude-opus-5-5", "servido_por": "claude-opus-5-5", "esforco": "sessao", "usd": 0,
+    "linhas": [
+      {"ordem": 1, "natureza": "responsabilidade", "itens": ["pessoas.liderar_time", "pessoas.multidisciplinar"], "outro": "", "setor": "nenhum", "motivo": "liderar áreas distintas: Dados, BI, Processos e Automação"},
+      {"ordem": 2, "natureza": "responsabilidade", "itens": ["negocio.estrategia"], "outro": "", "setor": "nenhum", "motivo": "desenvolver e executar a estratégia de dados"},
+      {"ordem": 3, "natureza": "responsabilidade", "itens": ["gov.governanca", "gov.qualidade"], "outro": "", "setor": "nenhum", "motivo": "governança, qualidade e integridade das informações"},
+      {"ordem": 4, "natureza": "responsabilidade", "itens": ["gov.seguranca"], "outro": "", "setor": "nenhum", "motivo": "segurança das informações"},
+      {"ordem": 5, "natureza": "responsabilidade", "itens": ["analytics.bi_dashboards", "analytics.kpis_metricas"], "outro": "", "setor": "nenhum", "motivo": "evoluir dashboards e indicadores; ferramentas pro dicionário"},
+      {"ordem": 6, "natureza": "responsabilidade", "itens": ["analytics.analise_insights", "negocio.visao_negocio"], "outro": "", "setor": "nenhum", "motivo": "transformar dados em inteligência de negócios, oportunidades"},
+      {"ordem": 7, "natureza": "responsabilidade", "itens": ["analytics.automacao"], "outro": "", "setor": "nenhum", "motivo": "iniciativas de automação e RPAs"},
+      {"ordem": 8, "natureza": "responsabilidade", "itens": ["analytics.automacao", "eng.integracao"], "outro": "", "setor": "nenhum", "motivo": "automação de processos, workflows, integrações sistêmicas"},
+      {"ordem": 9, "natureza": "responsabilidade", "itens": ["negocio.processos_melhoria"], "outro": "", "setor": "nenhum", "motivo": "redesenho e melhoria contínua de processos"},
+      {"ordem": 10, "natureza": "responsabilidade", "itens": ["ia.ia_aplicada", "negocio.transformacao_inovacao"], "outro": "", "setor": "nenhum", "motivo": "IA e novas tecnologias aplicadas ao negócio"},
+      {"ordem": 11, "natureza": "responsabilidade", "itens": ["negocio.stakeholders"], "outro": "", "setor": "nenhum", "motivo": "atuar em parceria com as áreas"},
+      {"ordem": 12, "natureza": "responsabilidade", "itens": ["pessoas.liderar_time", "pessoas.desenvolver_pessoas"], "outro": "", "setor": "nenhum", "motivo": "desenvolver e engajar equipes; gestão de equipes"},
+      {"ordem": 13, "natureza": "contexto", "itens": [], "outro": "", "setor": "nenhum", "motivo": "linha de reporte, não pede nada"}
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+"""Sorteia as vagas dos conjuntos de rotulagem, com semente, e grava rotulagem/amostra/<conjunto>.json.
+
+    python rotulagem/amostra.py pratica       # 3 vagas: 1 coordenador, 1 gerente e 1 de qualquer um dos dois
+    python rotulagem/amostra.py referencia    # 16 vagas: 8 coordenador + 8 gerente, fora as da prática
+
+Nível vem do mart `mart_vagas` (rode `dbt build` antes). Vaga repetida (mesmo texto de requisitos, mesmo que o título ou
+a empresa mudem) conta uma vez: fica a de menor id público. Cada vaga sai com as linhas de requisito já limpas e com o
+que as regras dão (peso, anos, ferramentas); o nome da empresa e o cargo vão só pra página de revisão, nunca pro prompt.
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import random
+
+import duckdb
+
+from common import AMOSTRA, RAIZ, gravar_json, ler_json
+from regras import anos, ferramentas, limpar, peso
+
+BANCO = RAIZ / "dbt" / "target" / "mercado.duckdb"
+SEMENTE = 20261106
+CONJUNTOS = {"pratica": {"coordenador": 1, "gerente": 1, "qualquer": 1}, "referencia": {"coordenador": 8, "gerente": 8}}
+
+
+def carregar() -> dict[str, dict]:
+    if not BANCO.exists():
+        raise SystemExit("Falta dbt/target/mercado.duckdb: rode `dbt build --project-dir dbt --profiles-dir dbt`.")
+    con = duckdb.connect(str(BANCO), read_only=True)
+    vagas = {r[0]: {"id_publico": r[0], "empresa": r[1], "cargo": r[2], "nivel": r[3], "linhas": []}
+             for r in con.execute("select id_publico, empresa, cargo_oficial, nivel from mart_vagas "
+                                  "order by id_publico").fetchall()}
+    for id_publico, ordem, texto in con.execute(
+            "select id_publico, ordem, texto from stg_requisitos order by id_publico, ordem").fetchall():
+        limpo = limpar(texto)
+        vagas[id_publico]["linhas"].append({"ordem": ordem, "texto": limpo, "peso": peso(limpo), "anos": anos(limpo),
+                                            "ferramentas": ferramentas(limpo)})
+    for v in vagas.values():
+        v["impressao"] = hashlib.sha256("\n".join(l["texto"] for l in v["linhas"]).encode()).hexdigest()[:12]
+    return vagas
+
+
+def sem_repeticao(vagas: dict[str, dict]) -> dict[str, dict]:
+    vistas, saida = set(), {}
+    for id_publico in sorted(vagas):
+        if vagas[id_publico]["impressao"] not in vistas:
+            vistas.add(vagas[id_publico]["impressao"])
+            saida[id_publico] = vagas[id_publico]
+    return saida
+
+
+def sortear(conjunto: str, semente: int) -> list[dict]:
+    todas = sem_repeticao(carregar())
+    excluir: set[str] = set()
+    if conjunto == "referencia":
+        prat = ler_json(AMOSTRA / "pratica.json")
+        excluir = {v["id_publico"] for v in prat["vagas"]}
+        impressoes = {v["impressao"] for v in carregar().values() if v["id_publico"] in excluir}
+        excluir |= {i for i, v in todas.items() if v["impressao"] in impressoes}
+    rng = random.Random(semente)
+    escolhidas: list[dict] = []
+    for nivel, n in CONJUNTOS[conjunto].items():
+        if nivel == "qualquer":
+            pool = [v for i, v in sorted(todas.items()) if v["nivel"] in ("coordenador", "gerente")
+                    and i not in excluir and i not in {e["id_publico"] for e in escolhidas}]
+        else:
+            pool = [v for i, v in sorted(todas.items()) if v["nivel"] == nivel and i not in excluir]
+        escolhidas += rng.sample(pool, n)
+    return escolhidas
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("conjunto", choices=sorted(CONJUNTOS))
+    parser.add_argument("--semente", type=int, default=SEMENTE)
+    args = parser.parse_args()
+    destino = AMOSTRA / f"{args.conjunto}.json"
+    if destino.exists():
+        raise SystemExit(f"{destino.name} já existe: o sorteio é único (apague o arquivo de propósito pra refazer).")
+    vagas = sortear(args.conjunto, args.semente)
+    gravar_json(destino, {"conjunto": args.conjunto, "semente": args.semente, "criterio": CONJUNTOS[args.conjunto],
+                          "vagas": [{k: v[k] for k in ("id_publico", "nivel", "empresa", "cargo", "impressao", "linhas")}
+                                    for v in vagas]})
+    for v in vagas:
+        print(f"{v['id_publico']}  {v['nivel']:11s} {len(v['linhas']):2d} linhas  {v['empresa']} — {v['cargo']}")
+    print(f"{sum(len(v['linhas']) for v in vagas)} linhas -> {destino}")
+
+
+if __name__ == "__main__":
+    main()
