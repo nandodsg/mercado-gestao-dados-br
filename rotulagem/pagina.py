@@ -34,6 +34,10 @@ def montar(conjunto: str) -> tuple[dict, int]:
     saidas = {m: ler_json(SAIDA / f"{slug(m)}_{conjunto}.json") for m in rotuladores}
     with (RAIZ / "data" / "vagas.csv").open(encoding="utf-8") as f:
         urls = {r["id_publico"]: r["url"] for r in csv.DictReader(f)}
+    jd_arquivo = AMOSTRA / "jd_texto.json"
+    if not jd_arquivo.exists():
+        sys.exit("Falta rotulagem/amostra/jd_texto.json: gere com o exportador (JD inteiro, não versionado).")
+    jd = ler_json(jd_arquivo)
     versao = taxonomia.versao()
     for m, s in saidas.items():
         faltam = [v["id_publico"] for v in amostra["vagas"] if v["id_publico"] not in s]
@@ -52,7 +56,7 @@ def montar(conjunto: str) -> tuple[dict, int]:
                   for i in taxonomia.itens()],
         "vagas": [{
             "id": v["id_publico"], "nivel": v["nivel"], "empresa": v["empresa"], "cargo": v["cargo"],
-            "url": urls.get(v["id_publico"], ""),
+            "url": urls.get(v["id_publico"], ""), "jd": jd[v["id_publico"]],
             "linhas": [{
                 "ordem": l["ordem"], "texto": l["texto"], "peso": l["peso"], "anos": l["anos"],
                 "ferramentas": l["ferramentas"],
@@ -130,6 +134,8 @@ textarea { width:100%; min-height:50px; font:inherit; font-size:13px; color:var(
 #modal li { display:flex; gap:10px; padding:6px 8px; border-radius:6px; }
 #modal li .n { width:26px; flex:none; text-align:right; color:var(--muted); }
 #modal li.atual { background:var(--soft); outline:1px solid var(--accent); }
+#modal li.secao { display:block; margin-top:14px; padding:2px 8px; font-weight:600; color:var(--muted); border-bottom:1px solid var(--line); border-radius:0; text-transform:uppercase; font-size:12px; letter-spacing:.04em; }
+#modal li.fora { color:var(--muted); }
 kbd { border:1px solid var(--line); border-bottom-width:2px; border-radius:4px; padding:0 4px; font-size:11px; }
 </style>
 </head>
@@ -352,13 +358,19 @@ const modal = document.getElementById('modal');
 function abrirVaga() {
   const vg = D.vagas[v];
   document.getElementById('mTitulo').textContent = `${vg.empresa} — ${vg.cargo}`;
-  const meta = document.getElementById('mMeta'); meta.textContent = `nível ${vg.nivel} · ${vg.linhas.length} linhas de requisito, na ordem do posting · `;
+  const meta = document.getElementById('mMeta'); meta.textContent = `nível ${vg.nivel} · texto completo do anúncio, na ordem; as ${vg.linhas.length} linhas numeradas são as que você revisa · `;
   if (vg.url) { const a = document.createElement('a'); a.href = vg.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = 'abrir o posting original'; meta.appendChild(a); }
   const ol = document.getElementById('mLinhas'); ol.innerHTML = '';
-  vg.linhas.forEach((ln, i) => {
-    const li = document.createElement('li'); if (i === l) li.className = 'atual';
-    li.innerHTML = '<span class="n"></span><span></span>'; li.firstChild.textContent = ln.ordem; li.lastChild.textContent = ln.texto;
-    ol.appendChild(li);
+  const atual = vg.linhas[l].ordem;
+  vg.jd.forEach(sec => {
+    const h = document.createElement('li'); h.className = 'secao';
+    h.textContent = (sec.titulo || sec.secao.replace(/_/g, ' ')) + (sec.titulo ? ' · ' + sec.secao.replace(/_/g, ' ') : '');
+    ol.appendChild(h);
+    sec.linhas.forEach(ln => {
+      const li = document.createElement('li'); if (ln.ordem === atual) li.className = 'atual'; if (ln.ordem == null) li.classList.add('fora');
+      li.innerHTML = '<span class="n"></span><span></span>'; li.firstChild.textContent = ln.ordem == null ? '' : ln.ordem; li.lastChild.textContent = ln.texto;
+      ol.appendChild(li);
+    });
   });
   modal.classList.add('aberto');
   const at = ol.querySelector('.atual'); if (at) at.scrollIntoView({ block: 'center' });

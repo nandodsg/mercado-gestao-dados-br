@@ -9,3 +9,5 @@ _site/
 .env
 dbt/.user.yml
 rotulagem/amostra/jd_linhas.json
+rotulagem/amostra/jd_texto.json
+rotulagem/pagina/*.html

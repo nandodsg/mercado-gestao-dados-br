@@ -17,7 +17,7 @@ import random
 
 import duckdb
 
-from common import AMOSTRA, RAIZ, gravar_json, ler_json
+from common import AMOSTRA, RAIZ, ROTULAGEM, gravar_json, ler_json
 from regras import anos, ferramentas, limpar, peso
 
 BANCO = RAIZ / "dbt" / "target" / "mercado.duckdb"
@@ -69,9 +69,13 @@ def sem_repeticao(vagas: dict[str, dict]) -> dict[str, dict]:
 def sortear(conjunto: str, semente: int) -> list[dict]:
     todas = sem_repeticao(carregar())
     excluir: set[str] = set()
+    anterior = ROTULAGEM / "historico" / "unidade-linha-do-fit" / "amostra" / "pratica.json"
+    if anterior.exists():  # quem revisa já viu estas vagas (e as da mesma empresa): ficam fora de qualquer sorteio
+        empresas = {v["empresa"] for v in ler_json(anterior)["vagas"]}
+        excluir = {i for i, v in todas.items() if v["empresa"] in empresas}
     if conjunto == "referencia":
         prat = ler_json(AMOSTRA / "pratica.json")
-        excluir = {v["id_publico"] for v in prat["vagas"]}
+        excluir |= {v["id_publico"] for v in prat["vagas"]}
         impressoes = {v["impressao"] for v in carregar().values() if v["id_publico"] in excluir}
         excluir |= {i for i, v in todas.items() if v["impressao"] in impressoes}
     rng = random.Random(semente)
