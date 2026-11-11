@@ -76,6 +76,8 @@ def sortear(conjunto: str, semente: int) -> list[dict]:
     if conjunto == "referencia":
         prat = ler_json(AMOSTRA / "pratica.json")
         excluir |= {v["id_publico"] for v in prat["vagas"]}
+        empresas_pratica = {v["empresa"] for v in prat["vagas"]}  # quem revisa já viu estas empresas
+        excluir |= {i for i, v in todas.items() if v["empresa"] in empresas_pratica}
         impressoes = {v["impressao"] for v in carregar().values() if v["id_publico"] in excluir}
         excluir |= {i for i, v in todas.items() if v["impressao"] in impressoes}
     rng = random.Random(semente)

@@ -1,0 +1,3336 @@
+{
+  "conjunto": "referencia",
+  "semente": 20261106,
+  "criterio": {
+    "coordenador": 8,
+    "gerente": 8
+  },
+  "unidade": "linha do JD",
+  "vagas": [
+    {
+      "id_publico": "193f6ffd8725",
+      "nivel": "coordenador",
+      "empresa": "Inter",
+      "cargo": "DATA ENGINEER & SCIENCE COORDINATOR",
+      "impressao": "4b7cb03431b3",
+      "linhas": [
+        {
+          "ordem": 1,
+          "secao": "responsabilidades",
+          "texto": "Liderar e desenvolver um time de engenheiros de dados e especialistas em IA;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 2,
+          "secao": "responsabilidades",
+          "texto": "Coordenar a entrega de projetos de dados e IA, garantindo qualidade, prazo e alinhamento com as prioridades do negócio;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 3,
+          "secao": "responsabilidades",
+          "texto": "Garantir a qualidade e a consistência dos dados que chegam às mãos das áreas de negócio;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 4,
+          "secao": "responsabilidades",
+          "texto": "Apoiar a colocação em produção de modelos de Machine Learning e soluções de Inteligência Artificial;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 5,
+          "secao": "responsabilidades",
+          "texto": "Estabelecer boas práticas de engenharia, como documentação, versionamento e monitoramento de pipelines;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 6,
+          "secao": "responsabilidades",
+          "texto": "Interagir com stakeholders de diferentes áreas, traduzindo necessidades de negócio em soluções técnicas eficientes;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 7,
+          "secao": "responsabilidades",
+          "texto": "Participar ativamente dos processos de recrutamento e seleção para expandir o time;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 8,
+          "secao": "responsabilidades",
+          "texto": "Reportar resultados, riscos e oportunidades para a gerência, contribuindo com a visão estratégica da área.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 9,
+          "secao": "requisitos",
+          "texto": "Graduação em Ciência da Computação, Engenharia de Computação, Sistemas de Informação, Estatística ou áreas correlatas",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 10,
+          "secao": "requisitos",
+          "texto": "Sólidos conhecimentos em arquitetura de dados (Data Lakehouse, Data Mesh, Data Warehouse)",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 11,
+          "secao": "requisitos",
+          "texto": "Experiência com pipelines de dados (ETL/ELT) e ferramentas como Apache Spark, Airflow, dbt ou similares",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Spark",
+            "dbt",
+            "Airflow"
+          ]
+        },
+        {
+          "ordem": 12,
+          "secao": "requisitos",
+          "texto": "Domínio de linguagens como Python e SQL;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "SQL",
+            "Python"
+          ]
+        },
+        {
+          "ordem": 13,
+          "secao": "requisitos",
+          "texto": "Conhecimento em plataformas de nuvem (AWS, Azure ou GCP) e seus serviços de dados;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "AWS",
+            "Azure",
+            "GCP"
+          ]
+        },
+        {
+          "ordem": 14,
+          "secao": "requisitos",
+          "texto": "Familiaridade com práticas de MLOps e deploy de modelos de Machine Learning em produção;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 15,
+          "secao": "requisitos",
+          "texto": "Conhecimento em governança de dados, qualidade de dados e catálogo de dados;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 16,
+          "secao": "requisitos",
+          "texto": "Capacidade de realizar feedbacks estruturados, PDIs e avaliações de desempenho;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 17,
+          "secao": "requisitos",
+          "texto": "Habilidade para desenvolver talentos e construir times de alta performance;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 18,
+          "secao": "requisitos",
+          "texto": "Experiência na gestão de múltiplos projetos simultâneos com priorização estratégica;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 19,
+          "secao": "requisitos",
+          "texto": "Visão estratégica aliada à execução prática;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 20,
+          "secao": "requisitos",
+          "texto": "Capacidade de traduzir necessidades de negócio em soluções técnicas.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 21,
+          "secao": "diferenciais",
+          "texto": "Experiência em empresas de tecnologia ou com cultura data-driven consolidada;",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 22,
+          "secao": "diferenciais",
+          "texto": "Pós-graduação ou MBA em áreas de dados, tecnologia ou gestão.",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        }
+      ]
+    },
+    {
+      "id_publico": "0c209e36504e",
+      "nivel": "coordenador",
+      "empresa": "Porto",
+      "cargo": "Coordenador(a) de Dados Digitais - Tagueamento",
+      "impressao": "915b4befc537",
+      "linhas": [
+        {
+          "ordem": 1,
+          "secao": "responsabilidades",
+          "texto": "Gestão de Pessoas: Liderar equipes multidisciplinares de MarTech e Engenharia de Dados, gerenciando o ciclo de vida de desenvolvimento dos times, orientando POs, Tech Leads e Chapter Leads com feedbacks, 1:1s e PDIs, estimulando o desenvolvimento da área e o atingimento das metas.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 2,
+          "secao": "responsabilidades",
+          "texto": "Gestão de Parceiros e Stakeholders: Atuar na gestão e alinhamento de expectativas com parceiros de negócios, fornecedores e stakeholders chave, alinhando as entregas de dados às metas estratégicas da empresa. Realizar a devida interface com o negócio, traduzindo requerimentos de projeto para a equipe e influenciando áreas pares para atingir os objetivos.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 3,
+          "secao": "responsabilidades",
+          "texto": "Gestão de Orçamento, Contratos e Licenças: Acompanhar e gerenciar o orçamento da área (OPEX/CAPEX), incluindo a gestão de fornecedores, contratos de tecnologia e licenciamento de ferramentas de Dados Digitais.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 4,
+          "secao": "responsabilidades",
+          "texto": "Gestão de Plataforma e Projetos de Dados: Promover práticas de Data Quality focadas no contexto de Digital Analytics e garantir a Observabilidade ponta a ponta da plataforma TagOps, gerenciando dados e tecnologias da Plataforma de Dados Digitais, fazendo a ponte entre as squads e os usuários/clientes da solução. Promover a otimização contínua de custos de infraestrutura e processamento (FinOps).",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 5,
+          "secao": "responsabilidades",
+          "texto": "Data Storytelling & Literacy: Liderar o desenvolvimento de produtos de dados, relatórios executivos e dashboards (Looker, Tableau, Power BI), aplicando técnicas para traduzir métricas complexas de AdTech/MarTech em acionáveis claros. Atuar na capacitação de stakeholders de negócio, promovendo o uso e a autonomia no consumo de Dados de Jornadas Digitais.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Power BI",
+            "Tableau",
+            "Looker"
+          ]
+        },
+        {
+          "ordem": 6,
+          "secao": "requisitos",
+          "texto": "Formação: Graduação completa em Análise de Sistemas, Engenharia da Computação, Ciência da Computação, Estatística ou áreas correlatas.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 7,
+          "secao": "requisitos",
+          "texto": "Domínio de Ecossistema MarTech & AdTech: Experiência em liderança da disciplina de Digital Analytics, especialmente com as ferramentas Google Analytics, Google Tag Manager, VWO, AppsFlyer, Facebook/Meta Ads, Google Ads e mídias afins.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Google Analytics / GTM",
+            "Plataformas de mídia"
+          ]
+        },
+        {
+          "ordem": 8,
+          "secao": "requisitos",
+          "texto": "Metodologias & Métricas: Experiência com métodos ágeis (Scrum, Kanban), métricas de produtividade (Cycle Time, Lead Time, Throughput) e métricas de produto (preferencialmente frameworks AARRR e HEART).",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 9,
+          "secao": "requisitos",
+          "texto": "Desenvolvimento & Automações: Domínio em programação backend (Python e/ou Node.js) para a criação de serviços, rotinas de integração e automações de esteira DataOps.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Python"
+          ]
+        },
+        {
+          "ordem": 10,
+          "secao": "requisitos",
+          "texto": "Cloud & Big Data: Experiência em soluções Big Data em Nuvem (preferencialmente GCP e/ou OCI) e experiência com Ecossistemas de Dados (Data Lake, Data Warehouse, Data Lakehouse, Data Mesh e afins).",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "GCP"
+          ]
+        },
+        {
+          "ordem": 11,
+          "secao": "requisitos",
+          "texto": "Bancos de Dados, NoSQL e Streaming Analytics: Experiência com bancos de dados e plataformas analíticas de grande escala (ex: BigQuery) e camadas de consumo NRT/Streaming Analytics (ex: Kafka, Pub/Sub).",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "BigQuery",
+            "Kafka",
+            "Pub/Sub"
+          ]
+        },
+        {
+          "ordem": 12,
+          "secao": "requisitos",
+          "texto": "ETL & Orquestração de Pipelines: Conhecimento prático com orquestradores de pipelines e ferramentas de transformação de dados (dbt, Airflow, Cloud Composer, Dataform, Funnel, etc.).",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "dbt",
+            "Airflow"
+          ]
+        },
+        {
+          "ordem": 13,
+          "secao": "requisitos",
+          "texto": "Linguagens & Consulta: Experiência em SQL e/ou Python para manipulação de dados em ambientes analíticos.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "SQL",
+            "Python"
+          ]
+        },
+        {
+          "ordem": 14,
+          "secao": "requisitos",
+          "texto": "Atribuição e Mensuração de Mídia: Experiência com metodologias e modelagens analíticas de Marketing (MMM - Marketing Mix Modeling, MTA - Multi-Touch Attribution e práticas de CRO e AB Testing) para análises complexas e geração de insights.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 15,
+          "secao": "requisitos",
+          "texto": "Visualização de Dados & Comunicação: Experiência na construção de soluções de BI e dashboards (Looker Studio, Tableau, Power BI) com foco em usabilidade e Data Storytelling para lideranças.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Power BI",
+            "Tableau",
+            "Looker"
+          ]
+        },
+        {
+          "ordem": 16,
+          "secao": "requisitos",
+          "texto": "Diferenciais",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 17,
+          "secao": "requisitos",
+          "texto": "Especialização: Pós-graduação, MBA ou especializações na área de Dados e/ou Analytics.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 18,
+          "secao": "requisitos",
+          "texto": "Ativação, CDP & MMP: Experiência com plataformas de Dados e Marketing, considerando CDP/Salesforce e MMP/AppsFlyer para ativação de audiências e personalização em plataformas digitais.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Plataformas de mídia",
+            "Salesforce"
+          ]
+        },
+        {
+          "ordem": 19,
+          "secao": "requisitos",
+          "texto": "Governança & Frameworks: Familiaridade com frameworks de gestão e qualidade de dados (DAMA-DMBOK, TDQM, CRISP-DM).",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 20,
+          "secao": "requisitos",
+          "texto": "Plataforma Multicloud: Experiência complementar em soluções de dados sobre OCI e/ou AWS.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "AWS"
+          ]
+        },
+        {
+          "ordem": 21,
+          "secao": "requisitos",
+          "texto": "Certificações: Certificações em Cloud (GCP, AWS) ou soluções de Engenharia de Dados (Databricks, dbt, etc.).",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Databricks",
+            "AWS",
+            "GCP",
+            "dbt"
+          ]
+        }
+      ]
+    },
+    {
+      "id_publico": "19534183f233",
+      "nivel": "coordenador",
+      "empresa": "Aegea Saneamento",
+      "cargo": "Coordenador(a) de Telemetria e Dados Operacionais",
+      "impressao": "3b633b23808a",
+      "linhas": [
+        {
+          "ordem": 1,
+          "secao": "responsabilidades",
+          "texto": "Coordenar a gestão dos sistemas de telemetria e monitoramento das operações de saneamento.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 2,
+          "secao": "responsabilidades",
+          "texto": "Garantir a disponibilidade, integridade e confiabilidade dos dados operacionais capturados em campo.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 3,
+          "secao": "responsabilidades",
+          "texto": "Monitorar indicadores relacionados ao comportamento de consumo dos clientes telemedidos, apoiando as concessionárias na identificação e tratamento de desvios e anormalidades.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 4,
+          "secao": "responsabilidades",
+          "texto": "Desenvolver análises, estudos de tendências e relatórios gerenciais para apoio à tomada de decisão.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 5,
+          "secao": "responsabilidades",
+          "texto": "Elaborar avaliações críticas dos dados operacionais, propondo planos de ação e oportunidades de melhoria.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 6,
+          "secao": "responsabilidades",
+          "texto": "Atuar como parceiro estratégico das áreas Comercial, Operação, Engenharia e Tecnologia na gestão e performance dos grandes clientes.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 7,
+          "secao": "responsabilidades",
+          "texto": "Liderar projetos de automação, digitalização e melhoria contínua baseados em dados.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 8,
+          "secao": "responsabilidades",
+          "texto": "Avaliar a viabilidade e estruturar projetos de ampliação do parque de telemetria e dos pontos telemedidos.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 9,
+          "secao": "responsabilidades",
+          "texto": "Atuar na integração entre plataformas SCADA, sistemas de telemetria, Business Intelligence, GIS e demais soluções corporativas.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 10,
+          "secao": "responsabilidades",
+          "texto": "Identificar oportunidades de otimização operacional por meio da análise de dados e indicadores de desempenho.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 11,
+          "secao": "responsabilidades",
+          "texto": "Coordenar fornecedores e contratos relacionados à infraestrutura de telemetria e comunicação de dados.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 12,
+          "secao": "responsabilidades",
+          "texto": "Gerenciar equipe técnica responsável pelo monitoramento e suporte dos sistemas.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 13,
+          "secao": "responsabilidades",
+          "texto": "Desenvolver e compartilhar relatórios técnicos e executivos com os principais indicadores das concessionárias.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 14,
+          "secao": "responsabilidades",
+          "texto": "Garantir a governança, rastreabilidade e segurança das informações operacionais.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 15,
+          "secao": "requisitos",
+          "texto": "Ensino Superior completo em Engenharia de Controle e Automação, Engenharia Elétrica, Engenharia de Telecomunicações, Engenharia de Produção, Engenharia Ambiental, Sistemas de Informação, Ciência de Dados ou áreas correlatas.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 16,
+          "secao": "requisitos",
+          "texto": "Experiência em liderança ou coordenação de equipes técnicas e multidisciplinares.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 17,
+          "secao": "requisitos",
+          "texto": "Vivência em telemetria, automação industrial, telecomunicações, monitoramento remoto ou operações digitais.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 18,
+          "secao": "requisitos",
+          "texto": "Experiência com análise de dados operacionais, indicadores de performance e suporte à tomada de decisão.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 19,
+          "secao": "requisitos",
+          "texto": "Conhecimento em sistemas SCADA e plataformas de supervisão operacional.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 20,
+          "secao": "requisitos",
+          "texto": "Conhecimento em telemetria, IoT e redes de comunicação de dados.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 21,
+          "secao": "requisitos",
+          "texto": "Experiência com Power BI, Tableau ou ferramentas similares de Business Intelligence.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Power BI",
+            "Tableau"
+          ]
+        },
+        {
+          "ordem": 22,
+          "secao": "requisitos",
+          "texto": "Conhecimentos em bancos de dados, análise de informações e construção de dashboards gerenciais.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 23,
+          "secao": "requisitos",
+          "texto": "Vivência em gestão de projetos, melhoria contínua e transformação digital.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 24,
+          "secao": "requisitos",
+          "texto": "Capacidade de análise crítica de dados, identificação de desvios e desenvolvimento de planos de ação.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 25,
+          "secao": "requisitos",
+          "texto": "Perfil consultivo, com habilidade para atuar junto às áreas de Operação, Comercial, Engenharia e Tecnologia.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 26,
+          "secao": "requisitos",
+          "texto": "Disponibilidade para viagens.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 27,
+          "secao": "diferenciais",
+          "texto": "Experiência no segmento de saneamento.",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 28,
+          "secao": "diferenciais",
+          "texto": "Vivência em utilities, energia ou infraestrutura.",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 29,
+          "secao": "diferenciais",
+          "texto": "Conhecimento em GIS/Georreferenciamento.",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 30,
+          "secao": "diferenciais",
+          "texto": "Experiência com projetos de automação e digitalização operacional.",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 31,
+          "secao": "diferenciais",
+          "texto": "Empresa contratante: Aegea Saneamento e Participações S.A. – Matriz",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        }
+      ]
+    },
+    {
+      "id_publico": "28eb0d792bf1",
+      "nivel": "coordenador",
+      "empresa": "Grupo Boticário",
+      "cargo": "Tech Manager I (Venda Direta)",
+      "impressao": "732e7814d681",
+      "linhas": [
+        {
+          "ordem": 1,
+          "secao": "responsabilidades",
+          "texto": "No Grupo Boticário, Inteligência Artificial Generativa é pilar estratégico. Você irá atuar no time de Plataforma de Agentes: plataforma centralizada para criar, gerir e executar agentes LLM nos canais de negócio do GB. Sua missão será criar uma plataforma de construção de agentes para dar autonomia ao uso de Gen AI em times funcionais. Nosso foco é garantir que chegue até os diversos clientes do Grupo Boticário as melhores soluções envolvendo IA, alavancando resultados tangíveis para a empresa.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 2,
+          "secao": "responsabilidades",
+          "texto": "Buscamos uma pessoa Tech Manager I (coordenadora), com perfil empreendedor e alta capacidade de adaptação, para liderar o time de engenharia de Plataforma de Agentes.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 3,
+          "secao": "responsabilidades",
+          "texto": "Como será o seu dia a dia?",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 4,
+          "secao": "responsabilidades",
+          "texto": "Gestão das pessoas do time de desenvolvimento de software, com o intuito de acompanhar e desenvolver nossos colaboradores (PDI), realizando sessões de 1:1, estabelecendo planos de ação e dando feedbacks de forma frequente;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 5,
+          "secao": "responsabilidades",
+          "texto": "Orientar as pessoas de sua equipe na utilização de práticas ágeis, facilitando cerimônias que façam parte da metodologia adotada pelo squad, como plannings, refinamentos, retrospectivas, etc.;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 6,
+          "secao": "responsabilidades",
+          "texto": "Remover impedimentos do time;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 7,
+          "secao": "responsabilidades",
+          "texto": "Promover um ambiente de respeito e confiança em conjunto com os membros do time, adaptando o seu estilo de liderança a diferentes situações;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 8,
+          "secao": "responsabilidades",
+          "texto": "Navegar pela companhia, identificando oportunidades e papéis-chave para o sucesso do time;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 9,
+          "secao": "responsabilidades",
+          "texto": "Coordenar iniciativas em que um ou mais times são necessários para o sucesso do produto;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 10,
+          "secao": "responsabilidades",
+          "texto": "Realizar sessões com todos os tipos de stakeholders para mostrar os últimos resultados alcançados, colher feedbacks/insights e realizar alinhamentos sobre o roadmap do produto;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 11,
+          "secao": "responsabilidades",
+          "texto": "Capacidade/habilidade de apresentar informações técnicas complexas de maneira clara e concisa para todos os tipos de stakeholders;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 12,
+          "secao": "responsabilidades",
+          "texto": "Construir a visão e missão do squad em conjunto com os membros do time;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 13,
+          "secao": "responsabilidades",
+          "texto": "Acompanhar frequentemente métricas de produto, métricas de negócio e indicadores técnicos, criticando, aprimorando e dando visibilidade dos objetivos e status de iniciativas do time;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 14,
+          "secao": "responsabilidades",
+          "texto": "Participar de processos de discovery de produto, mapeamento de problemas e soluções de incidentes;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 15,
+          "secao": "responsabilidades",
+          "texto": "Contribuir com a definição dos objetivos e métricas-chaves do produto/squad, expondo frequentemente esses resultados aos stakeholders (OKRs);",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 16,
+          "secao": "responsabilidades",
+          "texto": "Estabelecer um processo de construção de software e a manutenção de um ritmo constante e saudável;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 17,
+          "secao": "responsabilidades",
+          "texto": "Lidar com necessidades/prioridades concorrentes, assumindo responsabilidades e riscos em um contexto cujo ritmo é acelerado e em constante mudança.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 18,
+          "secao": "requisitos",
+          "texto": "## Requisitos:",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 19,
+          "secao": "requisitos",
+          "texto": "Experiência anterior em liderança de times de desenvolvimento de software para produtos digitais;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 20,
+          "secao": "requisitos",
+          "texto": "Background técnico forte (ex-desenvolvedor ou arquiteto) com capacidade para discutir arquitetura de software, integrações e boas práticas de engenharia;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 21,
+          "secao": "requisitos",
+          "texto": "Vivência em melhoria de processos, produtos ou serviços.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 22,
+          "secao": "requisitos",
+          "texto": "Facilitação e resolução de problemas; times ágeis (Scrum, Kanban ou equivalente).",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 23,
+          "secao": "requisitos",
+          "texto": "Liderança em modernização ou migração de tecnologia e/ou processo.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 24,
+          "secao": "requisitos",
+          "texto": "## Diferencial:",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 25,
+          "secao": "requisitos",
+          "texto": "Compreensão de como LLMs e agentes operam em produção. Frameworks do tipo Agno, LangChain ou equivalentes como referência (para gestão técnica, não necessariamente hands-on);",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Frameworks de agentes / LLM"
+          ]
+        },
+        {
+          "ordem": 26,
+          "secao": "requisitos",
+          "texto": "Ter liderado time multidisciplinar senior (engenharia de software, ciência de dados e AI)",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        }
+      ]
+    },
+    {
+      "id_publico": "03e4427fa662",
+      "nivel": "coordenador",
+      "empresa": "Globo",
+      "cargo": "Pessoa Coordenadora de Plataforma de Dados | Data & AI",
+      "impressao": "f11b12a8459f",
+      "linhas": [
+        {
+          "ordem": 1,
+          "secao": "responsabilidades",
+          "texto": "Trabalhar na formação, condução e evolução dos times interdisciplinares, respeitando papel, conhecimento e individualidade de cada pessoa;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 2,
+          "secao": "responsabilidades",
+          "texto": "Trabalhar em parceria com outras lideranças, times internos e externos, promovendo sinergia nas entregas e troca de experiência;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 3,
+          "secao": "responsabilidades",
+          "texto": "Garantir planejamento de entregas e processos dos times, alinhado com visão e planejamento estratégicos da empresa;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 4,
+          "secao": "responsabilidades",
+          "texto": "Liderança técnica, garantir padronização técnica e qualidade dos dados produzido pelos times;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 5,
+          "secao": "responsabilidades",
+          "texto": "Apoiar processos de recrutamento e seleção;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 6,
+          "secao": "responsabilidades",
+          "texto": "Contribuir no resultado dos times, atuando como mediador e auxiliando na gestão de conflitos, negociação e remoção de impedimentos;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 7,
+          "secao": "responsabilidades",
+          "texto": "Fomentar cultura de trabalho em equipe, feedback, 1:1, realizar mentorias e apoio no desenvolvimento de cada colaborador;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 8,
+          "secao": "responsabilidades",
+          "texto": "Apoiar processos e controle de entrega, planejamento, execução;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 9,
+          "secao": "responsabilidades",
+          "texto": "Garantir alinhamento e comunicação com todas as áreas que atuam de forma direta e indireta nos produtos sob sua gestão;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 10,
+          "secao": "responsabilidades",
+          "texto": "Implementar novas tecnologias e métodos que possam trazer melhorias e inovação para os processos de analytics, incentivando a melhoria contínua;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 11,
+          "secao": "responsabilidades",
+          "texto": "Estabelecer, medir e acompanhar KPIs de desempenho para medir eficiência das equipes;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 12,
+          "secao": "responsabilidades",
+          "texto": "Controlar orçamentos e recursos dos projetos, garantindo a alocação eficiente;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 13,
+          "secao": "responsabilidades",
+          "texto": "Fornecer insights baseados em dados e apresentar projetos e resultados em reuniões executivas.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 14,
+          "secao": "requisitos",
+          "texto": "Formação superior completa em áreas da Tecnologia;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 15,
+          "secao": "requisitos",
+          "texto": "Experiência em gestão de times e produtos e/ou plataformas de tecnologia;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 16,
+          "secao": "requisitos",
+          "texto": "Conhecimento de Analytics;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 17,
+          "secao": "requisitos",
+          "texto": "Vivência com ciclo de entregas de sistemas com alto desempenho e disponibilidade;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 18,
+          "secao": "requisitos",
+          "texto": "Vivência com formação, condução e evolução de times interdisciplinares, com base em metas e métricas de desempenho;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 19,
+          "secao": "requisitos",
+          "texto": "Vivência no trabalho com times com perfis interdisciplinares (DEV’s, PO’s e SM);",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 20,
+          "secao": "requisitos",
+          "texto": "Conhecimento em princípios do Manifesto Ágil e metodologias Kanban ou Scrum;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 21,
+          "secao": "requisitos",
+          "texto": "Conhecimento em ciclo de vida de produtos, discovery, delivery e acompanhando processo de evolução de entregas;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 22,
+          "secao": "requisitos",
+          "texto": "Mentalidade Data Driven.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 23,
+          "secao": "diferenciais",
+          "texto": "Capacidade de conectar dados, IA e estratégia de negócio, gerando impacto em métricas como engajamento, retenção e monetização;",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 24,
+          "secao": "diferenciais",
+          "texto": "Conhecimento em governança, qualidade e operação de dados em escala, com aplicação de práticas como DataOps;",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 25,
+          "secao": "diferenciais",
+          "texto": "Consciência da importância da diversidade no time;",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 26,
+          "secao": "diferenciais",
+          "texto": "Forte capacidade de análise, resolução de problemas e inconformismo às soluções engessadas e não escaláveis;",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 27,
+          "secao": "diferenciais",
+          "texto": "Implantação de monitoramentos com gestão de SLA, SLI e SLO e suporte a times operacionais para tratativa de incidentes;",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 28,
+          "secao": "diferenciais",
+          "texto": "Conhecimento em Google Cloud Platform;",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": [
+            "GCP"
+          ]
+        },
+        {
+          "ordem": 29,
+          "secao": "diferenciais",
+          "texto": "Conhecimento em Google Analytics.",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": [
+            "Google Analytics / GTM"
+          ]
+        }
+      ]
+    },
+    {
+      "id_publico": "7621cbda282d",
+      "nivel": "coordenador",
+      "empresa": "Hering",
+      "cargo": "Coordenador de Dados",
+      "impressao": "807f22a2f7f0",
+      "linhas": [
+        {
+          "ordem": 1,
+          "secao": "responsabilidades",
+          "texto": "Liderar o time de BI no dia a dia, promovendo alinhamento, acompanhamento e priorização contínua das entregas e projetos;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 2,
+          "secao": "responsabilidades",
+          "texto": "Desenvolver novos projetos de Dados em parceria com as áreas de negócio, do levantamento de requisitos à documentação de processos;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 3,
+          "secao": "responsabilidades",
+          "texto": "Planejar e distribuir as atividades da equipe (interna e parceiros terceiros), garantindo cadência, produtividade e foco em eficiência;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 4,
+          "secao": "responsabilidades",
+          "texto": "Coordenar e desenvolver o time, com acompanhamentos individuais, sessões de feedback e apoio ao crescimento técnico e comportamental de cada membro;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 5,
+          "secao": "responsabilidades",
+          "texto": "Participar de fóruns com lideranças (gerentes, gerentes executivos e diretores) para conectar os projetos de BI às prioridades estratégicas do negócio;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 6,
+          "secao": "responsabilidades",
+          "texto": "Atuar como referência técnica do time, apoiando a resolução de problemas complexos e orientando decisões técnicas;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 7,
+          "secao": "responsabilidades",
+          "texto": "Levantar, estruturar e priorizar o roadmap anual de Dados, a partir de escutas com stakeholders;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 8,
+          "secao": "responsabilidades",
+          "texto": "Garantir a entrega end-to-end dos projetos, desde o levantamento de requisitos até a publicação e adoção da solução;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 9,
+          "secao": "responsabilidades",
+          "texto": "Zelar pela governança e qualidade dos dados, definindo regras de uso, padronizando indicadores e promovendo boas práticas de modelagem e visualização.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 10,
+          "secao": "requisitos",
+          "texto": "Ensino superior completo ou em andamento em Administração, Análise e Desenvolvimento de Sistemas, Ciência da Computação ou áreas correlatas;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 11,
+          "secao": "requisitos",
+          "texto": "Conhecimento em Tableau/Power BI;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Power BI",
+            "Tableau"
+          ]
+        },
+        {
+          "ordem": 12,
+          "secao": "requisitos",
+          "texto": "Domínio em Databricks;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Databricks"
+          ]
+        },
+        {
+          "ordem": 13,
+          "secao": "requisitos",
+          "texto": "Domínio em gestão de pessoas.;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 14,
+          "secao": "requisitos",
+          "texto": "Noções de Data Science;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 15,
+          "secao": "requisitos",
+          "texto": "Conhecimento em SQL.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "SQL"
+          ]
+        },
+        {
+          "ordem": 16,
+          "secao": "requisitos",
+          "texto": "Diferencial:",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 17,
+          "secao": "requisitos",
+          "texto": "Vivência prévia em posições de liderança de times de Dados/BI;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 18,
+          "secao": "requisitos",
+          "texto": "Experiência conectando projetos de dados a objetivos estratégicos do negócio.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        }
+      ]
+    },
+    {
+      "id_publico": "41188c9ca8ea",
+      "nivel": "coordenador",
+      "empresa": "Afya",
+      "cargo": "Coordenador(a) de Dados (Hibrido RJ, SP ou BH)",
+      "impressao": "a3b695c7785d",
+      "linhas": [
+        {
+          "ordem": 1,
+          "secao": "responsabilidades",
+          "texto": "## 💻🩺 COMO VOCÊ VAI TRANSFORMAR A SAÚDE NO DIA A DIA:",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 2,
+          "secao": "responsabilidades",
+          "texto": "Liderar o time de engenharia de dados, promovendo desenvolvimento técnico, gestão de performance e evolução contínua;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 3,
+          "secao": "responsabilidades",
+          "texto": "Estruturar e evoluir arquiteturas de dados, incluindo data lake, data warehouse, ETL/ELT e pipelines escaláveis;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 4,
+          "secao": "responsabilidades",
+          "texto": "Garantir qualidade, confiabilidade e disponibilidade dos dados, promovendo boas práticas de governança;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 5,
+          "secao": "responsabilidades",
+          "texto": "Atuar na construção de uma cultura data-driven, facilitando o acesso e uso estratégico de dados pelas áreas de negócio;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 6,
+          "secao": "responsabilidades",
+          "texto": "Implementar práticas modernas de engenharia de dados, incluindo versionamento, testes, observabilidade e documentação;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 7,
+          "secao": "responsabilidades",
+          "texto": "Trabalhar em parceria com times de Produto, Analytics e Tecnologia para garantir alinhamento entre plataforma e necessidades do negócio;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 8,
+          "secao": "responsabilidades",
+          "texto": "Apoiar iniciativas de analytics avançado e machine learning, garantindo base de dados robusta e escalável;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 9,
+          "secao": "responsabilidades",
+          "texto": "Monitorar performance e eficiência dos pipelines e ambientes de dados;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 10,
+          "secao": "responsabilidades",
+          "texto": "Conectar decisões técnicas ao impacto de negócio, equilibrando escalabilidade, custo e performance;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 11,
+          "secao": "responsabilidades",
+          "texto": "Contribuir para evolução contínua do ecossistema de dados da companhia.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 12,
+          "secao": "requisitos",
+          "texto": "## 🔎 O QUE BUSCAMOS (mas não esperamos que uma única pessoa atenda a todos os requisitos):",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 13,
+          "secao": "requisitos",
+          "texto": "Ensino superior completo em Ciência da Computação, Engenharia, Sistemas de Informação ou áreas correlatas;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 14,
+          "secao": "requisitos",
+          "texto": "Experiência consolidada em liderança de times de engenharia de dados, especialmente em ambientes de média e alta complexidade;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 15,
+          "secao": "requisitos",
+          "texto": "Vivência sólida em arquitetura de dados, incluindo data lake, data warehouse, ETL/ELT e pipelines escaláveis;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 16,
+          "secao": "requisitos",
+          "texto": "Experiência com plataformas cloud, como AWS, GCP ou Azure, e ferramentas modernas de dados;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "AWS",
+            "Azure",
+            "GCP"
+          ]
+        },
+        {
+          "ordem": 17,
+          "secao": "requisitos",
+          "texto": "Conhecimento em modelagem de dados, qualidade e governança de dados;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 18,
+          "secao": "requisitos",
+          "texto": "Experiência com grandes volumes de dados e ambientes distribuídos;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 19,
+          "secao": "requisitos",
+          "texto": "Vivência com práticas modernas de engenharia, incluindo versionamento, testes, observabilidade e documentação;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 20,
+          "secao": "requisitos",
+          "texto": "Capacidade de conectar decisões técnicas ao impacto de negócio, com visão estratégica e foco em resultados;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 21,
+          "secao": "requisitos",
+          "texto": "Experiência com dados para analytics, BI e/ou machine learning;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 22,
+          "secao": "requisitos",
+          "texto": "Boa comunicação, capacidade de influência e colaboração com múltiplos stakeholders;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 23,
+          "secao": "requisitos",
+          "texto": "Diferencial: experiência em healthtechs, edtechs ou empresas orientadas a produto digital.",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        }
+      ]
+    },
+    {
+      "id_publico": "550a9c02b97d",
+      "nivel": "coordenador",
+      "empresa": "Inter",
+      "cargo": "DATA SCIENCE COORDINATOR | CREDIT & COLLECTIONS",
+      "impressao": "32b6d80daf1b",
+      "linhas": [
+        {
+          "ordem": 1,
+          "secao": "responsabilidades",
+          "texto": "Priorizar e organizar o portfólio. Alinhar com as lideranças de crédito e cobrança quais problemas atacar e distribuir as demandas pelo time conforme impacto e capacidade;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 2,
+          "secao": "responsabilidades",
+          "texto": "Acompanhar as entregas. Conduzir rituais de acompanhamento, remover impedimentos e garantir que projetos avancem com qualidade e no prazo;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 3,
+          "secao": "responsabilidades",
+          "texto": "Revisar e orientar tecnicamente. Discutir abordagens, revisar desenhos de experimentos e modelos, e ajudar o time a escolher o caminho certo diante de trade-offs;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 4,
+          "secao": "responsabilidades",
+          "texto": "Pôr a mão na massa. Atuar diretamente em análises e projetos estratégicos, especialmente nos mais ambíguos ou de maior visibilidade;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 5,
+          "secao": "responsabilidades",
+          "texto": "Desenvolver pessoas. Fazer 1:1s, dar feedback contínuo, apoiar planos de desenvolvimento e participar de contratações;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 6,
+          "secao": "responsabilidades",
+          "texto": "Influenciar decisões. Apresentar resultados, recomendações e trade-offs em fóruns de política e estratégia, e defender o uso de evidências na tomada de decisão;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 7,
+          "secao": "responsabilidades",
+          "texto": "Fortalecer o que já roda. Garantir monitoramento, governança e documentação dos modelos e estratégias em produção.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 8,
+          "secao": "requisitos",
+          "texto": "Experiência sólida em ciência de dados, com modelos e estratégias em produção, de preferência em crédito, cobrança ou serviços financeiros;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 9,
+          "secao": "requisitos",
+          "texto": "Vivência prévia em liderança de pessoas, seja como coordenação, gestão formal ou liderança técnica com responsabilidade sobre o desenvolvimento de outros cientistas;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 10,
+          "secao": "requisitos",
+          "texto": "Base sólida em estatística, machine learning e desenho de experimentos, com segurança para revisar e questionar abordagens técnicas;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 11,
+          "secao": "requisitos",
+          "texto": "Fluência em Python e SQL;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "SQL",
+            "Python"
+          ]
+        },
+        {
+          "ordem": 12,
+          "secao": "requisitos",
+          "texto": "Capacidade de priorizar um portfólio de iniciativas e equilibrar demandas de várias áreas com a capacidade do time;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 13,
+          "secao": "requisitos",
+          "texto": "Comunicação clara com públicos técnicos e executivos, incluindo a apresentação de recomendações e trade-offs para lideranças;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 14,
+          "secao": "requisitos",
+          "texto": "Histórico de entregas com impacto mensurável no negócio.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 15,
+          "secao": "diferenciais",
+          "texto": "Experiência com inferência causal aplicada a decisões, como uplift, testes A/B ou quase-experimentos;",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 16,
+          "secao": "diferenciais",
+          "texto": "Experiência com otimização aplicada, como alocação de limite, pricing ou estratégias de cobrança;",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 17,
+          "secao": "diferenciais",
+          "texto": "Vivência com métricas e conceitos de crédito e cobrança, como PD, LGD, perda esperada, roll rates e curvas de recuperação;",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 18,
+          "secao": "diferenciais",
+          "texto": "Experiência com Spark, Databricks ou outros ambientes de dados em larga escala;",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": [
+            "Databricks",
+            "Spark"
+          ]
+        },
+        {
+          "ordem": 19,
+          "secao": "diferenciais",
+          "texto": "Familiaridade com práticas de MLOps, monitoramento e governança de modelos;",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 20,
+          "secao": "diferenciais",
+          "texto": "Experiência em contratação e em estruturação ou crescimento de times;",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 21,
+          "secao": "diferenciais",
+          "texto": "Uso de ferramentas de IA generativa e agentes para acelerar o trabalho do time.",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        }
+      ]
+    },
+    {
+      "id_publico": "81d7d887943d",
+      "nivel": "gerente",
+      "empresa": "Omnicom Media Brazil",
+      "cargo": "Pessoa Gerente de Analytics",
+      "impressao": "a8436435661f",
+      "linhas": [
+        {
+          "ordem": 1,
+          "secao": "responsabilidades",
+          "texto": "Desenvolver reports com insights acionáveis e apresentá-los para o cliente, em conexão com líder de mídia e de digital;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 2,
+          "secao": "responsabilidades",
+          "texto": "Participar das agendas de performance para transformar conclusões de otimização em insights acionáveis;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 3,
+          "secao": "responsabilidades",
+          "texto": "Conexão com os times de Mídia no desenvolvimento das estratégias de marca/campanha;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 4,
+          "secao": "responsabilidades",
+          "texto": "Trabalho em conjunto com supervisores de planejamento para insights de performance;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 5,
+          "secao": "responsabilidades",
+          "texto": "Gerenciamento de taxonomia com apontamento de correções;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 6,
+          "secao": "responsabilidades",
+          "texto": "Análise das taxas de brand safety em Doubleverify/IAS e recomendação de melhorias;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 7,
+          "secao": "responsabilidades",
+          "texto": "Auxiliar no gerenciamento das plataformas de visualização de dados;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 8,
+          "secao": "responsabilidades",
+          "texto": "Garantir que dados estejam disponíveis de forma fácil e em tempo hábil;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 9,
+          "secao": "responsabilidades",
+          "texto": "Gestão e desenvolvimento técnico do time em relação a análises e estudos;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 10,
+          "secao": "responsabilidades",
+          "texto": "Desenvolvimento, acompanhamento e recomendações de agenda de testes/brandlifts;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 11,
+          "secao": "responsabilidades",
+          "texto": "Liderar o desenvolvimento de estudos e análises ad hoc a partir de diferentes fontes de dados, com ênfase em mídia digital, mídia offline, dados de negócio e indicadores de performance;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 12,
+          "secao": "responsabilidades",
+          "texto": "Construir e disseminar a cultura analítica junto às lideranças da conta, promovendo boas práticas de leitura de dados, mensuração, governança e interpretação de indicadores, visando os desafios de negócio do cliente.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 13,
+          "secao": "requisitos",
+          "texto": "Ensino superior completo;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 14,
+          "secao": "requisitos",
+          "texto": "Conhecimento em ferramentas de gestão e colaboração (Asana, Google Workspace e Slack);",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Office / Google Workspace"
+          ]
+        },
+        {
+          "ordem": 15,
+          "secao": "requisitos",
+          "texto": "Experiência com análise e visualização de dados utilizando Tableau, Power BI e/ou Looker;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Power BI",
+            "Tableau",
+            "Looker"
+          ]
+        },
+        {
+          "ordem": 16,
+          "secao": "requisitos",
+          "texto": "Domínio de SQL para manipulação e extração de dados;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "SQL"
+          ]
+        },
+        {
+          "ordem": 17,
+          "secao": "requisitos",
+          "texto": "Conhecimento em mensuração digital com Google Tag Manager e Google Analytics;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Google Analytics / GTM"
+          ]
+        },
+        {
+          "ordem": 18,
+          "secao": "requisitos",
+          "texto": "Experiência com plataformas de mídia digital, incluindo Google Ads, DV360, Meta Ads e TikTok Ads;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Plataformas de mídia"
+          ]
+        },
+        {
+          "ordem": 19,
+          "secao": "requisitos",
+          "texto": "Vivência com ambientes de dados e soluções em nuvem, como Google Cloud Platform (BigQuery), AWS (Redshift), Azure (Synapse), Databricks e Snowflake;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Databricks",
+            "AWS",
+            "Azure",
+            "GCP",
+            "BigQuery",
+            "Snowflake",
+            "Redshift",
+            "Synapse"
+          ]
+        },
+        {
+          "ordem": 20,
+          "secao": "requisitos",
+          "texto": "Inglês e/ou espanhol fluente.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        }
+      ]
+    },
+    {
+      "id_publico": "02fd1aac87ce",
+      "nivel": "gerente",
+      "empresa": "PwC",
+      "cargo": "Gerente de Dados",
+      "impressao": "6b91702a9b0f",
+      "linhas": [
+        {
+          "ordem": 1,
+          "secao": "requisitos",
+          "texto": "Experiência em consultorias estratégicas ou de tecnologia, preferencialmente Big Four ou empresas como Accenture, Deloitte, KPMG, EY, Capgemini, NTT Data, entre outras.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 2,
+          "secao": "requisitos",
+          "texto": "Carreira construída em consultoria, com progressão consistente até posições de Gerente Sênior ou equivalente.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 3,
+          "secao": "requisitos",
+          "texto": "Histórico de atuação em posições de liderança em consultoria de dados e analytics.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 4,
+          "secao": "requisitos",
+          "texto": "Participação em projetos de transformação de dados em setores regulados.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 5,
+          "secao": "requisitos",
+          "texto": "Vivência em prospecção, captura de oportunidades e desenvolvimento de negócios.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 6,
+          "secao": "requisitos",
+          "texto": "Capacidade comprovada de abrir oportunidades de negócio e conduzir reuniões executivas com autonomia.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 7,
+          "secao": "requisitos",
+          "texto": "Experiência em indústrias como Mercado Financeiro, Energia, Agro, Consumer Markets e Indústrias altamente reguladas.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 8,
+          "secao": "requisitos",
+          "texto": "Atuação prévia na liderança de equipes multidisciplinares e desenvolvimento de profissionais.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 9,
+          "secao": "requisitos",
+          "texto": "Disponibilidade para atuação presencial em São Paulo e visitas frequentes a clientes",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 10,
+          "secao": "requisitos",
+          "texto": "Formação",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 11,
+          "secao": "requisitos",
+          "texto": "Graduação em Ciência da Computação, Engenharia de Software, Sistemas de Informação, Estatística, Matemática ou áreas correlatas.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 12,
+          "secao": "requisitos",
+          "texto": "Desejável pós-graduação, MBA ou Mestrado em Data Science, Inteligência Artificial, Analytics, Tecnologia da Informação ou áreas relacionadas.",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 13,
+          "secao": "diferenciais",
+          "texto": "Perfil generalista em dados, com trânsito entre estratégia, governança, arquitetura, engenharia, analytics e ciência de dados.",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 14,
+          "secao": "diferenciais",
+          "texto": "Forte credibilidade técnica aliada à maturidade consultiva.",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 15,
+          "secao": "diferenciais",
+          "texto": "Experiência em ambientes de alta performance e forte exposição a clientes.",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        }
+      ]
+    },
+    {
+      "id_publico": "06382d0010af",
+      "nivel": "gerente",
+      "empresa": "Publicis Groupe",
+      "cargo": "Pessoa Gerente de Inteligência de Negócios (Dados com Mídia)",
+      "impressao": "f9f435371f1b",
+      "linhas": [
+        {
+          "ordem": 1,
+          "secao": "responsabilidades",
+          "texto": "No dia a dia, a pessoa será responsável por",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 2,
+          "secao": "responsabilidades",
+          "texto": "Liderança estratégica de BI",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 3,
+          "secao": "responsabilidades",
+          "texto": "Liderar a área de Business Intelligence para os clientes da conta.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 4,
+          "secao": "responsabilidades",
+          "texto": "Traduzir desafios de negócio em oportunidades analíticas e planos de ação.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 5,
+          "secao": "responsabilidades",
+          "texto": "Construir narrativas executivas e recomendações estratégicas para clientes e liderança.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 6,
+          "secao": "responsabilidades",
+          "texto": "Atuar como consultor interno e externo em temas relacionados a dados, analytics e performance.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 7,
+          "secao": "responsabilidades",
+          "texto": "Analytics & Insights",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 8,
+          "secao": "responsabilidades",
+          "texto": "Desenvolver análises integradas utilizando dados de mídia, vendas, mercado, consumidor, social intelligence e estudos de CMI.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 9,
+          "secao": "responsabilidades",
+          "texto": "Identificar oportunidades de crescimento através de market share, competitividade, pricing, distribuição e comportamento do consumidor.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 10,
+          "secao": "responsabilidades",
+          "texto": "Liderar estudos de categoria, brand health, retail media, social intelligence e inteligência competitiva.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 11,
+          "secao": "responsabilidades",
+          "texto": "Conectar diferentes fontes de dados, como TGI, Kantar, social listening, sell-out, mídia e mercado, para responder questões estratégicas do negócio.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 12,
+          "secao": "responsabilidades",
+          "texto": "Measurement & Effectiveness",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 13,
+          "secao": "responsabilidades",
+          "texto": "Liderar projetos de MMM (Marketing Mix Modeling), atribuição e mensuração de marketing.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 14,
+          "secao": "responsabilidades",
+          "texto": "Definir frameworks de medição para avaliar eficiência e impacto dos investimentos.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 15,
+          "secao": "responsabilidades",
+          "texto": "Garantir que indicadores de mídia estejam conectados aos resultados de negócio.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 16,
+          "secao": "responsabilidades",
+          "texto": "Apoiar a construção de modelos preditivos e análises avançadas.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 17,
+          "secao": "responsabilidades",
+          "texto": "Data Strategy & Automation",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 18,
+          "secao": "responsabilidades",
+          "texto": "Liderar iniciativas de automação e transformação digital da área.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 19,
+          "secao": "responsabilidades",
+          "texto": "Priorizar projetos relacionados a Data Lake, governança e estruturação de dados.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 20,
+          "secao": "responsabilidades",
+          "texto": "Identificar oportunidades para redução de esforço operacional e ganho de eficiência.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 21,
+          "secao": "responsabilidades",
+          "texto": "Trabalhar em parceria com engenharia de dados para evolução de produtos e soluções analíticas.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 22,
+          "secao": "responsabilidades",
+          "texto": "Gestão de Equipe",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 23,
+          "secao": "responsabilidades",
+          "texto": "Liderar e desenvolver profissionais de BI e Analytics.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 24,
+          "secao": "responsabilidades",
+          "texto": "Promover cultura de alta performance, colaboração e inovação.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 25,
+          "secao": "responsabilidades",
+          "texto": "Estruturar processos, rituais e governança da área.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 26,
+          "secao": "responsabilidades",
+          "texto": "Garantir equilíbrio entre demandas operacionais, estratégicas e de inovação.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 27,
+          "secao": "responsabilidades",
+          "texto": "Stakeholder Management",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 28,
+          "secao": "responsabilidades",
+          "texto": "Ser o principal ponto de contato para temas de dados e analytics junto aos clientes.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 29,
+          "secao": "responsabilidades",
+          "texto": "Conduzir apresentações executivas para stakeholders locais, regionais e globais.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 30,
+          "secao": "responsabilidades",
+          "texto": "Gerenciar múltiplas prioridades e alinhar expectativas entre áreas de negócio e equipes técnicas.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 31,
+          "secao": "requisitos",
+          "texto": "Experiência em Business Intelligence, Analytics ou Data Strategy.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 32,
+          "secao": "requisitos",
+          "texto": "Experiência liderando equipes multidisciplinares e atuação em ambientes de marketing, mídia, consultoria, pesquisa ou transformação digital.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 33,
+          "secao": "requisitos",
+          "texto": "Vivência com gestão de clientes e apresentações executivas.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 34,
+          "secao": "requisitos",
+          "texto": "Conhecimentos técnicos",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 35,
+          "secao": "requisitos",
+          "texto": "SQL e manipulação de dados.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "SQL"
+          ]
+        },
+        {
+          "ordem": 36,
+          "secao": "requisitos",
+          "texto": "Power BI ou ferramentas similares.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Power BI"
+          ]
+        },
+        {
+          "ordem": 37,
+          "secao": "requisitos",
+          "texto": "Modelagem estatística e análise de dados.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 38,
+          "secao": "requisitos",
+          "texto": "Marketing Measurement (MMM, atribuição, incrementality).",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 39,
+          "secao": "requisitos",
+          "texto": "Retail Media Analytics.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 40,
+          "secao": "requisitos",
+          "texto": "Consumer Insights, Social Intelligence e integração de dados de consumidor, mercado e cultura.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 41,
+          "secao": "requisitos",
+          "texto": "Estruturação e governança de dados.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 42,
+          "secao": "requisitos",
+          "texto": "Conhecimento de ferramentas e aplicações de IA para analytics.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 43,
+          "secao": "diferenciais",
+          "texto": "Conhecimento do setor de beleza, skincare e bens de consumo.",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 44,
+          "secao": "diferenciais",
+          "texto": "Vivência com Data Lakes e arquitetura de dados.",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 45,
+          "secao": "diferenciais",
+          "texto": "Experiência com plataformas cloud (Azure, GCP ou AWS).",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": [
+            "AWS",
+            "Azure",
+            "GCP"
+          ]
+        },
+        {
+          "ordem": 46,
+          "secao": "diferenciais",
+          "texto": "Conhecimento em Data Products e Analytics Engineering.",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 47,
+          "secao": "diferenciais",
+          "texto": "Perfil híbrido entre BI e CMI, com experiência em TGI, Kantar e Social Intelligence para conectar dados de consumidor, mercado e cultura às decisões de negócio.",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        }
+      ]
+    },
+    {
+      "id_publico": "50d91e0a2868",
+      "nivel": "gerente",
+      "empresa": "CI&T",
+      "cargo": "Data Product Manager, Brazil",
+      "impressao": "4b253fdb3453",
+      "linhas": [
+        {
+          "ordem": 1,
+          "secao": "responsabilidades",
+          "texto": "Data Analysis: Provide data analysis that supports business and digital product growth through data visualization.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 2,
+          "secao": "responsabilidades",
+          "texto": "Team Leadership: Lead cross-functional teams, including data scientists, engineers, and analytics specialists, to develop and deliver high-quality data products. Attract, retain, and develop top data talents while mentoring and training to foster growth and motivation within the team.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 3,
+          "secao": "responsabilidades",
+          "texto": "Task Prioritization: Collaborate with technical and business teams to understand their data needs and priorities, effectively communicating the value of data initiatives. Prioritize tasks and define the roadmap, balancing competing demands from different stakeholders.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 4,
+          "secao": "requisitos",
+          "texto": "Excellent level of English C1 or above and Spanish communication (reading, writing, and speaking is mandatory )",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 5,
+          "secao": "requisitos",
+          "texto": "Experience working with international clients",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 6,
+          "secao": "requisitos",
+          "texto": "Proficiency with PowerBI",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Power BI"
+          ]
+        },
+        {
+          "ordem": 7,
+          "secao": "requisitos",
+          "texto": "Strong work in customer segmentation.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 8,
+          "secao": "requisitos",
+          "texto": "Strong strategic thinking and product mindset",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 9,
+          "secao": "requisitos",
+          "texto": "Experience with value-based prioritization",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        }
+      ]
+    },
+    {
+      "id_publico": "6db6aadbd3fc",
+      "nivel": "gerente",
+      "empresa": "Cia. Hering",
+      "cargo": "Gerente de Dados",
+      "impressao": "2de74eb51a4c",
+      "linhas": [
+        {
+          "ordem": 1,
+          "secao": "responsabilidades",
+          "texto": "Liderar a estratégia de Dados e BI como parceiro habilitador do negócio, garantindo o alinhamento das iniciativas com os objetivos estratégicos da companhia e a geração contínua de valor;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 2,
+          "secao": "responsabilidades",
+          "texto": "Construir e direcionar o roadmap de dados, identificando oportunidades, priorizando iniciativas e definindo entregas de curto, médio e longo prazo em parceria com as áreas de negócio;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 3,
+          "secao": "responsabilidades",
+          "texto": "Liderar, desenvolver e engajar o time, promovendo uma cultura de colaboração, autonomia, aprendizado contínuo e alta performance, com foco no desenvolvimento técnico e comportamental das pessoas;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 4,
+          "secao": "responsabilidades",
+          "texto": "Gerenciar o portfólio de projetos e demandas de Dados, garantindo priorização, alocação eficiente de recursos, cumprimento de prazos e qualidade das entregas;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 5,
+          "secao": "responsabilidades",
+          "texto": "Atuar como parceiro estratégico das lideranças, participando de fóruns de decisão com gerentes, gerentes executivos e diretores para identificar oportunidades e apoiar decisões orientadas por dados;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 6,
+          "secao": "responsabilidades",
+          "texto": "Atuar como um perfil inquieto e multiplicador da cultura data-driven, impulsionando um mindset orientado a dados potencializado pelo uso de Inteligência Artificial em toda a organização;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 7,
+          "secao": "responsabilidades",
+          "texto": "Garantir a evolução das soluções de BI e da plataforma de Dados, buscando escalabilidade, eficiência, confiabilidade e aderência às necessidades atuais e futuras do negócio;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 8,
+          "secao": "responsabilidades",
+          "texto": "Garantir o \"básico bem feito\" na gestão de dados, estabelecendo governança sólida, integridade das informações, estruturação de papéis como Data Owners e padronização de indicadores;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 9,
+          "secao": "responsabilidades",
+          "texto": "Orientar decisões de arquitetura e soluções técnicas, em parceria com o time e especialistas, avaliando alternativas tecnológicas e promovendo boas práticas de modelagem, integração, visualização e análise de dados;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 10,
+          "secao": "responsabilidades",
+          "texto": "Gerenciar recursos, fornecedores e parceiros, quando aplicável, garantindo alinhamento às prioridades da área, qualidade dos serviços e eficiência na utilização dos investimentos;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 11,
+          "secao": "responsabilidades",
+          "texto": "Monitorar indicadores de desempenho e resultados da área, avaliando a efetividade das iniciativas, a produtividade do time e o valor gerado para o negócio, propondo melhorias contínuas;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 12,
+          "secao": "responsabilidades",
+          "texto": "Identificar oportunidades de inovação e aplicação de novas tecnologias, incluindo Analytics, Data Science e Inteligência Artificial, avaliando seu potencial de aplicação e geração de valor para a companhia;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 13,
+          "secao": "responsabilidades",
+          "texto": "Implementar e disseminar metodologias e práticas de mercado para garantir eficiência, qualidade e padronização nos processos de dados e analytics.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 14,
+          "secao": "requisitos",
+          "texto": "Ensino superior completo em Administração, Análise e Desenvolvimento de Sistemas, Ciência da Computação ou áreas correlatas;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 15,
+          "secao": "requisitos",
+          "texto": "Experiência em liderança de equipes de Dados, Business Intelligence, Analytics ou áreas correlatas;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 16,
+          "secao": "requisitos",
+          "texto": "Experiência na gestão de projetos e na definição de prioridades e roadmaps de Dados alinhados à estratégia do negócio;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 17,
+          "secao": "requisitos",
+          "texto": "Conhecimento em ferramentas de visualização e análise de dados, como Power BI e/ou QlikView;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Power BI",
+            "Qlik"
+          ]
+        },
+        {
+          "ordem": 18,
+          "secao": "requisitos",
+          "texto": "Domínio da plataforma Databricks e conhecimento de SQL;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "SQL",
+            "Databricks"
+          ]
+        },
+        {
+          "ordem": 19,
+          "secao": "requisitos",
+          "texto": "Conhecimento em modelagem, arquitetura, integração, qualidade e governança de dados;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 20,
+          "secao": "requisitos",
+          "texto": "Experiência em gestão e desenvolvimento de pessoas, incluindo definição de objetivos, feedbacks, acompanhamento de desempenho e desenvolvimento de talentos;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 21,
+          "secao": "requisitos",
+          "texto": "Capacidade de traduzir necessidades de negócio em soluções de dados e comunicar temas técnicos de forma clara para diferentes públicos;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 22,
+          "secao": "requisitos",
+          "texto": "Perfil inquieto, com forte postura de evangelizador de cultura, visão estratégica, capacidade analítica, habilidade de negociação e influência com stakeholders.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 23,
+          "secao": "requisitos",
+          "texto": "Diferenciais",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 24,
+          "secao": "requisitos",
+          "texto": "Experiência na construção ou evolução de estratégias e plataformas de Dados em ambientes corporativos de médio ou grande porte;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 25,
+          "secao": "requisitos",
+          "texto": "Conhecimento em Data Science, Machine Learning e aplicações de Inteligência Artificial;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 26,
+          "secao": "requisitos",
+          "texto": "Experiência com gestão orçamentária, fornecedores e parceiros tecnológicos;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 27,
+          "secao": "requisitos",
+          "texto": "Familiaridade com metodologias ágeis e projetos de transformação cultural.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        }
+      ]
+    },
+    {
+      "id_publico": "f05442a27a90",
+      "nivel": "gerente",
+      "empresa": "Buddha Spa",
+      "cargo": "Gerente de Data & Analytics",
+      "impressao": "932a3c1bdfb2",
+      "linhas": [
+        {
+          "ordem": 1,
+          "secao": "responsabilidades",
+          "texto": "Liderar tecnicamente a evolução da frente de dados da empresa",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 2,
+          "secao": "responsabilidades",
+          "texto": "Estruturar e evoluir a arquitetura de dados e o ambiente Databricks",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Databricks"
+          ]
+        },
+        {
+          "ordem": 3,
+          "secao": "responsabilidades",
+          "texto": "Acompanhar de perto (não apenas supervisionar) a execução do projeto de Data Lake",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 4,
+          "secao": "responsabilidades",
+          "texto": "Padronizar métricas entre as áreas de operação, comercial, marketing e financeiro",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 5,
+          "secao": "responsabilidades",
+          "texto": "Liderar a construção de dashboards e reduzir processos manuais via automação",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 6,
+          "secao": "responsabilidades",
+          "texto": "Atuar como ponte entre dados e decisões estratégicas de negócio",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 7,
+          "secao": "responsabilidades",
+          "texto": "Organizar fluxos de informação e garantir uso dos dados como alavanca de eficiência operacional e inteligência de negócio",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 8,
+          "secao": "requisitos",
+          "texto": "7 anos ou mais de experiência em engenharia de dados, com profundidade técnica comprovada e atuação hands-on real",
+          "peso": "obrigatorio",
+          "anos": 7,
+          "ferramentas": []
+        },
+        {
+          "ordem": 9,
+          "secao": "requisitos",
+          "texto": "Mínimo de 3 anos liderando times de dados ou atuando como referência técnica em Data & Analytics",
+          "peso": "obrigatorio",
+          "anos": 3,
+          "ferramentas": []
+        },
+        {
+          "ordem": 10,
+          "secao": "requisitos",
+          "texto": "Formação em Engenharia, Ciência da Computação, Sistemas de Informação, Estatística, Matemática ou áreas correlatas",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 11,
+          "secao": "requisitos",
+          "texto": "Domínio técnico em SQL e Python",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "SQL",
+            "Python"
+          ]
+        },
+        {
+          "ordem": 12,
+          "secao": "requisitos",
+          "texto": "Experiência sólida com PySpark, ETL/ELT e construção de pipelines de dados",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Spark"
+          ]
+        },
+        {
+          "ordem": 13,
+          "secao": "requisitos",
+          "texto": "Conhecimento avançado em Databricks: Delta Lake, Unity Catalog, Workflows/Jobs e otimização de clusters e performance",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Databricks"
+          ]
+        },
+        {
+          "ordem": 14,
+          "secao": "requisitos",
+          "texto": "Forte conhecimento em modelagem e arquitetura de dados, incluindo arquitetura medalhão (bronze, silver e gold)",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 15,
+          "secao": "requisitos",
+          "texto": "Experiência com ingestão de dados batch e streaming a partir de múltiplas fontes",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 16,
+          "secao": "requisitos",
+          "texto": "Conhecimento em orquestração de pipelines (ex: Databricks Workflows, Airflow ou similares)",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Databricks",
+            "Airflow"
+          ]
+        },
+        {
+          "ordem": 17,
+          "secao": "requisitos",
+          "texto": "Domínio de governança e qualidade de dados (data quality, catalogação e linhagem)",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 18,
+          "secao": "requisitos",
+          "texto": "Experiência com plataformas de dados em cloud",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 19,
+          "secao": "requisitos",
+          "texto": "Experiência com integração de dados entre diferentes sistemas",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 20,
+          "secao": "requisitos",
+          "texto": "Experiência com construção e sustentação de pipelines escaláveis",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 21,
+          "secao": "requisitos",
+          "texto": "Experiência com construção de dashboards e apoio à tomada de decisão",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 22,
+          "secao": "requisitos",
+          "texto": "Boa comunicação e capacidade de interação com áreas não técnicas",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 23,
+          "secao": "diferenciais",
+          "texto": "Espanhol",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 24,
+          "secao": "diferenciais",
+          "texto": "Certificações Databricks (Data Engineer Associate ou Professional)",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": [
+            "Databricks"
+          ]
+        },
+        {
+          "ordem": 25,
+          "secao": "diferenciais",
+          "texto": "Experiência com outras plataformas de dados em cloud (BigQuery, Snowflake ou similares)",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": [
+            "BigQuery",
+            "Snowflake"
+          ]
+        },
+        {
+          "ordem": 26,
+          "secao": "diferenciais",
+          "texto": "Vivência com dados de CRM, marketing, vendas ou operação",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 27,
+          "secao": "diferenciais",
+          "texto": "Experiência em empresas de varejo, serviços ou operações com múltiplas unidades",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 28,
+          "secao": "diferenciais",
+          "texto": "Experiência com definição de métricas de negócio (ex: recorrência, churn, conversão, performance de unidades)",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 29,
+          "secao": "diferenciais",
+          "texto": "Experiência com aplicações de IA, machine learning ou analytics avançado",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 30,
+          "secao": "diferenciais",
+          "texto": "Experiência com automação de processos analíticos",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 31,
+          "secao": "diferenciais",
+          "texto": "Habilidades desejadas",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 32,
+          "secao": "diferenciais",
+          "texto": "Forte pensamento estruturado e analítico",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 33,
+          "secao": "diferenciais",
+          "texto": "Capacidade de organizar ambientes em evolução",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 34,
+          "secao": "diferenciais",
+          "texto": "Perfil pragmático, com foco em entrega e geração de valor",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 35,
+          "secao": "diferenciais",
+          "texto": "Capacidade de priorização e tomada de decisão",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 36,
+          "secao": "diferenciais",
+          "texto": "Boa comunicação com áreas técnicas e não técnicas",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 37,
+          "secao": "diferenciais",
+          "texto": "Capacidade de traduzir dados em impacto real para o negócio",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 38,
+          "secao": "diferenciais",
+          "texto": "liderança colaborativa",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 39,
+          "secao": "diferenciais",
+          "texto": "escuta ativa",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 40,
+          "secao": "diferenciais",
+          "texto": "CANDIDATURA — Candidate-se em menos de um minuto; Modelo: Híbrido; Nível: Sênior; Local: Sede - São Paulo; Prazo: 18 de set. de 2026; Divisão híbrida: 1 remoto; 4 presencial; Formulário: nome, e-mail, telefone, currículo (PDF), pretensão salarial, cidade em que mora.",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        }
+      ]
+    },
+    {
+      "id_publico": "d3ad8239f051",
+      "nivel": "gerente",
+      "empresa": "Hotmart",
+      "cargo": "Data Manager",
+      "impressao": "ec71e7aab8da",
+      "linhas": [
+        {
+          "ordem": 1,
+          "secao": "responsabilidades",
+          "texto": "Ser parte integrante da liderança das BUs de Marketing, Growth e CX, contribuindo ativamente para direcionar a priorização do negócio;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 2,
+          "secao": "responsabilidades",
+          "texto": "Certificar de que o processo de tomada de decisão baseado em dados esteja sendo respeitado e bem fundamentado em fontes confiáveis e análises sólidas;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 3,
+          "secao": "responsabilidades",
+          "texto": "Ser responsável pelos dados dessas frentes (Marketing, Growth e CX), incluindo a construção de modelos, análises e geração de insights que suportem decisões estratégicas;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 4,
+          "secao": "responsabilidades",
+          "texto": "Consolidar a visão de dados desses negócios, garantindo uma leitura integrada e única das frentes de Marketing, Growth e CX;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 5,
+          "secao": "responsabilidades",
+          "texto": "Estruturar e liderar novas frentes de dados, modelos e AI, apoiando projetos novos que surgirem dentro dessas áreas;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 6,
+          "secao": "responsabilidades",
+          "texto": "Gerenciar equipes de dados direta e indiretamente;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 7,
+          "secao": "responsabilidades",
+          "texto": "Ser responsável pela orientação técnica e analítica do trabalho dos analistas, bem como pela gestão de sua carreira;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 8,
+          "secao": "responsabilidades",
+          "texto": "O mais importante: divirta-se e crie soluções incríveis baseadas em dados",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 9,
+          "secao": "requisitos",
+          "texto": "Sólida formação analítica, sendo capaz de sugerir, criar e validar soluções analíticas para alavancar as áreas de negócio atendidas;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 10,
+          "secao": "requisitos",
+          "texto": "Experiência na estruturação de dados, modelos e projetos de AI, atuando como referência técnica na construção de novas frentes;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 11,
+          "secao": "requisitos",
+          "texto": "Comunicação eficaz com líderes de produto, negócio e tecnologia, traduzindo de forma simples as conclusões obtidas para tomada de decisões, garantindo entendimento claro entre as áreas;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 12,
+          "secao": "requisitos",
+          "texto": "Pensamento estratégico, contribuindo com os direcionamentos das equipes ao combinar expertise técnica e de negócio;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 13,
+          "secao": "requisitos",
+          "texto": "Experiência prévia em liderança de projetos de dados, com evidências claras de contribuição intelectual para decisões do negócio;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 14,
+          "secao": "requisitos",
+          "texto": "Domínio técnico em Python, SQL;",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "SQL",
+            "Python"
+          ]
+        },
+        {
+          "ordem": 15,
+          "secao": "requisitos",
+          "texto": "Conhecimento de Power BI e experiência com cloud (GCP e/ou AWS);",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Power BI",
+            "AWS",
+            "GCP"
+          ]
+        },
+        {
+          "ordem": 16,
+          "secao": "diferenciais",
+          "texto": "Experiência nas áreas de Growth e/ou Marketing",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 17,
+          "secao": "diferenciais",
+          "texto": "Experiência prévia em projetos envolvendo AI/modelos preditivos aplicados a negócio.",
+          "peso": "diferencial",
+          "anos": null,
+          "ferramentas": []
+        }
+      ]
+    },
+    {
+      "id_publico": "3d16b1335bf0",
+      "nivel": "gerente",
+      "empresa": "Cadastra",
+      "cargo": "Data Manager (Data Engineer)",
+      "impressao": "70d141f7f7b2",
+      "linhas": [
+        {
+          "ordem": 1,
+          "secao": "responsabilidades",
+          "texto": "No nosso Data Hub você terá o desafio de:",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 2,
+          "secao": "responsabilidades",
+          "texto": "Liderança & Cultura AI-First: Gerenciar e mentorar o time de engenharia de dados, incentivando o uso de ferramentas assistidas por IA no ciclo de desenvolvimento (Copilots, geração automática de documentação e código).",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 3,
+          "secao": "responsabilidades",
+          "texto": "Arquitetura & IA Infrastructure: Desenhar arquiteturas de dados em nuvem preparadas para consumo de IA Generativa, LLMs e Machine Learning (incluindo pipelines para dados não estruturados).",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 4,
+          "secao": "responsabilidades",
+          "texto": "Pipelines de Dados e Conectores MarTech: Supervisionar a ingestão (batch e real-time) das APIs de AdTech/MarTech (Google Ads, Meta, TikTok Ads e demais veículos de mídia) garantindo integração perfeita com Data Warehouses e CDPs.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Plataformas de mídia"
+          ]
+        },
+        {
+          "ordem": 5,
+          "secao": "responsabilidades",
+          "texto": "Governança de Dados: Implementar políticas de qualidade, rastreabilidade, privacidade (LGPD) e segurança no tratamento de PII e dados sensíveis consumidos nos projetos.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 6,
+          "secao": "responsabilidades",
+          "texto": "Aceleração da Engenharia: Implementar ferramentas automáticas de detecção de anomalias em pipelines, testes de qualidade orientados por IA e monitoramento inteligente de custos em nuvem.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 7,
+          "secao": "responsabilidades",
+          "texto": "Sinergia com Ciência de Dados & MLOps: Liderar a criação da camada de Feature Stores e pipelines automatizados de preparação de dados para cientistas de dados e algoritmos preditivos de marketing.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 8,
+          "secao": "responsabilidades",
+          "texto": "Atendimento Consultivo: Atuar como especialista técnico em reuniões estratégicas com clientes, conectando objetivos de marketing às melhores soluções tecnológicas e de IA.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 9,
+          "secao": "requisitos",
+          "texto": "O que a Cadastra espera de você:",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 10,
+          "secao": "requisitos",
+          "texto": "Experiência comprovada na liderança ou gestão técnica de equipes de Engenharia de Dados.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 11,
+          "secao": "requisitos",
+          "texto": "Sólida experiência em Cloud Data Warehouses/Lakehouses (Snowflake, Google BigQuery, AWS Redshift ou Databricks).",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": [
+            "Databricks",
+            "AWS",
+            "BigQuery",
+            "Snowflake",
+            "Redshift"
+          ]
+        },
+        {
+          "ordem": 12,
+          "secao": "requisitos",
+          "texto": "Conhecimento e aplicação prática de conceitos de IA em Engenharia de Dados: manipulação de dados não estruturados, embeddings, Vector DBs (ex: Pinecone, Qdrant, ChromaDB) ou conectores para LLMs/RAG.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 13,
+          "secao": "requisitos",
+          "texto": "Vivência sólida no ecossistema de dados de marketing/mídia (APIs de anúncios, web analytics, CRMs e CDPs).",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        },
+        {
+          "ordem": 14,
+          "secao": "requisitos",
+          "texto": "Forte entendimento de governança e segurança de dados aplicadas a LGPD em ecossistemas de dados com uso de IA.",
+          "peso": "obrigatorio",
+          "anos": null,
+          "ferramentas": []
+        }
+      ]
+    }
+  ]
+}
