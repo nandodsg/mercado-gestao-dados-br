@@ -58,6 +58,19 @@ flowchart LR
   quando entrar a etapa de classificação de requisitos por modelo de linguagem, que é o primeiro passo com custo,
   cache e reprocessamento parcial. Está registrada em `PLAN.md`.
 
+## Classificação de requisitos: modelo e rota de consumo
+
+Cada linha dos anúncios (responsabilidades, requisitos, diferenciais) recebe uma natureza e um conjunto de itens de uma
+taxonomia fechada. Vários modelos foram medidos contra um conjunto de referência (rótulos de modelos revisados por pessoa;
+método e ressalvas em `rotulagem/` e `evals/relatorio.md`). **O escolhido é o Claude Haiku 5.5**, pelo desempenho na
+referência, e não por custo: nesse volume, todos os candidatos custam centavos.
+
+**O consumo ocorre pela assinatura do Claude do autor, na cota semanal, e não por uma API paga.** É uma escolha de rota,
+não uma limitação técnica: o mesmo trabalho roda por um gateway de modelos, com o mesmo prompt, esquema e validação.
+`pipeline/exemplo_gateway.py` é um exemplo executável dessa rota alternativa (Vercel AI Gateway, protocolo da OpenAI,
+custo informado por chamada). Quem quiser reproduzir a classificação sem assinatura pode usá-lo, com a própria chave.
+Como a rota por assinatura é disparada e como o resultado volta ao repositório está em `PLAN.md`.
+
 ## Como a amostra foi formada (metodologia)
 
 1. **Coleta.** Cada vaga entra no app por link ou texto colado (LinkedIn, Gupy, InHire e outros portais) e é lida e

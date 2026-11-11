@@ -37,11 +37,16 @@ vem vazio em parte das vagas (o teste de valores aceitos ignora vazio); análise
 | 2026-11-05 | Arquitetura: **armazenamento = CSVs no git; DuckDB só como motor de consulta, reconstruído a cada execução; dbt = transformação**; sem catálogo nem formato de lakehouse | um escritor, rodada semanal, git já guarda os snapshots; "data lake" seria nome grande demais pra poucos CSVs pequenos |
 | 2026-11-05 | Análise geográfica fora do foco: o README diz que a distribuição por local não é representativa (reflete a preferência de busca do autor) e recomenda a composição dos requisitos como fato principal | a amostra não pretende refletir a distribuição nacional; qualquer estudo de mercado mostraria concentração em São Paulo de qualquer forma |
 | 2026-11-05 | Orquestração = GitHub Actions encadeadas por commit em `data/`; **sem Dagster por enquanto** | uma transformação (o DAG é o do dbt) e um encadeamento simples; reavaliar quando entrar a classificação por modelo de linguagem (custo, cache, reprocesso parcial) |
+| 2026-11-11 | Modelo de classificação: **Claude Haiku 5.5**, consumido pela **assinatura do autor** (cota semanal), não por API paga. Rota por gateway documentada e com exemplo (`pipeline/exemplo_gateway.py`); a decisão de como a rota por assinatura é disparada fica em aberto (próximo passo abaixo). Substitui, para a classificação, a linha "único secret futuro: chave do gateway" | o volume é pequeno (cache por texto: só linha nova gasta), o modelo é barato e a cota da assinatura já está paga; o gateway segue viável se a rota mudar |
 
 ## Próximos passos (gatilhos)
 
 - **Taxonomia, setores e conjunto de referência** → seeds `taxonomia.csv`, `setores.csv`, `overrides.csv` e o teste "100% dos
   requisitos classificados". Gatilho: método do conjunto de referência decidido.
+- **Rota de consumo por assinatura** (antes da classificação em produção). Planejar como a classificação é disparada e como o
+  resultado volta ao repositório sem chave de API e sem publicar o anúncio inteiro; medir o Haiku 5.5 **por essa rota** contra a
+  referência (a medição atual foi por API com esquema estrito; a rota por assinatura tem outro envelope e pode render diferente).
+  Gatilho: modelo escolhido (feito, 2026-11-11).
 - **Classificação em produção** (`pipeline/`, cache por sha256 do texto, `overrides.csv` vence o modelo). Gatilho: modelo
   escolhido por comparação num conjunto rotulado. **Aqui reavaliar Dagster** (ativos com cache e reprocesso).
 - **Página com números e consultas** (`site/`, DuckDB-WASM sobre os marts). Gatilho: achados revisados.
