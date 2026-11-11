@@ -1,11 +1,19 @@
-# Publica site/ e data/ no GitHub Pages (repo público, plano gratuito). Roda quando muda a página, o dado ou este arquivo
-# (o commit da Vercel em data/ também dispara). Antes do Item 9 a página é um marcador com os links do dado bruto.
+# Publica a página no GitHub Pages (repo público, plano gratuito). Roda quando muda a página, o dado, o dbt, a análise ou
+# este arquivo (o commit semanal da Vercel em data/ também dispara).
+#
+# A página sai do dado real: `dbt build` sobre data/, depois `pipeline/gerar_site.py` monta index.html, dados/pagina.json
+# (os números de cada gráfico, os mesmos de analise/achados.md) e os marts em Parquet que a consulta de cada gráfico lê,
+# em DuckDB no navegador. Nada é digitado à mão.
+#
+# Nunca implanta sobre dado fictício: enquanto data/ não tiver o contrato completo (rotulos.csv com a coluna
+# `ferramentas`), o job termina sem publicar e a versão que já está no ar continua lá. O mesmo `dbt build` do workflow
+# `pipeline` vale aqui: se um teste cair (empresa nova sem setor, por exemplo), a página não é trocada.
 name: pages
 
 on:
   push:
     branches: [main]
-    paths: ["site/**", "data/**", ".github/workflows/pages.yml"]
+    paths: ["site/**", "data/**", "dbt/**", "analise/**", "pipeline/**", "requirements.txt", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
 permissions:
@@ -25,14 +33,41 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Montar a pasta do site
+      - name: Dado real disponível?
+        id: dados
         run: |
-          mkdir _site
-          cp -r site/. _site/
-          if [ -d data ]; then cp -r data _site/data; fi
+          if [ -f data/manifest.json ] && [ -f data/rotulos.csv ] && head -1 data/rotulos.csv | grep -q ',ferramentas,'; then
+            echo "real=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "real=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::data/ ainda não tem o contrato completo (rotulos.csv com a coluna ferramentas): a página não foi implantada e a versão anterior continua no ar"
+          fi
+      - uses: actions/setup-python@v5
+        if: steps.dados.outputs.real == 'true'
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Instalar dependências
+        if: steps.dados.outputs.real == 'true'
+        run: pip install -r requirements.txt
+      - name: Contrato v1, manifest e sigilo
+        if: steps.dados.outputs.real == 'true'
+        run: python pipeline/check_data.py data
+      - name: dbt build (DuckDB, sem warehouse)
+        if: steps.dados.outputs.real == 'true'
+        run: |
+          dbt build --project-dir dbt --profiles-dir dbt --vars "{data_dir: data}"
+      - name: Gerar a página
+        if: steps.dados.outputs.real == 'true'
+        run: |
+          python pipeline/gerar_site.py _site --dados data
+          cp -r data _site/data
       - uses: actions/configure-pages@v5
+        if: steps.dados.outputs.real == 'true'
       - uses: actions/upload-pages-artifact@v3
+        if: steps.dados.outputs.real == 'true'
         with:
           path: _site
       - id: deployment
+        if: steps.dados.outputs.real == 'true'
         uses: actions/deploy-pages@v4

@@ -147,6 +147,9 @@ function dumb(box, rows, o = {}) {
     const vLo = txt(g, X(lo) - 14, y + 4, Math.round(lo) + '%', { 'text-anchor': 'end', class: 'val', style: `fill:${loC ? colC : colG}` });
     const vHi = txt(g, X(hi) + 14, y + 4, Math.round(hi) + '%', { class: 'val', style: `fill:${loC ? colG : colC}` });
     if (hi - lo < 6) { vHi.textContent = ''; vLo.textContent = `${Math.round(pc)}% · ${Math.round(pg)}%`; vLo.style.fill = '#d9d9d9'; }
+    else if (X(lo) - 14 < 30) {  // o menor valor encostaria na borda esquerda (3%): os dois rótulos vão juntos pra direita dos pontos
+      vHi.textContent = ''; vLo.setAttribute('text-anchor', 'start'); vLo.setAttribute('x', X(hi) + 14);
+      vLo.textContent = `${Math.round(pc)}% · ${Math.round(pg)}%`; vLo.style.fill = '#d9d9d9'; }
     const sl = txt(g, narrow ? 0 : W, narrow ? yRow + 64 : y + 4, st_, { 'text-anchor': narrow ? 'start' : 'end', class: 'tick', style: `fill:${sc};letter-spacing:.1em` });
     st.add(1100, dly, k => { lab.style.opacity = Math.min(1, k * 2);
       set(cc, { cx: X(pc * k) }); set(cg, { cx: X(pg * k) }); set(ln, { x1: X(lo * k), x2: X(hi * k) });
@@ -212,18 +215,21 @@ function salario(box) {
   }).filter(g => g.xs.length);
   if (!grupos.length) return;
   const max = Math.ceil(Math.max(...grupos.flatMap(g => g.xs.map(v => v.max))) / 10000) * 10000;
-  const W = box.clientWidth, rowH = 7, gapG = 74, top = 24;
+  const W = box.clientWidth, narrow = W < 520, rowH = 7, gapG = 74, top = 24;  // celular: rótulos menores, eixo sem o "MIL" repetido
   const H = top + grupos.reduce((a, g) => a + g.xs.length * rowH + gapG, 0) + 4;
   const s = el('svg', { viewBox: `0 0 ${W} ${H}`, height: H, role: 'img', 'aria-label': 'Faixa de referência salarial pesquisada por vaga, coordenação e gerência' }, box);
   const X = v => (W - 8) * v / max;
   for (let v = 0; v <= max; v += 10000) {
     el('line', { x1: X(v), x2: X(v), y1: top - 6, y2: H, stroke: '#e4e4df', 'stroke-width': 1 }, s);
-    txt(s, X(v), 12, v === 0 ? 'R$ 0' : (v / 1000) + ' MIL', { 'text-anchor': v === 0 ? 'start' : 'middle', class: 'tick', style: 'fill:#6b6865' });
+    txt(s, X(v), 12, narrow ? (v === 0 ? '0' : v === max ? (v / 1000) + ' MIL' : String(v / 1000)) : v === 0 ? 'R$ 0' : (v / 1000) + ' MIL',
+      { 'text-anchor': v === 0 ? 'start' : v === max ? 'end' : 'middle', class: 'tick', style: 'fill:#6b6865' });
   }
   let y0 = top + 26, gi = 0;
   grupos.forEach(g => {
     const yTop = y0, b0 = gi * 700, nrep = g.xs.filter(g.rep).length;
-    txt(s, 0, yTop - 12, `${NOME[g.k].toUpperCase()} · ${g.xs.length} VAGAS · ${nrep} NA FAIXA REPETIDA`, { style: 'letter-spacing:.1em;fill:#1d1a1a;font-weight:400' });
+    const rot = { style: `letter-spacing:${narrow ? '.03em;font-size:10px' : '.1em'};fill:#1d1a1a;font-weight:400` };
+    if (narrow) { txt(s, 0, yTop - 25, `${NOME[g.k].toUpperCase()} · ${g.xs.length} VAGAS`, rot); txt(s, 0, yTop - 13, `${nrep} NA FAIXA REPETIDA`, rot); }
+    else txt(s, 0, yTop - 12, `${NOME[g.k].toUpperCase()} · ${g.xs.length} VAGAS · ${nrep} NA FAIXA REPETIDA`, rot);
     const lines = g.xs.map((v, i) => {
       const y = yTop + i * rowH + rowH / 2, rep = g.rep(v);
       const ln = el('line', { x1: X(v.mid), x2: X(v.mid), y1: y, y2: y, stroke: C[g.k], 'stroke-width': 4, 'stroke-linecap': rep ? 'butt' : 'round', 'stroke-dasharray': rep ? '3 3' : '', class: 'sl' }, s);
@@ -275,12 +281,12 @@ with base as (
 )
 select i.item, i.nivel,
        count(distinct i.id_publico) as pedem,
-       any_value(b.vagas) as vagas,
-       round(100.0 * pedem / vagas) as pct
+       b.vagas,
+       round(100.0 * pedem / b.vagas) as pct
 from mart_vaga_item i
 join base b using (nivel)
 where i.item_chave in (${chaves.map(c => `'${c}'`).join(',\n                       ')})
-group by i.item, i.nivel
+group by i.item, i.nivel, b.vagas
 order by i.item, i.nivel;`;
 const chavesDe = linhas => linhas.filter(r => r.chave).map(r => r.chave);
 const SQLS = {

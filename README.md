@@ -22,7 +22,7 @@ Portuguese).*
 | `data/` | os CSVs do dataset (`vagas.csv`, `requisitos.csv`, `benchmarks.csv`, `rotulos.csv`) e o `manifest.json` | **só a automação de publicação**, 1 commit por publicação, semanal |
 | `dbt/` | projeto dbt sobre DuckDB: staging lê `data/*.csv`, marts por nível, testes | código |
 | `pipeline/` | Python: conferência do contrato e do sigilo (`check_data.py`) e o exemplo da rota alternativa de classificação | código |
-| `site/` | a página pública (hoje um marcador; os números com a consulta ao lado entram depois) | código |
+| `site/` | o modelo, o CSS e o JavaScript da página pública (o `index.html` sai do gerador, nunca é editado) | código |
 | `tests/fixtures/` | dados **fictícios** no mesmo formato, pra CI rodar antes da 1ª publicação | `pipeline/make_fixture.py` |
 | `PLAN.md` | decisões do pipeline, com data e motivo | código |
 
@@ -57,6 +57,26 @@ flowchart LR
   transformação e um encadeamento simples, e um orquestrador seria mais uma peça pra hospedar. A decisão é reavaliada
   quando entrar a etapa de classificação de requisitos por modelo de linguagem, que é o primeiro passo com custo,
   cache e reprocessamento parcial. Está registrada em `PLAN.md`.
+
+## A página
+
+A página (`site/`) é estática, sem servidor. A cada publicação o workflow `pages` roda o `dbt build` sobre `data/` e depois
+`pipeline/gerar_site.py`, que monta três coisas: o `index.html` (o texto de cada achado, com a condição que o sustenta), o
+`dados/pagina.json` (os números de cada gráfico, calculados pelo mesmo código que gera `analise/achados.md`) e os marts em
+Parquet. **Os números são os do dado, nunca digitados**: se a direção de um achado mudar numa publicação, a página mostra o
+aviso em vez de afirmar o contrário.
+
+Cada gráfico tem uma consulta ao lado, em SQL, que roda no navegador com DuckDB-WASM (carregado de um CDN) sobre os mesmos
+Parquet. Se o CDN estiver fora do ar, a consulta avisa e a página continua inteira, porque os números já vêm do
+`pagina.json`. Enquanto `data/` não tiver o contrato completo, o `pages` não implanta nada e a versão anterior continua no ar;
+a página nunca é publicada sobre dado fictício.
+
+Pra ver localmente, depois do `dbt build`:
+
+```bash
+python pipeline/gerar_site.py _site --dados data
+python -m http.server 8765 --directory _site
+```
 
 ## Classificação de requisitos: modelo e rota de consumo
 

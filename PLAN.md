@@ -11,7 +11,7 @@ Registro de decisões do pipeline do repo público: o que mudou o desenho e por 
 | `pipeline/check_data.py` (contrato, manifest, sigilo) | pronto, testado sobre `tests/fixtures` |
 | `dbt/` (staging, marts por nível, testes) | `dbt build` verde sobre os dados fictícios e **sobre o dado real da 1ª publicação** |
 | CI `pipeline.yml` | verde sobre `data/` (1ª publicação, 2026-11-05); sem `data/`, roda sobre `tests/fixtures` |
-| Pages `pages.yml` + `site/` | pronto; `site/` é um marcador até a página de verdade |
+| Pages `pages.yml` + `site/` | página implementada (`pipeline/gerar_site.py` + modelo, CSS e JS); o `pages` só implanta sobre dado real com a coluna `ferramentas` |
 | Seeds `setores.csv`, `taxonomia.csv`, `overrides.csv` | ainda não existem: nascem junto com o conjunto de referência e a classificação |
 | Pasta `data/` | publicada pela automação (1 commit por publicação) |
 
@@ -49,4 +49,3 @@ vem vazio em parte das vagas (o teste de valores aceitos ignora vazio); análise
   Gatilho: modelo escolhido (feito, 2026-11-11).
 - **Classificação em produção** (`pipeline/`, cache por sha256 do texto, `overrides.csv` vence o modelo). Gatilho: modelo
   escolhido por comparação num conjunto rotulado. **Aqui reavaliar Dagster** (ativos com cache e reprocesso).
-- **Página com números e consultas** (`site/`, DuckDB-WASM sobre os marts). Gatilho: achados revisados.

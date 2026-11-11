@@ -6,6 +6,9 @@
 # workflow. Antes da 1ª publicação data/ não existe: o job roda sobre os dados fictícios de tests/fixtures, pra o
 # esqueleto continuar testado.
 #
+# O gerador da página (`pipeline/gerar_site.py`) também roda aqui, num diretório temporário e sobre a mesma pasta de dados
+# (fixture ou real): é o teste dele. Quem publica a página é o workflow `pages`, só sobre dado real.
+#
 # Depois do dbt build, sobre dado real, `analise/achados.py` refaz `analise/achados.md` (números saídos dos marts, texto do
 # modelo `achados.modelo.md`) e o job commita o arquivo se mudou. É o único commit que este workflow faz, só na main e só
 # em `analise/achados.md`; o GITHUB_TOKEN não dispara outro workflow, então não há laço.
@@ -13,7 +16,7 @@ name: pipeline
 
 on:
   push:
-    paths: ["data/**", "pipeline/**", "dbt/**", "tests/**", "analise/**", "requirements.txt", ".github/workflows/pipeline.yml"]
+    paths: ["data/**", "pipeline/**", "dbt/**", "tests/**", "analise/**", "site/**", "requirements.txt", ".github/workflows/pipeline.yml"]
   pull_request:
   schedule:
     - cron: "0 9 * * 1" # segunda 09h UTC, 3h depois do cron semanal de publicação
@@ -53,6 +56,12 @@ jobs:
           DATA_DIR: ${{ steps.dados.outputs.dir }}
         run: |
           dbt build --project-dir dbt --profiles-dir dbt --vars "{data_dir: $DATA_DIR}"
+      - name: Gerador da página roda (teste, num diretório temporário)
+        env:
+          DATA_DIR: ${{ steps.dados.outputs.dir }}
+        run: |
+          python pipeline/gerar_site.py "$RUNNER_TEMP/site" --dados "$DATA_DIR"
+          test -s "$RUNNER_TEMP/site/index.html" && test -s "$RUNNER_TEMP/site/dados/pagina.json" && test -s "$RUNNER_TEMP/site/app.js"
       - name: Regerar analise/achados.md (só dado real)
         if: steps.dados.outputs.dir == 'data'
         run: python analise/achados.py
