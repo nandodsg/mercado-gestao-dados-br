@@ -7,8 +7,9 @@
 **Antes de citar:** é a amostra de uma pessoa, não o mercado (ver "Vieses e limites" no README). Cada número traz o
 tamanho da amostra ao lado. As porcentagens são de **vagas** (uma vaga conta uma vez por item, por mais linhas que o
 citem), e a classificação tende a deixar de marcar item mais do que a marcar à toa: **trate as contagens como piso**.
-Diferença entre níveis vem com o p do teste exato de Fisher. Com dezenas de itens comparados, só p muito baixo
-(< 0,01) é diferença em que dá pra apoiar uma frase; o resto é direção.
+Diferença entre níveis vem com o p do teste exato de Fisher. Com dezenas de itens comparados, a régua é esta: p abaixo
+de 0,01 é diferença em que dá pra apoiar uma frase; entre 0,01 e 0,05 é direção, citada junto do achado do mesmo tema;
+acima de 0,05 vai para o fim, em "O que os dados ainda não sustentam".
 
 **Base.** 90 vagas publicadas, 83 com o anúncio classificado: **36 de coordenação e 42 de
 gerência**, mais 5 de alta gestão ou fora da gestão de dados, que entram só nos totais. Ficam de fora
@@ -39,14 +40,14 @@ As duas maiores diferenças entre os níveis, e as duas únicas com força estat
 | estratégia e visão | 28% (10 de 36) | 71% (30 de 42) | p < 0,001 |
 | operação do time (rotina, entregas, acompanhamento) | 72% (26 de 36) | 38% (16 de 42) | p = 0,003 |
 | *na mesma direção, com menos força:* contratar e estruturar o time | 11% (4 de 36) | 33% (14 de 42) | p = 0,030 |
-| *idem:* liderar líderes | 3% (1 de 36) | 17% (7 de 42) | p = 0,063 |
 
 O anúncio de gerência descreve quem desenha a área; o de coordenação, quem faz ela rodar.
 
 ## 3. Python é pedido de coordenação
 
-Ferramenta citada pelo nome no requisito (regra determinística, `dbt/seeds/ferramentas.csv`, sobre
-`requisitos.csv`; 37 vagas de coordenação e 46 de gerência com requisito publicado):
+Ferramenta citada pelo nome (regra determinística, `dbt/seeds/ferramentas.csv`) na lista de requisitos de
+`requisitos.csv`; 37 vagas de coordenação e 46 de gerência têm essa lista. A lista é um resumo do anúncio, não o
+anúncio inteiro (ver o README): a base não é a mesma das outras seções e a contagem é piso.
 
 | ferramenta | coordenação | gerência | teste |
 |---|---|---|---|
@@ -54,12 +55,10 @@ Ferramenta citada pelo nome no requisito (regra determinística, `dbt/seeds/ferr
 | SQL | 65% (24 de 37) | 43% (20 de 46) | p = 0,076 |
 | AWS, Azure ou GCP (qualquer) | 30% (11 de 37) | 39% (18 de 46) | p = 0,488 |
 
-Python é a única ferramenta em que os níveis se separam com folga. SQL vai na mesma direção, sem a mesma força. Nuvem
-citada pelo nome não separa os níveis. O item da taxonomia **plataforma de dados e nuvem**, que pega a responsabilidade
-pela plataforma mesmo sem nome de fornecedor, pende para a gerência: 47% (17 de 36) × 67% (28 de 42), p = 0,109. É direção, não
-achado.
+Python é a única ferramenta em que os níveis se separam com folga. SQL e nuvem citada pelo nome não se separam do
+acaso.
 
-## 4. Gerência não tira ninguém do teclado
+## 4. Metade pede mão na massa, nos dois níveis
 
 **Mão na massa** (o gestor também executa, codifica, constrói) aparece em 47% (17 de 36) das vagas de coordenação e
 em 50% (21 de 42) das de gerência (p = 0,824). Cerca de metade dos anúncios pede isso, e subir de nível não muda a conta.
@@ -71,8 +70,10 @@ IA) aparece em 70% (58 de 83) das vagas: 61% (22 de 36) em coordenação e 76% (
 
 - Em 78% (45 de 58) dessas vagas a IA está na seção de **responsabilidades**, no que a pessoa vai fazer. Na de
   **requisitos**, no que ela já precisa saber, em 60% (35 de 58). (Uma vaga pode ter as duas.)
-- É o **diferencial mais citado**: aparece em 67% (24 de 36) das vagas que têm seção de diferenciais. O segundo é
-  experiência no setor da empresa: 61% (22 de 36).
+- Gerência cita mais IA. Na mesma direção, com menos força: **IA aplicada ao negócio**, 31% (11 de 36) em coordenação ×
+  55% (23 de 42) em gerência (p = 0,040).
+- É o **diferencial mais citado**: aparece em 67% (24 de 36) das vagas que têm seção de diferenciais, somando os dois
+  níveis. O segundo é experiência no setor da empresa: 61% (22 de 36).
 
 ## 6. Nenhum anúncio diz quanto paga
 
@@ -84,7 +85,7 @@ vaga.
 |---|---|---|
 | vagas com referência pesquisada | 36 | 41 |
 | mediana do ponto médio da faixa de referência | R$ 16,6 mil | R$ 30,3 mil |
-| peso da faixa mais repetida | 11% (4 de 36) | 29% (12 de 41) |
+| vagas cuja referência é a mesma faixa de um guia salarial (a faixa mais repetida) | 11% (4 de 36) | 29% (12 de 41) |
 
 **Isto não é o que as vagas pagam.** É a referência de mercado para o cargo e a cidade. Parte das fontes bloqueia
 leitura automática e veio de resumo de busca, e a mesma faixa de um guia salarial se repete em muitas vagas (última
@@ -101,8 +102,9 @@ afirmar:
 |---|---|---|---|
 | inglês | 22% (8 de 36) | 40% (17 de 42) | p = 0,096 |
 | IA generativa e LLMs | 17% (6 de 36) | 36% (15 de 42) | p = 0,075 |
-| IA aplicada ao negócio | 31% (11 de 36) | 55% (23 de 42) | p = 0,040 |
 | KPIs e métricas | 75% (27 de 36) | 52% (22 de 42) | p = 0,060 |
+| liderar líderes | 3% (1 de 36) | 17% (7 de 42) | p = 0,063 |
+| plataforma de dados e nuvem (a responsabilidade pela plataforma, mesmo sem nome de fornecedor) | 47% (17 de 36) | 67% (28 de 42) | p = 0,109 |
 
 Também fora daqui, de propósito: **localização, setor da empresa e tendência no tempo.** A distribuição geográfica e a
 de setores refletem a busca do autor, não o mercado, e a janela de coleta ainda é curta para falar de tendência.

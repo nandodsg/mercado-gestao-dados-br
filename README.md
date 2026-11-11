@@ -77,7 +77,7 @@ Como a rota por assinatura é disparada e como o resultado volta ao repositório
 `hash_linha` (identificador da linha, sem o texto), `secao` (responsabilidades, requisitos ou diferenciais), `natureza`
 (`responsabilidade`, `requisito` ou `contexto`), `itens` (chaves da taxonomia separadas por `|`), `setor`,
 `versao_taxonomia` e `rotulador`. **O texto das linhas não é publicado**: o anúncio pertence à empresa, e o texto
-literal que já está em `requisitos.csv` cobre só as linhas do requisito. Quem quiser relacionar um item ao texto
+que já está em `requisitos.csv` é um resumo dos requisitos, não o anúncio. Quem quiser relacionar um item ao texto
 volta ao posting pela `url`.
 
 **Método.** Uma chamada por vaga: o modelo recebe as linhas do anúncio inteiro, na ordem e com a seção, e devolve, para
@@ -121,9 +121,12 @@ cada `id_publico` existe em `vagas.csv`. `mart_vaga_item` (vaga × item) é a ba
    regra que casa vence). Head e diretoria ficam num bucket "alta gestão", citados sem quebra; o que não é gestão de
    dados (gestão de time de software ou de produto, por exemplo) fica em "outros". Sem modelo de linguagem: o nível é a
    chave da análise e precisa dar o mesmo resultado em qualquer máquina.
-4. **Requisitos.** Texto literal das linhas de requisito do posting, sem nota, sem interpretação, em `requisitos.csv`. A
-   classificação de cada linha por tipo (ferramenta, competência de gestão, idioma…) é um arquivo à parte,
-   `rotulos.csv`, descrito na seção seguinte.
+4. **Requisitos.** Em `requisitos.csv`, a lista de requisitos que o app de acompanhamento resume de cada anúncio, sem
+   nota nem interpretação. O texto vem do anúncio, mas **não é o anúncio inteiro**: parte das linhas foi encurtada
+   (termina em "…") ou junta vários pedidos numa linha só (separados por "·"), e nem todo tópico do anúncio entra.
+   Contagem feita sobre esse arquivo é piso. A classificação por item (ferramenta, competência de gestão, idioma…)
+   não sai deste arquivo: ela é feita sobre as linhas do anúncio inteiro e publicada em `rotulos.csv`, descrito na
+   seção seguinte.
 5. **Salário, em duas camadas que não se misturam.** (a) *Transparência do posting*: quantas vagas declaram faixa,
    medida pelas colunas `salario_*` e `faixa_posting`. (b) *Benchmark pesquisado*: fontes públicas de salário por cargo
    e cidade, uma linha por fonte em `benchmarks.csv`. **Benchmark não é o que a vaga paga.** Parte dessas fontes
