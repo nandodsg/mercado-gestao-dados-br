@@ -1,6 +1,7 @@
 id_publico,empresa,cargo_oficial,modo,geografia,regime,cidade,uf,contrato,fonte,candidatura_tipo,mes,url,faixa_posting,salario_min,salario_max,salario_moeda,salario_tipo
 02fd1aac87ce,PwC,Gerente de Dados,lideranca,br,presencial,São Paulo,SP,CLT,linkedin,easy_apply,2026-10,https://www.linkedin.com/jobs/view/4472951466/,,23900,39950,BRL,base
 03e4427fa662,Globo,Pessoa Coordenadora de Plataforma de Dados | Data & AI,lideranca,br,hibrido,Porto Alegre,RS,CLT,linkedin,encerrada,2026-07,https://www.linkedin.com/jobs/view/4441848729/,,13000,23000,BRL,base
+058348ad09a5,Irmandade da Santa Casa de Misericórdia de Curitiba,Coordenador de Sistemas e Integridade de Dados,lideranca,br,,Curitiba,PR,,site,,2026-10,https://irmandadedasantacasademisericordiadecuritiba.pandape.infojobs.com.br/detail/3843282,,4758,12500,BRL,
 05966c9e2e90,"B3 S.A. – Brasil, Bolsa, Balcão",7664 - Coordenador(a) de Dados & Analytics / IA (Mercado Financeiro),lideranca,br,hibrido,São Paulo,SP,CLT,site,,2026-08,https://vagas.b3.com.br/job/s%c3%a3o-paulo-7664-coordenador%28a%29-de-dados-&-analytics-ia-%28mercado-financeiro%29-sp/1335762662/,,11000,17000,BRL,base
 06382d0010af,Publicis Groupe,Pessoa Gerente de Inteligência de Negócios (Dados com Mídia),lideranca,br,hibrido,São Paulo,SP,CLT,site,,2026-09,https://careers.publicisgroupe.com/jobs/174587,,19600,32850,BRL,base
 0c209e36504e,Porto,Coordenador(a) de Dados Digitais - Tagueamento,lideranca,br,,São Paulo,SP,CLT,gupy,,2026-10,https://porto.gupy.io/jobs/12752742,,10000,20000,BRL,total
@@ -8,6 +9,7 @@ id_publico,empresa,cargo_oficial,modo,geografia,regime,cidade,uf,contrato,fonte,
 0d9a1314b72a,Coca-Cola FEMSA,Coordenador(a) de Data & Business Intelligence,lideranca,br,,São Paulo,SP,CLT,eightfold,,2026-09,https://coca-colafemsa.eightfold.ai/careers/job/1374433961039,,7000,11000,BRL,base
 0f0911a172d2,V4 Company,Coordenador de Dados | Time de Dados | Matriz,lideranca,br,presencial,Campinas,SP,PJ,inhire,,2026-09,https://v4company.inhire.app/matriz/vagas/c5444b6f-97df-43e1-a2aa-42412e73c780/coordenador-de-dados-or-time-de-dados-or-matriz,,10000,16000,BRL,base
 114623b8f0d7,Afya,"Gerente de Engenharia de Dados Sênior (Base em SP, RJ ou BH)",lideranca,br,remoto,São Paulo,SP,CLT,gupy,,2026-04,https://afya.gupy.io/job/eyjqb2jjzci6mtexmti5njmsinnvdxjjzsi6imd1chlfcg9ydgfsin0=,,23000,38000,BRL,base
+18b3fca35e6a,Dasa,Gerente de Dados | Analytics,lideranca,br,hibrido,São Paulo,SP,CLT,gupy,,2026-09,https://dasatecnologia.gupy.io/jobs/12411943,,24900,41550,BRL,base
 193f6ffd8725,Inter,DATA ENGINEER & SCIENCE COORDINATOR,lideranca,br,,Belo Horizonte,MG,CLT,greenhouse,,2026-09,https://job-boards.greenhouse.io/inter/jobs/4732936005,,16600,21400,BRL,base
 19534183f233,Aegea Saneamento,Coordenador(a) de Telemetria e Dados Operacionais,lideranca,br,,São Paulo,SP,CLT,linkedin,easy_apply,2026-09,https://www.linkedin.com/jobs/view/4464634925/,,11000,17000,BRL,base
 1a1756261ba3,SulAmérica,Coordenador(a) de Informações Gerenciais,lideranca,br,presencial,São Paulo,SP,CLT,linkedin,easy_apply,2026-09,https://www.linkedin.com/jobs/view/4465948156/,,12600,20700,BRL,base
@@ -16,11 +18,13 @@ id_publico,empresa,cargo_oficial,modo,geografia,regime,cidade,uf,contrato,fonte,
 2356fcd62fea,Conexa Saúde,Coordenador de Data Analytics,lideranca,br,hibrido,Rio de Janeiro,RJ,CLT,gupy,,2026-09,https://conexasaude.gupy.io/jobs/12478416,,14000,20000,BRL,base
 28eb0d792bf1,Grupo Boticário,Tech Manager I (Venda Direta),lideranca,br,remoto,,,CLT,gupy,,2026-09,https://grupoboticario.gupy.io/jobs/12559225,,20000,26000,BRL,total
 2c9b6e526b6c,Loft,Data Manager,lideranca,br,remoto,,,,linkedin,,2026-09,,,18300,30300,BRL,base
+2ebd007e1e74,Pottencial Seguradora,Coordenador de Informações Estratégicas e FP&A,lideranca,br,presencial,Belo Horizonte,MG,CLT,inhire,,2026-04,https://pottencial.inhire.app/vagas/fa601c79-0670-47d6-9f89-5cc87055b687/coordenador-de-informacoes-estrategicas-e-fpanda,,,,BRL,base
 2f7a7a4bc6d9,Zup Innovation,Líder de equipe de dados,lideranca,br,remoto,São Paulo,SP,CLT,linkedin,,2026-10,,,14000,22000,BRL,base
 322d2c7e5ca0,Vivo,Gerente MIS Operações,lideranca,br,hibrido,São Paulo,SP,CLT,gupy,,2026-08,https://vivo.gupy.io/jobs/12029324,,4000,18000,BRL,base
 34913b6fb876,Azul,"Gerente Geral de Dados, Inteligência Artificial e Automação",lideranca,br,presencial,Barueri,SP,CLT,gupy,,2026-08,https://voeazul.gupy.io/job/eyjqb2jjzci6mtixotyymzksinnvdxjjzsi6imd1chlfcg9ydgfsin0=,,23900,39950,BRL,
 3832d8774b1f,CAIXA Vida e Previdência,Coordenador de Dados,lideranca,br,hibrido,Barueri,SP,CLT,gupy,,2026-08,https://caixavidaeprevidencia.gupy.io/job/eyjqb2jjzci6mtizmti5odqsinnvdxjjzsi6imxpbmtlzgluin0=,,12583,20667,BRL,base
 39f7c53fa832,Sicredi Aliança,"Gerente de Dados, BI e Automação",lideranca,br,presencial,Marau,RS,CLT,gupy,,2026-09,https://sicredi.gupy.io/jobs/12634753,,,,,
+3ca7df38280f,BTG Pactual,Gerente de People Analytics,lideranca,br,,São Paulo,SP,CLT,site,,2026-06,https://carreiras.btgpactual.com/vagas/hr/gerente-de-people-analytics/6104164004,,,,BRL,base
 3cb95b96c576,Sem Parar (Corpay),Coordenador(a) de Dados,lideranca,br,hibrido,São Paulo,SP,CLT,gupy,,2026-10,https://semparar.gupy.io/jobs/12775183,,10000,16000,BRL,base
 3d16b1335bf0,Cadastra,Data Manager (Data Engineer),lideranca,br,hibrido,São Paulo,SP,CLT,gupy,,2026-09,https://cadastra.gupy.io/job/eyjqb2jjzci6mti1nje0mdusinnvdxjjzsi6imxpbmtlzgluin0=,,18333,38522,BRL,base
 3fd63a9f0158,Poliedro Educação,Coordenador(a) de Sistemas IA,lideranca,br,remoto,,,CLT,inhire,,2026-09,https://poliedroeducacao.inhire.app/vagas/f3f4818c-8039-49d6-b94d-17586dfddb77,,18800,25000,BRL,base
@@ -30,12 +34,15 @@ id_publico,empresa,cargo_oficial,modo,geografia,regime,cidade,uf,contrato,fonte,
 41d0806354fb,Privalia,Head de Inteligência Comercial,lideranca,br,,São Paulo,SP,CLT,linkedin,easy_apply,2026-09,https://www.linkedin.com/jobs/view/4460766180/,,19450,32550,BRL,base
 4569511a9b2d,Coca-Cola,"Manager, Global PACS Intelligence",lideranca,br,hibrido,Rio de Janeiro,RJ,,site,,2026-08,https://careers.coca-colacompany.com/job/23679719/manager-global-pacs-intelligence-rio-de-janeiro-br/,,,,,
 4716e757d303,Flash,Gerente de Ciência de Dados,lideranca,br,,São Paulo,SP,CLT,linkedin,easy_apply,2026-09,https://www.linkedin.com/jobs/view/4467691145/,,23900,39950,BRL,base
+47d6dbda888e,JCDecaux Brasil,Coordenador de BI - LATAM,lideranca,br,hibrido,São Paulo,SP,CLT,gupy,,2026-10,https://jcdecaux.gupy.io/job/eyjqb2jjzci6mti2odq5mdcsinnvdxjjzsi6imxpbmtlzgluin0=,,14000,20000,BRL,base
+4a40d62842e0,Colombo Agroindústria S/A,Coordenador de Sistemas e Dados,lideranca,br,presencial,Ariranha,SP,CLT,site,,2026-11,https://www.jobbol.com.br/vaga/152419-coordenador-de-sistemas-e-dados,,17300,22300,BRL,base
 4c1f124fb9d7,RedeBrasil,Gerente de BI,lideranca,br,hibrido,Porto Alegre,RS,PJ,infojobs,,2026-08,https://redebrasil.pandape.infojobs.com.br/detail/3595215,,10000,16000,BRL,base
 4ff571270a64,Shopee,Gerente de Análise de Dados,lideranca,br,,São Paulo,SP,,site,,2026-10,https://careers.shopee.sg/job-detail/j02171452/1,,24900,41550,BRL,base
 50d91e0a2868,CI&T,"Data Product Manager, Brazil",lideranca,br,,,,CLT,linkedin,easy_apply,2026-09,https://www.linkedin.com/jobs/view/4470995058/,,22700,37950,BRL,
 550a9c02b97d,Inter,DATA SCIENCE COORDINATOR | CREDIT & COLLECTIONS,lideranca,br,,,,CLT,greenhouse,,2026-10,https://boards.greenhouse.io/inter/jobs/4738574005,,,,BRL,base
 565c55a7f114,DP6,Gerente de Digital Analytics,lideranca,br,hibrido,São Paulo,SP,,inhire,,2026-08,https://dp6.inhire.app/vagas/9aee36ca-0b8f-439d-9624-51b80aa6ee7b/gerente-de-digital-analytics,,,,,
 5760a6c0a513,Klavi,Data Governance Coordinator,lideranca,br,hibrido,São Paulo,SP,PJ,site,,2026-09,https://atracaodetalentos.totvs.app/vagasklavi/24/data-governance-coordinator,,16500,24733,BRL,
+5b6b571fdc3b,Accenture,Data and AI Senior Manager,lideranca,br,,São Paulo,SP,,site,,2026-10,https://www.accenture.com/br-pt/careers/jobdetails?id=r00356461_pt-br,,24900,41550,BRL,base
 5e2e2c6840d0,Víssimo Group,Gerente de Dados e Analytics,lideranca,br,hibrido,São Paulo,SP,PJ,gupy,,2026-08,https://vissimo.gupy.io/job/eyjqb2jjzci6mte5odc0ntisinnvdxjjzsi6imxpbmtlzgluin0=,,17100,33300,BRL,base
 5fb9cbe44000,Energisa,COORDENADOR (A) INTELIGÊNCIA ANALÍTICA,lideranca,br,hibrido,Cataguases,MG,CLT,gupy,,2026-09,https://grupoenergisa.gupy.io/jobs/12555155,,16000,20000,BRL,base
 60689696024f,Grupo QuintoAndar,Gerente de Dados & Analytics,lideranca,br,remoto,São Paulo,SP,CLT,greenhouse,,2026-10,https://job-boards.greenhouse.io/quintoandar/jobs/4375416009,,23900,39950,BRL,base
@@ -44,7 +51,6 @@ id_publico,empresa,cargo_oficial,modo,geografia,regime,cidade,uf,contrato,fonte,
 660f295c69d1,Cogna,"PESSOA COORDENADORA DE DADOS, HÍBRIDA - SÃO PAULO/SP.",lideranca,br,hibrido,São Paulo,SP,CLT,gupy,,2026-09,https://cogna.gupy.io/job/eyjqb2jjzci6mti0mzm0ntysinnvdxjjzsi6imxpbmtlzgluin0=,,12583,20667,BRL,
 694682d6a3b3,Itaú Unibanco,Gerente de Engenharia de Dados,lideranca,br,,São Paulo,SP,CLT,linkedin,easy_apply,2026-10,https://www.linkedin.com/jobs/view/4465213278/,,23900,39950,BRL,base
 69df8231cda0,Bradesco,Data Sênior Manager,lideranca,br,hibrido,,,CLT,site,,2026-07,https://bradesco.csod.com/ux/ats/careersite/1/home/requisition/89247,,23900,39950,BRL,base
-6b909fac421a,Lenovo,Business Intelligence Coordinator,lideranca,br,,São Paulo,SP,CLT,site,,2026-10,https://jobs.lenovo.com/en_us/careers/jobdetail,,14129,17817,BRL,base
 6db6aadbd3fc,Cia. Hering,Gerente de Dados,lideranca,br,presencial,Blumenau,SC,CLT,gupy,,2026-10,https://ciahering.gupy.io/jobs/12786677,,14000,38300,BRL,base
 6f04a8afdbe7,Votorantim Cimentos,Coordenadora/Coordenador de Dados,lideranca,br,hibrido,São Paulo,SP,CLT,gupy,,2026-08,https://votorantimcimentos.gupy.io/job/eyjqb2jjzci6mtiwnzyyotgsinnvdxjjzsi6imxpbmtlzgluin0=,,13000,20000,BRL,base
 733ede585256,Grupo WE,Supervisor(a) de Dados - Mídia,lideranca,br,,São Paulo,SP,,site,,2026-09,https://trampos.co/oportunidades/774598,,9892,13683,BRL,
@@ -53,11 +59,14 @@ id_publico,empresa,cargo_oficial,modo,geografia,regime,cidade,uf,contrato,fonte,
 7ae19ba2866b,Adimax,Gerente de Sistemas e Dados TI,lideranca,br,presencial,Sorocaba,SP,CLT,gupy,,2026-08,https://adimax.gupy.io/job/eyjqb2jjzci6mtixnjuzmtusinnvdxjjzsi6imd1chlfcg9ydgfsin0=,,20950,35050,BRL,base
 7dea21fa25b5,AB InBev,Gerente de Dados Senior,lideranca,br,presencial,Campinas,SP,CLT,linkedin,easy_apply,2026-09,https://www.linkedin.com/jobs/view/4465909748/,,23900,39950,BRL,base
 81d7d887943d,Omnicom Media Brazil,Pessoa Gerente de Analytics,lideranca,br,hibrido,São Paulo,SP,CLT,linkedin,easy_apply,2026-10,https://www.linkedin.com/jobs/view/4473788374/,,14000,23000,BRL,base
+84289d6a3888,BRK Ambiental,Coordenador(a) de Inteligência Comercial,lideranca,br,hibrido,São Paulo,SP,CLT,linkedin,easy_apply,2026-10,https://www.linkedin.com/jobs/view/4484079499/,,14700,22050,BRL,
 84ab51944e63,BR Media Group,Pessoa Gerente de Data Insights,lideranca,br,hibrido,São Paulo,SP,CLT,inhire,,2026-08,https://brmediagroup.inhire.app/brmediagroup/vagas/597d1ee0-f88e-446c-b60d-6d15432c95c9/pessoa-gerente-de-data-insights,,20000,30000,BRL,base
 85212bc6edb2,Ab Inbev,Gerente de Dados II Senior — Plataforma MarTech,lideranca,br,presencial,Campinas,SP,CLT,linkedin,externo,2026-07,https://www.linkedin.com/jobs/view/4406008455/,,18300,30300,BRL,base
 871d66b1329d,frete.com,Gerente de Ciência de Dados,lideranca,br,remoto,,,CLT,inhire,,2026-09,https://frete.inhire.app/vagas/ba2f605b-a34b-4a5b-b5c0-1bd3291387b5/gerente-de-ciencia-de-dados,,22700,37950,BRL,base
+896b67ac3163,Lenovo,Business Intelligence Coordinator,lideranca,br,,São Paulo,SP,CLT,site,,2026-10,https://jobs.lenovo.com/en_us/careers/jobdetail?jobid=82800,,14129,17817,BRL,base
 8d64f833858f,Poliedro Educação,Coordenador(a) de Inteligência de Mercado,lideranca,br,remoto,,,CLT,inhire,,2026-08,https://poliedroeducacao.inhire.app/vagas/864073c9-8956-49b4-875b-0a4729881fb7/coordenadora-de-inteligencia-de-mercado,,10000,15000,BRL,base
 8dd1645e3159,Estapar,Gerente de Dados,lideranca,br,presencial,São Paulo,SP,CLT,inhire,,2026-09,https://estapar.inhire.app/vagas/f62b0d7d-18a3-43ec-b0a0-1f6c3e91ffc6/gerente-de-dados,,23900,39950,BRL,base
+8e4e2a6e08ca,Sicredi (CAS),CAS | Coordenação de Dados e Analytics - Foco em Canais,lideranca,br,hibrido,Porto Alegre,RS,CLT,gupy,,2026-09,https://sicredi.gupy.io/jobs/12559836,,,,,
 92d70e27d5fc,Nestlé,Data Governance Coordinator,lideranca,br,presencial,,,CLT,site,,2026-09,https://jobdetails.nestle.com/job/s%c3%a3o-paulo-data-governance-coordinator-sp-04730-000/1433135733/,,7000,16000,BRL,base
 9623152afe51,Whirlpool,AI & Data Science Manager,lideranca,br,,,,CLT,site,,2026-08,https://jobs.whirlpool.com/careers/job/34403082738,,23900,39950,BRL,base
 99e49cb22475,Grupo QuintoAndar,Head Data & AI,lideranca,br,remoto,,,CLT,greenhouse,,2026-11,https://job-boards.greenhouse.io/quintoandar/jobs/4374595009,,23650,39450,BRL,base
@@ -67,12 +76,16 @@ a3f7b17ef4d4,Blip,Senior Manager Data & Analytics,lideranca,br,,São Paulo,SP,CL
 a6a3d788eb34,UOL,EdTech - Coordenador de Dados (Plataforma),lideranca,br,hibrido,São Paulo,SP,CLT,linkedin,encerrada,2026-09,https://www.linkedin.com/jobs/view/4455875932/,,12600,20700,BRL,base
 a7a07adec9b6,Memed,"Coordenador(a) de Analytics, Insights & Operações de Dados",lideranca,br,hibrido,São Paulo,SP,CLT,gupy,,2026-10,https://memed.gupy.io/job/eyjqb2jjzci6mti3mjixmdgsinnvdxjjzsi6imxpbmtlzgluin0=,,14650,19254,BRL,base
 a86aa478f23d,CI&T,"Data Product Manager, Brazil",lideranca,br,,,,CLT,linkedin,easy_apply,2026-10,https://www.linkedin.com/jobs/view/4473908060/,,11450,18600,BRL,base
+a8aab533d4a5,Ideen,Pessoa Líder de Ciência de Dados,lideranca,br,hibrido,São Paulo,SP,PJ,inhire,,2026-09,https://ideen.inhire.app/vagas/2c45dff0-1e75-4565-ad1c-e21dae93d3cc/pessoa-lider-de-ciencia-de-dados,,,,,
+a96990790649,Movida,Coordenador de Engenharia de Dados,lideranca,br,presencial,São Paulo,SP,CLT,gupy,,2026-10,https://movida.gupy.io/job/eyjqb2jjzci6mti3nzmymdysinnvdxjjzsi6imxpbmtlzgluin0=,,11471,24733,BRL,total
 a9fe18fb5e50,Shopee,Coordenador de Análise de Dados | Operações,lideranca,br,hibrido,,,CLT,site,,2026-10,https://careers.shopee.sg/job-detail/j02183675/1,,14000,21000,BRL,base
 aada6b7ed2de,Vivara,Coordenador de Inteligência Comercial,lideranca,br,presencial,São Paulo,SP,CLT,linkedin,easy_apply,2026-10,https://www.linkedin.com/jobs/view/4476902673/,,8900,21600,BRL,base
 b22db003d089,BTG Pactual,Gerente de Dados e Analytics,lideranca,br,hibrido,São Paulo,SP,CLT,site,,2026-08,https://carreiras.btgpactual.com/vagas/tech-data/gerente-de-dados-e-analytics/5814844004,,,,BRL,
 b2bc8e7fae9f,Junto Seguros,Gerente de Inteligência de Negócios,lideranca,br,hibrido,São Paulo,SP,CLT,gupy,,2026-09,https://juntoseguros.gupy.io/job/eyjqb2jjzci6mti1mdq4mjusinnvdxjjzsi6imxpbmtlzgluin0=,,15000,22000,BRL,
 b7e5b9c48ba3,Coca-Cola FEMSA,Coordenador(a) de Customer Insights & Growth Analytics,lideranca,br,,São Paulo,SP,CLT,eightfold,,2026-09,https://coca-colafemsa.eightfold.ai/careers/job/1374433960866,,7000,11000,BRL,base
 b8b55390d066,Unidas,Coordenador de Dados & IA,lideranca,br,hibrido,São Paulo,SP,CLT,gupy,,2026-09,https://unidas.gupy.io/jobs/12433087,,11000,17000,BRL,total
+b9f166d0606b,EVER Trade Marketing,Coordenador de BI,lideranca,br,,São Paulo,SP,,site,,2026-09,https://evertrade.pandape.infojobs.com.br/detail/3770140,,9500,12500,BRL,
+bfbf2275a4cc,eQuiv,Data Scientist Manager / Líder Analytics,lideranca,br,hibrido,São Paulo,SP,CLT,site,,2026-10,https://jobs.quickin.io/equiv/jobs/6acf90ea24b0e80012640ac5,,24000,40000,BRL,base
 c0b4d1c89c87,EY,Gerente de Dados,lideranca,br,,São Paulo,SP,CLT,site,,2026-10,https://careers.ey.com/ey/job/s%c3%a3o-paulo-jk-gerente-de-dados-sp-04543-011/1435873433/,,21000,25000,BRL,base
 c69f6b9fe932,BEES,Senior Manager Data Engineer,lideranca,br,,Campinas,SP,CLT,linkedin,easy_apply,2026-09,https://www.linkedin.com/jobs/view/4465643952/,,23900,39950,BRL,base
 c8cc8febd93c,Riachuelo,Coordenador (a) de Dados | DBM e CRM,lideranca,br,,São Paulo,SP,CLT,linkedin,,2026-09,https://riachuelo.inhire.app/vagas/e4565a33-d149-45bb-82b2-64bd5de7b098/coordenador-a-de-dados-or-dbm-e-crm,,11000,17000,BRL,base
@@ -83,9 +96,13 @@ d3ad8239f051,Hotmart,Data Manager,lideranca,br,,,,CLT,greenhouse,,2026-09,https:
 dff42904d53f,Ambev Tech,[Ambev Tech] Gerente de Dados I,lideranca,br,hibrido,São Paulo,SP,CLT,gupy,,2026-09,https://ambevtech.gupy.io/job/eyjqb2jjzci6mti1njkxndcsinnvdxjjzsi6imd1chlfcg9ydgfsin0=,,22700,37950,BRL,base
 e4d96cafe5cf,B3,Gerente de Dados & Analytics / IA (Mercado Financeiro),lideranca,br,hibrido,São Paulo,SP,CLT,linkedin,easy_apply,2026-10,https://www.linkedin.com/jobs/view/4478907287/,,24900,41550,BRL,base
 e980dfcbcaaa,BYD do Brasil,Supervisor de BI,lideranca,br,,São Paulo,SP,CLT,site,,2026-09,https://app.jobconvo.com/job/ntqwodu4mq-supervisor-de-bi/cb9a629c-f791-47c2-8392-e971114290e3/,,13000,20000,BRL,
-e9cc93db8b62,Accenture,Data and AI Senior Manager,lideranca,br,,São Paulo,SP,,site,,2026-10,https://www.accenture.com/br-pt/careers/jobdetails,,24900,41550,BRL,base
+ea694217175f,Publicis Groupe Brasil,Diretor(a) Executivo(a) de BI & Data Intelligence,lideranca,br,hibrido,São Paulo,SP,,linkedin,easy_apply,2026-11,https://www.linkedin.com/jobs/view/4488061226/,,38000,55000,BRL,total
 eb32a8d6fed4,ArcelorMittal,Gerente de Área de Business Insights e Agentes de IA,lideranca,br,,Belo Horizonte,MG,,site,,2026-10,https://emfg.fa.em4.oraclecloud.com/hcmui/candidateexperience/pt-br/sites/cx_4001/job/41673,,24650,41250,BRL,base
+eb584e0166a4,Cogna Educação,"PESSOA COORDENADORA DE DADOS, HÍBRIDO - SÃO PAULO/SP",lideranca,br,hibrido,São Paulo,SP,,linkedin,easy_apply,2026-11,https://www.linkedin.com/jobs/view/4485821889/,,,,BRL,
 eb93f09408dd,Deloitte,Gerente de AI & Data Strategy | SP ou RJ ou BH,lideranca,br,hibrido,São Paulo,SP,CLT,inhire,,2026-07,https://deloitte.inhire.app/vagas/0923076b-8d67-4c66-8358-72eeb17fa28d/gerente-de-ai-and-data-strategy-or-sp-ou-rj-ou-bh,,23900,39950,BRL,base
+ef266797c9f2,Lefosse,Coordenador(a) de Arquitetura e Governança de Dados,lideranca,br,hibrido,São Paulo,SP,CLT,gupy,,2026-10,https://lefosse.gupy.io/jobs/12613400,,14000,25000,BRL,base
 ef3018eca8b0,Trinus.co,Coordenador Data Analytics,lideranca,br,presencial,São Paulo,SP,,inhire,,2026-09,https://centraldevagas.inhire.app/trinus/vagas/53479e93-ed01-4cf8-b089-6e145c33c4ca/coordenador-data-analytics,,16000,22000,BRL,
+ef601e1daee2,PagBank,Coordenador de Canais (Performance & Analytics),lideranca,br,presencial,São Paulo,SP,CLT,gupy,,2026-10,https://pagseguro.gupy.io/jobs/12706152,,,,BRL,
 ef85be178155,CI&T,"Data Manager, Brazil",lideranca,br,,,,,linkedin,easy_apply,2026-09,https://www.linkedin.com/jobs/view/4470463257/,,23900,39950,BRL,base
 f05442a27a90,Buddha Spa,Gerente de Data & Analytics,lideranca,br,hibrido,São Paulo,SP,CLT,site,,2026-09,https://portal.fluidhr.app/pt-br/company/buddha-spa/careers/jobs/4cde87d0-0670-4766-a8a1-5ed44279c0a1,,18300,30300,BRL,base
+ffd2b47ded5c,PagBank,Coordenador de Canais (Data & Analytics),lideranca,br,presencial,São Paulo,SP,CLT,gupy,,2026-08,https://pagseguro.gupy.io/jobs/11617802,,,,BRL,base

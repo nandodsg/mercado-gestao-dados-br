@@ -31,6 +31,25 @@ id_publico,ordem,texto
 03e4427fa662,9,"Dest.: ""governança, qualidade e operação de dados em escala… DataOps"
 03e4427fa662,10,"Dest.: ""SLA, SLI e SLO… incidentes"
 03e4427fa662,11,"Dest.: ""Google Cloud Platform"" · ""Google Analytics"
+058348ad09a5,1,Conhecimento em Pacote Office
+058348ad09a5,2,Ferramentas de B.I.
+058348ad09a5,3,PL-SQL Avançado
+058348ad09a5,4,Experiência na função na área hospitalar
+058348ad09a5,5,responsabilidade do JD (literal)
+058348ad09a5,6,Promover a interface contínua entre a equipe de T.I. e as áreas de negócio
+058348ad09a5,7,"Acompanhar e executar projetos de implantação, sustentação, melhorias e integrações entre os sistemas Tasy, PACS e demais sistemas integrados"
+058348ad09a5,8,"Garantir a sustentação, atualização, evolução e controle de versão das aplicações, aplicando boas práticas de governança, compliance e segurança da informação"
+058348ad09a5,9,"Garantir a aplicação da Política de Segurança da Informação no gerenciamento de acessos, perfis e permissões dentro dos sistemas operacionais"
+058348ad09a5,10,"Realizar sprints e acompanhar dailys, definindo, negociando e alinhando prazos de execução com os setores solicitantes"
+058348ad09a5,11,"Apoiar analistas no desenvolvimento e resolução de atividades de projetos, suporte e ordens de serviço"
+058348ad09a5,12,"Promover testes de homologação, ambiente piloto e mitigação de riscos em projetos de implantação e melhorias sistêmicas"
+058348ad09a5,13,Dominar e dar suporte técnico/orientação sobre o uso correto das ferramentas operacionais sob responsabilidade da T.I.
+058348ad09a5,14,"Definir e aplicar padrões institucionais de governança e arquitetura de dados para garantir a consistência, unicidade e confiabilidade da informação"
+058348ad09a5,15,"Coordenar e validar a construção de indicadores, dashboards e relatórios gerenciais e operacionais junto aos solicitantes das áreas de negócio"
+058348ad09a5,16,"Identificar e atuar na correção de dados conflitantes ou inconsistentes, articulando melhorias nos processos operacionais das pontas de coleta/entrada de dados"
+058348ad09a5,17,"Estabelecer padrões de desenvolvimento de relatórios e painéis, assegurando conformidade com boas práticas de mineração, extração (PL-SQL) e análise de dados"
+058348ad09a5,18,Acompanhar e analisar continuamente indicadores de desempenho (KPIs) operacionais e de negócio
+058348ad09a5,19,"Manter-se atualizado frente às mudanças de processos setoriais, legislações específicas e regulamentações do setor de saúde"
 05966c9e2e90,1,"Liderar e desenvolver o time de Dados & Analytics e IA, promovendo excelência técnica e colaboração"
 05966c9e2e90,2,"Atuar de forma cross junto aos times de FP&A, Compras, Contabilidade e Tributário"
 05966c9e2e90,3,"Garantir a governança, qualidade e confiabilidade dos dados da Diretoria Financeira"
@@ -153,6 +172,20 @@ id_publico,ordem,texto
 114623b8f0d7,12,"**Forte capacidade de liderança, influência e colaboração** com múltiplos stakeholders"
 114623b8f0d7,13,"Desenvolver e liderar o time … promovendo **formação de lideranças**, gestão de performance e evolução técnica"
 114623b8f0d7,14,"**Ensino superior completo em Tecnologia, Engenharia, Ciência da Computação ou áreas correlatas**"
+18b3fca35e6a,1,"Experiência consolidada em posição de Gerência de Dados e Analytics, liderando times e iniciativas de dados"
+18b3fca35e6a,2,"Experiência comprovada em gestão e desenvolvimento de equipes, incluindo acompanhamento de performance, priorização e distribuição de demandas"
+18b3fca35e6a,3,Experiência na gestão de demandas e projetos de Dados e Analytics em ambientes corporativos de grande porte
+18b3fca35e6a,4,"Conhecimento em ferramentas de visualização e BI, como Power BI, Looker ou Qlik"
+18b3fca35e6a,5,"Experiência com gestão de custos, orçamento ou capacidade financeira da área"
+18b3fca35e6a,6,Conhecimento de ambientes e soluções do Google Cloud / ecossistema Google
+18b3fca35e6a,7,Conhecimento em Snowflake
+18b3fca35e6a,8,Forte capacidade de relacionamento e comunicação com áreas de negócio e stakeholders executivos
+18b3fca35e6a,9,"*(diferencial)* ""Experiência em empresas de grande porte ou ambientes complexos e de alta volumetria de dados"
+18b3fca35e6a,10,"*(diferencial)* ""Vivência na estruturação ou transformação de áreas de Dados e Analytics"
+18b3fca35e6a,11,"*(diferencial)* ""Experiência com Data & AI, Analytics avançado ou iniciativas de Inteligência Artificial"
+18b3fca35e6a,12,"*(diferencial)* ""Conhecimento de práticas de governança, qualidade e estratégia de dados"
+18b3fca35e6a,13,"*(diferencial)* ""Experiência na gestão de fornecedores, contratos e parceiros de tecnologia"
+18b3fca35e6a,14,"*(diferencial)* ""Vivência no segmento de Saúde"
 193f6ffd8725,1,Liderar e desenvolver um time de engenheiros de dados e especialistas em IA
 193f6ffd8725,2,"Capacidade de realizar feedbacks estruturados, PDIs e avaliações de desempenho"
 193f6ffd8725,3,Habilidade para desenvolver talentos e construir times de alta performance
@@ -256,6 +289,20 @@ id_publico,ordem,texto
 2c9b6e526b6c,5,garantir decisões altamente precisas
 2c9b6e526b6c,6,democratizar o acesso à informação
 2c9b6e526b6c,7,"expansão da Loft"" (contexto de crescimento)"
+2ebd007e1e74,1,"Controladoria, informações gerenciais ou planejamento financeiro"
+2ebd007e1e74,2,DRE gerencial
+2ebd007e1e74,3,Orçamento
+2ebd007e1e74,4,Centros de custos e modelos de rateios
+2ebd007e1e74,5,"Supervisionar a análise do comparativo orçado x realizado"" (atribuição)"
+2ebd007e1e74,6,KPIs financeiros e operacionais
+2ebd007e1e74,7,Gestão administrativa de contratos
+2ebd007e1e74,8,"ERP - Desejável SAP"" (nice)"
+2ebd007e1e74,9,"Coordenar a manutenção e a evolução dos painéis de informações gerenciais no Power BI"" (atribuição)"
+2ebd007e1e74,10,"Visão sistêmica e orientação estratégica, com capacidade de conectar dados à tomada de decisão"
+2ebd007e1e74,11,"Proatividade e foco em melhoria contínua, automação e eficiência operacional"
+2ebd007e1e74,12,"Coordenar tecnicamente a equipe … promovendo o desenvolvimento técnico dos analistas"" (atribuição)"
+2ebd007e1e74,13,"Coordenar a elaboração de relatórios, análises e apresentações executivas para reuniões de Diretoria, Conselhos"" (atribuição)"
+2ebd007e1e74,14,"Atuar de forma integrada com as áreas Financeira, Contábil, Riscos, Compliance, TI e Auditoria"" (atribuição)"
 2f7a7a4bc6d9,1,"vaga de líder de equipe de dados"" · ""desafios relevantes de liderança"
 2f7a7a4bc6d9,2,coordenação de times multidisciplinares
 2f7a7a4bc6d9,3,conduzindo times e iniciativas estratégicas em serviços financeiros
@@ -322,6 +369,26 @@ id_publico,ordem,texto
 39f7c53fa832,11,"Atuar em parceria com as áreas … produtividade, eficiência e qualidade operacional"
 39f7c53fa832,12,"Desenvolver e engajar equipes de alta performance"" + ""Experiência em gestão e desenvolvimento de equipes"
 39f7c53fa832,13,O(a) profissional responderá diretamente à Diretoria de Operações
+3ca7df38280f,1,"Experiência sólida em People Analytics, Analytics, Business Intelligence, Data ou áreas correlatas"
+3ca7df38280f,2,Experiência liderando equipes multidisciplinares e projetos de transformação
+3ca7df38280f,3,Forte capacidade analítica aliada à visão estratégica de negócio
+3ca7df38280f,4,"Conhecimento em arquitetura de dados, modelagem, governança e indicadores"
+3ca7df38280f,5,"Experiência com plataformas analíticas, BI e soluções de dados"
+3ca7df38280f,6,"Vivência em transformação de processos, integração de sistemas e construção de capacidades analíticas"
+3ca7df38280f,7,Interesse e experiência na aplicação de Inteligência Artificial para geração de valor ao negócio
+3ca7df38280f,8,"Capacidade de atuar entre estratégia e execução, liderando transformações em ambientes complexos e de alta performance"
+3ca7df38280f,9,"Excelente comunicação, influência e relacionamento com diferentes stakeholders"
+3ca7df38280f,10,Inglês avançado ou fluente
+3ca7df38280f,11,Liderar a evolução da área de um modelo baseado em reporting para uma plataforma de dados e produtos analíticos escaláveis
+3ca7df38280f,12,"Evoluir modelos de dados capazes de conectar toda a jornada do colaborador, integrando Attraction, Development, Compensation, Performance, Mobility…"
+3ca7df38280f,13,Atuar como parceiro estratégico de HR Business Partners e lideranças do Banco… estudos executivos para apoiar discussões da alta liderança
+3ca7df38280f,14,Preparar a área para um modelo em que agentes inteligentes e analytics automatizados ampliem a capacidade analítica do RH
+3ca7df38280f,15,"Experiência em instituições financeiras ou empresas de alta performance"" (diferencial)"
+3ca7df38280f,16,"Vivência na construção ou transformação de áreas de People Analytics, Data ou Analytics"" (diferencial)"
+3ca7df38280f,17,"Experiência com Inteligência Artificial Generativa, agentes inteligentes, automação ou produtos de dados"" (diferencial)"
+3ca7df38280f,18,"Conhecimento em SAP, SuccessFactors, Power BI, SQL, Python, Databricks ou tecnologias similares"" (diferencial)"
+3ca7df38280f,19,"Experiência com arquitetura moderna de dados e Analytics"" (diferencial)"
+3ca7df38280f,20,"Espanhol"" (diferencial)"
 3cb95b96c576,1,Domínio em **SQL** e **Power BI** para construção de dashboards e análises
 3cb95b96c576,2,Experiência com **Python**
 3cb95b96c576,3,"**Spark**, arquitetura de dados e modelo **medalhão**"
@@ -449,6 +516,32 @@ id_publico,ordem,texto
 4716e757d303,16,"Diferencial — ""Experiência consistente em Data Science e Machine Learning"
 4716e757d303,17,"Diferencial — ""Boa capacidade de stakeholder management"
 4716e757d303,18,"Diferencial — ""Orientação a produto"
+47d6dbda888e,1,"Coordenar o time de BI LATAM, garantindo a entrega dos objetivos regionais"
+47d6dbda888e,2,"SQL avançado (queries complexas, views, stored procedures, modelagem e otimização)"" · ""Manter Jobs de SQL: modelagem, carga, otimização, criação de queries e views"
+47d6dbda888e,3,"Power BI avançado (DAX, medidas calculadas, modelagem de dados)"
+47d6dbda888e,4,"Experiência comprovada em BI/Analytics, com foco em consolidação de relatórios regionais, gestão de dados e/ou projetos de Data Warehouse"
+47d6dbda888e,5,"Experiência com Data Warehouse (ETL, modelagem dimensional, camadas de dados)"" · ""Integrar dados históricos de diferentes fontes, harmonizando campos, códigos e estruturas"
+47d6dbda888e,6,"Experiência com Governança de Dados (dicionários, regras de negócio, qualidade, catálogo)"" · ""catálogo de indicadores, dicionários de dados e convenções de nomenclatura"
+47d6dbda888e,7,"Realizar validações e reconciliações sistemáticas"" · ""Monitorar a qualidade dos dados, garantindo acessos adequados"
+47d6dbda888e,8,"Definir indicadores, regras de negócio e KPIs em conjunto com os stakeholders regionais"" · ""ponto de contato… com stakeholders nacionais da região e equipe corporativa"
+47d6dbda888e,9,"Executar análises ad hoc para a liderança regional (benchmarks entre países, análises de vendas, apresentações executivas)"
+47d6dbda888e,10,"Manter relatórios regionais (Ocupação, Yield, OPEX, TI, Jurídico, SAP…)"
+47d6dbda888e,11,"Manter e aprimorar relatórios de performance (campanhas, investimentos em mídia, KPIs de marketing)"
+47d6dbda888e,12,Participar ativamente das evoluções do roadmap do Data Warehouse LATAM
+47d6dbda888e,13,"Excel avançado (fórmulas complexas, tabelas dinâmicas, integração com BI/DWH)"
+47d6dbda888e,14,"Manter fluxos automatizados com Power Automate (ou ferramenta similar)"" · diferencial ""Power Automate ou ferramentas similares"
+47d6dbda888e,15,Inglês fluente essencial para reuniões com o time corporativo
+47d6dbda888e,16,Espanhol avançado ou fluente — essencial
+47d6dbda888e,17,Português avançado
+47d6dbda888e,18,"Diferencial: ""Snowflake"
+47d6dbda888e,19,"Diferencial: ""Certificação em BI"
+47d6dbda888e,20,"Diferencial: ""Francês"
+4a40d62842e0,1,Acompanhar a organização e a integridade das informações sob responsabilidade da área de sistemas e dados
+4a40d62842e0,2,Apoiar a equipe no atendimento às demandas operacionais relacionadas ao uso de sistemas e ao tratamento de informações
+4a40d62842e0,3,Contribuir para a padronização de rotinas e para a melhoria dos processos internos ligados à área de tecnologia
+4a40d62842e0,4,"Apoiar a comunicação entre as áreas usuárias e a equipe técnica, facilitando o alinhamento das necessidades do negócio"
+4a40d62842e0,5,Experiência: Necessário experiência
+4a40d62842e0,6,"Perfil organizado e colaborativo, com atenção à integração entre sistemas e dados"
 4c1f124fb9d7,1,Definir e implementar a estratégia de BI e Analytics
 4c1f124fb9d7,2,Liderar e desenvolver a equipe de BI
 4c1f124fb9d7,3,"qualidade, segurança, organização e governança dos dados"
@@ -524,6 +617,23 @@ id_publico,ordem,texto
 5760a6c0a513,11,"Marketing Analytics, Customer Analytics, CRM Analytics ou segmentação de clientes"
 5760a6c0a513,12,"Data Quality, Data Observability e Data Governance Frameworks"
 5760a6c0a513,13,iniciativas de monetização de dados e serviços analíticos
+5b6b571fdc3b,1,"**R01** — ""Experiência mínima de seis anos em Compliance, Ética ou Governança"
+5b6b571fdc3b,2,"**R02** — ""preferencialmente em uma organização multinacional ou em um escritório de advocacia de grande porte"
+5b6b571fdc3b,3,"**R03** — ""Conhecimento aprofundado de governança e gestão de dados"
+5b6b571fdc3b,4,"**R04** — ""…inteligência artificial, estratégias, frameworks…"
+5b6b571fdc3b,5,"**R05** — ""…e requisitos legais e regulatórios relacionados"
+5b6b571fdc3b,6,"**R06** — ""Experiência mínima de três anos com liderança de equipes"
+5b6b571fdc3b,7,"**R07** — ""…incluindo atuação com profissionais e stakeholders em diferentes localidades"
+5b6b571fdc3b,8,"**R08** — ""Capacidade de desenvolver uma visão estratégica e transformá-la em programas, políticas, padrões, controles e ações práticas"
+5b6b571fdc3b,9,"**R09** — ""Inglês fluente e excelente comunicação verbal, escrita e interpessoal"
+5b6b571fdc3b,10,"**R10** — ""…com capacidade de sintetizar análises jurídicas complexas"
+5b6b571fdc3b,11,"**R11** — ""Representar a área em comitês e grupos de trabalho, além de produzir orientações, treinamentos e conteúdos…"
+5b6b571fdc3b,12,"**R12** — ""Trabalhar em parceria com Riscos, Segurança da Informação, Jurídico, Responsible AI…"
+5b6b571fdc3b,13,"**R13** — ""Experiência na construção de relacionamentos profissionais com especialistas, clientes e **órgãos reguladores**"
+5b6b571fdc3b,14,"**R14** — ""Certificações em Privacidade de Dados, Governança de Dados, Auditoria, Inteligência Artificial ou Segurança da Informação"" (desejável)"
+5b6b571fdc3b,15,"**R15** — ""Experiência em gestão de projetos e capacidade de conduzir diferentes atividades e prioridades simultaneamente"" (desejável)"
+5b6b571fdc3b,16,"**R16** — ""Vivência no acompanhamento de tendências tecnológicas, jurídicas e regulatórias e na conversão dessas mudanças em requisitos aplicáveis"" (desejável)"
+5b6b571fdc3b,17,"**R17** — ""Disponibilidade para viagens, com previsão inferior a 10%"
 5e2e2c6840d0,1,"mínimo de 8 anos na área de Dados"" · ""3 anos em gestão formal"
 5e2e2c6840d0,2,gestão de orçamento e de contratos com fornecedores
 5e2e2c6840d0,3,apresentações… com diretoria
@@ -637,22 +747,6 @@ id_publico,ordem,texto
 69df8231cda0,15,"_diferencial_ ""Vivência em Antifraude, PLDFT, Gestão de Riscos ou Crimes Financeiros"
 69df8231cda0,16,"_diferencial_ ""FICO Platform, FICO Falcon, Feedzai, Graph Analytics e plataformas de prevenção à fraude e lavagem de dinheiro"
 69df8231cda0,17,"_diferencial_ ""Certificações em cloud"
-6b909fac421a,1,"Guide, and develop the Sales business Intelligence team, fostering collaboration, technical growth, and high-quality deliverables"" / ""Organize and prioritize team tasks"
-6b909fac421a,2,"Experience in Sales Intelligence, Business Intelligence, Market Intelligence, Business Analytics, CRM, or related areas"
-6b909fac421a,3,Strong analytical skills and experience working with various data sources and large volumes of data
-6b909fac421a,4,"Business acumen, with an understanding of commercial KPIs, revenue, margins, sales performance, and customer behavior"
-6b909fac421a,5,"Experience with customer analysis, segmentation, sales performance, or identifying business opportunities"
-6b909fac421a,6,"Ability to structure problems, investigate outcomes, and translate analyses into actionable business recommendations"
-6b909fac421a,7,"Advanced Excel proficiency and experience with data analysis and visualization tools, such as Power BI"
-6b909fac421a,8,Advanced English proficiency
-6b909fac421a,9,"Strong communication skills, with the ability to present analyses in a clear and objective manner"
-6b909fac421a,10,"Coordinate Sales Intelligence projects and deliverables, ensuring alignment with stakeholders"
-6b909fac421a,11,"*(desejável)* ""Knowledge of Customer Analytics methodologies, such as Customer Lifecycle, Customer Lifetime Value (LTV), RFM analysis, retention, and customer potential"
-6b909fac421a,12,"*(desejável)* ""Experience with Go-to-Market analysis, territory management, account allocation, and sales coverage"
-6b909fac421a,13,"*(desejável)* ""Knowledge of SQL and database manipulation"
-6b909fac421a,14,"*(desejável)* ""Familiarity with CRM, automation, and analytics tools, such as Dynamics 365, Power Platform, Python, or similar"
-6b909fac421a,15,"*(desejável)* ""Experience working with external market intelligence sources"
-6b909fac421a,16,"*(desejável)* ""Experience in the technology sector or B2B business"
 6db6aadbd3fc,1,"Liderar a estratégia de Dados e BI como parceiro habilitador do negócio, garantindo o alinhamento das iniciativas com os objetivos estratégicos"
 6db6aadbd3fc,2,"Construir e direcionar o roadmap de dados, identificando oportunidades, priorizando iniciativas e definindo entregas de curto, médio e longo prazo em parceria com as áreas de negócio"
 6db6aadbd3fc,3,"Liderar, desenvolver e engajar o time, promovendo uma cultura de colaboração, autonomia, aprendizado contínuo e alta performance, com foco no desenvolvimento técnico e comportamental das pessoas"
@@ -786,6 +880,19 @@ id_publico,ordem,texto
 81d7d887943d,13,"Desenvolvimento, acompanhamento e recomendações de agenda de testes/brandlifts"
 81d7d887943d,14,"Conhecimento em ferramentas de gestão e colaboração (Asana, Google Workspace e Slack)"
 81d7d887943d,15,Inglês e/ou espanhol fluente
+84289d6a3888,1,"Coordenar a área de Inteligência Comercial, atuando como PMO na gestão e priorização de projetos estratégicos da Diretoria Comercial"
+84289d6a3888,2,"Liderar o suporte às gerências comerciais, garantindo o alinhamento das demandas e a integração entre as áreas"
+84289d6a3888,3,"Gerenciar projetos de dados, inovação e inteligência comercial, assegurando qualidade, prazos e resultados"
+84289d6a3888,4,"Acompanhar indicadores, cronogramas e riscos, propondo melhorias e garantindo a efetividade das entregas"
+84289d6a3888,5,"Atuar de forma corporativa, conectando as necessidades das unidades de negócio às prioridades da Diretoria Comercial"
+84289d6a3888,6,Experiência no setor de saneamento
+84289d6a3888,7,"Experiência comprovada em gestão de projetos, preferencialmente como PMO"
+84289d6a3888,8,"Domínio de planejamento, priorização e acompanhamento de projetos, com autonomia na condução das entregas"
+84289d6a3888,9,Capacidade de articulação entre diferentes áreas e gestão de demandas simultâneas
+84289d6a3888,10,"Desejável — ""Conhecimento em projetos de dados, indicadores e inteligência comercial"
+84289d6a3888,11,"Desejável — ""Familiaridade com Power BI e Databricks"
+84289d6a3888,12,"Desejável — ""Conhecimento em Python, JSON e tecnologias correlatas"
+84289d6a3888,13,"Desejável — ""Vivência em soluções de dados e inteligência artificial"
 84ab51944e63,1,Experiência sólida em gestão de grandes equipes e atuação transversal em empresas
 84ab51944e63,2,"Background em estratégia, business ou planejamento, com forte capacidade de gerar insights de impacto"
 84ab51944e63,3,"Liderar, desenvolver e inspirar uma equipe ampla e diversa, garantindo (…) crescimento individual"
@@ -831,6 +938,22 @@ id_publico,ordem,texto
 871d66b1329d,16,"Diferencial: ""setor de logística, transporte ou plataformas B2B"
 871d66b1329d,17,"Diferencial: ""Databricks, MLflow, Spark e LightGBM/LambdaRank"
 871d66b1329d,18,"Diferencial: ""uso de LLMs como componente de soluções de Ciência de Dados, como extração de features de texto e classificação"
+896b67ac3163,1,"Guide, and develop the Sales business Intelligence team, fostering collaboration, technical growth, and high-quality deliverables"" / ""Organize and prioritize team tasks"
+896b67ac3163,2,"Experience in Sales Intelligence, Business Intelligence, Market Intelligence, Business Analytics, CRM, or related areas"
+896b67ac3163,3,Strong analytical skills and experience working with various data sources and large volumes of data
+896b67ac3163,4,"Business acumen, with an understanding of commercial KPIs, revenue, margins, sales performance, and customer behavior"
+896b67ac3163,5,"Experience with customer analysis, segmentation, sales performance, or identifying business opportunities"
+896b67ac3163,6,"Ability to structure problems, investigate outcomes, and translate analyses into actionable business recommendations"
+896b67ac3163,7,"Advanced Excel proficiency and experience with data analysis and visualization tools, such as Power BI"
+896b67ac3163,8,Advanced English proficiency
+896b67ac3163,9,"Strong communication skills, with the ability to present analyses in a clear and objective manner"
+896b67ac3163,10,"Coordinate Sales Intelligence projects and deliverables, ensuring alignment with stakeholders"
+896b67ac3163,11,"*(desejável)* ""Knowledge of Customer Analytics methodologies, such as Customer Lifecycle, Customer Lifetime Value (LTV), RFM analysis, retention, and customer potential"
+896b67ac3163,12,"*(desejável)* ""Experience with Go-to-Market analysis, territory management, account allocation, and sales coverage"
+896b67ac3163,13,"*(desejável)* ""Knowledge of SQL and database manipulation"
+896b67ac3163,14,"*(desejável)* ""Familiarity with CRM, automation, and analytics tools, such as Dynamics 365, Power Platform, Python, or similar"
+896b67ac3163,15,"*(desejável)* ""Experience working with external market intelligence sources"
+896b67ac3163,16,"*(desejável)* ""Experience in the technology sector or B2B business"
 8d64f833858f,1,"Estruturar e conduzir a estratégia de Business Intelligence e Inteligência de Mercado, definindo prioridades, roadmap, arquitetura de dados e práticas de governança alinhadas ao planejamento estratégico"
 8d64f833858f,2,"Liderar e desenvolver o time de BI e Dados, distribuindo demandas, acompanhando entregas, apoiando o desenvolvimento técnico da equipe"
 8d64f833858f,3,"Definir, em parceria com as áreas de negócio, os principais indicadores estratégicos, comerciais, financeiros e acadêmicos"
@@ -861,6 +984,21 @@ id_publico,ordem,texto
 8dd1645e3159,14,"Tiver participado da construção de produtos de Dados ou IA, e não apenas projetos de analytics e dashboards"
 8dd1645e3159,15,"Experiência em ambientes de transformação, ajudando a substituir processos e arquiteturas legadas"
 8dd1645e3159,16,"Acompanhar de perto a evolução de agentes de IA, LLMs e novas arquiteturas de Dados, com curiosidade para experimentar e discernimento para separar hype de impacto real"
+8e4e2a6e08ca,1,"Experiência na liderança de equipes de Dados, Analytics, BI ou Ciência de Dados"
+8e4e2a6e08ca,2,"Vivência em ambientes digitais, canais de relacionamento ou contextos omnicanal"
+8e4e2a6e08ca,3,"Conhecimento avançado em Denodo, Power BI e Google Analytics"
+8e4e2a6e08ca,4,"Conhecimento sólido em plataformas modernas de dados, especialmente Databricks e arquiteturas Lakehouse"
+8e4e2a6e08ca,5,"Experiência em modelagem, integração e análise de dados"
+8e4e2a6e08ca,6,"Conhecimento em governança, qualidade e observabilidade de dados"
+8e4e2a6e08ca,7,"Vivência com mensuração digital, análise comportamental e indicadores de performance"
+8e4e2a6e08ca,8,"Experiência na construção de dashboards executivos, produtos de dados e análises para tomada de decisão"
+8e4e2a6e08ca,9,Capacidade de transformar dados em insights estratégicos e direcionamentos acionáveis
+8e4e2a6e08ca,10,"Experiência em indicadores de adoção, engajamento, conversão, retenção e desempenho de canais"
+8e4e2a6e08ca,11,"Diferencial: ""Experiência com Inteligência Artificial, Machine Learning e Analytics Avançado"
+8e4e2a6e08ca,12,"Diferencial: ""Conhecimento em Google Tag Manager (GTM) e estratégias de mensuração digital"
+8e4e2a6e08ca,13,"Diferencial: ""Vivência com Customer Analytics e análise comportamental"
+8e4e2a6e08ca,14,"Diferencial: ""Experiência em construção de produtos de dados e ecossistemas self-service analytics"
+8e4e2a6e08ca,15,"Diferencial: ""Conhecimento do mercado financeiro e de estratégias de canais físicos e digitais"
 92d70e27d5fc,1,"Experiência em Data Governance, Data Management, Data Quality"
 92d70e27d5fc,2,"definição de políticas, padrões, processos e frameworks de Governança"
 92d70e27d5fc,3,"Data Quality, Metadata Management, Data Catalog, Data Lineage e Data Stewardship"
@@ -982,6 +1120,30 @@ a86aa478f23d,19,"*Nice:* ""prior experience working with international clients a
 a86aa478f23d,20,"*Nice:* ""background transitioning from product management, project management, or technical team leadership (e.g., squad leadership) into data product roles"
 a86aa478f23d,21,"*Nice:* ""experience with data governance practices"
 a86aa478f23d,22,"*Nice:* ""experience with additional cloud platform providers (AWS or GCP)"
+a8aab533d4a5,1,"Experiência prévia em liderança de times de ciência de dados, com atuação técnica preservada, não é uma posição de gestão sem prática técnica atual."
+a8aab533d4a5,2,"Vivência em marketplace, e-commerce ou plataformas digitais de alto volume de tráfego."
+a8aab533d4a5,3,"Domínio do ciclo completo de modelos, da concepção à operação em produção."
+a8aab533d4a5,4,"Experiência com produtos de busca, ordenação, recomendação ou personalização."
+a8aab533d4a5,5,Python e SQL em nível avançado.
+a8aab533d4a5,6,Capacidade de navegar em notebooks de terceiros e entender rapidamente código que não escreveu.
+a8aab533d4a5,7,Organizar o backlog de modelagem junto à liderança de dados do cliente e traduzir demanda de negócio em hipótese testável.
+a8aab533d4a5,8,"Definir padrões de desenvolvimento, validação e documentação de modelos."
+a8aab533d4a5,9,"Sustentar a interlocução com Produto e Marketing na definição de métricas, desenho de experimentos e leitura de resultados."
+a8aab533d4a5,10,"Desenvolver tecnicamente os cientistas do time, com acompanhamento individual e ritual de revisão."
+a8aab533d4a5,11,"Diferencial: ""Vivência em ambiente Databricks."
+a8aab533d4a5,12,"Diferencial: ""Experiência em desenho de experimentos e testes A/B em produto digital."
+a8aab533d4a5,13,"Diferencial: ""Passagem por área de dados em formação ou reestruturação."
+a8aab533d4a5,14,"Diferencial: ""Inglês em nível avançado."
+a96990790649,1,"Liderar e ser referência técnica para o time de Engenharia de Dados da área de pricing dinâmico, garantindo a qualidade das entregas"
+a96990790649,2,"Atuar em projetos estratégicos, auxiliando no desenho de soluções técnicas"
+a96990790649,3,Fazer a ponte entre a área de negócios e a equipe técnica
+a96990790649,4,"Estimular a inovação e o aprendizado contínuo, aplicando ferramentas e técnicas de IA sempre que possível"
+a96990790649,5,"Sólida experiência com arquitetura e engenharia de dados, principalmente atuando em ambiente Google (GCP)"
+a96990790649,6,"Experiência com melhores práticas de engenharia (observabilidade, governança, LGPD entre outras)"
+a96990790649,7,"desenvolvimento de software, versionamento com Git, documentação de projetos de dados e pipelines de CI/CD"
+a96990790649,8,"Experiência com criação de data lake, data warehouse e data marts"
+a96990790649,9,"Fluência nas seguintes linguagens e frameworks: Python, SQL e Apache Airflow"
+a96990790649,10,"*(contexto do cargo)* ""área de pricing dinâmico"
 a9fe18fb5e50,1,"SQL e Python em nível avançado, com capacidade de estruturar análises em grandes volumes de dados **transacionais**"" — parte SQL"
 a9fe18fb5e50,2,idem — parte **Python avançado**
 a9fe18fb5e50,3,capacidade de **revisar queries e scripts produzidos pela equipe**
@@ -1058,6 +1220,34 @@ b8b55390d066,15,LLMOps
 b8b55390d066,16,"IA Generativa (GenAI)"" + ""Plataformas de Inteligência Artificial"" + ""Apoiar iniciativas de inovação envolvendo IA Generativa, Machine Learning e plataformas corporativas de dados"
 b8b55390d066,17,"Promover a integração entre times de Arquitetura, Plataforma, Engenharia de Dados, IA e Value Streams"
 b8b55390d066,18,"Estruturar processos de documentação, compartilhamento de conhecimento e gestão de decisões arquiteturais"
+b9f166d0606b,1,"Experiência em BI, Dados ou Inteligência de Negócios"
+b9f166d0606b,2,Experiência com liderança ou coordenação de equipes/projetos
+b9f166d0606b,3,"Conhecimento em Power BI, SQL e Excel"
+b9f166d0606b,4,Visão analítica e capacidade de transformar dados em informações para tomada de decisão
+b9f166d0606b,5,"Perfil consultivo, organizado e orientado para resultados"
+b9f166d0606b,6,Boa comunicação e facilidade para relacionamento com clientes
+b9f166d0606b,7,Atuar aproximadamente 70% em gestão e 30% em atividades hands-on
+b9f166d0606b,8,Ser o principal ponto de contato de BI com o cliente
+b9f166d0606b,9,Conduzir projetos de BI de ponta a ponta
+b9f166d0606b,10,Apoiar projetos de dados em nuvem e automação de processos
+b9f166d0606b,11,Conhecimento em Trade Marketing e indicadores comerciais
+b9f166d0606b,12,Google BigQuery e/ou Azure
+b9f166d0606b,13,Automação de processos e Inteligência Artificial
+b9f166d0606b,14,Chatbots e automação de distribuição de relatórios
+bfbf2275a4cc,1,Experiência prévia em posição de liderança em Data Science / Analytics
+bfbf2275a4cc,2,Liderar e desenvolver o time de Data Scientists e Analytics
+bfbf2275a4cc,3,"Definir visão, roadmap e prioridades de projetos de dados"
+bfbf2275a4cc,4,"Sólidos conhecimentos em estatística, modelagem preditiva e machine learning"" / ""Traduzir problemas de negócio em hipóteses e modelos estatísticos/ML"
+bfbf2275a4cc,5,Atuação com Python e ferramentas de versionamento
+bfbf2275a4cc,6,Experiência com bancos de dados (SQL) e ambientes em nuvem
+bfbf2275a4cc,7,Capacidade de traduzir problemas de negócio em soluções de dados
+bfbf2275a4cc,8,"Garantir qualidade, governança e reprodutibilidade das análises"
+bfbf2275a4cc,9,"Atuar em parceria com Produto, Tecnologia e áreas de negócio"
+bfbf2275a4cc,10,Apresentar insights e resultados para diretoria e C-level
+bfbf2275a4cc,11,Contribuir para a evolução da cultura data-driven na empresa
+bfbf2275a4cc,12,"Inglês para leitura, escrita e interação com stakeholders"
+bfbf2275a4cc,13,"Diferencial — ""Atuação prévia em empresas data-driven de médio ou grande porte"
+bfbf2275a4cc,14,"Diferencial — ""Experiência com MLOps, pipelines de dados e experimentação (A/B tests)"
 c0b4d1c89c87,1,"Experiência prévia em posições de liderança em projetos de tecnologia, dados ou transformação digital"
 c0b4d1c89c87,2,Experiência em consultoria ou atuação direta com clientes corporativos de grande porte
 c0b4d1c89c87,3,Histórico em gestão de projetos complexos com múltiplas frentes de trabalho
@@ -1228,23 +1418,26 @@ e980dfcbcaaa,13,"Identificar oportunidades de automação, digitalização e oti
 e980dfcbcaaa,14,"~~R14~~|~~""Ensino Superior Completo em Engenharia, CC, SI, Estatística, Ciência de Dados, Administração ou correlatas""~~"
 e980dfcbcaaa,15,Inglês avançado
 e980dfcbcaaa,16,"Experiência sólida em Business Intelligence, Analytics e gestão de dados"
-e9cc93db8b62,1,"**R01** — ""Experiência mínima de seis anos em Compliance, Ética ou Governança"
-e9cc93db8b62,2,"**R02** — ""preferencialmente em uma organização multinacional ou em um escritório de advocacia de grande porte"
-e9cc93db8b62,3,"**R03** — ""Conhecimento aprofundado de governança e gestão de dados"
-e9cc93db8b62,4,"**R04** — ""…inteligência artificial, estratégias, frameworks…"
-e9cc93db8b62,5,"**R05** — ""…e requisitos legais e regulatórios relacionados"
-e9cc93db8b62,6,"**R06** — ""Experiência mínima de três anos com liderança de equipes"
-e9cc93db8b62,7,"**R07** — ""…incluindo atuação com profissionais e stakeholders em diferentes localidades"
-e9cc93db8b62,8,"**R08** — ""Capacidade de desenvolver uma visão estratégica e transformá-la em programas, políticas, padrões, controles e ações práticas"
-e9cc93db8b62,9,"**R09** — ""Inglês fluente e excelente comunicação verbal, escrita e interpessoal"
-e9cc93db8b62,10,"**R10** — ""…com capacidade de sintetizar análises jurídicas complexas"
-e9cc93db8b62,11,"**R11** — ""Representar a área em comitês e grupos de trabalho, além de produzir orientações, treinamentos e conteúdos…"
-e9cc93db8b62,12,"**R12** — ""Trabalhar em parceria com Riscos, Segurança da Informação, Jurídico, Responsible AI…"
-e9cc93db8b62,13,"**R13** — ""Experiência na construção de relacionamentos profissionais com especialistas, clientes e **órgãos reguladores**"
-e9cc93db8b62,14,"**R14** — ""Certificações em Privacidade de Dados, Governança de Dados, Auditoria, Inteligência Artificial ou Segurança da Informação"" (desejável)"
-e9cc93db8b62,15,"**R15** — ""Experiência em gestão de projetos e capacidade de conduzir diferentes atividades e prioridades simultaneamente"" (desejável)"
-e9cc93db8b62,16,"**R16** — ""Vivência no acompanhamento de tendências tecnológicas, jurídicas e regulatórias e na conversão dessas mudanças em requisitos aplicáveis"" (desejável)"
-e9cc93db8b62,17,"**R17** — ""Disponibilidade para viagens, com previsão inferior a 10%"
+ea694217175f,1,"Experiência sólida em posições de liderança em BI, Analytics, Data Intelligence ou áreas correlatas"
+ea694217175f,2,"preferencialmente nos segmentos de mídia, marketing, publicidade ou comunicação"
+ea694217175f,3,"Experiência na estruturação, evolução e gestão de operações de dados e analytics, incluindo planejamento de equipe, definição de prioridades, capacidade e gestão de entregas"
+ea694217175f,4,"Sólido conhecimento de mensuração de mídia e marketing, incluindo atribuição, audiências, CRM, martech, performance digital e integração de dados on-line e off-line"
+ea694217175f,5,"Liderar soluções de analytics aplicadas a marketing, mídia e negócios, incluindo atribuição, projeção de resultados, segmentação, Test & Learn, modelos preditivos e correlacionais, propensão, scoring e análises de incrementalidade"
+ea694217175f,6,"Capacidade de transformar dados e análises complexas em insights, recomendações estratégicas e oportunidades de negócio"
+ea694217175f,7,"Experiência em interlocução com clientes, board e lideranças seniores, com habilidade para apresentações executivas, influência e storytelling orientado por dados"
+ea694217175f,8,"Conhecimento sólido de plataformas de BI, visualização de dados e ambientes analíticos, como Power BI, Tableau, Looker Studio, BigQuery ou soluções equivalentes"
+ea694217175f,9,"Conhecimento de SQL, estruturas e integração de dados e ambientes de cloud analytics, com capacidade para dialogar e direcionar discussões técnicas"
+ea694217175f,10,"Conhecimento do ecossistema de mídia digital, incluindo lógica de planejamento, mensuração, compra e avaliação de performance"
+ea694217175f,11,"Assegurar a governança, integração, privacidade e qualidade dos dados, conectando fontes transacionais, plataformas de mídia, CRM, martech e ambientes analíticos"
+ea694217175f,12,"Liderar estratégias de audiências, segmentação e inteligência de mídia, ampliando o uso de dados proprietários e soluções de identidade"
+ea694217175f,13,"Impulsionar iniciativas de automação, inteligência artificial, machine learning e advanced analytics"
+ea694217175f,14,"Liderar e desenvolver equipe multidisciplinar, definindo estrutura, capacidade, prioridades e alocação de recursos"
+ea694217175f,15,"Traduzir temas técnicos, estatísticos e tecnológicos em narrativas claras, didáticas e executivas"
+ea694217175f,16,"Participar de discussões estratégicas, propostas comerciais, pitches e iniciativas de novos negócios"
+ea694217175f,17,"Atuar de forma integrada com as áreas de mídia, estratégia, performance, tecnologia, CRM e SEO, além de equipes regionais e globais"
+ea694217175f,18,"Diferencial: ""Experiência com advanced analytics, incluindo modelos preditivos e correlacionais, propensão, scoring, segmentação"
+ea694217175f,19,"Diferencial: ""Experiência com inteligência artificial, machine learning e automação aplicados a dados, marketing, mídia ou negócios"
+ea694217175f,20,"Diferencial: ""Conhecimento ou experiência com SEO, identity solutions, dados proprietários, Test & Learn e mensuração de incrementalidade"
 eb32a8d6fed4,1,Liderar a definição e a execução da visão e da estratégia **global** de dados da companhia
 eb32a8d6fed4,2,Experiência **executiva** liderando equipes de dados e de BI corporativo de altíssima volumetria
 eb32a8d6fed4,3,"Gestão de pessoas em nível gerencial, com recrutamento, avaliação e desenvolvimento de equipes técnicas"
@@ -1265,6 +1458,23 @@ eb32a8d6fed4,17,"*Diferencial:* ""frameworks de agentes e LLMs"
 eb32a8d6fed4,18,"*Diferencial:* ""CI/CD"
 eb32a8d6fed4,19,"*Diferencial:* ""Pós-graduação ou mestrado em IA ou Dados"
 eb32a8d6fed4,20,"*Diferencial:* ""Vivência em ambiente industrial ou de manufatura"
+eb584e0166a4,1,"Coordenar funcionalmente o time de dados, organizando demandas, prioridades, entregas"
+eb584e0166a4,2,"Desenvolver análises estratégicas para identificação de oportunidades de receita, redução de custos, eficiência operacional e mitigação de riscos"
+eb584e0166a4,3,"Construir, acompanhar e analisar indicadores de performance"" / ""Experiência com construção, acompanhamento e análise de indicadores"
+eb584e0166a4,4,"Desenvolver e evoluir dashboards gerenciais e executivos"" / ""Experiência com Power BI e EXCEL"
+eb584e0166a4,5,"Liderar estudos e análises envolvendo produtos, clientes e cobrança e segmentos PF"
+eb584e0166a4,6,"Estruturar análises para identificar oportunidades de melhoria na conversão, efetividade, contato com clientes e performance de cobrança"
+eb584e0166a4,7,"Avaliar processos operacionais a partir de dados, propondo mudanças que promovam eficiência"
+eb584e0166a4,8,"Atuar de forma transversal com áreas de Negócios, Operações e Tecnologia"
+eb584e0166a4,9,"Estruturar e fortalecer práticas de governança de dados, indicadores, controles"" / ""Conhecimento de conceitos e práticas de governança e qualidade de dados"
+eb584e0166a4,10,"Identificar inconsistências em dados, regras de negócio e processos, conduzindo análises de causa"
+eb584e0166a4,11,"Gerenciar backlog de melhorias analíticas, sistêmicas e de automação"
+eb584e0166a4,12,Desenvolver materiais executivos e apresentar resultados… para comitês e fóruns executivos
+eb584e0166a4,13,Apoiar a automação de processos e controles por meio de ferramentas de dados e automação
+eb584e0166a4,14,"Conhecimento avançado em SQL para extração, tratamento e análise de grandes volumes de dados"
+eb584e0166a4,15,Experiência ou conhecimento em Databricks e ambientes de processamento e análise de dados
+eb584e0166a4,16,"Conhecimento na linguagem Python, conhecer do ecossistema das bibliotecas"
+eb584e0166a4,17,Diferencial: Power Automate
 eb93f09408dd,1,"Definir estratégia de Transformação, tecnologia, dados e AI"
 eb93f09408dd,2,Estruturar áreas e programas de transformação de dados e AÍ
 eb93f09408dd,3,Realizar a gestão de portfólio e outras atividades incluindo desenho de processos e governança
@@ -1277,6 +1487,21 @@ eb93f09408dd,9,Experiência sólida em empresas de consultoria
 eb93f09408dd,10,Experiência no cargo de Gerente
 eb93f09408dd,11,Disponibilidade para viagens
 eb93f09408dd,12,"Disponibilidade para atuar no modelo de trabalho híbrido em São Paulo, no Rio de Janeiro ou em Belo Horizonte"
+ef266797c9f2,1,Experiência em gestão e desenvolvimento de profissionais de dados
+ef266797c9f2,2,"Experiência com pipelines ETL/ELT, SQL e modelagem de dados relacional e dimensional"
+ef266797c9f2,3,"Experiência sólida com Power BI, incluindo modelagem, DAX e desenvolvimento de soluções analíticas"
+ef266797c9f2,4,"Experiência com arquiteturas modernas de dados, como Data Lake e Lakehouse"
+ef266797c9f2,5,"Experiência com serviços de dados em Microsoft Azure, como Data Factory, Synapse, Databricks ou tecnologias equivalentes"
+ef266797c9f2,6,"Conhecimentos de governança de dados, qualidade, segurança, catálogo e linhagem"
+ef266797c9f2,7,Capacidade de interação com áreas de negócio e tecnologia
+ef266797c9f2,8,"Garantir boas práticas de desenvolvimento, versionamento, CI/CD, monitoramento e sustentação"" (responsabilidade)"
+ef266797c9f2,9,"Gerenciar demandas e iniciativas de dados, organizando prioridades…"" (responsabilidade)"
+ef266797c9f2,10,"Diferencial: ""Experiência com Microsoft Fabric, OneLake e integração com Power BI"
+ef266797c9f2,11,"Diferencial: ""Experiência com Microsoft Purview ou outras soluções de governança de dados"
+ef266797c9f2,12,"Diferencial: ""Conhecimento de arquitetura Medallion, Data Products e FinOps"
+ef266797c9f2,13,"Diferencial: ""Experiência com integrações entre APIs, bancos de dados, sistemas e ambientes em nuvem"
+ef266797c9f2,14,"Diferencial: ""Certificações Microsoft relacionadas a Fabric, Azure ou Power BI"
+ef266797c9f2,15,"Diferencial: ""Inglês intermediário ou avançado"
 ef3018eca8b0,1,"Liderar o time de Data Analytics, garantindo entregas de alta qualidade e alinhadas aos objetivos estratégicos"
 ef3018eca8b0,2,"Gerir um time responsável por gerar insights para o negócio, estruturando e evoluindo métricas de performance, dashboards e análises de suporte à decisão"
 ef3018eca8b0,3,Conduzir análises exploratórias e diagnósticas para apoiar a tomada de decisão
@@ -1299,6 +1524,25 @@ ef3018eca8b0,19,"*(plus)* ""metodologias ágeis na gestão de demandas analític
 ef3018eca8b0,20,"*(plus)* ""projetos de Machine Learning ou analytics avançado"
 ef3018eca8b0,21,"*(plus)* ""Certificações em cloud, BI ou engenharia de dados"
 ef3018eca8b0,22,"*(plus)* ""Experiência em empresas do setor financeiro, imobiliário ou de crédito"
+ef601e1daee2,1,"Liderar análises de performance de canais, polos, gestores e equipes comerciais."
+ef601e1daee2,2,"Transformar dados em diagnósticos, recomendações e planos de ação."
+ef601e1daee2,3,"Estruturar scorecards, indicadores e fóruns executivos de acompanhamento."
+ef601e1daee2,4,"Garantir consistência na construção, validação e acompanhamento de metas."
+ef601e1daee2,5,"Identificar tendências, riscos, oportunidades e causas dos desvios de performance."
+ef601e1daee2,6,"Acompanhar pipeline, conversão, produtividade e resultado de campanhas comerciais."
+ef601e1daee2,7,"Apresentar análises complexas de forma simples, objetiva e acionável."
+ef601e1daee2,8,"Desenvolver o time em pensamento analítico, estatística aplicada e storytelling com dados."
+ef601e1daee2,9,"Experiência em Analytics, Inteligência Comercial, Planejamento ou Sales Operations."
+ef601e1daee2,10,Forte capacidade analítica e visão de negócio.
+ef601e1daee2,11,Domínio de Excel e Power BI.
+ef601e1daee2,12,Conhecimento de SQL para exploração e validação dos dados.
+ef601e1daee2,13,"Experiência com metas, pipeline, produtividade, forecast ou campanhas."
+ef601e1daee2,14,Comunicação executiva e capacidade de influenciar decisões.
+ef601e1daee2,15,Experiência em liderança de pessoas ou projetos analíticos.
+ef601e1daee2,16,"Estatística aplicada, testes A/B ou mensuração de impacto."" (desejável)"
+ef601e1daee2,17,"Python ou outras ferramentas de análise."" (desejável)"
+ef601e1daee2,18,"Modelos preditivos, segmentação ou propensão."" (desejável)"
+ef601e1daee2,19,"Vivência em meios de pagamento, adquirência, bancos ou varejo."" (desejável)"
 ef85be178155,1,Excellent level of English C1 or above
 ef85be178155,2,Proven team leadership skills with a hands-on approach
 ef85be178155,3,"Lead cross-functional teams, including data scientists, engineers, and analytics specialists"
@@ -1328,3 +1572,20 @@ f05442a27a90,10,"plataformas de dados em cloud"" · ""integração entre sistema
 f05442a27a90,11,"dashboards e apoio à tomada de decisão"" · ""padronizar métricas entre áreas"
 f05442a27a90,12,"comunicação… áreas não técnicas"" · ""ponte entre dados e decisões"
 f05442a27a90,13,"Dif.: espanhol · cert. Databricks · BigQuery · dados de CRM/marketing · múltiplas unidades · métricas (churn, conversão) · IA/ML · automação"
+ffd2b47ded5c,1,Liderar a estruturação e a evolução das bases e camadas analíticas da área
+ffd2b47ded5c,2,"Definir padrões de modelagem, qualidade, documentação e governança de dados"
+ffd2b47ded5c,3,"Priorizar e acompanhar a construção de queries, pipelines, automações e dashboards"
+ffd2b47ded5c,4,Garantir rastreabilidade e consistência entre a origem do dado e o indicador executivo
+ffd2b47ded5c,5,Reduzir rotinas manuais e criar soluções escaláveis para o time
+ffd2b47ded5c,6,"Atuar em parceria com áreas de Dados, BI, Tecnologia, Planejamento e Comercial"
+ffd2b47ded5c,7,Desenvolver tecnicamente o time e estimular boas práticas de engenharia e análise de dados
+ffd2b47ded5c,8,"Experiência em Dados, BI, Analytics Engineering ou áreas relacionadas"
+ffd2b47ded5c,9,Conhecimento em SQL avançado e experiência com modelagem de dados
+ffd2b47ded5c,10,Conhecimento de Power BI e processos de ETL/ELT
+ffd2b47ded5c,11,"Experiência com qualidade, governança e documentação de dados"
+ffd2b47ded5c,12,Capacidade de traduzir necessidades de negócio em soluções técnicas
+ffd2b47ded5c,13,"Experiência em liderança de pessoas, projetos ou frentes técnicas"
+ffd2b47ded5c,14,"Diferencial: ""Python e automação de rotinas"
+ffd2b47ded5c,15,"Diferencial: ""Ambientes de dados em nuvem e Amazon Redshift"
+ffd2b47ded5c,16,"Diferencial: ""Conhecimento de versionamento e monitoramento de pipelines"
+ffd2b47ded5c,17,"Diferencial: ""Vivência com dados comerciais, financeiros ou meios de pagamento"
