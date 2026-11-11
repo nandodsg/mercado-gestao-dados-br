@@ -27,8 +27,15 @@ GATEWAY_URL = "https://ai-gateway.vercel.sh/v1"
 PRECOS = {
     "google/gemini-4-argon": {"input": 2.20, "output": 11.00, "cache_read": 0.11},
     "spacexai/grok-4.7": {"input": 2.20, "output": 6.60, "cache_read": 0.55},
+    # candidatos do Item 6 (preço de tabela do gateway em 2026-11-11; o custo gravado vem do `usage.cost` dele)
+    "openai/gpt-5.4-mini": {"input": 0.75, "output": 4.50, "cache_read": 0.075},
+    "openai/gpt-oss-120b": {"input": 0.10, "output": 0.50, "cache_read": 0.10},
+    "anthropic/claude-haiku-5.5": {"input": 0.10, "output": 0.50, "cache_read": 0.01},
 }
-ROTULADORES_GATEWAY = sorted(PRECOS)
+ROTULADORES_GATEWAY = ["google/gemini-4-argon", "spacexai/grok-4.7"]  # rotularam a referência (Item 5)
+CANDIDATOS_GATEWAY = ["openai/gpt-5.4-mini", "openai/gpt-oss-120b", "anthropic/claude-haiku-5.5"]  # medidos no Item 6
+JEV_MODELOS = ["jev-1.13.0", "jev-1.14.0"]  # pela API da TypeSafe (D10); US$ 42 por bilhão de tokens de entrada
+JEV_USD_POR_TOKEN = 42e-9
 OPUS = "claude-opus-5-5"  # rotula na sessão do Claude Code (assinatura), sem passar pelo gateway
 
 load_dotenv(RAIZ / ".env")  # sem override: o .env nunca troca uma variável já definida
@@ -71,6 +78,19 @@ def registrar_gasto(rodada: str, passo: str, modelo: str, usage) -> float:
                         "tokens_cache", "usd"])
         w.writerow([dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"), rodada, passo, modelo,
                     *tokens(usage), f"{custo:.4f}"])
+    return custo
+
+
+def registrar_gasto_direto(rodada: str, passo: str, modelo: str, entrada: int, saida: int, custo: float) -> float:
+    """Gasto de API que não passa pelo gateway (Jev, pela TypeSafe): tokens e US$ já calculados."""
+    novo = not GASTOS.exists()
+    with GASTOS.open("a", newline="", encoding="utf-8") as f:
+        w = csv.writer(f, lineterminator="\n")
+        if novo:
+            w.writerow(["registrado_em_utc", "rodada", "passo", "modelo", "tokens_entrada", "tokens_saida",
+                        "tokens_cache", "usd"])
+        w.writerow([dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"), rodada, passo, modelo,
+                    entrada, saida, 0, f"{custo:.4f}"])
     return custo
 
 

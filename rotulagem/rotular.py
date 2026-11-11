@@ -16,10 +16,11 @@ import argparse
 import csv
 import json
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor
 
 import taxonomia
-from common import (AMOSTRA, OPUS, PRECOS, ROTULADORES_GATEWAY, SAIDA, RAIZ, gasto_total, gateway_client, gravar_json,
+from common import (AMOSTRA, CANDIDATOS_GATEWAY, OPUS, PRECOS, ROTULADORES_GATEWAY, SAIDA, RAIZ, gasto_total, gateway_client, gravar_json,
                     ler_json, registrar_gasto, slug)
 
 ESFORCO = "medium"
@@ -94,6 +95,22 @@ def validar_resultado(resultado: dict, vaga: dict) -> None:
             raise ValueError(f"linha {l['ordem']}: setor {l['setor']!r} não combina com os itens")
 
 
+def reparar(resultado: dict) -> int:
+    """Conserta só inconsistência de forma entre campos que não muda o julgamento (candidatos do Item 6); devolve quantas.
+
+    Texto de `outro` sem o item `outro` (ou o contrário) e setor preenchido sem o item de setor. Item errado, natureza
+    errada, linha faltando e contexto com item continuam sendo erro: a vaga não é salva e conta contra o candidato."""
+    n = 0
+    for l in resultado.get("linhas", []):
+        if "outro" in l["itens"] and not l["outro"].strip():
+            l["outro"], n = "(sem descrição)", n + 1
+        elif "outro" not in l["itens"] and l["outro"].strip():
+            l["outro"], n = "", n + 1
+        if l["setor"] != "nenhum" and "experiencia.setor" not in l["itens"]:
+            l["setor"], n = "nenhum", n + 1
+    return n
+
+
 def analisar(texto: str) -> dict:
     texto = texto.strip()
     if texto.startswith("```"):  # alguns provedores embrulham o JSON em cerca de código mesmo com esquema
@@ -120,7 +137,9 @@ def contar(conjunto: str, modelo: str) -> None:
 
 def chamar(cliente, vaga: dict, modelo: str):
     try:
+        t0 = time.monotonic()
         r = cliente.chat.completions.create(**requisicao(vaga, modelo))
+        r.latencia_s = round(time.monotonic() - t0, 1)  # com 1 trabalhador, o tempo de uma chamada sozinha
         return r
     except Exception as e:  # uma chamada que falha não derruba a rodada; ela é refeita na próxima
         return e
@@ -157,13 +176,14 @@ def rodar(conjunto: str, modelo: str, max_usd: float, trabalhadores: int) -> Non
                     continue
                 try:
                     resultado = analisar(escolha.message.content or "")
+                    reparos = reparar(resultado) if modelo in CANDIDATOS_GATEWAY else 0
                     validar_resultado(resultado, vaga)
                 except (ValueError, KeyError, json.JSONDecodeError) as e:
                     print(f"    não salva: {e}")
                     continue
                 feitas[vaga["id_publico"]] = {
                     "versao_taxonomia": versao, "rotulador": modelo, "servido_por": saida.model or modelo,
-                    "esforco": ESFORCO, "usd": round(custo, 4), "uso": saida.usage.model_dump(), **resultado}
+                    "esforco": ESFORCO, "usd": round(custo, 4), "latencia_s": getattr(saida, "latencia_s", None), "reparos": reparos, "uso": saida.usage.model_dump(), **resultado}
             gravar_json(destino, feitas)
     gravar_json(destino, feitas)
     print(f"US$ {gasto:.2f} nesta rodada (US$ {gasto_total():.2f} no total da rotulagem); "
@@ -196,7 +216,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("modo", choices=["contar", "rodar", "validar"])
     parser.add_argument("--conjunto", required=True, choices=["pratica", "referencia"])
-    parser.add_argument("--modelo", required=True, choices=[*ROTULADORES_GATEWAY, OPUS])
+    parser.add_argument("--modelo", required=True, choices=[*ROTULADORES_GATEWAY, *CANDIDATOS_GATEWAY, OPUS])
     parser.add_argument("--trabalhadores", type=int, default=1, help="rodar: chamadas ao mesmo tempo")
     parser.add_argument("--max-usd", type=float, help="rodar: para de começar chamadas ao passar disso")
     args = parser.parse_args()

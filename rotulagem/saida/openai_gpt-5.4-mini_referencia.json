@@ -1,0 +1,4738 @@
+{
+  "193f6ffd8725": {
+    "versao_taxonomia": "ed47eaa18707",
+    "rotulador": "openai/gpt-5.4-mini",
+    "servido_por": "openai/gpt-5.4-mini",
+    "esforco": "medium",
+    "usd": 0.0252,
+    "latencia_s": 28.1,
+    "reparos": 0,
+    "uso": {
+      "completion_tokens": 4255,
+      "prompt_tokens": 8095,
+      "total_tokens": 12350,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 2926,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.02521875,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.02521875,
+      "gateway_cost": 0.02521875
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.multidisciplinar",
+          "pessoas.desenvolver_pessoas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"Liderar e desenvolver\" indica gestão, desenvolvimento e um time com perfis diferentes."
+      },
+      {
+        "ordem": 2,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.projetos_portfolio",
+          "negocio.roadmap_priorizacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"Coordenar a entrega de projetos\" e \"prioridades do negócio\" pedem portfólio e priorização."
+      },
+      {
+        "ordem": 3,
+        "natureza": "responsabilidade",
+        "itens": [
+          "gov.qualidade"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"qualidade e a consistência dos dados\" aponta diretamente para qualidade de dados."
+      },
+      {
+        "ordem": 4,
+        "natureza": "responsabilidade",
+        "itens": [
+          "ia.ciencia_dados_ml",
+          "ia.mlops"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"modelos de Machine Learning\" e \"colocação em produção\" citam ML e operação de modelos."
+      },
+      {
+        "ordem": 5,
+        "natureza": "responsabilidade",
+        "itens": [
+          "eng.boas_praticas",
+          "eng.observabilidade_operacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"documentação, versionamento\" e \"monitoramento de pipelines\" indicam boas práticas e observabilidade."
+      },
+      {
+        "ordem": 6,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.stakeholders",
+          "negocio.visao_negocio",
+          "comportamento.comunicacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"Interagir com stakeholders\" e \"traduzindo necessidades de negócio\" pedem articulação e tradução negócio-técnica."
+      },
+      {
+        "ordem": 7,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.contratar_estruturar"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"processos de recrutamento e seleção\" para \"expandir o time\" indicam contratação/estruturação."
+      },
+      {
+        "ordem": 8,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.comunicacao_executiva",
+          "negocio.estrategia"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"Reportar resultados, riscos e oportunidades\" à gerência remete a comunicação de liderança e visão estratégica."
+      },
+      {
+        "ordem": 9,
+        "natureza": "requisito",
+        "itens": [
+          "formacao.graduacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"Graduação em... ou áreas correlatas\" pede formação superior."
+      },
+      {
+        "ordem": 10,
+        "natureza": "requisito",
+        "itens": [
+          "eng.arquitetura"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"arquitetura de dados\" e \"Data Lakehouse, Data Mesh, Data Warehouse\" são arquitetura de dados."
+      },
+      {
+        "ordem": 11,
+        "natureza": "requisito",
+        "itens": [
+          "eng.pipelines"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"pipelines de dados (ETL/ELT)\" define engenharia de pipelines."
+      },
+      {
+        "ordem": 12,
+        "natureza": "requisito",
+        "itens": [
+          "outro"
+        ],
+        "outro": "linguagens de programação e consulta",
+        "setor": "nenhum",
+        "motivo": "\"Python e SQL\" não encaixam em item específico da taxonomia."
+      },
+      {
+        "ordem": 13,
+        "natureza": "requisito",
+        "itens": [
+          "eng.plataforma_cloud"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"plataformas de nuvem\" e \"serviços de dados\" pedem plataforma cloud."
+      },
+      {
+        "ordem": 14,
+        "natureza": "requisito",
+        "itens": [
+          "ia.mlops",
+          "ia.ciencia_dados_ml"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"práticas de MLOps\" e \"deploy de modelos de Machine Learning\" citam operação de modelos."
+      },
+      {
+        "ordem": 15,
+        "natureza": "requisito",
+        "itens": [
+          "gov.governanca",
+          "gov.qualidade",
+          "gov.catalogo_linhagem"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"governança\", \"qualidade\" e \"catálogo de dados\" correspondem aos três itens."
+      },
+      {
+        "ordem": 16,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.desenvolver_pessoas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"feedbacks\", \"PDIs\" e \"avaliações de desempenho\" são desenvolvimento de pessoas."
+      },
+      {
+        "ordem": 17,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.desenvolver_pessoas",
+          "pessoas.contratar_estruturar"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"desenvolver talentos\" e \"construir times\" indicam desenvolvimento e estruturação de equipe."
+      },
+      {
+        "ordem": 18,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.projetos_portfolio",
+          "negocio.roadmap_priorizacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"múltiplos projetos simultâneos\" com \"priorização estratégica\" pedem portfólio e priorização."
+      },
+      {
+        "ordem": 19,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.estrategia"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"Visão estratégica\" é a formulação explícita de estratégia."
+      },
+      {
+        "ordem": 20,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.visao_negocio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"traduzir necessidades de negócio em soluções técnicas\" é visão de negócio."
+      },
+      {
+        "ordem": 21,
+        "natureza": "requisito",
+        "itens": [
+          "experiencia.setor"
+        ],
+        "outro": "",
+        "setor": "tecnologia e software",
+        "motivo": "\"empresas de tecnologia\" aponta experiência no setor de tecnologia e software."
+      },
+      {
+        "ordem": 22,
+        "natureza": "requisito",
+        "itens": [
+          "formacao.pos"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"Pós-graduação ou MBA\" pede formação de pós-graduação."
+      }
+    ]
+  },
+  "0c209e36504e": {
+    "versao_taxonomia": "ed47eaa18707",
+    "rotulador": "openai/gpt-5.4-mini",
+    "servido_por": "openai/gpt-5.4-mini",
+    "esforco": "medium",
+    "usd": 0.0288,
+    "latencia_s": 38.2,
+    "reparos": 0,
+    "uso": {
+      "completion_tokens": 5962,
+      "prompt_tokens": 8625,
+      "total_tokens": 14587,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 4660,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 6656,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.02880495,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.02880495,
+      "gateway_cost": 0.02880495
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.multidisciplinar",
+          "pessoas.desenvolver_pessoas",
+          "pessoas.liderar_lideres"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Liderar equipes”, feedbacks, 1:1s e PDIs indicam liderança, time multidisciplinar, desenvolvimento e gestão de líderes."
+      },
+      {
+        "ordem": 2,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.stakeholders"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“gestão e alinhamento” com parceiros, fornecedores e stakeholders, além de influenciar áreas pares."
+      },
+      {
+        "ordem": 3,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.orcamento_fornecedores"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita orçamento da área, OPEX/CAPEX, contratos, fornecedores e licenciamento."
+      },
+      {
+        "ordem": 4,
+        "natureza": "responsabilidade",
+        "itens": [
+          "gov.qualidade",
+          "eng.observabilidade_operacao",
+          "eng.plataforma_cloud",
+          "negocio.finops"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Data Quality”, “Observabilidade ponta a ponta” e “FinOps” apontam qualidade, operação e custo de plataforma."
+      },
+      {
+        "ordem": 5,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.produto_dados",
+          "analytics.bi_dashboards",
+          "analytics.analise_insights",
+          "negocio.cultura_dados"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“produtos de dados”, “relatórios executivos e dashboards” e capacitação para autonomia indicam produto, BI, insights e cultura."
+      },
+      {
+        "ordem": 6,
+        "natureza": "requisito",
+        "itens": [
+          "formacao.graduacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Graduação completa” explicita formação superior."
+      },
+      {
+        "ordem": 7,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.digital_analytics"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "A linha pede experiência em “Digital Analytics” como disciplina principal."
+      },
+      {
+        "ordem": 8,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.ageis",
+          "analytics.kpis_metricas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Scrum, Kanban” e métricas de produtividade/produto marcam ágil e indicadores."
+      },
+      {
+        "ordem": 9,
+        "natureza": "requisito",
+        "itens": [
+          "eng.software_sistemas",
+          "eng.integracao",
+          "analytics.automacao",
+          "eng.boas_praticas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“programação backend”, “serviços”, “integração” e “automações de esteira DataOps” citam software, integração, automação e DataOps."
+      },
+      {
+        "ordem": 10,
+        "natureza": "requisito",
+        "itens": [
+          "eng.plataforma_cloud",
+          "eng.big_data",
+          "eng.arquitetura"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Big Data em Nuvem” e “Data Lake, Data Warehouse, Data Mesh” indicam cloud, larga escala e arquitetura."
+      },
+      {
+        "ordem": 11,
+        "natureza": "requisito",
+        "itens": [
+          "eng.big_data",
+          "eng.streaming"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“grande escala” e “NRT/Streaming Analytics” apontam big data e streaming."
+      },
+      {
+        "ordem": 12,
+        "natureza": "requisito",
+        "itens": [
+          "eng.pipelines"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“orquestradores de pipelines” e “transformação de dados” citam engenharia de pipelines."
+      },
+      {
+        "ordem": 13,
+        "natureza": "requisito",
+        "itens": [
+          "outro"
+        ],
+        "outro": "SQL e Python analíticos",
+        "setor": "nenhum",
+        "motivo": "Só aparecem linguagens e manipulação de dados, sem item específico na taxonomia."
+      },
+      {
+        "ordem": 14,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.marketing_cliente",
+          "analytics.experimentacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“MMM”, “MTA”, “CRO” e “AB Testing” indicam marketing analytics e experimentação."
+      },
+      {
+        "ordem": 15,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.bi_dashboards",
+          "comportamento.comunicacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“BI e dashboards” e “Data Storytelling para lideranças” pedem visualização e comunicação."
+      },
+      {
+        "ordem": 16,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Apenas o título da seção “Diferenciais”, sem exigência própria."
+      },
+      {
+        "ordem": 17,
+        "natureza": "requisito",
+        "itens": [
+          "formacao.pos"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Pós-graduação, MBA ou especializações” caracteriza formação pós-graduada."
+      },
+      {
+        "ordem": 18,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.marketing_cliente"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“CDP”, “MMP” e ativação/personalização de audiências remetem a marketing e cliente."
+      },
+      {
+        "ordem": 19,
+        "natureza": "requisito",
+        "itens": [
+          "gov.governanca",
+          "gov.qualidade"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“DAMA-DMBOK, TDQM, CRISP-DM” são frameworks de governança e qualidade de dados."
+      },
+      {
+        "ordem": 20,
+        "natureza": "requisito",
+        "itens": [
+          "eng.plataforma_cloud"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“soluções de dados sobre OCI e/ou AWS” pede experiência em plataforma cloud."
+      },
+      {
+        "ordem": 21,
+        "natureza": "requisito",
+        "itens": [
+          "formacao.certificacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Certificações em Cloud” e em engenharia de dados indicam certificações técnicas."
+      }
+    ]
+  },
+  "19534183f233": {
+    "versao_taxonomia": "ed47eaa18707",
+    "rotulador": "openai/gpt-5.4-mini",
+    "servido_por": "openai/gpt-5.4-mini",
+    "esforco": "medium",
+    "usd": 0.029,
+    "latencia_s": 37.4,
+    "reparos": 0,
+    "uso": {
+      "completion_tokens": 6050,
+      "prompt_tokens": 8326,
+      "total_tokens": 14376,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 4234,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 6656,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.0289767,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.0289767,
+      "gateway_cost": 0.0289767
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "responsabilidade",
+        "itens": [
+          "eng.observabilidade_operacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“gestão dos sistemas” e “monitoramento” apontam para operação e observabilidade da plataforma."
+      },
+      {
+        "ordem": 2,
+        "natureza": "responsabilidade",
+        "itens": [
+          "gov.qualidade",
+          "eng.observabilidade_operacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“integridade” é qualidade de dados; “disponibilidade” e “confiabilidade” indicam sustentação operacional."
+      },
+      {
+        "ordem": 3,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.kpis_metricas",
+          "analytics.analise_insights"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“indicadores” e “identificação de desvios” pedem métricas e análise de comportamento."
+      },
+      {
+        "ordem": 4,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.analise_insights",
+          "analytics.bi_dashboards"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“análises”, “estudos de tendências” e “relatórios gerenciais” pedem insight e BI."
+      },
+      {
+        "ordem": 5,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.analise_insights",
+          "negocio.processos_melhoria"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“avaliações críticas” e “planos de ação” combinam análise com melhoria contínua."
+      },
+      {
+        "ordem": 6,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.stakeholders"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“parceiro estratégico” das áreas indica articulação com stakeholders internos."
+      },
+      {
+        "ordem": 7,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.automacao",
+          "negocio.transformacao_inovacao",
+          "negocio.processos_melhoria",
+          "negocio.projetos_portfolio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“automação”, “digitalização”, “melhoria contínua” e “liderar projetos” aparecem explicitamente."
+      },
+      {
+        "ordem": 8,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.projetos_portfolio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“estruturar projetos” e avaliar viabilidade apontam gestão de iniciativas."
+      },
+      {
+        "ordem": 9,
+        "natureza": "responsabilidade",
+        "itens": [
+          "eng.integracao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“integração entre plataformas” e “sistemas” descrevem integração de fontes e ambientes."
+      },
+      {
+        "ordem": 10,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.analise_insights",
+          "analytics.kpis_metricas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“análise de dados” e “indicadores de desempenho” pedem análise e métricas."
+      },
+      {
+        "ordem": 11,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.orcamento_fornecedores"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“fornecedores e contratos” são gestão de parceiros e contratos."
+      },
+      {
+        "ordem": 12,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.operacao_time"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“gerenciar equipe técnica” e “monitoramento e suporte” indicam liderança e operação do time."
+      },
+      {
+        "ordem": 13,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.bi_dashboards",
+          "analytics.kpis_metricas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“relatórios” e “principais indicadores” pedem BI e acompanhamento de métricas."
+      },
+      {
+        "ordem": 14,
+        "natureza": "responsabilidade",
+        "itens": [
+          "gov.governanca",
+          "gov.catalogo_linhagem",
+          "gov.seguranca"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“governança”, “rastreabilidade” e “segurança” acionam esses temas de dados."
+      },
+      {
+        "ordem": 15,
+        "natureza": "requisito",
+        "itens": [
+          "formacao.graduacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Ensino Superior completo” pede graduação."
+      },
+      {
+        "ordem": 16,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.multidisciplinar"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“liderança ou coordenação” e “equipes… multidisciplinares”."
+      },
+      {
+        "ordem": 17,
+        "natureza": "requisito",
+        "itens": [
+          "experiencia.setor"
+        ],
+        "outro": "",
+        "setor": "telecom",
+        "motivo": "“telecomunicações” nomeia um setor explícito na experiência pedida."
+      },
+      {
+        "ordem": 18,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.analise_insights",
+          "analytics.kpis_metricas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“análise de dados operacionais” e “indicadores de performance”."
+      },
+      {
+        "ordem": 19,
+        "natureza": "requisito",
+        "itens": [
+          "eng.observabilidade_operacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“SCADA” e “supervisão operacional” indicam monitoramento e operação."
+      },
+      {
+        "ordem": 20,
+        "natureza": "requisito",
+        "itens": [
+          "outro"
+        ],
+        "outro": "telemetria e redes de dados",
+        "setor": "nenhum",
+        "motivo": "A linha cita “telemetria”, “IoT” e “redes de comunicação”, sem item específico da taxonomia."
+      },
+      {
+        "ordem": 21,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.bi_dashboards"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Power BI, Tableau ou ferramentas similares” apontam para BI e dashboards."
+      },
+      {
+        "ordem": 22,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.bi_dashboards",
+          "analytics.analise_insights"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“dashboards gerenciais” e “análise de informações” pedem BI e análise."
+      },
+      {
+        "ordem": 23,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.projetos_portfolio",
+          "negocio.processos_melhoria",
+          "negocio.transformacao_inovacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“gestão de projetos”, “melhoria contínua” e “transformação digital” aparecem literalmente."
+      },
+      {
+        "ordem": 24,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.analise_insights",
+          "negocio.processos_melhoria"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“análise crítica”, “desvios” e “planos de ação” combinam análise e melhoria."
+      },
+      {
+        "ordem": 25,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.stakeholders"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“atuar junto às áreas” indica articulação com stakeholders internos."
+      },
+      {
+        "ordem": 26,
+        "natureza": "requisito",
+        "itens": [
+          "condicao.trabalho"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Disponibilidade para viagens” é condição de trabalho."
+      },
+      {
+        "ordem": 27,
+        "natureza": "requisito",
+        "itens": [
+          "experiencia.setor"
+        ],
+        "outro": "",
+        "setor": "energia e saneamento",
+        "motivo": "“segmento de saneamento” define o setor da experiência desejada."
+      },
+      {
+        "ordem": 28,
+        "natureza": "requisito",
+        "itens": [
+          "experiencia.setor"
+        ],
+        "outro": "",
+        "setor": "energia e saneamento",
+        "motivo": "“utilities, energia ou infraestrutura” pedem experiência setorial próxima de utilities/energia."
+      },
+      {
+        "ordem": 29,
+        "natureza": "requisito",
+        "itens": [
+          "outro"
+        ],
+        "outro": "GIS e georreferenciamento",
+        "setor": "nenhum",
+        "motivo": "A linha cita “GIS/Georreferenciamento”, sem item correspondente na taxonomia."
+      },
+      {
+        "ordem": 30,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.automacao",
+          "negocio.transformacao_inovacao",
+          "negocio.projetos_portfolio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“projetos de automação” e “digitalização operacional” pedem transformação, automação e projetos."
+      },
+      {
+        "ordem": 31,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "É apenas a identificação da empresa contratante, sem requisito ou responsabilidade."
+      }
+    ]
+  },
+  "28eb0d792bf1": {
+    "versao_taxonomia": "ed47eaa18707",
+    "rotulador": "openai/gpt-5.4-mini",
+    "servido_por": "openai/gpt-5.4-mini",
+    "esforco": "medium",
+    "usd": 0.0314,
+    "latencia_s": 40.7,
+    "reparos": 0,
+    "uso": {
+      "completion_tokens": 6571,
+      "prompt_tokens": 8400,
+      "total_tokens": 14971,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 5178,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 6656,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.0313767,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.0313767,
+      "gateway_cost": 0.0313767
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "responsabilidade",
+        "itens": [
+          "ia.genai_llm",
+          "ia.agentes",
+          "ia.ia_aplicada"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita \"IA Generativa\", \"agentes LLM\" e uso de Gen AI aplicado ao negócio."
+      },
+      {
+        "ordem": 2,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.liderar_time",
+          "comportamento.autonomia",
+          "comportamento.organizacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Pede \"liderar o time\", além de perfil empreendedor e adaptação."
+      },
+      {
+        "ordem": 3,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Linha introdutória de abertura, sem exigir ação ou perfil."
+      },
+      {
+        "ordem": 4,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.desenvolver_pessoas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Menciona gestão das pessoas, \"PDI\", 1:1 e feedbacks."
+      },
+      {
+        "ordem": 5,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.ageis",
+          "pessoas.operacao_time"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Fala em práticas ágeis e facilitar cerimônias do squad."
+      },
+      {
+        "ordem": 6,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.operacao_time"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Ação direta de \"Remover impedimentos do time\"."
+      },
+      {
+        "ordem": 7,
+        "natureza": "responsabilidade",
+        "itens": [
+          "outro"
+        ],
+        "outro": "clima de respeito e confiança",
+        "setor": "nenhum",
+        "motivo": "Trata de ambiente de respeito, confiança e estilo de liderança."
+      },
+      {
+        "ordem": 8,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.stakeholders"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"Navegar pela companhia\" e achar papéis-chave indica articulação interna."
+      },
+      {
+        "ordem": 9,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.projetos_portfolio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Coordena iniciativas com um ou mais times para o produto."
+      },
+      {
+        "ordem": 10,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.stakeholders",
+          "negocio.roadmap_priorizacao",
+          "comportamento.comunicacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita stakeholders, alinhamento do roadmap e sessões de apresentação."
+      },
+      {
+        "ordem": 11,
+        "natureza": "requisito",
+        "itens": [
+          "comportamento.comunicacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Pede apresentar informações complexas de forma clara e concisa."
+      },
+      {
+        "ordem": 12,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.estrategia"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"Construir a visão e missão\" do squad aponta estratégia."
+      },
+      {
+        "ordem": 13,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.kpis_metricas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Menciona métricas de produto, de negócio e indicadores técnicos."
+      },
+      {
+        "ordem": 14,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.produto_dados",
+          "eng.observabilidade_operacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Fala em discovery de produto e em soluções de incidentes."
+      },
+      {
+        "ordem": 15,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.kpis_metricas",
+          "comportamento.comunicacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Trata de objetivos, métricas-chave e exposição aos stakeholders."
+      },
+      {
+        "ordem": 16,
+        "natureza": "responsabilidade",
+        "itens": [
+          "eng.boas_praticas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Menciona processo de construção de software e ritmo saudável."
+      },
+      {
+        "ordem": 17,
+        "natureza": "requisito",
+        "itens": [
+          "comportamento.autonomia",
+          "comportamento.organizacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita prioridades concorrentes, responsabilidades, riscos e ritmo acelerado."
+      },
+      {
+        "ordem": 18,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cabeçalho de seção de requisitos, sem exigência em si."
+      },
+      {
+        "ordem": 19,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.liderar_time"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Pede experiência anterior em liderança de times de software."
+      },
+      {
+        "ordem": 20,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.hands_on",
+          "eng.software_sistemas",
+          "eng.integracao",
+          "eng.boas_praticas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita background técnico, arquitetura, integrações e boas práticas de engenharia."
+      },
+      {
+        "ordem": 21,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.processos_melhoria"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Menciona \"melhoria de processos, produtos ou serviços\"."
+      },
+      {
+        "ordem": 22,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.ageis",
+          "comportamento.analitico",
+          "comportamento.comunicacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Fala em facilitação, resolução de problemas e times ágeis."
+      },
+      {
+        "ordem": 23,
+        "natureza": "requisito",
+        "itens": [
+          "eng.migracao_modernizacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Pede liderança em modernização ou migração de tecnologia/processo."
+      },
+      {
+        "ordem": 24,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Só marca o início da seção \"Diferencial\"."
+      },
+      {
+        "ordem": 25,
+        "natureza": "requisito",
+        "itens": [
+          "ia.genai_llm",
+          "ia.agentes",
+          "ia.mlops"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita LLMs, agentes e operação em produção."
+      },
+      {
+        "ordem": 26,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.multidisciplinar"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Menciona liderar um time multidisciplinar sênior."
+      }
+    ]
+  },
+  "03e4427fa662": {
+    "versao_taxonomia": "ed47eaa18707",
+    "rotulador": "openai/gpt-5.4-mini",
+    "servido_por": "openai/gpt-5.4-mini",
+    "esforco": "medium",
+    "usd": 0.0273,
+    "latencia_s": 35.3,
+    "reparos": 0,
+    "uso": {
+      "completion_tokens": 5674,
+      "prompt_tokens": 8292,
+      "total_tokens": 13966,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 3886,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 6656,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.0272592,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.0272592,
+      "gateway_cost": 0.0272592
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.multidisciplinar",
+          "pessoas.desenvolver_pessoas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“formação, condução e evolução” de “times interdisciplinares” indica liderar, multidisciplinaridade e desenvolvimento."
+      },
+      {
+        "ordem": 2,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.stakeholders",
+          "comportamento.comunicacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“parceria com outras lideranças” e “troca de experiência” apontam articulação entre áreas e comunicação."
+      },
+      {
+        "ordem": 3,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.estrategia",
+          "negocio.roadmap_priorizacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“planejamento de entregas” alinhado à “visão e planejamento estratégicos” pede estratégia e priorização."
+      },
+      {
+        "ordem": 4,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.hands_on",
+          "gov.qualidade",
+          "eng.boas_praticas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“liderança técnica”, “padronização técnica” e “qualidade dos dados” indicam hands-on, boas práticas e qualidade."
+      },
+      {
+        "ordem": 5,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.contratar_estruturar"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“recrutamento e seleção” é diretamente contratação e estruturação de time."
+      },
+      {
+        "ordem": 6,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.operacao_time",
+          "comportamento.comunicacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“gestão de conflitos”, “negociação” e “remoção de impedimentos” mostram operação do time e mediação."
+      },
+      {
+        "ordem": 7,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.desenvolver_pessoas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“feedback, 1:1, mentorias” e “desenvolvimento de cada colaborador” são desenvolvimento de pessoas."
+      },
+      {
+        "ordem": 8,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.operacao_time",
+          "negocio.roadmap_priorizacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“controle de entrega, planejamento, execução” descreve operação do time e organização do fluxo."
+      },
+      {
+        "ordem": 9,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.stakeholders",
+          "comportamento.comunicacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“alinhamento e comunicação com todas as áreas” indica articulação com stakeholders e comunicação."
+      },
+      {
+        "ordem": 10,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.transformacao_inovacao",
+          "negocio.processos_melhoria"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“novas tecnologias”, “inovação” e “melhoria contínua” apontam transformação e melhoria de processos."
+      },
+      {
+        "ordem": 11,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.kpis_metricas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Estabelecer, medir e acompanhar KPIs” cita claramente métricas e indicadores."
+      },
+      {
+        "ordem": 12,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.orcamento_fornecedores"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Controlar orçamentos e recursos” é gestão de orçamento e alocação financeira."
+      },
+      {
+        "ordem": 13,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.analise_insights",
+          "negocio.comunicacao_executiva"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Fornecer insights” e “reuniões executivas” pedem análise e comunicação executiva."
+      },
+      {
+        "ordem": 14,
+        "natureza": "requisito",
+        "itens": [
+          "formacao.graduacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Formação superior completa” define requisito de graduação."
+      },
+      {
+        "ordem": 15,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.liderar_time",
+          "eng.software_sistemas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“gestão de times” e “produtos/plataformas de tecnologia” apontam liderança e contexto de sistemas."
+      },
+      {
+        "ordem": 16,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.analise_insights"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Conhecimento de Analytics” remete à prática analítica em geral."
+      },
+      {
+        "ordem": 17,
+        "natureza": "requisito",
+        "itens": [
+          "eng.observabilidade_operacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“alto desempenho e disponibilidade” indica confiabilidade e operação da plataforma/sistemas."
+      },
+      {
+        "ordem": 18,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.multidisciplinar",
+          "pessoas.desenvolver_pessoas",
+          "analytics.kpis_metricas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“times interdisciplinares” e “metas e métricas de desempenho” pedem liderança, desenvolvimento e indicadores."
+      },
+      {
+        "ordem": 19,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.multidisciplinar"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“times com perfis interdisciplinares” cita diretamente multidisciplinaridade."
+      },
+      {
+        "ordem": 20,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.ageis"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Manifesto Ágil”, “Kanban” e “Scrum” são metodologias ágeis."
+      },
+      {
+        "ordem": 21,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.produto_dados"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“ciclo de vida de produtos”, “discovery” e “delivery” descrevem visão de produto."
+      },
+      {
+        "ordem": 22,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.cultura_dados"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Mentalidade Data Driven” indica cultura orientada a dados."
+      },
+      {
+        "ordem": 23,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.estrategia",
+          "ia.ia_aplicada",
+          "analytics.marketing_cliente"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“conectar dados, IA e estratégia” e métricas de “engajamento, retenção e monetização”."
+      },
+      {
+        "ordem": 24,
+        "natureza": "requisito",
+        "itens": [
+          "gov.governanca",
+          "gov.qualidade",
+          "eng.boas_praticas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“governança, qualidade e operação de dados” e “DataOps” pedem governança, qualidade e boas práticas."
+      },
+      {
+        "ordem": 25,
+        "natureza": "requisito",
+        "itens": [
+          "outro"
+        ],
+        "outro": "diversidade no time",
+        "setor": "nenhum",
+        "motivo": "“importância da diversidade no time” não encaixa em item específico da taxonomia."
+      },
+      {
+        "ordem": 26,
+        "natureza": "requisito",
+        "itens": [
+          "comportamento.analitico"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“forte capacidade de análise” e “resolução de problemas” caracterizam perfil analítico."
+      },
+      {
+        "ordem": 27,
+        "natureza": "requisito",
+        "itens": [
+          "eng.observabilidade_operacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“SLA, SLI e SLO” e “tratativa de incidentes” indicam observabilidade e operação."
+      },
+      {
+        "ordem": 28,
+        "natureza": "requisito",
+        "itens": [
+          "outro"
+        ],
+        "outro": "plataforma de nuvem",
+        "setor": "nenhum",
+        "motivo": "A linha cita só “Google Cloud Platform”, sem conceituação adicional além da ferramenta."
+      },
+      {
+        "ordem": 29,
+        "natureza": "requisito",
+        "itens": [
+          "outro"
+        ],
+        "outro": "ferramenta de analytics",
+        "setor": "nenhum",
+        "motivo": "A linha cita apenas “Google Analytics”, que é nome de ferramenta."
+      }
+    ]
+  },
+  "7621cbda282d": {
+    "versao_taxonomia": "ed47eaa18707",
+    "rotulador": "openai/gpt-5.4-mini",
+    "servido_por": "openai/gpt-5.4-mini",
+    "esforco": "medium",
+    "usd": 0.015,
+    "latencia_s": 18.8,
+    "reparos": 0,
+    "uso": {
+      "completion_tokens": 2997,
+      "prompt_tokens": 8013,
+      "total_tokens": 11010,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 1871,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 6656,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.01500345,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.01500345,
+      "gateway_cost": 0.01500345
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.operacao_time",
+          "negocio.roadmap_priorizacao",
+          "negocio.projetos_portfolio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Liderar”, “alinhamento” e “priorização” indicam gestão do time e das entregas/projetos no dia a dia."
+      },
+      {
+        "ordem": 2,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.stakeholders",
+          "negocio.projetos_portfolio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Em parceria com as áreas de negócio” e “novos projetos” apontam articulação com stakeholders e gestão de projetos."
+      },
+      {
+        "ordem": 3,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.operacao_time"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Planejar e distribuir as atividades” e garantir cadência/productividade descrevem operação e alocação do time."
+      },
+      {
+        "ordem": 4,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.desenvolver_pessoas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Coordenar e desenvolver o time”, com feedbacks e crescimento, marca liderança e desenvolvimento de pessoas."
+      },
+      {
+        "ordem": 5,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.comunicacao_executiva",
+          "negocio.stakeholders",
+          "negocio.estrategia"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Fóruns com lideranças” e conectar projetos às “prioridades estratégicas” indicam comunicação executiva e articulação estratégica."
+      },
+      {
+        "ordem": 6,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.hands_on"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Referência técnica” e “orientando decisões técnicas” pedem atuação hands-on da liderança."
+      },
+      {
+        "ordem": 7,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.roadmap_priorizacao",
+          "negocio.stakeholders"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Levantar, estruturar e priorizar o roadmap” e as “escutas com stakeholders” citam priorização e articulação."
+      },
+      {
+        "ordem": 8,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.projetos_portfolio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Entrega end-to-end dos projetos” indica condução de projetos do início à adoção."
+      },
+      {
+        "ordem": 9,
+        "natureza": "responsabilidade",
+        "itens": [
+          "gov.governanca",
+          "gov.qualidade",
+          "analytics.kpis_metricas",
+          "eng.modelagem",
+          "analytics.bi_dashboards"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Governança e qualidade”, “padronizando indicadores” e “modelagem e visualização” puxam governança, KPIs, modelagem e BI."
+      },
+      {
+        "ordem": 10,
+        "natureza": "requisito",
+        "itens": [
+          "formacao.graduacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Ensino superior completo ou em andamento” é exigência de graduação."
+      },
+      {
+        "ordem": 11,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.bi_dashboards"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Tableau/Power BI” aponta para BI, dashboards e visualização de dados."
+      },
+      {
+        "ordem": 12,
+        "natureza": "requisito",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "A linha só cita o nome da ferramenta “Databricks”, sem conceito adicional para rotular."
+      },
+      {
+        "ordem": 13,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.liderar_time"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Domínio em gestão de pessoas” indica capacidade de liderar e gerir equipe."
+      },
+      {
+        "ordem": 14,
+        "natureza": "requisito",
+        "itens": [
+          "ia.ciencia_dados_ml"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Noções de Data Science” corresponde a ciência de dados e machine learning."
+      },
+      {
+        "ordem": 15,
+        "natureza": "requisito",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "A linha traz apenas “SQL”, ferramenta nomeada que não é rotulada aqui."
+      },
+      {
+        "ordem": 16,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "É só o cabeçalho “Diferencial:”, sem exigência em si."
+      },
+      {
+        "ordem": 17,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.liderar_time",
+          "experiencia.dados"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Posições de liderança” e “times de Dados/BI” indicam liderança e experiência na área de dados."
+      },
+      {
+        "ordem": 18,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.estrategia",
+          "negocio.visao_negocio",
+          "negocio.projetos_portfolio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Conectando projetos de dados” a “objetivos estratégicos” marca estratégia, visão de negócio e projetos."
+      }
+    ]
+  },
+  "41188c9ca8ea": {
+    "versao_taxonomia": "ed47eaa18707",
+    "rotulador": "openai/gpt-5.4-mini",
+    "servido_por": "openai/gpt-5.4-mini",
+    "esforco": "medium",
+    "usd": 0.0292,
+    "latencia_s": 36.9,
+    "reparos": 0,
+    "uso": {
+      "completion_tokens": 6124,
+      "prompt_tokens": 8165,
+      "total_tokens": 14289,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 4828,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 6656,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.02918895,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.02918895,
+      "gateway_cost": 0.02918895
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cabeçalho da vaga, sem exigência ou atividade descrita."
+      },
+      {
+        "ordem": 2,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.desenvolver_pessoas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Liderar o time” e “desenvolvimento técnico, gestão de performance” indicam liderança e desenvolvimento da equipe."
+      },
+      {
+        "ordem": 3,
+        "natureza": "responsabilidade",
+        "itens": [
+          "eng.arquitetura",
+          "eng.pipelines"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita “arquiteturas de dados”, “data lake/warehouse” e “ETL/ELT e pipelines”."
+      },
+      {
+        "ordem": 4,
+        "natureza": "responsabilidade",
+        "itens": [
+          "gov.qualidade",
+          "gov.governanca"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Qualidade, confiabilidade” e “boas práticas de governança” apontam qualidade e governança."
+      },
+      {
+        "ordem": 5,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.cultura_dados"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Cultura data-driven” e “acesso e uso estratégico de dados” indicam cultura de dados."
+      },
+      {
+        "ordem": 6,
+        "natureza": "responsabilidade",
+        "itens": [
+          "eng.boas_praticas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Versionamento, testes, observabilidade e documentação” são práticas modernas de engenharia."
+      },
+      {
+        "ordem": 7,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.stakeholders"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Trabalhar em parceria” com vários times indica articulação com stakeholders."
+      },
+      {
+        "ordem": 8,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.analise_insights",
+          "ia.ciencia_dados_ml"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Analytics avançado” e “machine learning” citam análise e ciência de dados."
+      },
+      {
+        "ordem": 9,
+        "natureza": "responsabilidade",
+        "itens": [
+          "eng.observabilidade_operacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Monitorar performance e eficiência dos pipelines” descreve operação e observabilidade."
+      },
+      {
+        "ordem": 10,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.visao_negocio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Conectar decisões técnicas ao impacto de negócio” traduz visão de negócio."
+      },
+      {
+        "ordem": 11,
+        "natureza": "responsabilidade",
+        "itens": [
+          "outro"
+        ],
+        "outro": "evolução de ecossistema de dados",
+        "setor": "nenhum",
+        "motivo": "“Evolução contínua do ecossistema de dados” não encaixa claramente em item específico."
+      },
+      {
+        "ordem": 12,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Introdução da seção de requisitos, sem pedido específico."
+      },
+      {
+        "ordem": 13,
+        "natureza": "requisito",
+        "itens": [
+          "formacao.graduacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Ensino superior completo” pede graduação."
+      },
+      {
+        "ordem": 14,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.liderar_time",
+          "experiencia.dados"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Liderança de times de engenharia de dados” pede gestão e experiência em dados."
+      },
+      {
+        "ordem": 15,
+        "natureza": "requisito",
+        "itens": [
+          "eng.arquitetura",
+          "eng.pipelines"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Arquitetura de dados” e “ETL/ELT e pipelines” são explicitamente citados."
+      },
+      {
+        "ordem": 16,
+        "natureza": "requisito",
+        "itens": [
+          "eng.plataforma_cloud"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Plataformas cloud” pede vivência em plataforma de dados em nuvem."
+      },
+      {
+        "ordem": 17,
+        "natureza": "requisito",
+        "itens": [
+          "eng.modelagem",
+          "gov.qualidade",
+          "gov.governanca"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Modelagem”, “qualidade” e “governança de dados” aparecem diretamente."
+      },
+      {
+        "ordem": 18,
+        "natureza": "requisito",
+        "itens": [
+          "eng.big_data"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Grandes volumes de dados” e “ambientes distribuídos” indicam big data."
+      },
+      {
+        "ordem": 19,
+        "natureza": "requisito",
+        "itens": [
+          "eng.boas_praticas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Versionamento, testes, observabilidade e documentação” são práticas modernas de engenharia."
+      },
+      {
+        "ordem": 20,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.estrategia",
+          "negocio.visao_negocio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Visão estratégica” e “impacto de negócio” indicam estratégia e visão de negócio."
+      },
+      {
+        "ordem": 21,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.analise_insights",
+          "ia.ciencia_dados_ml"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Analytics, BI e/ou machine learning” cita análise e ciência de dados."
+      },
+      {
+        "ordem": 22,
+        "natureza": "requisito",
+        "itens": [
+          "comportamento.comunicacao",
+          "negocio.stakeholders"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Boa comunicação” e “colaboração com múltiplos stakeholders” definem o perfil."
+      },
+      {
+        "ordem": 23,
+        "natureza": "requisito",
+        "itens": [
+          "experiencia.setor"
+        ],
+        "outro": "",
+        "setor": "tecnologia e software",
+        "motivo": "“Healthtechs, edtechs ou empresas orientadas a produto digital” pede experiência setorial."
+      }
+    ]
+  },
+  "550a9c02b97d": {
+    "versao_taxonomia": "ed47eaa18707",
+    "rotulador": "openai/gpt-5.4-mini",
+    "servido_por": "openai/gpt-5.4-mini",
+    "esforco": "medium",
+    "usd": 0.0246,
+    "latencia_s": 31.4,
+    "reparos": 0,
+    "uso": {
+      "completion_tokens": 5097,
+      "prompt_tokens": 8206,
+      "total_tokens": 13303,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 3624,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 6656,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.0245982,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.0245982,
+      "gateway_cost": 0.0245982
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.roadmap_priorizacao",
+          "negocio.projetos_portfolio",
+          "negocio.stakeholders",
+          "pessoas.operacao_time"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Priorizar”, “portfólio”, alinhar com lideranças e distribuir demandas citam priorização, projetos, articulação e operação do time."
+      },
+      {
+        "ordem": 2,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.operacao_time",
+          "negocio.projetos_portfolio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Rituais”, “remover impedimentos” e garantir prazo/qualidade indicam acompanhamento da execução e gestão de projetos."
+      },
+      {
+        "ordem": 3,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.hands_on",
+          "ia.ciencia_dados_ml",
+          "analytics.experimentacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Revisar desenhos de experimentos e modelos” e orientar o time apontam revisão técnica, ML e experimentação."
+      },
+      {
+        "ordem": 4,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.hands_on",
+          "analytics.analise_insights",
+          "negocio.projetos_portfolio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Pôr a mão na massa” e atuar em “análises e projetos estratégicos” pedem atuação direta e análise."
+      },
+      {
+        "ordem": 5,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.desenvolver_pessoas",
+          "pessoas.contratar_estruturar"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“1:1s”, “feedback”, “planos de desenvolvimento” e “contratações” citam desenvolvimento e hiring."
+      },
+      {
+        "ordem": 6,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.stakeholders",
+          "negocio.comunicacao_executiva"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Apresentar resultados” em “fóruns” e defender evidências indicam influência e comunicação executiva."
+      },
+      {
+        "ordem": 7,
+        "natureza": "responsabilidade",
+        "itens": [
+          "ia.mlops",
+          "gov.governanca_ia",
+          "eng.boas_praticas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Monitoramento, governança e documentação” de modelos em produção apontam MLOps, governança e boas práticas."
+      },
+      {
+        "ordem": 8,
+        "natureza": "requisito",
+        "itens": [
+          "experiencia.dados",
+          "ia.ciencia_dados_ml",
+          "ia.mlops",
+          "experiencia.setor"
+        ],
+        "outro": "",
+        "setor": "financeiro",
+        "motivo": "“Ciência de dados”, “modelos em produção” e menção a “crédito, cobrança ou serviços financeiros” definem dados, MLOps e setor."
+      },
+      {
+        "ordem": 9,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.desenvolver_pessoas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Liderança de pessoas” e responsabilidade sobre “desenvolvimento de outros cientistas” pedem gestão e desenvolvimento."
+      },
+      {
+        "ordem": 10,
+        "natureza": "requisito",
+        "itens": [
+          "ia.ciencia_dados_ml",
+          "analytics.experimentacao",
+          "pessoas.hands_on"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Estatística, machine learning e desenho de experimentos” e “revisar abordagens técnicas” pedem ML, experimentação e profundidade técnica."
+      },
+      {
+        "ordem": 11,
+        "natureza": "requisito",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "A linha cita apenas nomes de ferramentas; a taxonomia não rotula ferramentas pelo nome."
+      },
+      {
+        "ordem": 12,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.roadmap_priorizacao",
+          "negocio.projetos_portfolio",
+          "negocio.stakeholders",
+          "pessoas.operacao_time"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Priorizar um portfólio”, “várias áreas” e “capacidade do time” indicam priorização, articulação e operação."
+      },
+      {
+        "ordem": 13,
+        "natureza": "requisito",
+        "itens": [
+          "comportamento.comunicacao",
+          "negocio.comunicacao_executiva",
+          "negocio.stakeholders"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Comunicação clara” e apresentação para “lideranças” e públicos executivos pedem comunicação e influência entre áreas."
+      },
+      {
+        "ordem": 14,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.visao_negocio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Impacto mensurável no negócio” aponta compreensão de valor e resultado para o negócio."
+      },
+      {
+        "ordem": 15,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.experimentacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Inferência causal”, “uplift” e “testes A/B” são sinais diretos de experimentação."
+      },
+      {
+        "ordem": 16,
+        "natureza": "requisito",
+        "itens": [
+          "outro"
+        ],
+        "outro": "otimização aplicada ao negócio",
+        "setor": "nenhum",
+        "motivo": "“Otimização aplicada” aparece, mas a taxonomia não tem item específico para isso."
+      },
+      {
+        "ordem": 17,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.kpis_metricas",
+          "experiencia.setor"
+        ],
+        "outro": "",
+        "setor": "financeiro",
+        "motivo": "“PD, LGD, perda esperada” e “roll rates” são métricas/conceitos de crédito e cobrança, ligados ao setor financeiro."
+      },
+      {
+        "ordem": 18,
+        "natureza": "requisito",
+        "itens": [
+          "eng.big_data"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Spark, Databricks” e “dados em larga escala” indicam processamento distribuído e big data."
+      },
+      {
+        "ordem": 19,
+        "natureza": "requisito",
+        "itens": [
+          "ia.mlops",
+          "gov.governanca_ia"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“MLOps”, “monitoramento” e “governança de modelos” citam ciclo de vida e governança de IA."
+      },
+      {
+        "ordem": 20,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.contratar_estruturar"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Contratação” e “estruturação ou crescimento de times” pedem montar/expandir equipe."
+      },
+      {
+        "ordem": 21,
+        "natureza": "requisito",
+        "itens": [
+          "ia.genai_llm",
+          "ia.agentes",
+          "ia.ia_produtividade"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“IA generativa”, “agentes” e “acelerar o trabalho do time” apontam GenAI, agentes e produtividade."
+      }
+    ]
+  },
+  "81d7d887943d": {
+    "versao_taxonomia": "ed47eaa18707",
+    "rotulador": "openai/gpt-5.4-mini",
+    "servido_por": "openai/gpt-5.4-mini",
+    "esforco": "medium",
+    "usd": 0.0269,
+    "latencia_s": 34.5,
+    "reparos": 0,
+    "uso": {
+      "completion_tokens": 5633,
+      "prompt_tokens": 8076,
+      "total_tokens": 13709,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 4476,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 6656,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.0269127,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.0269127,
+      "gateway_cost": 0.0269127
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.bi_dashboards",
+          "analytics.analise_insights",
+          "negocio.stakeholders"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“reports com insights acionáveis” e “apresentá-los para o cliente” indicam BI, análise e articulação com stakeholders."
+      },
+      {
+        "ordem": 2,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.analise_insights"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“transformar conclusões de otimização em insights acionáveis” pede análise e recomendação."
+      },
+      {
+        "ordem": 3,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.stakeholders"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Conexão com os times” e “desenvolvimento das estratégias” indicam articulação com stakeholders."
+      },
+      {
+        "ordem": 4,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.stakeholders",
+          "analytics.analise_insights"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“trabalho em conjunto” e “insights de performance” apontam colaboração e análise."
+      },
+      {
+        "ordem": 5,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.digital_analytics"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“gerenciamento de taxonomia” sugere padronização de tracking e taxonomia analítica."
+      },
+      {
+        "ordem": 6,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.kpis_metricas",
+          "analytics.analise_insights"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“taxas de brand safety” e “recomendação de melhorias” pedem métricas e análise."
+      },
+      {
+        "ordem": 7,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.bi_dashboards"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“plataformas de visualização de dados” indica BI e dashboards."
+      },
+      {
+        "ordem": 8,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.cultura_dados"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“dados estejam disponíveis” e “em tempo hábil” apontam democratização e acesso rápido."
+      },
+      {
+        "ordem": 9,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.desenvolver_pessoas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“gestão” e “desenvolvimento técnico do time” indicam liderança e desenvolvimento de pessoas."
+      },
+      {
+        "ordem": 10,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.experimentacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“agenda de testes/brandlifts” pede experimentação e acompanhamento de testes."
+      },
+      {
+        "ordem": 11,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.analise_insights",
+          "analytics.kpis_metricas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“estudos e análises ad hoc” e “indicadores de performance” pedem análise e métricas."
+      },
+      {
+        "ordem": 12,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.cultura_dados",
+          "gov.governanca",
+          "analytics.kpis_metricas",
+          "analytics.analise_insights"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“cultura analítica”, “governança” e “interpretação de indicadores” pedem cultura, governança e métricas."
+      },
+      {
+        "ordem": 13,
+        "natureza": "requisito",
+        "itens": [
+          "formacao.graduacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Ensino superior completo” é exigência de formação superior."
+      },
+      {
+        "ordem": 14,
+        "natureza": "requisito",
+        "itens": [
+          "outro"
+        ],
+        "outro": "ferramentas de colaboração",
+        "setor": "nenhum",
+        "motivo": "Ferramentas de gestão e colaboração não cabem na taxonomia."
+      },
+      {
+        "ordem": 15,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.bi_dashboards",
+          "analytics.analise_insights"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“análise e visualização de dados” com BI indica dashboards e análise."
+      },
+      {
+        "ordem": 16,
+        "natureza": "requisito",
+        "itens": [
+          "outro"
+        ],
+        "outro": "SQL para extração",
+        "setor": "nenhum",
+        "motivo": "“SQL para manipulação e extração” não tem item específico."
+      },
+      {
+        "ordem": 17,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.digital_analytics"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“mensuração digital” com GTM e Analytics indica tracking e analytics digital."
+      },
+      {
+        "ordem": 18,
+        "natureza": "requisito",
+        "itens": [
+          "outro"
+        ],
+        "outro": "plataformas de mídia digital",
+        "setor": "nenhum",
+        "motivo": "Plataformas de mídia digital não têm item próprio na taxonomia."
+      },
+      {
+        "ordem": 19,
+        "natureza": "requisito",
+        "itens": [
+          "eng.plataforma_cloud"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“ambientes de dados e soluções em nuvem” pedem plataforma cloud de dados."
+      },
+      {
+        "ordem": 20,
+        "natureza": "requisito",
+        "itens": [
+          "idioma.ingles",
+          "idioma.espanhol"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Inglês e/ou espanhol fluente” pede idiomas."
+      }
+    ]
+  },
+  "02fd1aac87ce": {
+    "versao_taxonomia": "ed47eaa18707",
+    "rotulador": "openai/gpt-5.4-mini",
+    "servido_por": "openai/gpt-5.4-mini",
+    "esforco": "medium",
+    "usd": 0.0202,
+    "latencia_s": 27.7,
+    "reparos": 0,
+    "uso": {
+      "completion_tokens": 4170,
+      "prompt_tokens": 7956,
+      "total_tokens": 12126,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 3234,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 6656,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.0202392,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.0202392,
+      "gateway_cost": 0.0202392
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "requisito",
+        "itens": [
+          "experiencia.setor"
+        ],
+        "outro": "",
+        "setor": "consultoria",
+        "motivo": "Cita “consultorias estratégicas ou de tecnologia”, indicando experiência setorial em consultoria."
+      },
+      {
+        "ordem": 2,
+        "natureza": "requisito",
+        "itens": [
+          "experiencia.setor"
+        ],
+        "outro": "",
+        "setor": "consultoria",
+        "motivo": "“Carreira construída em consultoria” pede trajetória no setor de consultoria."
+      },
+      {
+        "ordem": 3,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.liderar_time",
+          "experiencia.setor",
+          "experiencia.dados"
+        ],
+        "outro": "",
+        "setor": "consultoria",
+        "motivo": "“posições de liderança” e “consultoria de dados e analytics” pedem liderança e experiência em dados/consultoria."
+      },
+      {
+        "ordem": 4,
+        "natureza": "requisito",
+        "itens": [
+          "experiencia.dados"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“projetos de transformação de dados” indica experiência prévia na área de dados."
+      },
+      {
+        "ordem": 5,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.clientes_consultoria"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“prospecção”, “captura de oportunidades” e “desenvolvimento de negócios” são desenvolvimento comercial."
+      },
+      {
+        "ordem": 6,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.clientes_consultoria",
+          "negocio.comunicacao_executiva",
+          "comportamento.autonomia"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“abrir oportunidades”, “reuniões executivas” e “com autonomia” apontam comercial, execução executiva e autonomia."
+      },
+      {
+        "ordem": 7,
+        "natureza": "requisito",
+        "itens": [
+          "experiencia.setor"
+        ],
+        "outro": "",
+        "setor": "financeiro",
+        "motivo": "Lista setores como “Mercado Financeiro”, “Energia” e “Agro”, pedindo experiência setorial."
+      },
+      {
+        "ordem": 8,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.multidisciplinar",
+          "pessoas.desenvolver_pessoas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“liderança de equipes multidisciplinares” e “desenvolvimento de profissionais” citam gestão e desenvolvimento de pessoas."
+      },
+      {
+        "ordem": 9,
+        "natureza": "requisito",
+        "itens": [
+          "condicao.trabalho"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“presencial em São Paulo” e “visitas frequentes a clientes” definem condição de trabalho."
+      },
+      {
+        "ordem": 10,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Apenas o título “Formação”, sem exigência específica na linha."
+      },
+      {
+        "ordem": 11,
+        "natureza": "requisito",
+        "itens": [
+          "formacao.graduacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Graduação em Ciência da Computação...” pede ensino superior."
+      },
+      {
+        "ordem": 12,
+        "natureza": "requisito",
+        "itens": [
+          "formacao.pos"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“pós-graduação, MBA ou Mestrado” cita formação pós-graduada."
+      },
+      {
+        "ordem": 13,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.estrategia",
+          "gov.governanca",
+          "eng.arquitetura",
+          "eng.pipelines",
+          "analytics.analise_insights",
+          "ia.ciencia_dados_ml"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“trânsito entre estratégia, governança, arquitetura, engenharia, analytics e ciência de dados” nomeia várias frentes."
+      },
+      {
+        "ordem": 14,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.hands_on",
+          "negocio.clientes_consultoria"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“credibilidade técnica” e “maturidade consultiva” pedem profundidade técnica e perfil consultivo."
+      },
+      {
+        "ordem": 15,
+        "natureza": "requisito",
+        "itens": [
+          "comportamento.organizacao",
+          "negocio.clientes_consultoria"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“alta performance” e “exposição a clientes” indicam ambiente exigente e atuação com clientes."
+      }
+    ]
+  },
+  "06382d0010af": {
+    "versao_taxonomia": "ed47eaa18707",
+    "rotulador": "openai/gpt-5.4-mini",
+    "servido_por": "openai/gpt-5.4-mini",
+    "esforco": "medium",
+    "usd": 0.0689,
+    "latencia_s": 85.1,
+    "reparos": 0,
+    "uso": {
+      "completion_tokens": 14899,
+      "prompt_tokens": 8487,
+      "total_tokens": 23386,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 12304,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 6656,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.06891795,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.06891795,
+      "gateway_cost": 0.06891795
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Apenas introduz o bloco; não pede ação nem requisito."
+      },
+      {
+        "ordem": 2,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Título de seção; só nomeia a frente de BI."
+      },
+      {
+        "ordem": 3,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.liderar_time"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Liderar a área indica gestão de time/área."
+      },
+      {
+        "ordem": 4,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.analise_insights",
+          "negocio.visao_negocio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Traduzir desafios em oportunidades e ação pede análise e visão de negócio."
+      },
+      {
+        "ordem": 5,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.analise_insights",
+          "negocio.comunicacao_executiva",
+          "negocio.stakeholders"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Narrativas executivas e recomendações para clientes e liderança pedem comunicação e influência."
+      },
+      {
+        "ordem": 6,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.clientes_consultoria",
+          "analytics.analise_insights"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Consultor interno e externo aponta atuação consultiva em dados e performance."
+      },
+      {
+        "ordem": 7,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cabeçalho da seção; não descreve atividade."
+      },
+      {
+        "ordem": 8,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.analise_insights",
+          "analytics.inteligencia_mercado",
+          "analytics.marketing_cliente"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Análises com mídia, vendas, mercado e consumidor indicam insights e inteligência de mercado/cliente."
+      },
+      {
+        "ordem": 9,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.inteligencia_mercado",
+          "analytics.marketing_cliente",
+          "analytics.analise_insights"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Market share, pricing e comportamento do consumidor são sinais de inteligência de mercado."
+      },
+      {
+        "ordem": 10,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.inteligencia_mercado",
+          "analytics.marketing_cliente"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Estudos de categoria, brand health e competitive intelligence caem em mercado e cliente."
+      },
+      {
+        "ordem": 11,
+        "natureza": "responsabilidade",
+        "itens": [
+          "eng.integracao",
+          "analytics.analise_insights",
+          "analytics.inteligencia_mercado"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Conectar fontes distintas e responder questões estratégicas pede integração e análise."
+      },
+      {
+        "ordem": 12,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Título de frente; só nomeia medição e efetividade."
+      },
+      {
+        "ordem": 13,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.marketing_cliente"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "MMM, atribuição e mensuração são métricas de marketing/cliente."
+      },
+      {
+        "ordem": 14,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.marketing_cliente",
+          "analytics.kpis_metricas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Frameworks de medição e eficiência dos investimentos pedem métricas e marketing."
+      },
+      {
+        "ordem": 15,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.marketing_cliente",
+          "analytics.kpis_metricas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Indicadores de mídia ligados a resultados de negócio pedem KPIs e marketing."
+      },
+      {
+        "ordem": 16,
+        "natureza": "responsabilidade",
+        "itens": [
+          "ia.ciencia_dados_ml",
+          "analytics.analise_insights"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Modelos preditivos e análises avançadas indicam ML e análise."
+      },
+      {
+        "ordem": 17,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cabeçalho da frente; não traz exigência."
+      },
+      {
+        "ordem": 18,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.automacao",
+          "negocio.transformacao_inovacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Automação e transformação digital pedem automação e inovação."
+      },
+      {
+        "ordem": 19,
+        "natureza": "responsabilidade",
+        "itens": [
+          "eng.arquitetura",
+          "gov.governanca",
+          "eng.modelagem",
+          "negocio.roadmap_priorizacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Data Lake, governança e priorização de projetos apontam arquitetura, governança e priorização."
+      },
+      {
+        "ordem": 20,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.automacao",
+          "negocio.processos_melhoria"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Reduzir esforço operacional e ganhar eficiência remete a automação e melhoria de processos."
+      },
+      {
+        "ordem": 21,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.produto_dados"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Evolução de produtos e soluções analíticas sugere trabalho com data products."
+      },
+      {
+        "ordem": 22,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Título da seção de gestão; não descreve tarefa."
+      },
+      {
+        "ordem": 23,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.desenvolver_pessoas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Liderar e desenvolver profissionais pede gestão de time e desenvolvimento."
+      },
+      {
+        "ordem": 24,
+        "natureza": "responsabilidade",
+        "itens": [
+          "outro"
+        ],
+        "outro": "cultura de alta performance",
+        "setor": "nenhum",
+        "motivo": "Cultura de alta performance, colaboração e inovação não encaixa em item específico."
+      },
+      {
+        "ordem": 25,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.operacao_time",
+          "gov.governanca"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Estruturar processos, rituais e governança pede operação do time e governança."
+      },
+      {
+        "ordem": 26,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.operacao_time",
+          "negocio.roadmap_priorizacao",
+          "comportamento.organizacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Equilibrar demandas operacionais, estratégicas e de inovação envolve priorização e organização."
+      },
+      {
+        "ordem": 27,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Título de seção sobre relacionamento; não traz ação."
+      },
+      {
+        "ordem": 28,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.clientes_consultoria",
+          "negocio.stakeholders"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Ponto de contato para clientes indica relação consultiva e stakeholders."
+      },
+      {
+        "ordem": 29,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.comunicacao_executiva",
+          "negocio.stakeholders"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Apresentações para stakeholders locais, regionais e globais pedem comunicação executiva."
+      },
+      {
+        "ordem": 30,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.stakeholders",
+          "negocio.roadmap_priorizacao",
+          "comportamento.organizacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Múltiplas prioridades e alinhamento de expectativas pedem stakeholders, priorização e organização."
+      },
+      {
+        "ordem": 31,
+        "natureza": "requisito",
+        "itens": [
+          "experiencia.dados",
+          "negocio.estrategia"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Experiência em BI, Analytics ou Data Strategy pede vivência em dados e estratégia."
+      },
+      {
+        "ordem": 32,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.multidisciplinar",
+          "experiencia.setor"
+        ],
+        "outro": "",
+        "setor": "mídia, marketing e publicidade",
+        "motivo": "Liderar equipes multidisciplinares em marketing, mídia e consultoria indica liderança e experiência setorial."
+      },
+      {
+        "ordem": 33,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.clientes_consultoria",
+          "negocio.comunicacao_executiva",
+          "negocio.stakeholders"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Gestão de clientes e apresentações executivas pedem relacionamento e comunicação."
+      },
+      {
+        "ordem": 34,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Título de bloco técnico; não descreve requisito específico."
+      },
+      {
+        "ordem": 35,
+        "natureza": "requisito",
+        "itens": [
+          "outro"
+        ],
+        "outro": "manipulação de dados",
+        "setor": "nenhum",
+        "motivo": "SQL e manipulação de dados não encaixam em item específico da taxonomia."
+      },
+      {
+        "ordem": 36,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.bi_dashboards"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Power BI ou similares apontam BI, dashboards e relatórios."
+      },
+      {
+        "ordem": 37,
+        "natureza": "requisito",
+        "itens": [
+          "ia.ciencia_dados_ml",
+          "analytics.analise_insights"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Modelagem estatística e análise de dados pedem ciência de dados e análise."
+      },
+      {
+        "ordem": 38,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.marketing_cliente"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "MMM, atribuição e incrementality são mensuração de marketing."
+      },
+      {
+        "ordem": 39,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.marketing_cliente"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Retail Media Analytics cai em analytics de marketing e cliente."
+      },
+      {
+        "ordem": 40,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.analise_insights",
+          "analytics.inteligencia_mercado",
+          "analytics.marketing_cliente",
+          "eng.integracao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Consumer Insights, Social Intelligence e integração de dados pedem insights, mercado, cliente e integração."
+      },
+      {
+        "ordem": 41,
+        "natureza": "requisito",
+        "itens": [
+          "gov.governanca",
+          "eng.arquitetura"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Estruturação e governança de dados remetem a governança e arquitetura."
+      },
+      {
+        "ordem": 42,
+        "natureza": "requisito",
+        "itens": [
+          "ia.ia_aplicada"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Ferramentas e aplicações de IA para analytics indicam IA aplicada ao negócio."
+      },
+      {
+        "ordem": 43,
+        "natureza": "requisito",
+        "itens": [
+          "experiencia.setor"
+        ],
+        "outro": "",
+        "setor": "bens de consumo (CPG)",
+        "motivo": "Beleza, skincare e bens de consumo definem o setor pedido."
+      },
+      {
+        "ordem": 44,
+        "natureza": "requisito",
+        "itens": [
+          "eng.arquitetura"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Data Lakes e arquitetura de dados pedem arquitetura."
+      },
+      {
+        "ordem": 45,
+        "natureza": "requisito",
+        "itens": [
+          "eng.plataforma_cloud"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Plataformas cloud apontam plataforma de dados em nuvem."
+      },
+      {
+        "ordem": 46,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.produto_dados",
+          "eng.modelagem"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Data Products e Analytics Engineering pedem produto de dados e modelagem."
+      },
+      {
+        "ordem": 47,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.bi_dashboards",
+          "analytics.inteligencia_mercado",
+          "analytics.marketing_cliente",
+          "analytics.analise_insights",
+          "negocio.visao_negocio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "BI, CMI, TGI e Kantar indicam análise, mercado, cliente e visão de negócio."
+      }
+    ]
+  },
+  "50d91e0a2868": {
+    "versao_taxonomia": "ed47eaa18707",
+    "rotulador": "openai/gpt-5.4-mini",
+    "servido_por": "openai/gpt-5.4-mini",
+    "esforco": "medium",
+    "usd": 0.0119,
+    "latencia_s": 9.1,
+    "reparos": 0,
+    "uso": {
+      "completion_tokens": 1344,
+      "prompt_tokens": 7795,
+      "total_tokens": 9139,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 766,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.01189425,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.01189425,
+      "gateway_cost": 0.01189425
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.analise_insights",
+          "analytics.bi_dashboards"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“data analysis” e “data visualization” pedem análise e construção de visualizações para apoiar negócio e produto."
+      },
+      {
+        "ordem": 2,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.multidisciplinar",
+          "pessoas.desenvolver_pessoas",
+          "pessoas.contratar_estruturar",
+          "negocio.produto_dados"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Lead cross-functional teams”, “develop data products” e “mentor and train” indicam liderança, recrutamento, desenvolvimento e produto de dados."
+      },
+      {
+        "ordem": 3,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.stakeholders",
+          "negocio.roadmap_priorizacao",
+          "negocio.visao_negocio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“prioritize tasks”, “define the roadmap” e “competing demands” mostram priorização, stakeholders e valor de negócio."
+      },
+      {
+        "ordem": 4,
+        "natureza": "requisito",
+        "itens": [
+          "idioma.ingles",
+          "idioma.espanhol"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "A linha pede “English C1” e “Spanish communication”, explicitando os dois idiomas."
+      },
+      {
+        "ordem": 5,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.clientes_consultoria"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“working with international clients” aponta atuação com clientes externos e perfil consultivo."
+      },
+      {
+        "ordem": 6,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.bi_dashboards"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“PowerBI” indica proficiência em BI e visualização de dados."
+      },
+      {
+        "ordem": 7,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.marketing_cliente"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“customer segmentation” é segmentação de clientes, típica de analytics de marketing e cliente."
+      },
+      {
+        "ordem": 8,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.estrategia",
+          "negocio.produto_dados"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“strategic thinking” e “product mindset” pedem visão estratégica e mentalidade de produto."
+      },
+      {
+        "ordem": 9,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.roadmap_priorizacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“value-based prioritization” é priorização de iniciativas por valor."
+      }
+    ]
+  },
+  "6db6aadbd3fc": {
+    "versao_taxonomia": "ed47eaa18707",
+    "rotulador": "openai/gpt-5.4-mini",
+    "servido_por": "openai/gpt-5.4-mini",
+    "esforco": "medium",
+    "usd": 0.0287,
+    "latencia_s": 35.9,
+    "reparos": 0,
+    "uso": {
+      "completion_tokens": 5960,
+      "prompt_tokens": 8460,
+      "total_tokens": 14420,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 4142,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 6656,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.0286722,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.0286722,
+      "gateway_cost": 0.0286722
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.estrategia",
+          "negocio.visao_negocio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Liderar a estratégia” e alinhar às metas de negócio indicam estratégia e conexão com valor para a companhia."
+      },
+      {
+        "ordem": 2,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.roadmap_priorizacao",
+          "negocio.stakeholders"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Roadmap”, priorização e parceria com áreas de negócio apontam planejamento e articulação entre áreas."
+      },
+      {
+        "ordem": 3,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.desenvolver_pessoas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Liderar, desenvolver e engajar o time” cita gestão de equipe e desenvolvimento das pessoas."
+      },
+      {
+        "ordem": 4,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.projetos_portfolio",
+          "negocio.roadmap_priorizacao",
+          "pessoas.operacao_time"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Portfólio”, priorização, alocação de recursos e prazos indicam gestão de demandas e operação do time."
+      },
+      {
+        "ordem": 5,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.stakeholders",
+          "negocio.comunicacao_executiva",
+          "negocio.visao_negocio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Fóruns de decisão” com diretoria e apoio a decisões mostram influência, comunicação executiva e visão de negócio."
+      },
+      {
+        "ordem": 6,
+        "natureza": "responsabilidade",
+        "itens": [
+          "comportamento.autonomia",
+          "negocio.cultura_dados",
+          "ia.ia_aplicada"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Perfil inquieto”, cultura data-driven e uso de IA indicam autonomia, evangelização de dados e aplicação de IA."
+      },
+      {
+        "ordem": 7,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.bi_dashboards",
+          "eng.plataforma_cloud"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Soluções de BI” e “plataforma de Dados” pedem evolução de BI e da plataforma."
+      },
+      {
+        "ordem": 8,
+        "natureza": "responsabilidade",
+        "itens": [
+          "gov.governanca",
+          "gov.qualidade",
+          "analytics.kpis_metricas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Governança”, “integridade” e “padronização de indicadores” apontam governança, qualidade e métricas."
+      },
+      {
+        "ordem": 9,
+        "natureza": "responsabilidade",
+        "itens": [
+          "eng.arquitetura",
+          "eng.modelagem",
+          "eng.integracao",
+          "analytics.bi_dashboards",
+          "analytics.analise_insights",
+          "pessoas.hands_on"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Arquitetura”, “modelagem”, “integração” e “visualização e análise” citam práticas técnicas e profundidade técnica."
+      },
+      {
+        "ordem": 10,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.orcamento_fornecedores"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Fornecedores e parceiros” e “investimentos” caracterizam gestão de orçamento e contratos."
+      },
+      {
+        "ordem": 11,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.kpis_metricas",
+          "pessoas.operacao_time",
+          "negocio.processos_melhoria"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Indicadores”, “produtividade do time” e “melhorias contínuas” pedem métricas, operação e melhoria de processos."
+      },
+      {
+        "ordem": 12,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.transformacao_inovacao",
+          "ia.ia_aplicada",
+          "analytics.analise_insights"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Inovação”, “novas tecnologias” e “aplicação” de Analytics/Data Science/IA indicam transformação e IA aplicada."
+      },
+      {
+        "ordem": 13,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.processos_melhoria",
+          "eng.boas_praticas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Implementar e disseminar metodologias e práticas” para eficiência e padronização aponta melhoria de processos e boas práticas."
+      },
+      {
+        "ordem": 14,
+        "natureza": "requisito",
+        "itens": [
+          "formacao.graduacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Ensino superior completo” é exigência clara de graduação."
+      },
+      {
+        "ordem": 15,
+        "natureza": "requisito",
+        "itens": [
+          "experiencia.dados",
+          "pessoas.liderar_time"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Experiência em liderança de equipes” e áreas de dados indicam liderança e trajetória em dados."
+      },
+      {
+        "ordem": 16,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.projetos_portfolio",
+          "negocio.roadmap_priorizacao",
+          "negocio.estrategia"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Gestão de projetos”, “prioridades e roadmaps” e alinhamento à estratégia citam portfólio, priorização e estratégia."
+      },
+      {
+        "ordem": 17,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.bi_dashboards",
+          "analytics.analise_insights"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Visualização e análise de dados” pede BI, dashboards e análise."
+      },
+      {
+        "ordem": 18,
+        "natureza": "requisito",
+        "itens": [
+          "eng.plataforma_cloud"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Domínio da plataforma” indica familiaridade com plataforma de dados, apesar da ferramenta citada pelo nome."
+      },
+      {
+        "ordem": 19,
+        "natureza": "requisito",
+        "itens": [
+          "eng.modelagem",
+          "eng.arquitetura",
+          "eng.integracao",
+          "gov.qualidade",
+          "gov.governanca"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Modelagem, arquitetura, integração, qualidade e governança” cita diretamente esses domínios."
+      },
+      {
+        "ordem": 20,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.desenvolver_pessoas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Gestão e desenvolvimento de pessoas”, com feedback e desempenho, aponta liderança e desenvolvimento."
+      },
+      {
+        "ordem": 21,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.visao_negocio",
+          "comportamento.comunicacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Traduzir necessidades de negócio” e “comunicar... para diferentes públicos” indicam visão de negócio e comunicação."
+      },
+      {
+        "ordem": 22,
+        "natureza": "requisito",
+        "itens": [
+          "comportamento.autonomia",
+          "negocio.cultura_dados",
+          "negocio.estrategia",
+          "comportamento.analitico",
+          "negocio.stakeholders"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Perfil inquieto”, “evangelizador”, visão estratégica, análise e influência com stakeholders aparecem explicitamente."
+      },
+      {
+        "ordem": 23,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Apenas a seção “Diferenciais”, sem requisito específico."
+      },
+      {
+        "ordem": 24,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.estrategia",
+          "eng.plataforma_cloud"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Construção ou evolução” de estratégias e plataformas de Dados cita estratégia e plataforma."
+      },
+      {
+        "ordem": 25,
+        "natureza": "requisito",
+        "itens": [
+          "ia.ciencia_dados_ml",
+          "ia.ia_aplicada"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Data Science, Machine Learning e aplicações de IA” apontam ML e uso de IA no negócio."
+      },
+      {
+        "ordem": 26,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.orcamento_fornecedores"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Gestão orçamentária, fornecedores e parceiros tecnológicos” corresponde a orçamento e fornecedores."
+      },
+      {
+        "ordem": 27,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.ageis",
+          "outro"
+        ],
+        "outro": "projetos de transformação cultural",
+        "setor": "nenhum",
+        "motivo": "“Metodologias ágeis” é direto; “transformação cultural” não cabe em item específico da taxonomia."
+      }
+    ]
+  },
+  "f05442a27a90": {
+    "versao_taxonomia": "ed47eaa18707",
+    "rotulador": "openai/gpt-5.4-mini",
+    "servido_por": "openai/gpt-5.4-mini",
+    "esforco": "medium",
+    "usd": 0.036,
+    "latencia_s": 44.6,
+    "reparos": 0,
+    "uso": {
+      "completion_tokens": 7578,
+      "prompt_tokens": 8488,
+      "total_tokens": 16066,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 5353,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 6656,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.0359742,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.0359742,
+      "gateway_cost": 0.0359742
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.hands_on"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Liderar tecnicamente” pede atuação técnica direta, não só gestão."
+      },
+      {
+        "ordem": 2,
+        "natureza": "responsabilidade",
+        "itens": [
+          "eng.arquitetura",
+          "eng.plataforma_cloud"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Arquitetura de dados” e “ambiente Databricks” indicam plataforma e desenho arquitetural."
+      },
+      {
+        "ordem": 3,
+        "natureza": "responsabilidade",
+        "itens": [
+          "eng.arquitetura",
+          "negocio.projetos_portfolio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Projeto de Data Lake” e “acompanhar a execução” apontam arquitetura e gestão de projeto."
+      },
+      {
+        "ordem": 4,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.kpis_metricas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Padronizar métricas” é requisito claro de KPIs e métricas."
+      },
+      {
+        "ordem": 5,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.bi_dashboards",
+          "analytics.automacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Dashboards” e “automação” citam BI e automação de processos."
+      },
+      {
+        "ordem": 6,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.estrategia",
+          "negocio.visao_negocio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Decisões estratégicas de negócio” liga dados à estratégia e ao impacto de negócio."
+      },
+      {
+        "ordem": 7,
+        "natureza": "responsabilidade",
+        "itens": [
+          "eng.integracao",
+          "negocio.processos_melhoria"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Organizar fluxos de informação” e “eficiência operacional” sugerem integração e melhoria de processos."
+      },
+      {
+        "ordem": 8,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.hands_on",
+          "experiencia.anos",
+          "experiencia.dados"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“7 anos”, “engenharia de dados” e “hands-on real” definem experiência e profundidade técnica."
+      },
+      {
+        "ordem": 9,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.hands_on",
+          "experiencia.anos"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“3 anos liderando times” e “referência técnica” pedem liderança e atuação prática."
+      },
+      {
+        "ordem": 10,
+        "natureza": "requisito",
+        "itens": [
+          "formacao.graduacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Formação em Engenharia… ou áreas correlatas” pede graduação."
+      },
+      {
+        "ordem": 11,
+        "natureza": "requisito",
+        "itens": [
+          "outro"
+        ],
+        "outro": "Domínio de linguagens técnicas",
+        "setor": "nenhum",
+        "motivo": "“Domínio técnico em SQL e Python” não cabe na taxonomia de práticas."
+      },
+      {
+        "ordem": 12,
+        "natureza": "requisito",
+        "itens": [
+          "eng.pipelines"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“ETL/ELT” e “construção de pipelines” citam engenharia de dados e pipelines."
+      },
+      {
+        "ordem": 13,
+        "natureza": "requisito",
+        "itens": [
+          "eng.plataforma_cloud",
+          "eng.arquitetura"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Databricks”, “Delta Lake” e “cluster performance” apontam plataforma e arquitetura."
+      },
+      {
+        "ordem": 14,
+        "natureza": "requisito",
+        "itens": [
+          "eng.modelagem",
+          "eng.arquitetura"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Modelagem e arquitetura de dados” e “arquitetura medalhão” citam os dois conceitos."
+      },
+      {
+        "ordem": 15,
+        "natureza": "requisito",
+        "itens": [
+          "eng.pipelines",
+          "eng.streaming",
+          "eng.integracao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Ingestão batch e streaming” e “múltiplas fontes” pedem pipelines, streaming e integração."
+      },
+      {
+        "ordem": 16,
+        "natureza": "requisito",
+        "itens": [
+          "eng.pipelines"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Orquestração de pipelines” é diretamente engenharia de dados."
+      },
+      {
+        "ordem": 17,
+        "natureza": "requisito",
+        "itens": [
+          "gov.governanca",
+          "gov.qualidade",
+          "gov.catalogo_linhagem"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Governança”, “qualidade”, “catalogação e linhagem” citam os três itens."
+      },
+      {
+        "ordem": 18,
+        "natureza": "requisito",
+        "itens": [
+          "eng.plataforma_cloud"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Plataformas de dados em cloud” pede experiência com plataforma em nuvem."
+      },
+      {
+        "ordem": 19,
+        "natureza": "requisito",
+        "itens": [
+          "eng.integracao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Integração de dados entre diferentes sistemas” é integração de fontes e sistemas."
+      },
+      {
+        "ordem": 20,
+        "natureza": "requisito",
+        "itens": [
+          "eng.pipelines"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Construção e sustentação de pipelines” aponta diretamente para pipelines."
+      },
+      {
+        "ordem": 21,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.bi_dashboards",
+          "analytics.analise_insights"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Dashboards” e “apoio à tomada de decisão” indicam BI e análise."
+      },
+      {
+        "ordem": 22,
+        "natureza": "requisito",
+        "itens": [
+          "comportamento.comunicacao",
+          "negocio.stakeholders"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Boa comunicação” e “interação com áreas não técnicas” pedem comunicação e articulação."
+      },
+      {
+        "ordem": 23,
+        "natureza": "requisito",
+        "itens": [
+          "idioma.espanhol"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "A linha cita diretamente “Espanhol”."
+      },
+      {
+        "ordem": 24,
+        "natureza": "requisito",
+        "itens": [
+          "formacao.certificacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Certificações Databricks” é exigência de certificação."
+      },
+      {
+        "ordem": 25,
+        "natureza": "requisito",
+        "itens": [
+          "eng.plataforma_cloud"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Outras plataformas de dados em cloud” remete a plataforma de dados em nuvem."
+      },
+      {
+        "ordem": 26,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.marketing_cliente"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Dados de CRM, marketing, vendas” apontam para analytics de cliente e marketing."
+      },
+      {
+        "ordem": 27,
+        "natureza": "requisito",
+        "itens": [
+          "experiencia.setor"
+        ],
+        "outro": "",
+        "setor": "varejo e e-commerce",
+        "motivo": "“Experiência em empresas de varejo, serviços” pede vivência setorial, com varejo explícito."
+      },
+      {
+        "ordem": 28,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.kpis_metricas"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Definição de métricas de negócio” cita KPIs e métricas."
+      },
+      {
+        "ordem": 29,
+        "natureza": "requisito",
+        "itens": [
+          "ia.ia_aplicada",
+          "ia.ciencia_dados_ml",
+          "analytics.analise_insights"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“IA, machine learning” e “analytics avançado” pedem IA aplicada, ML e análise."
+      },
+      {
+        "ordem": 30,
+        "natureza": "requisito",
+        "itens": [
+          "analytics.automacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Automação de processos analíticos” é automação."
+      },
+      {
+        "ordem": 31,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Título genérico de seção, sem requisito próprio."
+      },
+      {
+        "ordem": 32,
+        "natureza": "requisito",
+        "itens": [
+          "comportamento.analitico"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Forte pensamento estruturado e analítico” pede capacidade analítica."
+      },
+      {
+        "ordem": 33,
+        "natureza": "requisito",
+        "itens": [
+          "comportamento.organizacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Organizar ambientes em evolução” aponta organização e adaptação."
+      },
+      {
+        "ordem": 34,
+        "natureza": "requisito",
+        "itens": [
+          "comportamento.organizacao",
+          "negocio.visao_negocio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Foco em entrega” e “geração de valor” indicam organização e visão de negócio."
+      },
+      {
+        "ordem": 35,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.roadmap_priorizacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Capacidade de priorização” é exatamente priorização de roadmap."
+      },
+      {
+        "ordem": 36,
+        "natureza": "requisito",
+        "itens": [
+          "comportamento.comunicacao",
+          "negocio.stakeholders"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Boa comunicação” e diálogo com várias áreas indicam comunicação e stakeholders."
+      },
+      {
+        "ordem": 37,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.visao_negocio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Traduzir dados em impacto real para o negócio” é visão de negócio."
+      },
+      {
+        "ordem": 38,
+        "natureza": "requisito",
+        "itens": [
+          "outro"
+        ],
+        "outro": "Liderança com colaboração",
+        "setor": "nenhum",
+        "motivo": "“Liderança colaborativa” não encaixa em item específico da taxonomia."
+      },
+      {
+        "ordem": 39,
+        "natureza": "requisito",
+        "itens": [
+          "comportamento.comunicacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Escuta ativa” é parte de comunicação e colaboração."
+      },
+      {
+        "ordem": 40,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Linha de candidatura com detalhes logísticos, sem requisito técnico."
+      }
+    ]
+  },
+  "d3ad8239f051": {
+    "versao_taxonomia": "ed47eaa18707",
+    "rotulador": "openai/gpt-5.4-mini",
+    "servido_por": "openai/gpt-5.4-mini",
+    "esforco": "medium",
+    "usd": 0.0158,
+    "latencia_s": 20.0,
+    "reparos": 0,
+    "uso": {
+      "completion_tokens": 3166,
+      "prompt_tokens": 8061,
+      "total_tokens": 11227,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 2070,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 6656,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.01579995,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.01579995,
+      "gateway_cost": 0.01579995
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.stakeholders",
+          "negocio.roadmap_priorizacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"liderança das BUs\" e \"priorização do negócio\" indicam articulação com áreas e priorização de demandas."
+      },
+      {
+        "ordem": 2,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.cultura_dados",
+          "analytics.analise_insights"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"tomada de decisão baseado em dados\" e \"análises sólidas\" apontam cultura data-driven e análise."
+      },
+      {
+        "ordem": 3,
+        "natureza": "responsabilidade",
+        "itens": [
+          "analytics.analise_insights",
+          "negocio.visao_negocio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"modelos, análises e geração de insights\" e suporte a decisões estratégicas indicam análise e visão de negócio."
+      },
+      {
+        "ordem": 4,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.estrategia"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"Consolidar a visão de dados\" e garantir \"leitura integrada\" descrevem atuação estratégica sobre dados."
+      },
+      {
+        "ordem": 5,
+        "natureza": "responsabilidade",
+        "itens": [
+          "ia.ia_aplicada",
+          "negocio.transformacao_inovacao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"novas frentes de dados, modelos e AI\" e \"projetos novos\" indicam inovação e IA aplicada."
+      },
+      {
+        "ordem": 6,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.liderar_time"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"Gerenciar equipes de dados\" caracteriza liderança/gestão de time."
+      },
+      {
+        "ordem": 7,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.desenvolver_pessoas",
+          "pessoas.hands_on"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"orientação técnica\" e \"gestão de sua carreira\" indicam hands-on técnico e desenvolvimento de pessoas."
+      },
+      {
+        "ordem": 8,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Texto motivacional e genérico; não pede responsabilidade ou requisito concreto."
+      },
+      {
+        "ordem": 9,
+        "natureza": "requisito",
+        "itens": [
+          "comportamento.analitico",
+          "analytics.analise_insights"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"sólida formação analítica\" e \"criar e validar soluções analíticas\" pedem perfil analítico."
+      },
+      {
+        "ordem": 10,
+        "natureza": "requisito",
+        "itens": [
+          "eng.modelagem",
+          "ia.ia_aplicada",
+          "pessoas.hands_on"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"estruturação de dados, modelos e projetos de AI\" e \"referência técnica\" apontam modelagem, IA aplicada e hands-on."
+      },
+      {
+        "ordem": 11,
+        "natureza": "requisito",
+        "itens": [
+          "comportamento.comunicacao",
+          "negocio.stakeholders",
+          "negocio.visao_negocio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"comunicação eficaz\" com líderes e \"traduzindo\" conclusões mostra comunicação, articulação e visão de negócio."
+      },
+      {
+        "ordem": 12,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.estrategia",
+          "negocio.visao_negocio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"pensamento estratégico\" e combinar expertise técnica e de negócio indicam estratégia e visão de negócio."
+      },
+      {
+        "ordem": 13,
+        "natureza": "requisito",
+        "itens": [
+          "negocio.projetos_portfolio",
+          "analytics.analise_insights",
+          "negocio.visao_negocio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"liderança de projetos de dados\" e contribuição para decisões do negócio pedem projetos, análise e visão de negócio."
+      },
+      {
+        "ordem": 14,
+        "natureza": "requisito",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "A linha só cita \"Python\" e \"SQL\", que são ferramentas nomeadas fora da taxonomia."
+      },
+      {
+        "ordem": 15,
+        "natureza": "requisito",
+        "itens": [
+          "eng.plataforma_cloud"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"experiência com cloud\" indica atuação em plataforma de nuvem; as ferramentas citadas não são rotuladas."
+      },
+      {
+        "ordem": 16,
+        "natureza": "requisito",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "A linha apenas pede experiência em \"Growth e/ou Marketing\", sem item específico da taxonomia."
+      },
+      {
+        "ordem": 17,
+        "natureza": "requisito",
+        "itens": [
+          "ia.ciencia_dados_ml",
+          "ia.ia_aplicada",
+          "negocio.visao_negocio"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "\"projetos envolvendo AI/modelos preditivos\" e \"aplicados a negócio\" indicam ML, IA aplicada e impacto no negócio."
+      }
+    ]
+  },
+  "3d16b1335bf0": {
+    "versao_taxonomia": "ed47eaa18707",
+    "rotulador": "openai/gpt-5.4-mini",
+    "servido_por": "openai/gpt-5.4-mini",
+    "esforco": "medium",
+    "usd": 0.0201,
+    "latencia_s": 26.6,
+    "reparos": 1,
+    "uso": {
+      "completion_tokens": 4104,
+      "prompt_tokens": 8125,
+      "total_tokens": 12229,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 3253,
+        "rejected_prediction_tokens": null,
+        "text_tokens": null,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 6656,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": 0
+      },
+      "cost": 0.02006895,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": null,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "market_cost": 0.02006895,
+      "gateway_cost": 0.02006895
+    },
+    "linhas": [
+      {
+        "ordem": 1,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cabeçalho introdutório do desafio."
+      },
+      {
+        "ordem": 2,
+        "natureza": "responsabilidade",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.desenvolver_pessoas",
+          "ia.ia_produtividade"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Gerenciar e mentorar” e uso de IA no ciclo de desenvolvimento."
+      },
+      {
+        "ordem": 3,
+        "natureza": "responsabilidade",
+        "itens": [
+          "eng.arquitetura",
+          "eng.plataforma_cloud",
+          "eng.pipelines",
+          "ia.genai_llm",
+          "ia.ciencia_dados_ml"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Desenho de arquitetura em nuvem para GenAI, LLMs, ML e pipelines."
+      },
+      {
+        "ordem": 4,
+        "natureza": "responsabilidade",
+        "itens": [
+          "eng.pipelines",
+          "eng.streaming",
+          "eng.integracao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Ingestão batch/real-time e integração de APIs com DW/CDPs."
+      },
+      {
+        "ordem": 5,
+        "natureza": "responsabilidade",
+        "itens": [
+          "gov.governanca",
+          "gov.qualidade",
+          "gov.catalogo_linhagem",
+          "gov.privacidade_regulacao",
+          "gov.seguranca"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Cita políticas de qualidade, rastreabilidade, LGPD e segurança de dados."
+      },
+      {
+        "ordem": 6,
+        "natureza": "responsabilidade",
+        "itens": [
+          "eng.observabilidade_operacao",
+          "gov.qualidade",
+          "negocio.finops"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Anomalias em pipelines, testes de qualidade e custos em nuvem."
+      },
+      {
+        "ordem": 7,
+        "natureza": "responsabilidade",
+        "itens": [
+          "eng.pipelines",
+          "ia.mlops",
+          "ia.ciencia_dados_ml"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Feature stores e pipelines automatizados para dados e modelos preditivos."
+      },
+      {
+        "ordem": 8,
+        "natureza": "responsabilidade",
+        "itens": [
+          "negocio.clientes_consultoria",
+          "negocio.stakeholders",
+          "negocio.visao_negocio",
+          "ia.ia_aplicada"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Atuação consultiva com clientes e conexão entre negócio, tecnologia e IA."
+      },
+      {
+        "ordem": 9,
+        "natureza": "contexto",
+        "itens": [],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Apenas abre a seção de requisitos."
+      },
+      {
+        "ordem": 10,
+        "natureza": "requisito",
+        "itens": [
+          "pessoas.liderar_time",
+          "pessoas.hands_on",
+          "experiencia.dados"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "“Liderança ou gestão técnica” de equipes de Engenharia de Dados."
+      },
+      {
+        "ordem": 11,
+        "natureza": "requisito",
+        "itens": [
+          "eng.arquitetura",
+          "eng.plataforma_cloud"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Experiência em cloud data warehouses/lakehouses e plataformas de dados."
+      },
+      {
+        "ordem": 12,
+        "natureza": "requisito",
+        "itens": [
+          "ia.genai_llm",
+          "eng.integracao"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Embeddings, Vector DBs e conectores para LLMs/RAG."
+      },
+      {
+        "ordem": 13,
+        "natureza": "requisito",
+        "itens": [
+          "eng.integracao",
+          "analytics.digital_analytics"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Ecossistema de marketing/mídia com APIs, web analytics, CRMs e CDPs."
+      },
+      {
+        "ordem": 14,
+        "natureza": "requisito",
+        "itens": [
+          "gov.governanca",
+          "gov.privacidade_regulacao",
+          "gov.seguranca",
+          "gov.governanca_ia"
+        ],
+        "outro": "",
+        "setor": "nenhum",
+        "motivo": "Governança e segurança de dados ligadas à LGPD e IA."
+      }
+    ]
+  }
+}
