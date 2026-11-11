@@ -168,7 +168,7 @@ function waffle(box, chave) {
   box.innerHTML = ''; const st = stage(box);
   const W = box.clientWidth, narrow = W < 600, it = IT[chave];
   const grupos = [['coordenador', it.c, NC], ['gerente', it.g, NG]];
-  const cols = narrow ? 9 : 12, gap = narrow ? Math.min(30, (W - 10) / cols) : Math.min(34, (W / 2 - 60) / cols), r = gap * 0.36;
+  const cols = narrow ? 9 : 12, gap = narrow ? Math.min(30, (W - 10) / cols) : Math.min(34, (W / 2 - 60) / cols), r = Math.max(0, gap * 0.36);  // caixa ainda sem largura (1º desenho, antes do layout): raio 0, o desenho seguinte refaz
   const blocos = grupos.map(([, , n]) => Math.ceil(n / cols) * gap);
   const H = narrow ? blocos[0] + blocos[1] + 190 : Math.max(...blocos) + 110;
   const s = el('svg', { viewBox: `0 0 ${W} ${H}`, height: H }, box);
