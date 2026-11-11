@@ -45,15 +45,16 @@ O anúncio de gerência descreve quem desenha a área; o de coordenação, quem 
 
 ## 3. Python é pedido de coordenação
 
-Ferramenta citada pelo nome (regra determinística, `dbt/seeds/ferramentas.csv`) na lista de requisitos de
-`requisitos.csv`; 37 vagas de coordenação e 46 de gerência têm essa lista. A lista é um resumo do anúncio, não o
-anúncio inteiro (ver o README): a base não é a mesma das outras seções e a contagem é piso.
+Ferramenta citada pelo nome em qualquer linha do anúncio (regra determinística, `dbt/seeds/ferramentas.csv`,
+publicada na coluna `ferramentas` de `rotulos.csv`). A base é a das outras seções: 36 vagas de coordenação e 42 de
+gerência com o anúncio classificado. Citar o nome é diferente de exigir a ferramenta (pode estar em diferencial ou numa
+lista de exemplos), e quem não a nomeia pode pedi-la por outro termo: **trate como piso**.
 
 | ferramenta | coordenação | gerência | teste |
 |---|---|---|---|
-| Python | 54% (20 de 37) | 20% (9 de 46) | p = 0,001 |
-| SQL | 65% (24 de 37) | 43% (20 de 46) | p = 0,076 |
-| AWS, Azure ou GCP (qualquer) | 30% (11 de 37) | 39% (18 de 46) | p = 0,488 |
+| Python | 53% (19 de 36) | 21% (9 de 42) | p = 0,005 |
+| SQL | 67% (24 de 36) | 48% (20 de 42) | p = 0,112 |
+| AWS, Azure ou GCP (qualquer) | 31% (11 de 36) | 43% (18 de 42) | p = 0,348 |
 
 Python é a única ferramenta em que os níveis se separam com folga. SQL e nuvem citada pelo nome não se separam do
 acaso.

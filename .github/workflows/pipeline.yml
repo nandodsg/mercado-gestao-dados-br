@@ -5,18 +5,22 @@
 # data/ é escrito só pela publicação automática (1 commit por publicação, a partir do app privado), e esse commit dispara este
 # workflow. Antes da 1ª publicação data/ não existe: o job roda sobre os dados fictícios de tests/fixtures, pra o
 # esqueleto continuar testado.
+#
+# Depois do dbt build, sobre dado real, `analise/achados.py` refaz `analise/achados.md` (números saídos dos marts, texto do
+# modelo `achados.modelo.md`) e o job commita o arquivo se mudou. É o único commit que este workflow faz, só na main e só
+# em `analise/achados.md`; o GITHUB_TOKEN não dispara outro workflow, então não há laço.
 name: pipeline
 
 on:
   push:
-    paths: ["data/**", "pipeline/**", "dbt/**", "tests/**", "requirements.txt", ".github/workflows/pipeline.yml"]
+    paths: ["data/**", "pipeline/**", "dbt/**", "tests/**", "analise/**", "requirements.txt", ".github/workflows/pipeline.yml"]
   pull_request:
   schedule:
     - cron: "0 9 * * 1" # segunda 09h UTC, 3h depois do cron semanal de publicação
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write # só pra commitar analise/achados.md na main (passo final); PR e fixture nunca commitam
 
 jobs:
   build:
@@ -31,12 +35,12 @@ jobs:
       - name: Escolher a pasta de dados
         id: dados
         run: |
-          if [ -f data/manifest.json ] && [ -f data/rotulos.csv ]; then
+          if [ -f data/manifest.json ] && [ -f data/rotulos.csv ] && head -1 data/rotulos.csv | grep -q ',ferramentas,'; then
             echo "dir=data" >> "$GITHUB_OUTPUT"
             echo "Dados reais de data/"
           else
             echo "dir=tests/fixtures" >> "$GITHUB_OUTPUT"
-            echo "::notice::data/ ainda não tem o contrato completo (rotulos.csv chega na próxima publicação): rodando sobre tests/fixtures (dados fictícios)"
+            echo "::notice::data/ ainda não tem o contrato completo (rotulos.csv com a coluna ferramentas chega na próxima publicação): rodando sobre tests/fixtures (dados fictícios)"
           fi
       - name: Python compila
         run: python -m compileall -q pipeline
@@ -49,3 +53,19 @@ jobs:
           DATA_DIR: ${{ steps.dados.outputs.dir }}
         run: |
           dbt build --project-dir dbt --profiles-dir dbt --vars "{data_dir: $DATA_DIR}"
+      - name: Regerar analise/achados.md (só dado real)
+        if: steps.dados.outputs.dir == 'data'
+        run: python analise/achados.py
+      - name: Commitar achados.md se mudou (só main)
+        if: steps.dados.outputs.dir == 'data' && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        run: |
+          if git diff --quiet -- analise/achados.md; then
+            echo "achados.md já está em dia"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add analise/achados.md
+            git commit -m "achados: regerado a partir da publicação de $(python -c "import json;print(json.load(open('data/manifest.json'))['gerado_em'][:10])")"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

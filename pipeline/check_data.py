@@ -26,13 +26,14 @@ COLUNAS = {
                   "salario_moeda", "salario_tipo"],
     "requisitos.csv": ["id_publico", "ordem", "texto"],
     "benchmarks.csv": ["id_publico", "ordem", "fonte_url", "fonte_nota"],
-    "rotulos.csv": ["id_publico", "ordem", "hash_linha", "secao", "natureza", "itens", "setor", "versao_taxonomia", "rotulador"],
+    "rotulos.csv": ["id_publico", "ordem", "hash_linha", "secao", "natureza", "itens", "ferramentas", "setor", "versao_taxonomia",
+                    "rotulador"],
 }
 TEXTOS = {
     "vagas.csv": ["empresa", "cargo_oficial", "cidade", "contrato", "fonte", "url", "salario_tipo"],
     "requisitos.csv": ["texto"],
     "benchmarks.csv": ["fonte_url", "fonte_nota"],
-    "rotulos.csv": [],  # sem prosa: chaves da taxonomia, hash e listas fechadas
+    "rotulos.csv": [],  # sem prosa: chaves da taxonomia, nomes de ferramenta, hash e listas fechadas
 }
 REGRAS = [
     ("código de achievement/território/inventário", re.compile(r"\b(?:A\d{2}|E\d{2}|C\d{2}|T\d{1,2})\b")),

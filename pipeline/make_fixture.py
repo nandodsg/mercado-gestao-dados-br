@@ -39,14 +39,14 @@ BENCHMARKS = [
     ("aaaaaaaaaaa1", 1, "https://exemplo.invalid/salarios/coordenador-dados", "Faixa fictícia de exemplo"),
     ("aaaaaaaaaaa2", 1, "https://exemplo.invalid/salarios/gerente-analytics", "Faixa fictícia de exemplo"),
 ]
-# vaga, ordem, hash, secao, natureza, itens, setor. Itens: chaves reais da taxonomia (conferidas pelo teste dbt).
+# vaga, ordem, hash, secao, natureza, itens, ferramentas, setor. Itens e ferramentas: chaves reais da taxonomia e do dicionário (conferidas pelo teste dbt).
 # A vaga ...6 fica com 1 linha sem rótulo de propósito: a cobertura da fixture é parcial, como numa rodada incremental.
 ROTULOS = [
-    ("aaaaaaaaaaa1", 1, "f00000000001", "requisitos", "requisito", "pessoas.liderar_time", "nenhum"),
-    ("aaaaaaaaaaa1", 2, "f00000000002", "requisitos", "requisito", "pessoas.desenvolver_pessoas|pessoas.contratar_estruturar", "nenhum"),
-    ("aaaaaaaaaaa2", 1, "f00000000003", "responsabilidades", "contexto", "", "nenhum"),
-    ("aaaaaaaaaaa2", 2, "f00000000004", "diferenciais", "requisito", "experiencia.setor", "financeiro"),
-    ("aaaaaaaaaaa3", 1, "f00000000005", "responsabilidades", "responsabilidade", "pessoas.liderar_time", "nenhum"),
+    ("aaaaaaaaaaa1", 1, "f00000000001", "requisitos", "requisito", "pessoas.liderar_time", "", "nenhum"),
+    ("aaaaaaaaaaa1", 2, "f00000000002", "requisitos", "requisito", "pessoas.desenvolver_pessoas|pessoas.contratar_estruturar", "SQL|Power BI", "nenhum"),
+    ("aaaaaaaaaaa2", 1, "f00000000003", "responsabilidades", "contexto", "", "", "nenhum"),
+    ("aaaaaaaaaaa2", 2, "f00000000004", "diferenciais", "requisito", "experiencia.setor", "Python", "financeiro"),
+    ("aaaaaaaaaaa3", 1, "f00000000005", "responsabilidades", "responsabilidade", "pessoas.liderar_time", "", "nenhum"),
 ]
 COBERTURA = {"linhas": 6, "rotuladas": len(ROTULOS)}
 VERSAO_TAXONOMIA = "fixture00000"
@@ -69,13 +69,13 @@ def main() -> None:
          f"https://exemplo.invalid/vaga/{i}", "", "", "", "", ""]
         for i, e, c, reg, cid, uf, ctr, mes in VAGAS
     ]
-    rotulos = [[v, o, h, sec, nat, it, st, VERSAO_TAXONOMIA, ROTULADOR] for v, o, h, sec, nat, it, st in ROTULOS]
+    rotulos = [[v, o, h, sec, nat, it, fe, st, VERSAO_TAXONOMIA, ROTULADOR] for v, o, h, sec, nat, it, fe, st in ROTULOS]
     arquivos = {
         "vagas.csv": escrever("vagas.csv", CABECALHO_VAGAS, vagas),
         "requisitos.csv": escrever("requisitos.csv", ["id_publico", "ordem", "texto"], [list(r) for r in REQUISITOS]),
         "benchmarks.csv": escrever("benchmarks.csv", ["id_publico", "ordem", "fonte_url", "fonte_nota"], [list(b) for b in BENCHMARKS]),
-        "rotulos.csv": escrever("rotulos.csv", ["id_publico", "ordem", "hash_linha", "secao", "natureza", "itens", "setor",
-                                                "versao_taxonomia", "rotulador"], rotulos),
+        "rotulos.csv": escrever("rotulos.csv", ["id_publico", "ordem", "hash_linha", "secao", "natureza", "itens", "ferramentas",
+                                                "setor", "versao_taxonomia", "rotulador"], rotulos),
     }
     info = {n: {"sha256": hashlib.sha256(t.encode("utf-8")).hexdigest(), "linhas": len(t.splitlines()) - 1} for n, t in arquivos.items()}
     manifest = {

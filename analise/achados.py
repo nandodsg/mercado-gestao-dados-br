@@ -10,18 +10,13 @@ repetido). Alta gestão e "outros" entram só nos totais: são poucas vagas pra 
 """
 from __future__ import annotations
 
-import csv
 import json
 import math
-import sys
 from pathlib import Path
 
 import duckdb
 
 RAIZ = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(RAIZ / "rotulagem"))
-import regras  # noqa: E402
-
 DB = RAIZ / "dbt" / "target" / "mercado.duckdb"
 MODELO = Path(__file__).with_name("achados.modelo.md")
 SAIDA = Path(__file__).with_name("achados.md")
@@ -134,39 +129,31 @@ def main() -> None:
     v["setor_dif"] = frac(dif.get("experiencia.setor", 0), n_dif)
     ia_primeiro = bool(difs) and difs[0][0] == "ia"
 
-    # 3. ferramenta pelo nome (regra determinística sobre requisitos.csv)
-    nivel_de = dict(c.sql(f"""select id_publico, nivel from mart_vagas
-                              where nivel in {NIVEIS} and id_publico not in (select id_publico from mart_repost)""").fetchall())
-    com_req: dict[str, set] = {nv: set() for nv in NIVEIS}
-    ferr: dict[str, dict[str, set]] = {}
-    with (RAIZ / "data" / "requisitos.csv").open(encoding="utf-8") as f:
-        for r in csv.DictReader(f):
-            nv = nivel_de.get(r["id_publico"])
-            if not nv:
-                continue
-            com_req[nv].add(r["id_publico"])
-            for nome in regras.ferramentas(r["texto"]):
-                ferr.setdefault(nome, {x: set() for x in NIVEIS})[nv].add(r["id_publico"])
-    rc, rg = len(com_req["coordenador"]), len(com_req["gerente"])
-    v["rc"], v["rg"] = rc, rg
+    # 3. ferramenta pelo nome no anúncio inteiro (regra determinística aplicada antes da publicação; mart_vaga_ferramenta,
+    #    mesma base 36 × 42 das outras seções)
+    por_ferr = {
+        (nome, nivel): k
+        for nome, nivel, k in c.sql("select ferramenta, nivel, count(distinct id_publico) from mart_vaga_ferramenta group by 1, 2").fetchall()
+    }
     # a ferramenta mais citada em cada nível (pra condição do achado 1: nenhuma chega à frequência do núcleo)
     v["ferr_top"], ferr_top_pct = "", 0.0
-    for nome, s_ in ferr.items():
-        frac_max = max(len(s_["coordenador"]) / rc if rc else 0, len(s_["gerente"]) / rg if rg else 0)
+    for nome in sorted({n_ for n_, _ in por_ferr}):
+        frac_max = max(por_ferr.get((nome, "coordenador"), 0) / nc if nc else 0, por_ferr.get((nome, "gerente"), 0) / ng if ng else 0)
         if frac_max > ferr_top_pct:
             v["ferr_top"], ferr_top_pct = nome, frac_max
 
     def ferramenta(nome: str, pref: str) -> tuple[int, int]:
-        s = ferr.get(nome, {x: set() for x in NIVEIS})
-        xc, xg = len(s["coordenador"]), len(s["gerente"])
-        v[f"{pref}_c"], v[f"{pref}_g"], v[f"{pref}_p"] = frac(xc, rc), frac(xg, rg), p_txt(fisher(xc, rc, xg, rg))
+        xc, xg = por_ferr.get((nome, "coordenador"), 0), por_ferr.get((nome, "gerente"), 0)
+        v[f"{pref}_c"], v[f"{pref}_g"], v[f"{pref}_p"] = frac(xc, nc), frac(xg, ng), p_txt(fisher(xc, nc, xg, ng))
         return xc, xg
 
     py = ferramenta("Python", "py")
     ferramenta("SQL", "sql")
-    nuvem = {x: set().union(*(ferr.get(nm, {x: set()})[x] for nm in ("AWS", "Azure", "GCP"))) for x in NIVEIS}
-    v["nuvem_c"], v["nuvem_g"] = frac(len(nuvem["coordenador"]), rc), frac(len(nuvem["gerente"]), rg)
-    v["nuvem_p"] = p_txt(fisher(len(nuvem["coordenador"]), rc, len(nuvem["gerente"]), rg))
+    nuvem = dict(c.sql("""select nivel, count(distinct id_publico) from mart_vaga_ferramenta
+                          where ferramenta in ('AWS', 'Azure', 'GCP') group by 1""").fetchall())
+    nuvem_c, nuvem_g = nuvem.get("coordenador", 0), nuvem.get("gerente", 0)
+    v["nuvem_c"], v["nuvem_g"] = frac(nuvem_c, nc), frac(nuvem_g, ng)
+    v["nuvem_p"] = p_txt(fisher(nuvem_c, nc, nuvem_g, ng))
 
     # 6. salário: transparência do anúncio × referência pesquisada
     v["n_faixa"] = um("select count(*) from mart_vagas where faixa_posting is not null")
@@ -189,7 +176,7 @@ def main() -> None:
         "c1": all(min(xc / nc, xg / ng) >= 0.75 for xc, xg in nucleo)
               and ferr_top_pct < min(min(xc / nc, xg / ng) for xc, xg in nucleo),
         "c2": gap(*est) > 0 and gap(*ope) < 0,
-        "c3": py[0] / rc > py[1] / rg,
+        "c3": py[0] / nc > py[1] / ng,
         "c4": abs(gap(*hands)) < 10 and 0.3 <= (hands[0] + hands[1]) / (nc + ng) <= 0.7,
         "c5": ia.get("gerente", 0) / ng >= ia.get("coordenador", 0) / nc and ia_primeiro and ia_resp > ia_req,
         "c6": v["n_faixa"] <= 0.1 * v["n_vagas"],

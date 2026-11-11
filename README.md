@@ -75,8 +75,8 @@ Como a rota por assinatura é disparada e como o resultado volta ao repositório
 
 `rotulos.csv` tem uma linha por linha de anúncio classificada: `id_publico`, `ordem` (posição da linha no anúncio),
 `hash_linha` (identificador da linha, sem o texto), `secao` (responsabilidades, requisitos ou diferenciais), `natureza`
-(`responsabilidade`, `requisito` ou `contexto`), `itens` (chaves da taxonomia separadas por `|`), `setor`,
-`versao_taxonomia` e `rotulador`. **O texto das linhas não é publicado**: o anúncio pertence à empresa, e o texto
+(`responsabilidade`, `requisito` ou `contexto`), `itens` (chaves da taxonomia separadas por `|`), `ferramentas`
+(nomes das ferramentas citadas na linha, separados por `|`), `setor`, `versao_taxonomia` e `rotulador`. **O texto das linhas não é publicado**: o anúncio pertence à empresa, e o texto
 que já está em `requisitos.csv` é um resumo dos requisitos, não o anúncio. Quem quiser relacionar um item ao texto
 volta ao posting pela `url`.
 
@@ -84,8 +84,9 @@ volta ao posting pela `url`.
 cada linha, a natureza e **todos** os itens que ela pede (uma linha pode pedir vários; contexto sobre a empresa não pede
 nenhum). A taxonomia (`rotulagem/taxonomia.md`, de onde sai o seed `dbt/seeds/taxonomia.csv`) é fechada: item fora
 da lista é erro de validação, e o item `outro` é a válvula pra o que não cabe. Peso, anos de experiência e ferramentas
-**não** vêm do modelo, e sim de regras determinísticas (`rotulagem/regras.py`, `dbt/seeds/ferramentas.csv`). O modelo
-só decide o que exige leitura. A taxonomia tem uma versão (hash do arquivo): taxonomia nova refaz a rodada inteira, e
+**não** vêm do modelo, e sim de regras determinísticas (`rotulagem/regras.py`, `dbt/seeds/ferramentas.csv`); delas, só as
+ferramentas são publicadas, na coluna `ferramentas` (o nome canônico, nunca o texto da linha). O modelo só decide o que
+exige leitura. A taxonomia tem uma versão (hash do arquivo): taxonomia nova refaz a rodada inteira, e
 só uma versão fica publicada por vez.
 
 **Vieses e limites da classificação.**
@@ -96,6 +97,10 @@ só uma versão fica publicada por vez.
   isolada.**
 - **Revocação menor que precisão.** O modelo tende a deixar de marcar um item que está lá mais do que a marcar um que
   não está. Contagens por item são piso, não teto.
+- **Ferramenta é citação, não exigência.** A regra procura o nome (e apelidos como "PBI", "PySpark") em qualquer
+  linha do anúncio, inclusive diferencial, lista de exemplos e texto de contexto, e não entende o sentido: "não precisa saber Python" conta.
+  Quem pede a ferramenta por outro termo ("linguagem de programação", "nuvem") não é contado. A contagem é piso. O
+  dicionário (`dbt/seeds/ferramentas.csv`) tem versão: mudou, as linhas são recalculadas antes da publicação.
 - **Itens de fronteira confundem.** A taxonomia lista, item a item, o que *não* conta; mesmo assim a borda entre itens
   vizinhos (liderar projetos × liderar time, por exemplo) é onde mais se erra.
 - **Rodada parcial é estado normal.** A fração classificada fica em `cobertura` no `manifest.json` (linhas do anúncio ×
@@ -106,7 +111,8 @@ só uma versão fica publicada por vez.
 anterior). A escolha vem do desempenho na referência. Nada no repositório público guarda credencial: a classificação
 roda do lado privado e só os rótulos validados chegam aqui. O dbt confere que todo item pertence à taxonomia, que a
 natureza está na lista, que linha de contexto não carrega item, que o setor só aparece junto do item de setor e que
-cada `id_publico` existe em `vagas.csv`. `mart_vaga_item` (vaga × item) é a base das contagens da análise.
+cada `id_publico` existe em `vagas.csv`. `mart_vaga_item` (vaga × item) e `mart_vaga_ferramenta` (vaga × ferramenta)
+são a base das contagens da análise; `analise/achados.md` é refeito pela CI a cada publicação.
 
 ## Como a amostra foi formada (metodologia)
 
@@ -170,7 +176,8 @@ contrato, a data de geração, as contagens, a `cobertura` da classificação e 
 - `requisitos.csv` (1 linha por linha de requisito): `id_publico`, `ordem`, `texto`.
 - `benchmarks.csv` (1 linha por fonte de benchmark): `id_publico`, `ordem`, `fonte_url`, `fonte_nota`.
 - `rotulos.csv` (1 linha por linha de anúncio classificada, sem o texto): `id_publico`, `ordem`, `hash_linha`, `secao`,
-  `natureza`, `itens` (separados por `|`), `setor`, `versao_taxonomia`, `rotulador`.
+  `natureza`, `itens` (separados por `|`), `ferramentas` (nomes do dicionário, separados por `|`), `setor`,
+  `versao_taxonomia`, `rotulador`.
 
 Mudança de coluna sobe a versão do contrato. A publicação e este repo concordam sobre a lista; se discordarem, o
 `check_data.py` falha.

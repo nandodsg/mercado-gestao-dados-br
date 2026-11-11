@@ -45,9 +45,10 @@ O anúncio de gerência descreve quem desenha a área; o de coordenação, quem 
 
 ## 3. Python é pedido de coordenação
 
-{aviso_c3}Ferramenta citada pelo nome (regra determinística, `dbt/seeds/ferramentas.csv`) na lista de requisitos de
-`requisitos.csv`; {rc} vagas de coordenação e {rg} de gerência têm essa lista. A lista é um resumo do anúncio, não o
-anúncio inteiro (ver o README): a base não é a mesma das outras seções e a contagem é piso.
+{aviso_c3}Ferramenta citada pelo nome em qualquer linha do anúncio (regra determinística, `dbt/seeds/ferramentas.csv`,
+publicada na coluna `ferramentas` de `rotulos.csv`). A base é a das outras seções: {nc} vagas de coordenação e {ng} de
+gerência com o anúncio classificado. Citar o nome é diferente de exigir a ferramenta (pode estar em diferencial ou numa
+lista de exemplos), e quem não a nomeia pode pedi-la por outro termo: **trate como piso**.
 
 | ferramenta | coordenação | gerência | teste |
 |---|---|---|---|

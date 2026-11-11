@@ -96,6 +96,14 @@ models:
           - not_null
           - relationships: {arguments: {to: ref('taxonomia'), field: chave}}
 
+  - name: stg_rotulo_ferramentas
+    description: "Linha rotulada × ferramenta citada pelo nome (o campo ferramentas aberto pelo separador). Toda ferramenta pertence ao dicionário (seed ferramentas)."
+    columns:
+      - name: ferramenta
+        data_tests:
+          - not_null
+          - relationships: {arguments: {to: ref('ferramentas'), field: ferramenta}}
+
   - name: stg_cobertura
     description: "Cobertura declarada no manifest: linhas de anúncio no universo × linhas rotuladas."
 
@@ -105,6 +113,13 @@ models:
       - name: id_publico
         data_tests: [not_null]
       - name: item_chave
+        data_tests: [not_null]
+  - name: mart_vaga_ferramenta
+    description: "Vaga × ferramenta citada pelo nome no anúncio (uma vaga conta uma vez por ferramenta), na mesma base de mart_vaga_item."
+    columns:
+      - name: id_publico
+        data_tests: [not_null]
+      - name: ferramenta
         data_tests: [not_null]
   - name: mart_repost
     description: "Anúncio repetido (mesma empresa, mesmo nível, mesmo conjunto de linhas): aponta pro original e sai de mart_vaga_item."
