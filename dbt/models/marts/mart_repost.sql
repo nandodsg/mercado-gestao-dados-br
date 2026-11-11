@@ -1,5 +1,5 @@
 -- Anúncio repetido: a mesma empresa publica o mesmo texto mais de uma vez (às vezes com outro título). Conta uma vez só
--- na análise vaga × item. Critério: mesma empresa normalizada (seed `setores`), mesmo nível e o MESMO conjunto de linhas
+-- na análise vaga × item. Critério: mesma empresa normalizada (`stg_empresas`), mesmo nível e o MESMO conjunto de linhas
 -- rotuladas (hash de cada linha do anúncio). Igualdade exata de propósito: anúncios da mesma empresa que só dividem o
 -- texto institucional não são repetição. A vaga mais antiga (mês, depois id) fica; as outras apontam pra ela.
 -- O mesmo texto publicado em níveis diferentes conta uma vez em cada nível: é a comparação entre níveis que a análise faz.
@@ -18,7 +18,7 @@ grupos as (
         a.linhas
     from {{ ref('mart_vagas') }} v
     join assinatura a using (id_publico)
-    left join {{ ref('setores') }} s on s.empresa = v.empresa
+    left join {{ ref('stg_empresas') }} s on s.empresa = v.empresa
 ),
 
 ordenados as (

@@ -38,12 +38,12 @@ jobs:
       - name: Escolher a pasta de dados
         id: dados
         run: |
-          if [ -f data/manifest.json ] && [ -f data/rotulos.csv ] && head -1 data/rotulos.csv | grep -q ',ferramentas,'; then
+          if [ -f data/manifest.json ] && [ -f data/rotulos.csv ] && head -1 data/rotulos.csv | grep -q ',ferramentas,' && [ -f data/empresas.csv ]; then
             echo "dir=data" >> "$GITHUB_OUTPUT"
             echo "Dados reais de data/"
           else
             echo "dir=tests/fixtures" >> "$GITHUB_OUTPUT"
-            echo "::notice::data/ ainda não tem o contrato completo (rotulos.csv com a coluna ferramentas chega na próxima publicação): rodando sobre tests/fixtures (dados fictícios)"
+            echo "::notice::data/ ainda não tem o contrato completo (rotulos.csv com a coluna ferramentas e empresas.csv chegam na próxima publicação): rodando sobre tests/fixtures (dados fictícios)"
           fi
       - name: Python compila
         run: python -m compileall -q pipeline

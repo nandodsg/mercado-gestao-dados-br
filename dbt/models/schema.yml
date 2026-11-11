@@ -50,6 +50,18 @@ models:
       - name: texto
         data_tests: [not_null]
 
+  - name: stg_empresas
+    description: "Empresa como aparece em vagas.csv, nome normalizado (grafias repetidas viram uma) e setor de atuação, da lista fechada `lista_setores`. Empresa sem linha aqui é aviso (teste empresa_sem_setor), não erro."
+    columns:
+      - name: empresa
+        data_tests: [not_null, unique]
+      - name: empresa_normalizada
+        data_tests: [not_null]
+      - name: setor
+        data_tests:
+          - not_null
+          - relationships: {arguments: {to: ref('lista_setores'), field: setor}}
+
   - name: stg_benchmarks
     description: "Fontes de benchmark salarial por vaga. Referência pesquisada, nunca salário do posting."
     columns:
@@ -142,17 +154,11 @@ seeds:
         data_tests: [not_null, unique]
       - name: dimensao
         data_tests: [not_null]
-  - name: setores
-    description: "Empresa como aparece em vagas.csv, nome normalizado (grafias repetidas viram uma) e setor de atuação. Lista de setores fechada."
+  - name: lista_setores
+    description: "Lista fechada de setores de atuação da empresa. Única fonte da lista: empresas.csv, o rótulo de setor das linhas do anúncio e o prompt da rotulagem leem daqui."
     columns:
-      - name: empresa
-        data_tests: [not_null, unique]
       - name: setor
-        data_tests:
-          - not_null
-          - accepted_values:
-              arguments:
-                values: ["financeiro", "seguros e previdência", "saúde", "educação", "varejo e e-commerce", "bens de consumo (CPG)", "indústria", "tecnologia e software", "consultoria", "mídia, marketing e publicidade", "telecom", "logística e mobilidade", "energia e saneamento", "imobiliário", "serviços"]
+        data_tests: [not_null, unique]
   - name: ferramentas
     description: "Dicionário de ferramentas: regex (sobre o texto sem acento e em minúsculas) por nome canônico. `remover` é apagado do texto antes de casar."
     columns:

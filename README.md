@@ -19,7 +19,7 @@ Portuguese).*
 
 | pasta | o que é | quem escreve |
 |---|---|---|
-| `data/` | os CSVs do dataset (`vagas.csv`, `requisitos.csv`, `benchmarks.csv`, `rotulos.csv`) e o `manifest.json` | **só a automação de publicação**, 1 commit por publicação, semanal |
+| `data/` | os CSVs do dataset (`vagas.csv`, `requisitos.csv`, `benchmarks.csv`, `rotulos.csv`, `empresas.csv`) e o `manifest.json` | **só a automação de publicação**, 1 commit por publicação, semanal |
 | `dbt/` | projeto dbt sobre DuckDB: staging lê `data/*.csv`, marts por nível, testes | código |
 | `pipeline/` | Python: conferência do contrato e do sigilo (`check_data.py`) e o exemplo da rota alternativa de classificação | código |
 | `site/` | o modelo, o CSS e o JavaScript da página pública (o `index.html` sai do gerador, nunca é editado) | código |
@@ -163,6 +163,12 @@ são a base das contagens da análise; `analise/achados.md` é refeito pela CI a
    conta como híbrido ou presencial.
 7. **Normalização na publicação.** `fonte` vira o canal (`linkedin`, `gupy`…), `contrato` vira `CLT`, `PJ` ou vazio e
    `salario_tipo` vira `base`, `total` ou vazio. O texto livre original não sai.
+8. **Setor da empresa.** `empresas.csv` dá, para cada empresa que aparece em `vagas.csv`, o nome normalizado (grafias
+   repetidas da mesma empresa viram uma) e o setor, escolhido numa lista fechada (`dbt/seeds/lista_setores.csv`). O setor é
+   uma classificação do autor a partir do que a empresa faz, lida no anúncio, e é discutível nas bordas (uma consultoria
+   de recrutamento que não nomeia a contratante conta como consultoria). Pode ser revisado entre uma publicação e outra. O
+   nome normalizado entra na detecção de anúncio repetido; o setor, nesta etapa, não é eixo de análise. Empresa sem linha
+   em `empresas.csv` não trava nada: o teste `empresa_sem_setor` só avisa e a empresa entra com o próprio nome.
 
 ## Vieses e limites (o que impede de ler isto como "o mercado")
 
@@ -198,6 +204,8 @@ contrato, a data de geração, as contagens, a `cobertura` da classificação e 
 - `rotulos.csv` (1 linha por linha de anúncio classificada, sem o texto): `id_publico`, `ordem`, `hash_linha`, `secao`,
   `natureza`, `itens` (separados por `|`), `ferramentas` (nomes do dicionário, separados por `|`), `setor`,
   `versao_taxonomia`, `rotulador`.
+- `empresas.csv` (1 linha por empresa de `vagas.csv`): `empresa` (como aparece em `vagas.csv`), `empresa_normalizada`,
+  `setor` (da lista fechada `dbt/seeds/lista_setores.csv`; o `check_data.py` confere).
 
 Mudança de coluna sobe a versão do contrato. A publicação e este repo concordam sobre a lista; se discordarem, o
 `check_data.py` falha.
@@ -210,7 +218,7 @@ python pipeline/check_data.py data                                      # contra
 dbt build --project-dir dbt --profiles-dir dbt                          # DuckDB, sem credencial
 ```
 
-Sem `data/` completo (antes da publicação que traz `rotulos.csv`), aponte pros dados fictícios:
+Sem `data/` completo (antes da publicação que traz `rotulos.csv` com `ferramentas` e `empresas.csv`), aponte pros dados fictícios:
 `dbt build --project-dir dbt --profiles-dir dbt --vars '{data_dir: tests/fixtures}'`.
 
 ## Licença

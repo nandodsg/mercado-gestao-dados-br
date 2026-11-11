@@ -2,7 +2,7 @@
 
     python rotulagem/gerar_seeds.py
 
-`setores.csv` e `ferramentas.csv` são escritos à mão (são tabelas de decisão, não derivam da taxonomia); este script só
+`lista_setores.csv` e `ferramentas.csv` são escritos à mão (são tabelas de decisão, não derivam da taxonomia); este script só
 confere que o que eles prometem é coerente com ela.
 """
 
@@ -24,9 +24,9 @@ def main() -> None:
             w.writerow([n, i["dimensao"], i["chave"], i["item"], i["definicao"], i["borda"]])
     print(f"taxonomia.csv: {len(todos)} itens (taxonomia {versao()})")
 
-    with (SEEDS / "setores.csv").open(encoding="utf-8") as f:
+    with (SEEDS / "lista_setores.csv").open(encoding="utf-8") as f:
         setores = list(csv.DictReader(f))
-    print(f"setores.csv: {len(setores)} empresas, {len({s['setor'] for s in setores})} setores")
+    print(f"lista_setores.csv: {len(setores)} setores")
     with (SEEDS / "ferramentas.csv").open(encoding="utf-8") as f:
         ferramentas = list(csv.DictReader(f))
     print(f"ferramentas.csv: {len(ferramentas)} regras")

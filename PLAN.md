@@ -12,7 +12,8 @@ Registro de decisões do pipeline do repo público: o que mudou o desenho e por 
 | `dbt/` (staging, marts por nível, testes) | `dbt build` verde sobre os dados fictícios e **sobre o dado real da 1ª publicação** |
 | CI `pipeline.yml` | verde sobre `data/` (1ª publicação, 2026-11-05); sem `data/`, roda sobre `tests/fixtures` |
 | Pages `pages.yml` + `site/` | página implementada (`pipeline/gerar_site.py` + modelo, CSS e JS); o `pages` só implanta sobre dado real com a coluna `ferramentas` |
-| Seeds `setores.csv`, `taxonomia.csv`, `overrides.csv` | ainda não existem: nascem junto com o conjunto de referência e a classificação |
+| Seeds `taxonomia.csv`, `ferramentas.csv`, `niveis.csv`, `lista_setores.csv` | prontos (`lista_setores.csv` é a lista fechada de setores; `overrides.csv` ainda não existe) |
+| `data/empresas.csv` (5º arquivo do contrato: empresa, nome normalizado, setor) | lido por `stg_empresas`; o `pages` e o `pipeline` só tratam `data/` como completo com ele presente |
 | Pasta `data/` | publicada pela automação (1 commit por publicação) |
 
 Conferido na 1ª publicação com dado real: os valores de `regime` batem com `presencial | hibrido | remoto` (sem avisos) e
@@ -37,11 +38,13 @@ vem vazio em parte das vagas (o teste de valores aceitos ignora vazio); análise
 | 2026-11-05 | Arquitetura: **armazenamento = CSVs no git; DuckDB só como motor de consulta, reconstruído a cada execução; dbt = transformação**; sem catálogo nem formato de lakehouse | um escritor, rodada semanal, git já guarda os snapshots; "data lake" seria nome grande demais pra poucos CSVs pequenos |
 | 2026-11-05 | Análise geográfica fora do foco: o README diz que a distribuição por local não é representativa (reflete a preferência de busca do autor) e recomenda a composição dos requisitos como fato principal | a amostra não pretende refletir a distribuição nacional; qualquer estudo de mercado mostraria concentração em São Paulo de qualquer forma |
 | 2026-11-05 | Orquestração = GitHub Actions encadeadas por commit em `data/`; **sem Dagster por enquanto** | uma transformação (o DAG é o do dbt) e um encadeamento simples; reavaliar quando entrar a classificação por modelo de linguagem (custo, cache, reprocesso parcial) |
+| 2026-11-11 | Setor da empresa vem de `data/empresas.csv` (publicado), não de seed escrito à mão; o seed `setores.csv` sai e a lista fechada vira `lista_setores.csv`. `empresa_sem_setor` é aviso, não erro | o setor só alimenta a junção de grafias do `mart_repost`; travar CI e página por um dado que ninguém publicado lê não se justifica, e empresa nova não pode depender de edição manual do repo |
+| 2026-11-11 | `rotulagem/taxonomia.md` continua citando `setores.csv` na linha de `experiencia.setor` | editar o texto mudaria a versão da taxonomia (hash do arquivo) e invalidaria todas as linhas já rotuladas; corrige-se junto da próxima mudança real de taxonomia |
 | 2026-11-11 | Modelo de classificação: **Claude Haiku 5.5**, consumido pela **assinatura do autor** (cota semanal), não por API paga. Rota por gateway documentada e com exemplo (`pipeline/exemplo_gateway.py`); a decisão de como a rota por assinatura é disparada fica em aberto (próximo passo abaixo). Substitui, para a classificação, a linha "único secret futuro: chave do gateway" | o volume é pequeno (cache por texto: só linha nova gasta), o modelo é barato e a cota da assinatura já está paga; o gateway segue viável se a rota mudar |
 
 ## Próximos passos (gatilhos)
 
-- **Taxonomia, setores e conjunto de referência** → seeds `taxonomia.csv`, `setores.csv`, `overrides.csv` e o teste "100% dos
+- **Taxonomia, setores e conjunto de referência** → seeds `taxonomia.csv`, `overrides.csv` e o teste "100% dos
   requisitos classificados". Gatilho: método do conjunto de referência decidido.
 - **Rota de consumo por assinatura** (antes da classificação em produção). Planejar como a classificação é disparada e como o
   resultado volta ao repositório sem chave de API e sem publicar o anúncio inteiro; medir o Haiku 5.5 **por essa rota** contra a

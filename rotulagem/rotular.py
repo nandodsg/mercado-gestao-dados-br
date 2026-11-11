@@ -30,8 +30,8 @@ SAIDA_ESPERADA = 5000  # tokens de saída por vaga (raciocínio + rótulos + mot
 
 
 def setores() -> list[str]:
-    with (RAIZ / "dbt" / "seeds" / "setores.csv").open(encoding="utf-8") as f:
-        return sorted({r["setor"] for r in csv.DictReader(f)})
+    with (RAIZ / "dbt" / "seeds" / "lista_setores.csv").open(encoding="utf-8") as f:
+        return sorted(r["setor"] for r in csv.DictReader(f))
 
 
 def prompt_sistema() -> str:

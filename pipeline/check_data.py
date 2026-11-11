@@ -3,12 +3,14 @@
 Uso:
   python pipeline/check_data.py [pasta]      # padrão: data
 
-Quatro checagens, nesta ordem, e qualquer falha sai com código 1:
+Cinco checagens, nesta ordem, e qualquer falha sai com código 1:
   1. manifest.json existe e o sha256 e o número de linhas de cada CSV batem com o que ele declara;
   2. cada CSV tem exatamente as colunas do contrato v1, na ordem;
   3. `cobertura` do manifest (linhas do anúncio × linhas rotuladas) é um par de inteiros coerente (rotuladas ≤ linhas);
      a fração rotulada é aviso no dbt, não falha aqui: rodada parcial é estado normal;
-  4. sigilo (2ª camada, depois da aplicada na publicação): nenhum texto carrega código de achievement/território/inventário
+  4. `setor` de empresas.csv e de rotulos.csv está na lista fechada de dbt/seeds/lista_setores.csv (em rotulos.csv, vazio e
+     "nenhum" também valem);
+  5. sigilo (2ª camada, depois da aplicada na publicação): nenhum texto carrega código de achievement/território/inventário
      nem o nome do autor. Repete de propósito a regra da publicação: o repo público não confia em quem escreve nele.
 """
 from __future__ import annotations
@@ -28,20 +30,29 @@ COLUNAS = {
     "benchmarks.csv": ["id_publico", "ordem", "fonte_url", "fonte_nota"],
     "rotulos.csv": ["id_publico", "ordem", "hash_linha", "secao", "natureza", "itens", "ferramentas", "setor", "versao_taxonomia",
                     "rotulador"],
+    "empresas.csv": ["empresa", "empresa_normalizada", "setor"],
 }
 TEXTOS = {
     "vagas.csv": ["empresa", "cargo_oficial", "cidade", "contrato", "fonte", "url", "salario_tipo"],
     "requisitos.csv": ["texto"],
     "benchmarks.csv": ["fonte_url", "fonte_nota"],
     "rotulos.csv": [],  # sem prosa: chaves da taxonomia, nomes de ferramenta, hash e listas fechadas
+    "empresas.csv": ["empresa", "empresa_normalizada"],  # `setor` é lista fechada, conferida abaixo
 }
+LISTA_SETORES = Path(__file__).resolve().parent.parent / "dbt" / "seeds" / "lista_setores.csv"
 REGRAS = [
     ("código de achievement/território/inventário", re.compile(r"\b(?:A\d{2}|E\d{2}|C\d{2}|T\d{1,2})\b")),
     ("nome do autor", re.compile(r"\bNando\b|Fernando\s+Guimar", re.I)),
 ]
 
 
+def carregar_setores() -> set[str]:
+    with open(LISTA_SETORES, encoding="utf-8", newline="") as f:
+        return {r["setor"] for r in csv.DictReader(f)}
+
+
 def main() -> int:
+    setores = carregar_setores()
     pasta = Path(sys.argv[1] if len(sys.argv) > 1 else "data")
     erros: list[str] = []
     manifest_path = pasta / "manifest.json"
@@ -75,6 +86,10 @@ def main() -> int:
         if len(linhas) != declarado.get("linhas"):
             erros.append(f"{nome}: {len(linhas)} linhas, manifest declara {declarado.get('linhas')}")
         for i, linha in enumerate(linhas, start=2):
+            if nome == "empresas.csv" and linha["setor"] not in setores:
+                erros.append(f"{nome}:{i} setor {linha['setor']!r} fora da lista fechada (dbt/seeds/lista_setores.csv)")
+            if nome == "rotulos.csv" and linha["setor"] not in setores | {"", "nenhum"}:
+                erros.append(f"{nome}:{i} setor {linha['setor']!r} fora da lista fechada (dbt/seeds/lista_setores.csv)")
             for campo in TEXTOS[nome]:
                 for regra, re_ in REGRAS:
                     if linha[campo] and (m := re_.search(linha[campo])):

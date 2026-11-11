@@ -24,6 +24,15 @@ VAGAS = [
     ("aaaaaaaaaaa5", "Empresa Exemplo E", "Supervisor de BI", "presencial", "Porto Alegre", "RS", "CLT", "2026-11"),
     ("aaaaaaaaaaa6", "Empresa Exemplo F", "Gerente de Dados e IA", "hibrido", "Curitiba", "PR", "CLT", "2026-11"),
 ]
+# empresa, empresa normalizada, setor (da lista fechada de dbt/seeds/lista_setores.csv)
+EMPRESAS = [
+    ("Empresa Exemplo A", "Empresa Exemplo A", "financeiro"),
+    ("Empresa Exemplo B", "Empresa Exemplo B", "consultoria"),
+    ("Empresa Exemplo C", "Empresa Exemplo C", "tecnologia e software"),
+    ("Empresa Exemplo D", "Empresa Exemplo D", "varejo e e-commerce"),
+    ("Empresa Exemplo E", "Empresa Exemplo E", "saúde"),
+    ("Empresa Exemplo F", "Empresa Exemplo F", "seguros e previdência"),
+]
 REQUISITOS = [
     ("aaaaaaaaaaa1", 1, "Experiência com SQL e Power BI"),
     ("aaaaaaaaaaa1", 2, "Liderança de times de analistas"),
@@ -76,6 +85,7 @@ def main() -> None:
         "benchmarks.csv": escrever("benchmarks.csv", ["id_publico", "ordem", "fonte_url", "fonte_nota"], [list(b) for b in BENCHMARKS]),
         "rotulos.csv": escrever("rotulos.csv", ["id_publico", "ordem", "hash_linha", "secao", "natureza", "itens", "ferramentas",
                                                 "setor", "versao_taxonomia", "rotulador"], rotulos),
+        "empresas.csv": escrever("empresas.csv", ["empresa", "empresa_normalizada", "setor"], [list(e) for e in EMPRESAS]),
     }
     info = {n: {"sha256": hashlib.sha256(t.encode("utf-8")).hexdigest(), "linhas": len(t.splitlines()) - 1} for n, t in arquivos.items()}
     manifest = {

@@ -22,6 +22,10 @@
     "rotulos.csv": {
       "sha256": "d01de113ec6b234e8dfe19b1c164377878e38c8585fccc5414038edbef0f0f93",
       "linhas": 5
+    },
+    "empresas.csv": {
+      "sha256": "fa75f46014a91b9a39f09ca8062ed45dc6c4e9b1e901f9d25222e29d54177f7c",
+      "linhas": 6
     }
   },
   "cobertura": {

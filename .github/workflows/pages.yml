@@ -6,7 +6,7 @@
 # em DuckDB no navegador. Nada é digitado à mão.
 #
 # Nunca implanta sobre dado fictício: enquanto data/ não tiver o contrato completo (rotulos.csv com a coluna
-# `ferramentas`), o job termina sem publicar e a versão que já está no ar continua lá. O mesmo `dbt build` do workflow
+# `ferramentas`, mais empresas.csv), o job termina sem publicar e a versão que já está no ar continua lá. O mesmo `dbt build` do workflow
 # `pipeline` vale aqui: se um teste cair (empresa nova sem setor, por exemplo), a página não é trocada.
 name: pages
 
@@ -36,11 +36,11 @@ jobs:
       - name: Dado real disponível?
         id: dados
         run: |
-          if [ -f data/manifest.json ] && [ -f data/rotulos.csv ] && head -1 data/rotulos.csv | grep -q ',ferramentas,'; then
+          if [ -f data/manifest.json ] && [ -f data/rotulos.csv ] && head -1 data/rotulos.csv | grep -q ',ferramentas,' && [ -f data/empresas.csv ]; then
             echo "real=true" >> "$GITHUB_OUTPUT"
           else
             echo "real=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::data/ ainda não tem o contrato completo (rotulos.csv com a coluna ferramentas): a página não foi implantada e a versão anterior continua no ar"
+            echo "::notice::data/ ainda não tem o contrato completo (rotulos.csv com a coluna ferramentas e empresas.csv): a página não foi implantada e a versão anterior continua no ar"
           fi
       - uses: actions/setup-python@v5
         if: steps.dados.outputs.real == 'true'
