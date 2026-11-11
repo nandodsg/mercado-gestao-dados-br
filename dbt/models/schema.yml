@@ -106,6 +106,13 @@ models:
         data_tests: [not_null]
       - name: item_chave
         data_tests: [not_null]
+  - name: mart_repost
+    description: "Anúncio repetido (mesma empresa, mesmo nível, mesmo conjunto de linhas): aponta pro original e sai de mart_vaga_item."
+    columns:
+      - name: id_publico
+        data_tests: [not_null, unique]
+      - name: repost_de
+        data_tests: [not_null]
   - name: mart_cobertura_rotulos
     description: "Fração do universo de anúncios já classificada. Parcial é estado normal durante uma rodada."
 
