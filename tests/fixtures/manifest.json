@@ -18,7 +18,15 @@
     "benchmarks.csv": {
       "sha256": "81e2d422954bcc0af9143fe0e2239dab068b9bd9abb27eb86a08198fb85c7d0e",
       "linhas": 2
+    },
+    "rotulos.csv": {
+      "sha256": "cebf184ebc7b3f842d56a458ddf334e63a9e74b58ffe965eac2f9fa51cff5351",
+      "linhas": 5
     }
+  },
+  "cobertura": {
+    "linhas": 6,
+    "rotuladas": 5
   },
   "notas": [
     "FIXTURE: dados fictícios pra testar o pipeline, não são vagas reais."

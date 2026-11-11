@@ -1,0 +1,6 @@
+id_publico,ordem,hash_linha,secao,natureza,itens,setor,versao_taxonomia,rotulador
+aaaaaaaaaaa1,1,f00000000001,requisitos,requisito,pessoas.liderar_time,nenhum,fixture00000,fixture
+aaaaaaaaaaa1,2,f00000000002,requisitos,requisito,pessoas.desenvolver_pessoas|pessoas.contratar_estruturar,nenhum,fixture00000,fixture
+aaaaaaaaaaa2,1,f00000000003,responsabilidades,contexto,,nenhum,fixture00000,fixture
+aaaaaaaaaaa2,2,f00000000004,diferenciais,requisito,experiencia.setor,financeiro,fixture00000,fixture
+aaaaaaaaaaa3,1,f00000000005,responsabilidades,responsabilidade,pessoas.liderar_time,nenhum,fixture00000,fixture

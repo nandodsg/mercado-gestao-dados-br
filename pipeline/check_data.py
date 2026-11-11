@@ -3,10 +3,12 @@
 Uso:
   python pipeline/check_data.py [pasta]      # padrão: data
 
-Três checagens, nesta ordem, e qualquer falha sai com código 1:
+Quatro checagens, nesta ordem, e qualquer falha sai com código 1:
   1. manifest.json existe e o sha256 e o número de linhas de cada CSV batem com o que ele declara;
   2. cada CSV tem exatamente as colunas do contrato v1, na ordem;
-  3. sigilo (2ª camada, depois da aplicada na publicação): nenhum texto carrega código de achievement/território/inventário
+  3. `cobertura` do manifest (linhas do anúncio × linhas rotuladas) é um par de inteiros coerente (rotuladas ≤ linhas);
+     a fração rotulada é aviso no dbt, não falha aqui: rodada parcial é estado normal;
+  4. sigilo (2ª camada, depois da aplicada na publicação): nenhum texto carrega código de achievement/território/inventário
      nem o nome do autor. Repete de propósito a regra da publicação: o repo público não confia em quem escreve nele.
 """
 from __future__ import annotations
@@ -24,11 +26,13 @@ COLUNAS = {
                   "salario_moeda", "salario_tipo"],
     "requisitos.csv": ["id_publico", "ordem", "texto"],
     "benchmarks.csv": ["id_publico", "ordem", "fonte_url", "fonte_nota"],
+    "rotulos.csv": ["id_publico", "ordem", "hash_linha", "secao", "natureza", "itens", "setor", "versao_taxonomia", "rotulador"],
 }
 TEXTOS = {
     "vagas.csv": ["empresa", "cargo_oficial", "cidade", "contrato", "fonte", "url", "salario_tipo"],
     "requisitos.csv": ["texto"],
     "benchmarks.csv": ["fonte_url", "fonte_nota"],
+    "rotulos.csv": [],  # sem prosa: chaves da taxonomia, hash e listas fechadas
 }
 REGRAS = [
     ("código de achievement/território/inventário", re.compile(r"\b(?:A\d{2}|E\d{2}|C\d{2}|T\d{1,2})\b")),
@@ -46,6 +50,11 @@ def main() -> int:
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     if manifest.get("contrato") != "v1":
         erros.append(f"contrato {manifest.get('contrato')!r}, esperado 'v1'")
+
+    cob = manifest.get("cobertura")
+    if not (isinstance(cob, dict) and isinstance(cob.get("linhas"), int) and isinstance(cob.get("rotuladas"), int)
+            and 0 <= cob["rotuladas"] <= cob["linhas"]):
+        erros.append(f"cobertura {cob!r}: esperado {{linhas, rotuladas}} inteiros com 0 ≤ rotuladas ≤ linhas")
 
     for nome, colunas in COLUNAS.items():
         caminho = pasta / nome
@@ -73,7 +82,7 @@ def main() -> int:
     for e in erros:
         print("FALHA:", e)
     if not erros:
-        print(f"ok: {pasta} confere com o manifest ({manifest['contagens']}), contrato v1, sem ocorrência de sigilo")
+        print(f"ok: {pasta} confere com o manifest ({manifest['contagens']}), contrato v1, cobertura {cob['rotuladas']}/{cob['linhas']}, sem ocorrência de sigilo")
     return 1 if erros else 0
 
 

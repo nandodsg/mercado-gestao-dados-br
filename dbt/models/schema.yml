@@ -70,6 +70,45 @@ models:
           - not_null
           - accepted_values: {arguments: {values: ["coordenador", "gerente", "alta_gestao", "outros"]}}
 
+  - name: stg_rotulos
+    description: "Classificação de cada linha do anúncio na taxonomia (natureza + itens). Sem o texto da linha: só o hash dela e a posição."
+    columns:
+      - name: id_publico
+        data_tests:
+          - not_null
+          - relationships: {arguments: {to: ref('stg_vagas'), field: id_publico}}
+      - name: ordem
+        data_tests: [not_null]
+      - name: hash_linha
+        data_tests: [not_null]
+      - name: secao
+        data_tests:
+          - accepted_values: {arguments: {values: ["responsabilidades", "requisitos", "diferenciais"]}}
+      - name: natureza
+        data_tests:
+          - accepted_values: {arguments: {values: ["responsabilidade", "requisito", "contexto"]}}
+
+  - name: stg_rotulo_itens
+    description: "Linha rotulada × item (o campo itens aberto pelo separador). Todo item pertence ao vocabulário da taxonomia."
+    columns:
+      - name: item
+        data_tests:
+          - not_null
+          - relationships: {arguments: {to: ref('taxonomia'), field: chave}}
+
+  - name: stg_cobertura
+    description: "Cobertura declarada no manifest: linhas de anúncio no universo × linhas rotuladas."
+
+  - name: mart_vaga_item
+    description: "Vaga × item da taxonomia (uma vaga conta uma vez por item). Base das contagens da análise."
+    columns:
+      - name: id_publico
+        data_tests: [not_null]
+      - name: item_chave
+        data_tests: [not_null]
+  - name: mart_cobertura_rotulos
+    description: "Fração do universo de anúncios já classificada. Parcial é estado normal durante uma rodada."
+
   - name: mart_resumo_nivel
     description: "Contagem de vagas por nível."
 

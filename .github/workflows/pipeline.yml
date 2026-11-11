@@ -31,12 +31,12 @@ jobs:
       - name: Escolher a pasta de dados
         id: dados
         run: |
-          if [ -f data/manifest.json ]; then
+          if [ -f data/manifest.json ] && [ -f data/rotulos.csv ]; then
             echo "dir=data" >> "$GITHUB_OUTPUT"
             echo "Dados reais de data/"
           else
             echo "dir=tests/fixtures" >> "$GITHUB_OUTPUT"
-            echo "::notice::data/ ainda não existe (1ª publicação pendente): rodando sobre tests/fixtures (dados fictícios)"
+            echo "::notice::data/ ainda não tem o contrato completo (rotulos.csv chega na próxima publicação): rodando sobre tests/fixtures (dados fictícios)"
           fi
       - name: Python compila
         run: python -m compileall -q pipeline

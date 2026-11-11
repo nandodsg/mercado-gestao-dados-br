@@ -19,9 +19,9 @@ Portuguese).*
 
 | pasta | o que é | quem escreve |
 |---|---|---|
-| `data/` | os CSVs do dataset (`vagas.csv`, `requisitos.csv`, `benchmarks.csv`) e o `manifest.json` | **só a automação de publicação**, 1 commit por publicação, semanal |
+| `data/` | os CSVs do dataset (`vagas.csv`, `requisitos.csv`, `benchmarks.csv`, `rotulos.csv`) e o `manifest.json` | **só a automação de publicação**, 1 commit por publicação, semanal |
 | `dbt/` | projeto dbt sobre DuckDB: staging lê `data/*.csv`, marts por nível, testes | código |
-| `pipeline/` | Python: conferência do contrato e do sigilo (`check_data.py`); a classificação de requisitos entra depois | código |
+| `pipeline/` | Python: conferência do contrato e do sigilo (`check_data.py`) e o exemplo da rota alternativa de classificação | código |
 | `site/` | a página pública (hoje um marcador; os números com a consulta ao lado entram depois) | código |
 | `tests/fixtures/` | dados **fictícios** no mesmo formato, pra CI rodar antes da 1ª publicação | `pipeline/make_fixture.py` |
 | `PLAN.md` | decisões do pipeline, com data e motivo | código |
@@ -71,6 +71,43 @@ não uma limitação técnica: o mesmo trabalho roda por um gateway de modelos, 
 custo informado por chamada). Quem quiser reproduzir a classificação sem assinatura pode usá-lo, com a própria chave.
 Como a rota por assinatura é disparada e como o resultado volta ao repositório está em `PLAN.md`.
 
+### O que sai da classificação, e o que não sai
+
+`rotulos.csv` tem uma linha por linha de anúncio classificada: `id_publico`, `ordem` (posição da linha no anúncio),
+`hash_linha` (identificador da linha, sem o texto), `secao` (responsabilidades, requisitos ou diferenciais), `natureza`
+(`responsabilidade`, `requisito` ou `contexto`), `itens` (chaves da taxonomia separadas por `|`), `setor`,
+`versao_taxonomia` e `rotulador`. **O texto das linhas não é publicado**: o anúncio pertence à empresa, e o texto
+literal que já está em `requisitos.csv` cobre só as linhas do requisito. Quem quiser relacionar um item ao texto
+volta ao posting pela `url`.
+
+**Método.** Uma chamada por vaga: o modelo recebe as linhas do anúncio inteiro, na ordem e com a seção, e devolve, para
+cada linha, a natureza e **todos** os itens que ela pede (uma linha pode pedir vários; contexto sobre a empresa não pede
+nenhum). A taxonomia (`rotulagem/taxonomia.md`, de onde sai o seed `dbt/seeds/taxonomia.csv`) é fechada: item fora
+da lista é erro de validação, e o item `outro` é a válvula pra o que não cabe. Peso, anos de experiência e ferramentas
+**não** vêm do modelo, e sim de regras determinísticas (`rotulagem/regras.py`, `dbt/seeds/ferramentas.csv`). O modelo
+só decide o que exige leitura. A taxonomia tem uma versão (hash do arquivo): taxonomia nova refaz a rodada inteira, e
+só uma versão fica publicada por vez.
+
+**Vieses e limites da classificação.**
+- **Mede-se contra uma referência, e a referência não é verdade absoluta.** São rótulos feitos por um modelo maior e
+  revisados por uma pessoa em um conjunto de vagas. O desempenho do modelo escolhido (F1, precisão e revocação por
+  item) está em `evals/relatorio.md`, e o conjunto exato de itens de uma linha concorda com a referência em cerca de
+  60% das linhas. Item a item a concordância é maior; linha a linha, não: **conte vagas por item, não confie numa linha
+  isolada.**
+- **Revocação menor que precisão.** O modelo tende a deixar de marcar um item que está lá mais do que a marcar um que
+  não está. Contagens por item são piso, não teto.
+- **Itens de fronteira confundem.** A taxonomia lista, item a item, o que *não* conta; mesmo assim a borda entre itens
+  vizinhos (liderar projetos × liderar time, por exemplo) é onde mais se erra.
+- **Rodada parcial é estado normal.** A fração classificada fica em `cobertura` no `manifest.json` (linhas do anúncio ×
+  linhas classificadas); o teste `rotulos_cobertura_baixa` avisa sem derrubar a CI. Analise só com cobertura completa,
+  ou diga a fração junto do número.
+
+**Modelo e custo.** O modelo é o **Claude Haiku 5.5**, consumido pela assinatura do autor, sem API paga (seção
+anterior). A escolha vem do desempenho na referência. Nada no repositório público guarda credencial: a classificação
+roda do lado privado e só os rótulos validados chegam aqui. O dbt confere que todo item pertence à taxonomia, que a
+natureza está na lista, que linha de contexto não carrega item, que o setor só aparece junto do item de setor e que
+cada `id_publico` existe em `vagas.csv`. `mart_vaga_item` (vaga × item) é a base das contagens da análise.
+
 ## Como a amostra foi formada (metodologia)
 
 1. **Coleta.** Cada vaga entra no app por link ou texto colado (LinkedIn, Gupy, InHire e outros portais) e é lida e
@@ -84,9 +121,9 @@ Como a rota por assinatura é disparada e como o resultado volta ao repositório
    regra que casa vence). Head e diretoria ficam num bucket "alta gestão", citados sem quebra; o que não é gestão de
    dados (gestão de time de software ou de produto, por exemplo) fica em "outros". Sem modelo de linguagem: o nível é a
    chave da análise e precisa dar o mesmo resultado em qualquer máquina.
-4. **Requisitos.** Texto literal das linhas de requisito do posting, sem nota, sem interpretação. A quebra em
-   requisitos atômicos e a classificação por tipo (ferramenta, competência de gestão, idioma…) vêm numa etapa seguinte,
-   com um conjunto de referência rotulado à mão para medir cada modelo antes de escolher qual usar.
+4. **Requisitos.** Texto literal das linhas de requisito do posting, sem nota, sem interpretação, em `requisitos.csv`. A
+   classificação de cada linha por tipo (ferramenta, competência de gestão, idioma…) é um arquivo à parte,
+   `rotulos.csv`, descrito na seção seguinte.
 5. **Salário, em duas camadas que não se misturam.** (a) *Transparência do posting*: quantas vagas declaram faixa,
    medida pelas colunas `salario_*` e `faixa_posting`. (b) *Benchmark pesquisado*: fontes públicas de salário por cargo
    e cidade, uma linha por fonte em `benchmarks.csv`. **Benchmark não é o que a vaga paga.** Parte dessas fontes
@@ -120,7 +157,7 @@ Como a rota por assinatura é disparada e como o resultado volta ao repositório
 ## Contrato de dados (v1)
 
 Cada arquivo é CSV UTF-8, RFC 4180, `\n`, cabeçalho sempre, célula vazia = ausente. `manifest.json` traz a versão do
-contrato, a data de geração, as contagens e o sha256 de cada arquivo; `pipeline/check_data.py` confere tudo isso.
+contrato, a data de geração, as contagens, a `cobertura` da classificação e o sha256 de cada arquivo; `pipeline/check_data.py` confere tudo isso.
 
 - `vagas.csv` (1 linha por vaga): `id_publico` (12 hex do sha256 da URL normalizada), `empresa`, `cargo_oficial`, `modo`,
   `geografia`, `regime`, `cidade`, `uf`, `contrato`, `fonte`, `candidatura_tipo`, `mes`, `url`, `faixa_posting`,
@@ -129,6 +166,8 @@ contrato, a data de geração, as contagens e o sha256 de cada arquivo; `pipelin
   candidatura); `mes` é o mês de publicação ou, na falta dele, da captura.
 - `requisitos.csv` (1 linha por linha de requisito): `id_publico`, `ordem`, `texto`.
 - `benchmarks.csv` (1 linha por fonte de benchmark): `id_publico`, `ordem`, `fonte_url`, `fonte_nota`.
+- `rotulos.csv` (1 linha por linha de anúncio classificada, sem o texto): `id_publico`, `ordem`, `hash_linha`, `secao`,
+  `natureza`, `itens` (separados por `|`), `setor`, `versao_taxonomia`, `rotulador`.
 
 Mudança de coluna sobe a versão do contrato. A publicação e este repo concordam sobre a lista; se discordarem, o
 `check_data.py` falha.
@@ -141,7 +180,7 @@ python pipeline/check_data.py data                                      # contra
 dbt build --project-dir dbt --profiles-dir dbt                          # DuckDB, sem credencial
 ```
 
-Sem `data/` (antes da 1ª publicação), aponte pros dados fictícios:
+Sem `data/` completo (antes da publicação que traz `rotulos.csv`), aponte pros dados fictícios:
 `dbt build --project-dir dbt --profiles-dir dbt --vars '{data_dir: tests/fixtures}'`.
 
 ## Licença
