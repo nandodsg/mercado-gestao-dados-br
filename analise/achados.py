@@ -5,6 +5,9 @@ Nenhum número do texto é digitado à mão: cada um sai de uma consulta abaixo,
 que o texto afirma, o achado sai marcado como "não se sustenta nesta publicação", em vez de continuar dizendo o contrário
 do dado.
 
+`calcular()` devolve também os números brutos (`raw`), e `pipeline/gerar_site.py` usa o mesmo cálculo pra montar a página:
+o texto dela e o do `achados.md` saem das mesmas contas, sem número digitado à mão.
+
 Base das contagens: vagas de coordenação e de gerência com o anúncio classificado (`mart_vaga_item`, que já tira o anúncio
 repetido). Alta gestão e "outros" entram só nos totais: são poucas vagas pra quebrar.
 """
@@ -21,6 +24,17 @@ DB = RAIZ / "dbt" / "target" / "mercado.duckdb"
 MODELO = Path(__file__).with_name("achados.modelo.md")
 SAIDA = Path(__file__).with_name("achados.md")
 NIVEIS = ("coordenador", "gerente")
+
+# Itens de cada achado (chave da taxonomia, prefixo no texto). A página desenha exatamente estes.
+NUCLEO = (("pessoas.liderar_time", "liderar"), ("negocio.stakeholders", "stake"), ("pessoas.desenvolver_pessoas", "desenv"))
+ESTRATEGIA = ("negocio.estrategia", "estrat")
+OPERACAO = ("pessoas.operacao_time", "oper")
+CONTRATAR = ("pessoas.contratar_estruturar", "contratar")
+LIDERAR_LIDERES = ("pessoas.liderar_lideres", "lidlid")
+MAO_NA_MASSA = ("pessoas.hands_on", "hands")
+IA_APLICADA = ("ia.ia_aplicada", "iaap")
+NAO_SUSTENTA = (("idioma.ingles", "ingles"), ("ia.genai_llm", "genai"), ("eng.plataforma_cloud", "cloud"),
+                ("analytics.kpis_metricas", "kpis"), LIDERAR_LIDERES)
 
 
 # ---------- estatística (sem numpy/scipy: o repo não depende deles) ----------
@@ -61,18 +75,21 @@ def reais(v: float) -> str:
 
 # ---------- consultas ----------
 
-def main() -> None:
-    c = duckdb.connect(str(DB), read_only=True)
+def calcular(c: "duckdb.DuckDBPyConnection", dados: Path = RAIZ / "data") -> tuple[dict, dict, dict]:
+    """Devolve (v, cond, raw): `v` = textos formatados do modelo, `cond` = condição de cada achado, `raw` = números brutos.
+    `dados` é a pasta do manifest (data/ no dado real, tests/fixtures na CI sem publicação)."""
     um = lambda s: c.sql(s).fetchall()[0][0]  # noqa: E731
     v: dict[str, object] = {}
+    raw: dict[str, object] = {}
 
-    manifest = json.loads((RAIZ / "data" / "manifest.json").read_text(encoding="utf-8"))
+    manifest = json.loads((dados / "manifest.json").read_text(encoding="utf-8"))
     cob = manifest.get("cobertura") or {}
     v["versao_dado"] = manifest.get("gerado_em", "")[:10]
     v["cobertura"] = frac(cob.get("rotuladas", 0), cob.get("linhas", 0))
 
     v["n_vagas"] = um("select count(*) from mart_vagas")
     n_rep = um("select count(*) from mart_repost")
+    raw["n_repost"] = n_rep
     v["repost_txt"] = "nenhum anúncio repetido" if n_rep == 0 else (
         "1 anúncio repetido" if n_rep == 1 else f"{n_rep} anúncios repetidos")
     v["n_rotuladas"] = um("select count(distinct id_publico) from mart_vaga_item")
@@ -81,6 +98,8 @@ def main() -> None:
     nc, ng = n.get("coordenador", 0), n.get("gerente", 0)
     v["nc"], v["ng"] = nc, ng
     v["n_outros_niveis"] = sum(k for nivel, k in n.items() if nivel not in NIVEIS)
+    raw.update(nc=nc, ng=ng, n_vagas=v["n_vagas"], n_rotuladas=v["n_rotuladas"], n_outros_niveis=v["n_outros_niveis"],
+               n_sem_rotulo=v["n_sem_rotulo"])
 
     por_item = {
         (chave, nivel): k
@@ -94,23 +113,24 @@ def main() -> None:
         return xc, xg
 
     # 1. núcleo comum
-    nucleo = [item("pessoas.liderar_time", "liderar"), item("negocio.stakeholders", "stake"),
-              item("pessoas.desenvolver_pessoas", "desenv")]
+    nucleo = [item(*par) for par in NUCLEO]
     # 2. estratégia × operação
-    est = item("negocio.estrategia", "estrat")
-    ope = item("pessoas.operacao_time", "oper")
-    item("pessoas.contratar_estruturar", "contratar")
-    item("pessoas.liderar_lideres", "lidlid")
+    est = item(*ESTRATEGIA)
+    ope = item(*OPERACAO)
+    item(*CONTRATAR)
+    item(*LIDERAR_LIDERES)
     # 4. mão na massa
-    hands = item("pessoas.hands_on", "hands")
-    # sem força estatística (seção "o que não dá pra afirmar")
-    for chave, pref in [("idioma.ingles", "ingles"), ("ia.genai_llm", "genai"), ("eng.plataforma_cloud", "cloud"),
-                        ("analytics.kpis_metricas", "kpis"), ("ia.ia_aplicada", "iaap")]:
+    hands = item(*MAO_NA_MASSA)
+    # sem força estatística (seção "o que não dá pra afirmar") e IA aplicada ao negócio (achado 5)
+    for chave, pref in (*NAO_SUSTENTA, IA_APLICADA):
         item(chave, pref)
+    raw["por_item"] = por_item
 
     # 5. IA: qualquer item da dimensão
     ia = dict(c.sql("""select nivel, count(distinct id_publico) from mart_vaga_item where item_chave like 'ia.%' group by 1""").fetchall())
     ia_tot = um("select count(distinct id_publico) from mart_vaga_item where item_chave like 'ia.%'")
+    raw["ia_nivel"] = (ia.get("coordenador", 0), ia.get("gerente", 0))
+    raw["ia_tot"] = ia_tot
     v["ia_tot"] = frac(ia_tot, v["n_rotuladas"])
     v["ia_c"], v["ia_g"] = frac(ia.get("coordenador", 0), nc), frac(ia.get("gerente", 0), ng)
     base_rot = "select id_publico from mart_vaga_item"
@@ -125,6 +145,7 @@ def main() -> None:
                      group by 1 order by k desc""").fetchall()
     dif = dict(difs)
     v["n_dif"] = n_dif
+    raw.update(ia_resp=ia_resp, ia_req=ia_req, n_dif=n_dif, difs=difs)
     v["ia_dif"] = frac(dif.get("ia", 0), n_dif)
     v["setor_dif"] = frac(dif.get("experiencia.setor", 0), n_dif)
     ia_primeiro = bool(difs) and difs[0][0] == "ia"
@@ -142,6 +163,9 @@ def main() -> None:
         if frac_max > ferr_top_pct:
             v["ferr_top"], ferr_top_pct = nome, frac_max
 
+    raw["ferr_top"] = v["ferr_top"]
+    raw["ferr_top_cg"] = (por_ferr.get((v["ferr_top"], "coordenador"), 0), por_ferr.get((v["ferr_top"], "gerente"), 0))
+
     def ferramenta(nome: str, pref: str) -> tuple[int, int]:
         xc, xg = por_ferr.get((nome, "coordenador"), 0), por_ferr.get((nome, "gerente"), 0)
         v[f"{pref}_c"], v[f"{pref}_g"], v[f"{pref}_p"] = frac(xc, nc), frac(xg, ng), p_txt(fisher(xc, nc, xg, ng))
@@ -152,11 +176,14 @@ def main() -> None:
     nuvem = dict(c.sql("""select nivel, count(distinct id_publico) from mart_vaga_ferramenta
                           where ferramenta in ('AWS', 'Azure', 'GCP') group by 1""").fetchall())
     nuvem_c, nuvem_g = nuvem.get("coordenador", 0), nuvem.get("gerente", 0)
+    raw["ferr"] = {"SQL": (por_ferr.get(("SQL", "coordenador"), 0), por_ferr.get(("SQL", "gerente"), 0)),
+                   "Python": py, "nuvem": (nuvem_c, nuvem_g)}
     v["nuvem_c"], v["nuvem_g"] = frac(nuvem_c, nc), frac(nuvem_g, ng)
     v["nuvem_p"] = p_txt(fisher(nuvem_c, nc, nuvem_g, ng))
 
     # 6. salário: transparência do anúncio × referência pesquisada
     v["n_faixa"] = um("select count(*) from mart_vagas where faixa_posting is not null")
+    raw["n_faixa"] = v["n_faixa"]
     sal = {nivel: (k, med, rep) for nivel, k, med, rep in c.sql(f"""
         with b as (select * from mart_vagas where nivel in {NIVEIS} and salario_min is not null
                      and id_publico not in (select id_publico from mart_repost)),
@@ -164,6 +191,7 @@ def main() -> None:
                       qualify row_number() over (partition by nivel order by count(*) desc) = 1)
         select b.nivel, count(*), median((b.salario_min + b.salario_max) / 2), any_value(m.k)
         from b join moda m using (nivel) group by 1""").fetchall()}
+    raw["sal"] = sal
     for nivel, pref in (("coordenador", "c"), ("gerente", "g")):
         k, med, rep = sal.get(nivel, (0, 0, 0))
         v[f"sal_n_{pref}"], v[f"sal_med_{pref}"], v[f"sal_rep_{pref}"] = k, reais(med or 0), frac(rep or 0, k)
@@ -181,12 +209,19 @@ def main() -> None:
         "c5": ia.get("gerente", 0) / ng >= ia.get("coordenador", 0) / nc and ia_primeiro and ia_resp > ia_req,
         "c6": v["n_faixa"] <= 0.1 * v["n_vagas"],
     }
+    raw["cond"] = cond
     aviso = "> ⚠ **Não se sustenta nesta publicação**: a direção abaixo mudou com o dado novo; o texto espera revisão.\n\n"
     for k, ok in cond.items():
         v[f"aviso_{k}"] = "" if ok else aviso
 
+    return v, cond, raw
+
+
+def main() -> None:
+    c = duckdb.connect(str(DB), read_only=True)
+    v, cond, _ = calcular(c)
     SAIDA.write_text(MODELO.read_text(encoding="utf-8").format(**v), encoding="utf-8", newline="\n")
-    falhas = [k for k, ok in cond.items() if not ok]
+    falhas =[k for k, ok in cond.items() if not ok]
     print(f"achados.md gerado ({len(cond) - len(falhas)}/{len(cond)} achados se sustentam{'; revisar: ' + ', '.join(falhas) if falhas else ''})")
 
 
