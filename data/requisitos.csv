@@ -352,6 +352,25 @@ id_publico,ordem,texto
 3d16b1335bf0,13,"Aceleração da Engenharia: **detecção de anomalias em pipelines**, testes de qualidade orientados por IA e **monitoramento inteligente de custos em nuvem**"
 3d16b1335bf0,14,Sinergia com Ciência de Dados & MLOps: liderar a criação da camada de **Feature Stores** e pipelines automatizados de preparação de dados pra cientistas de dados e algoritmos preditivos de marketing
 3d16b1335bf0,15,"Atendimento Consultivo: atuar como **especialista técnico em reuniões estratégicas com clientes**, conectando objetivos de marketing às melhores soluções tecnológicas e de IA"
+3fd63a9f0158,1,"Acompanhar e liderar a implementação de soluções de IA, incluindo aplicações com LLMs"
+3fd63a9f0158,2,pipelines de RAG
+3fd63a9f0158,3,sistemas multiagentes
+3fd63a9f0158,4,"Promover boas práticas de MLOps/LLMOps, implantação de modelos, monitoramento e gerenciamento do ciclo de vida"
+3fd63a9f0158,5,Experiência com bancos de dados vetoriais e estratégias de armazenamento e recuperação de embeddings
+3fd63a9f0158,6,avaliação da qualidade das respostas
+3fd63a9f0158,7,"Liderança, gestão de desempenho, feedbacks, PDIs e desenvolvimento de carreira"
+3fd63a9f0158,8,"Gestão de capacity, sprints, prioridades, riscos, dependências e entregas"
+3fd63a9f0158,9,"Gestão de indicadores de produtividade, qualidade, estabilidade e previsibilidade"
+3fd63a9f0158,10,"Garantia das práticas de qualidade, testes, code review, automação e redução de dívida técnica"
+3fd63a9f0158,11,"Acompanhamento da estabilidade dos produtos, incidentes, observabilidade e planos de ação"
+3fd63a9f0158,12,"Gestão de problemas e análise de causa-raiz (RCA), com acompanhamento das ações corretivas"
+3fd63a9f0158,13,"Atuação integrada com Produto, QA, Arquitetura, Infraestrutura e Engenharia"
+3fd63a9f0158,14,"Garantia de aderência aos padrões técnicos e arquiteturais, em parceria com Tech Leads e Arquitetos"
+3fd63a9f0158,15,Promoção de evolução da maturidade de engenharia e adoção de novas tecnologias e práticas
+3fd63a9f0158,16,"Comunicação executiva de resultados, riscos, desvios, tendências e planos de mitigação"
+3fd63a9f0158,17,Experiência sólida em desenvolvimento de software e gestão/liderança de equipes de tecnologia
+3fd63a9f0158,18,"Conhecimento de Scrum, engenharia de software, CI/CD, testes automatizados e qualidade"
+3fd63a9f0158,19,"Experiência com indicadores, análise de causa-raiz e gestão por dados"
 41188c9ca8ea,1,"Experiência consolidada em liderança de times de engenharia de dados, especialmente em ambientes de média e alta complexidade"
 41188c9ca8ea,2,"Liderar o time de engenharia de dados, promovendo desenvolvimento técnico, gestão de performance e evolução contínua"
 41188c9ca8ea,3,"Estruturar e evoluir arquiteturas de dados, incluindo data lake, data warehouse, ETL/ELT e pipelines escaláveis"
@@ -558,6 +577,20 @@ id_publico,ordem,texto
 62c8c6ce8fd9,9,"operações de mídia e métricas digitais"" · ""Comscore, TGI e Monitor"
 62c8c6ce8fd9,10,IA aplicada a dados… automação de QA… preditivas
 62c8c6ce8fd9,11,Dif.: Alteryx · agências · multicultural
+6432aa425345,1,"8+ anos em dados, sendo 3+ liderando times de dados"
+6432aa425345,2,Experiência desenhando e operando plataformas de dados modernas em cloud
+6432aa425345,3,"Domínio de SQL (de ""Domínio de SQL, Python e dbt"")"
+6432aa425345,4,"Domínio de Python (de ""Domínio de SQL, Python e dbt"")"
+6432aa425345,5,"Domínio de dbt (de ""Domínio de SQL, Python e dbt"")"
+6432aa425345,6,"Visão sólida de modelagem, qualidade e governança de dados"
+6432aa425345,7,"Experiência com camada semântica (de ""camada semântica e agentes de dados com IA"")"
+6432aa425345,8,"Experiência com agentes de dados com IA (de ""camada semântica e agentes de dados com IA"")"
+6432aa425345,9,Boa comunicação com liderança executiva e áreas de negócio
+6432aa425345,10,"Diferencial: experiência em fintech, crédito ou meios de pagamento"
+6432aa425345,11,"Diferencial: vivência com AWS, Airbyte, Temporal ou ferramentas similares"
+6432aa425345,12,Diferencial: uso de IA para escalar o trabalho com dados
+6432aa425345,13,Diferencial: experiência com criação de MCPs de dados
+6432aa425345,14,Diferencial: experiência estruturando dados para IA
 660f295c69d1,1,Coordenar a equipe de inteligência de performance
 660f295c69d1,2,"garantindo disponibilidade, performance e acuracidade dos dados"
 660f295c69d1,3,Gerenciar projetos de migração de dados e processos para arquitetura corporativa de dados
@@ -854,6 +887,20 @@ id_publico,ordem,texto
 9623152afe51,15,"Orchestrate External Vendors & Partners: manage technical deliverables, SLAs, and development execution with third-party consultancies"
 9623152afe51,16,"compliance with corporate security, privacy (**LGPD**/PIA/ISDR) and Red Data risk checks via the PULSE Committee"
 9623152afe51,17,"Previous experience in **CPG, Durable Goods, Manufacturing, or Supply Chain** industries"" (*preferred*)"
+99e49cb22475,1,proven track record of leading teams and managing careers within the data field for at least 4 to 5 years
+99e49cb22475,2,"Manage a team of Data Scientists and Machine Learning Engineers, fostering a high-performance culture and continuously raising the bar for technical excellence"
+99e49cb22475,3,"Deep understanding of machine learning concepts, including regression, classification, clustering, neural networks, cross-validation, and model explainability"
+99e49cb22475,4,"Strong knowledge of probability and statistics, including experimental design, optimization, and causal inference for A/B testing"
+99e49cb22475,5,Solid understanding of the engineering challenges required to deploy and maintain machine learning systems in production
+99e49cb22475,6,Proficiency in Python and experience with software engineering best practices
+99e49cb22475,7,"Act as a technical reference for the team, architecting, developing, and deploying machine learning systems to production when needed"
+99e49cb22475,8,Discuss business requirements with Product Managers and other senior leaders to align data strategy with business goals
+99e49cb22475,9,"Guide the team in designing and executing experiments, ensuring robust analysis of structured and unstructured data to improve current models"
+99e49cb22475,10,Set clear goals and objectives for the team and ensure they are aligned with the overall business objectives
+99e49cb22475,11,Advocate for the value of data and AI within the organization and foster a data-driven culture
+99e49cb22475,12,"Have experience building solutions with Large Language Models (RAG, fine-tuning) and developing AI agents or agentic frameworks (LangGraph, LangChain)"
+99e49cb22475,13,Have solid experience with Deep Learning and NLP techniques
+99e49cb22475,14,Have experience working in fast-growing startups or high-tech companies
 9e8df8b653f7,1,Liderar o time de inteligência de negócios
 9e8df8b653f7,2,"planejamento, orçamento, forecast e projeções das estruturas da diretoria"
 9e8df8b653f7,3,governança dos indicadores estratégicos
