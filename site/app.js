@@ -591,6 +591,268 @@ function colunas() {
   ta.addEventListener('keydown', e => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); roda(); } });
 }
 
+// ---------- 3.1 · arquitetura: o fluxo do dado, animado (Item 14) ----------
+// Todos os números vêm de DATA.arq (calculado na publicação por pipeline/gerar_site.py); nada é digitado aqui.
+const AQ = DATA.arq;
+const NUM = ['zero', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez'];
+const ST = [
+  { n: '00', t: ['Origem', 'privada'], c: fmt(AQ.vagas), num: AQ.vagas, cl: ['vagas, com o', 'anúncio inteiro'], origem: 1 },
+  { n: '01', t: ['Classificação', 'por IA'], c: fmt(AQ.rot), num: AQ.rot, cl: ['de ' + fmt(AQ.linhas) + ' linhas', 'classificadas'], ai: 1 },
+  { n: '02', t: ['Exportador', 'e sigilo'], c: AQ.arquivos + ' + 1', cl: ['arquivos e', 'o manifesto'] },
+  { n: '03', t: ['Repositório', 'público'], c: '1 commit', cl: ['por publicação:', 'um retrato do dado'] },
+  { n: '04', t: ['CI · GitHub Actions'], c: fmt(AQ.testes), num: AQ.testes, cl: ['testes a cada', 'publicação'], ci: 1 },
+  { n: '05', t: ['GitHub', 'Pages'], c: String(AQ.parquet), num: AQ.parquet, cl: ['tabelas em Parquet', '+ pagina.json'] },
+  { n: '06', t: ['Seu', 'navegador'], c: '0', num: 0, cl: ['servidor na', 'sua consulta'] },
+];
+const MODES = { fluxo: [0, 1, 2, 3, 4, 5, 6], testes: [2, 4, 5], sigilo: [2, 4], ia: [1], custo: [1, 4, 5, 6] };
+const CHIPS = [['fluxo', 'Fluxo'], ['testes', 'Testes'], ['sigilo', 'Sigilo'], ['ia', 'Onde há IA'], ['custo', 'Custo']];
+const DET = [
+  { h: 'A vaga é guardada aqui, com o anúncio inteiro, e daqui não sai sozinha.',
+    p: ['Os dados nascem de um app de acompanhamento de vagas que o autor desenvolveu. Ele fica fechado: nenhuma parte deste repositório se conecta a ele, e a página não mostra o que tem dentro.',
+        'Toda semana, de forma automática, sai daqui só o que o contrato de dados permite.'],
+    g: 'Nenhuma: a guarda está no estágio 02.', w: 'README, "Como a amostra foi formada"' },
+  { h: 'Um modelo de linguagem marca os itens da lista fechada em cada linha.',
+    p: [`Cada anúncio é quebrado em linhas (responsabilidades, requisitos, diferenciais) e o <b>${AQ.modelo}</b> marca, em cada uma, a natureza e os itens da lista de ${AQ.itens}. Ferramenta não passa pelo modelo: é regra fixa sobre o nome.`,
+        'Roda do lado privado, pela assinatura do autor, sem API paga. Só linha nova é classificada. <b>O texto da linha fica; só o rótulo segue.</b>'],
+    g: 'A régua: uma referência revisada por pessoa e o modelo escolhido contra ela (a bancada, abaixo).', w: '<code>rotulagem/prompt.md</code> · <code>evals/relatorio.md</code>' },
+  { h: 'Monta os arquivos públicos e barra o que não pode sair.',
+    p: ['Sai uma vaga por linha (empresa, cargo, local, link, datas), o rótulo de cada linha sem o texto, o resumo dos requisitos, a referência salarial com a fonte e o setor da empresa: <code>vagas.csv</code>, <code>rotulos.csv</code>, <code>requisitos.csv</code>, <code>benchmarks.csv</code>, <code>empresas.csv</code> e o <code>manifest.json</code>.',
+        'O texto do anúncio não atravessa.'],
+    g: 'Checagem de sigilo antes do commit.', w: 'README, "Contrato de dados"' },
+  { h: 'Cada publicação é um commit em data/.',
+    p: ['Ninguém edita os CSV à mão: só a publicação automática escreve em <code>data/</code>, um commit por vez. O histórico do git guarda cada retrato do dado, e é dele que sai uma série no tempo, quando houver janela pra isso.'],
+    g: 'O histórico: qualquer número pode ser refeito sobre a versão daquela semana.', w: '<code>data/</code> · histórico do repositório' },
+  { h: 'O commit dispara a conferência, sem nenhuma credencial.',
+    p: [`O GitHub Actions confere o contrato, o hash de cada arquivo e o sigilo de novo (<code>check_data.py</code>), roda o <code>dbt build</code> sobre DuckDB, com <b>${AQ.testes} testes</b> (chave única, valor na lista, linha de contexto sem item, datas coerentes, cobertura da classificação), e refaz os achados em texto.`,
+        '<b>Se um teste falha, nada é publicado e a versão anterior da página continua no ar.</b>'],
+    g: 'Testes do contrato e do dbt.', w: '<code>.github/workflows/</code> · <code>dbt/</code>' },
+  { h: 'A página é estática: HTML, números e tabelas.',
+    p: ['O gerador escreve o HTML, o <code>pagina.json</code> com os números de cada gráfico e as tabelas em Parquet. Os números saem das mesmas tabelas que o texto dos achados, sem nada digitado à mão. Sem o contrato completo, nada é implantado.'],
+    g: 'Só implanta sobre dado real e completo.', w: '<code>pipeline/gerar_site.py</code>' },
+  { h: 'A consulta roda no seu navegador.',
+    p: [`O DuckDB-WASM lê os Parquet e responde as ${AQ.consultas} consultas da página e a consulta livre, aqui, sem servidor. Se ele não carregar, os gráficos continuam, porque os números já vêm prontos.`],
+    g: 'Nenhuma pergunta sua sai do navegador.', w: 'Exploração livre, 4.2' },
+];
+const USOS = [
+  { t: `A lista de ${AQ.itens} itens`, m: 'propôs a lista lendo as linhas dos anúncios', p: 'revisou item a item, escreveu a regra de borda de cada um e congelou a versão', w: 'rotulagem/taxonomia.md', s: 1 },
+  { t: 'A referência', m: `${NUM[AQ.rotuladores] || AQ.rotuladores} modelos de empresas diferentes rotularam as mesmas ${fmt(AQ.ref_linhas)} linhas de ${AQ.ref_vagas} vagas`, p: 'desempatou cada divergência, linha a linha', w: 'rotulagem/referencia/', s: 1 },
+  { t: 'A escolha do modelo', m: `${AQ.candidatos} candidatos rotularam a referência e foram medidos contra ela`, p: `escolheu pelo resultado: ${AQ.modelo}, F1 de ${AQ.f1}`, w: 'evals/relatorio.md', s: 1 },
+  { t: 'A classificação, toda semana', m: `o ${AQ.modelo} marca os itens de cada linha nova`, p: 'ninguém revisa linha a linha: a régua veio antes. Por isso a contagem é piso', w: 'README, "Classificação"', s: 0 },
+  { t: 'O setor da empresa', m: 'propõe o setor quando aparece uma empresa nova', p: 'confirma ou corrige depois; a publicação não espera', w: 'empresas.csv', s: 1 },
+  { t: 'O código de tudo isto', m: 'um assistente de código (Claude Code) escreveu o pipeline, os testes e esta página', p: 'decidiu o desenho, revisou e aprovou cada mudança', w: 'histórico do repositório', s: 1 },
+];
+function panelMode(m) {
+  if (m === 'fluxo') return `<div class="ph"><span class="mono">Fluxo · toda semana</span></div>
+    <h3>Da vaga ao seu navegador, em sete estágios.</h3>
+    <p>Clique num estágio pra ver o que entra, o que sai e a guarda que se prende ali. Os chips acima mostram cada guarda no diagrama.</p>`;
+  if (m === 'ia') return `<div class="ph"><span class="mono">Onde há IA · seis usos</span><span class="selo mono">Pessoa no circuito</span></div>
+    <h3>O modelo faz o volume. A pessoa define a régua e confere.</h3>
+    <div class="g3">${USOS.map(u => `<div class="uso${u.s ? ' pc' : ''}"><b>${u.t}</b>
+      <div class="r"><span>Modelo</span><span>${u.m}</span></div>
+      <div class="r pes"><span>Pessoa</span><span>${u.p}</span></div>
+      <div class="r"><span>Onde ver</span><code>${u.w}</code></div>
+      <span class="selo mono${u.s ? '' : ' nao'}">${u.s ? 'Pessoa no circuito' : 'Sem revisão por linha'}</span></div>`).join('')}</div>`;
+  if (m === 'testes') return `<div class="ph"><span class="mono">Testes · três barreiras</span></div>
+    <h3>Três lugares onde o dado pode ser barrado.</h3>
+    <div class="g3"><div class="box2"><span class="mono">02 · antes do commit</span><b>Sigilo</b>Nenhum texto de anúncio, nenhuma coluna fora do contrato.</div>
+    <div class="box2"><span class="mono">04 · na CI</span><b>Contrato e ${AQ.testes} testes</b>Arquivos, hash, sigilo de novo e os testes do dbt.</div>
+    <div class="box2"><span class="mono">05 · antes de implantar</span><b>Dado completo</b>Sem os cinco arquivos, a página não troca.</div></div>
+    <p style="margin-top:14px"><b>Se qualquer barreira falha, nada novo vai ao ar e a versão anterior fica.</b></p>`;
+  if (m === 'sigilo') return `<div class="ph"><span class="mono">Sigilo · a fronteira</span></div>
+    <h3>O que atravessa e o que fica.</h3>
+    <div class="g2"><div class="box2 ok"><span class="mono">Atravessa</span><ul><li>a vaga: empresa, cargo, local, regime, link e datas</li><li>o rótulo de cada linha, sem o texto</li><li>o resumo dos requisitos</li><li>a referência salarial, com a fonte</li><li>o setor da empresa</li></ul></div>
+    <div class="box2 fica"><span class="mono">Fica do lado privado</span><ul><li>o texto inteiro do anúncio</li><li>tudo o que não está no contrato de dados</li><li>qualquer credencial</li></ul></div></div>
+    <p style="margin-top:14px">Defesa em profundidade: o <code>check_data.py</code> repete a checagem do lado público, porque este repositório não confia em quem escreve em <code>data/</code>.</p>`;
+  return `<div class="ph"><span class="mono">Custo</span></div>
+    <h3>Do lado público, nada se paga.</h3>
+    <div class="g4"><div class="k"><b>R$ 0</b><span>GitHub Actions e Pages, gratuitos pra repositório público</span></div>
+    <div class="k"><b>0</b><span>servidor: a consulta roda no seu navegador</span></div>
+    <div class="k"><b>Assinatura</b><span>a classificação usa a assinatura do autor, sem API paga</span></div>
+    <div class="k"><b>US$ ${AQ.usd_mil}</b><span>por mil linhas, o custo do modelo escolhido medido por API (<code>evals/</code>)</span></div></div>`;
+}
+function panelStage(i) {
+  const s = ST[i], d = DET[i];
+  return `<div class="ph"><span class="mono">${s.n} · ${s.t.join(' ')}</span><button class="x mono" type="button" data-x>× fechar</button></div>
+    <h3>${d.h}</h3>${d.p.map(x => `<p>${x}</p>`).join('')}
+    <div class="g2" style="margin-top:16px"><div class="box2"><span class="mono">Guarda</span>${d.g}</div><div class="box2"><span class="mono">Onde ver</span>${d.w}</div></div>`;
+}
+
+// Desenha o fluxo (horizontal no desktop, vertical abaixo de 900 px) e devolve a função que desfaz tudo. `est` guarda o chip e o estágio
+// escolhidos, pra a troca de layout não perder o que o leitor tinha aberto.
+function fluxo(host, V, est) {
+  const G = V
+    ? { W: 340, H: 960, M: [70, 190, 310, 520, 640, 760, 880], B: 418, cx: 92, bw: 140, bh: 64 }
+    : { W: 1080, H: 500, M: [80, 215, 350, 560, 710, 860, 1010], B: 455, cy: 190, bw: 112, bh: 74 };
+  const half = V ? G.bh / 2 : G.bw / 2;
+  const P = (m, o) => V ? [G.cx + o, m] : [m, G.cy + o];
+  let dead = false; const timers = [];
+
+  const chips = document.createElement('div'); chips.className = 'chips';
+  chips.innerHTML = CHIPS.map(([k, t]) => `<button class="pill mono${k === est.mode ? ' on' : ''}" data-m="${k}" type="button" aria-pressed="${k === est.mode}">${t}</button>`).join('');
+  host.appendChild(chips);
+
+  let s = `<svg viewBox="0 0 ${G.W} ${G.H}" role="group" aria-label="Fluxo do dado: origem privada, classificação por IA, exportador e sigilo, repositório público, CI, GitHub Pages e o seu navegador"><g class="root">`;
+  if (V) {
+    s += `<rect class="zone" x="4" y="14" width="${G.W - 8}" height="${G.B - 30}" rx="22"/>`;
+    s += `<text class="zl" x="${G.W - 18}" y="36" text-anchor="end">LADO PRIVADO · FECHADO</text>`;
+    s += `<line class="front" x1="0" x2="${G.W}" y1="${G.B}" y2="${G.B}"/><text class="fl" x="${G.W - 12}" y="${G.B - 8}" text-anchor="end">FRONTEIRA DE SIGILO</text>`;
+    s += `<text class="zl" x="${G.W - 18}" y="${G.B + 30}" text-anchor="end">LADO PÚBLICO · NESTE REPOSITÓRIO</text>`;
+    s += `<line class="wire" x1="${G.cx}" x2="${G.cx}" y1="${G.M[0]}" y2="${G.M[6]}"/>`;
+  } else {
+    s += `<rect class="zone" x="8" y="62" width="${G.B - 26}" height="270" rx="24"/>`;
+    s += `<text class="zl" x="26" y="86">LADO PRIVADO · FECHADO</text>`;
+    s += `<text class="zl" x="${G.B + 30}" y="86">LADO PÚBLICO · TUDO NESTE REPOSITÓRIO</text>`;
+    s += `<line class="front" x1="${G.B}" x2="${G.B}" y1="40" y2="340"/><text class="fl" x="${G.B}" y="30" text-anchor="middle">FRONTEIRA DE SIGILO</text>`;
+    s += `<line class="wire" x1="${G.M[0]}" x2="${G.M[6]}" y1="${G.cy}" y2="${G.cy}"/>`;
+    // bancada: como a régua foi feita, uma vez
+    const BY = 432, BX = [100, 266, 432];
+    s += `<g class="bk"><text class="zl" x="26" y="482">BANCADA · FEITA UMA VEZ, REFEITA QUANDO A LISTA MUDA</text>`;
+    const bt = [[`Lista de ${AQ.itens} itens`, 'taxonomia.md'], ['Referência revisada', `${fmt(AQ.ref_linhas)} linhas · ${AQ.rotuladores} modelos`], ['Escolha do modelo', `${AQ.candidatos} candidatos medidos`]];
+    BX.forEach((x, i) => {
+      s += `<rect x="${x - 75}" y="${BY - 24}" width="150" height="48" rx="12"/><text x="${x}" y="${BY - 3}" text-anchor="middle" style="font-family:var(--f-text);font-size:12.5px;fill:var(--bone)">${bt[i][0]}</text><text x="${x}" y="${BY + 13}" text-anchor="middle" style="font-size:8.5px;letter-spacing:.04em">${bt[i][1]}</text>`;
+      if (i < 2) s += `<line class="bkarrow" x1="${x + 77}" x2="${BX[i + 1] - 77}" y1="${BY}" y2="${BY}"/>`;
+    });
+    s += `<path class="bkarrow" d="M${BX[2]},${BY - 26} C${BX[2]},330 ${G.M[1]},320 ${G.M[1]},${G.cy + 72}"/>`;
+    s += `<text x="${BX[2] + 14}" y="358" style="font-size:9.5px;letter-spacing:.1em;fill:var(--muted)">A RÉGUA</text></g>`;
+    // moldura e etiqueta (só no chip IA)
+    s += `<g class="iaonly"><rect class="frame" x="2" y="8" width="${G.W - 4}" height="${G.H - 6}" rx="26"/>
+      <text x="${G.W - 18}" y="${G.H - 12}" text-anchor="end" style="font-size:9.5px;letter-spacing:.08em;fill:var(--c-arq)">O CÓDIGO DE TUDO ISTO: CLAUDE CODE ESCREVEU, O AUTOR DECIDIU E REVISOU</text>
+      <g class="tagia"><rect x="${G.M[0] - 62}" y="${G.cy + 108}" width="124" height="22" rx="11"/><text x="${G.M[0]}" y="${G.cy + 123}" text-anchor="middle">SETOR: IA PROPÕE</text></g></g>`;
+  }
+  s += `<g class="parts"></g>`;
+  ST.forEach((st, i) => {
+    const [x, y] = P(G.M[i], 0);
+    const cls = 'nd' + (st.ai ? ' ai' : '') + (st.origem ? ' origem' : '');
+    s += `<g class="${cls}" data-i="${i}" tabindex="0" role="button" aria-label="${st.n} ${st.t.join(' ')}">`;
+    s += `<circle class="glow" cx="${x}" cy="${y}" r="${half + 6}"/>`;
+    s += `<rect class="ping" x="${x - G.bw / 2}" y="${y - G.bh / 2}" width="${G.bw}" height="${G.bh}" rx="16"/>`;
+    s += `<rect class="box" x="${x - G.bw / 2}" y="${y - G.bh / 2}" width="${G.bw}" height="${G.bh}" rx="16"/>`;
+    if (st.origem) { // cadeado
+      const lx = x + G.bw / 2 - 18, ly = y - G.bh / 2 + 14;
+      s += `<path d="M${lx - 4},${ly} v-3 a4,4 0 0 1 8,0 v3" fill="none" stroke="var(--muted)" stroke-width="1.3"/><rect x="${lx - 6}" y="${ly}" width="12" height="9" rx="2" fill="var(--muted)"/>`;
+    }
+    if (st.ai) s += `<g class="badge"><rect x="${x + G.bw / 2 - 26}" y="${y - G.bh / 2 - 8}" width="30" height="16" rx="8"/><text x="${x + G.bw / 2 - 11}" y="${y - G.bh / 2 + 3}" text-anchor="middle">IA</text></g>`;
+    if (st.ci) {
+      s += `<text class="nm" x="${x}" y="${y - G.bh / 2 + 22}" text-anchor="middle" style="font-size:11.5px">${st.t[0]}</text>`;
+      const cols = 15, gap = V ? 7.4 : 6.2, x0 = x - (cols - 1) * gap / 2, y0 = y - G.bh / 2 + (V ? 34 : 36);
+      for (let k = 0; k < AQ.testes; k++) s += `<circle class="led" cx="${x0 + (k % cols) * gap}" cy="${y0 + Math.floor(k / cols) * (V ? 5.4 : 6.6)}" r="${V ? 1.8 : 2.1}"/>`;
+    } else {
+      s += `<text class="nm" x="${x}" y="${y - (st.t.length > 1 ? 2 : -4)}" text-anchor="middle">${st.t[0]}</text>`;
+      if (st.t[1]) s += `<text class="nm" x="${x}" y="${y + 15}" text-anchor="middle">${st.t[1]}</text>`;
+    }
+    if (V) {
+      s += `<text class="st" x="${x - G.bw / 2 + 12}" y="${y - G.bh / 2 + 14}">${st.n}</text>`;
+      s += `<text class="cnt" x="${x + G.bw / 2 + 14}" y="${y - 2}" data-n="${st.num ?? ''}">${st.c}</text>`;
+      s += `<text class="cl" x="${x + G.bw / 2 + 14}" y="${y + 14}">${st.cl[0]}</text><text class="cl" x="${x + G.bw / 2 + 14}" y="${y + 26}">${st.cl[1]}</text>`;
+    } else {
+      s += `<text class="st" x="${x}" y="${y - G.bh / 2 - 14}" text-anchor="middle">${st.n}</text>`;
+      s += `<text class="cnt" x="${x}" y="${y + G.bh / 2 + 34}" text-anchor="middle" data-n="${st.num ?? ''}">${st.c}</text>`;
+      s += `<text class="cl" x="${x}" y="${y + G.bh / 2 + 52}" text-anchor="middle">${st.cl[0]}</text><text class="cl" x="${x}" y="${y + G.bh / 2 + 65}" text-anchor="middle">${st.cl[1]}</text>`;
+    }
+    s += `</g>`;
+  });
+  if (V) s += `<g class="iaonly"><g class="tagia"><rect x="${G.cx + G.bw / 2 + 10}" y="${G.M[0] + 32}" width="118" height="20" rx="10"/><text x="${G.cx + G.bw / 2 + 69}" y="${G.M[0] + 46}" text-anchor="middle" style="font-size:8.5px">SETOR: IA PROPÕE</text></g></g>`;
+  s += `</g></svg>`;
+  const box = document.createElement('div'); box.className = 'quadro'; box.innerHTML = s; host.appendChild(box);
+  const hint = document.createElement('div'); hint.className = 'mono hint'; hint.textContent = RM ? 'Movimento reduzido: diagrama parado' : (V ? 'Toque num estágio' : 'Clique num estágio');
+  host.appendChild(hint);
+  const panel = document.createElement('div'); panel.setAttribute('aria-live', 'polite'); host.appendChild(panel);
+
+  const svg = box.querySelector('svg'), root = svg.querySelector('.root'), parts = svg.querySelector('.parts');
+  const nodes = [...svg.querySelectorAll('.nd')], leds = [...svg.querySelectorAll('.led')], front = svg.querySelector('.front');
+
+  function paint() {
+    root.setAttribute('class', 'root mode-' + est.mode);
+    svg.classList.toggle('dimparts', est.mode !== 'fluxo');
+    const on = MODES[est.mode];
+    nodes.forEach((n, i) => { n.classList.toggle('off', !on.includes(i)); n.classList.toggle('lit', est.mode !== 'fluxo' && on.includes(i)); n.classList.toggle('sel', est.sel === i); });
+    chips.querySelectorAll('.pill').forEach(b => { const a = b.dataset.m === est.mode; b.classList.toggle('on', a); b.setAttribute('aria-pressed', a); });
+    panel.className = 'apanel'; void panel.offsetWidth;
+    panel.innerHTML = est.sel != null ? panelStage(est.sel) : panelMode(est.mode);
+    const x = panel.querySelector('[data-x]'); if (x) x.onclick = () => { est.sel = null; paint(); };
+  }
+  chips.addEventListener('click', e => { const b = e.target.closest('[data-m]'); if (!b) return; est.mode = b.dataset.m; est.sel = null; paint(); });
+  nodes.forEach((n, i) => {
+    const go = () => { est.sel = est.sel === i ? null : i; paint(); };
+    n.addEventListener('click', go);
+    n.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+  });
+  paint();
+
+  if (RM) { leds.forEach(l => l.classList.add('on')); return () => { dead = true; }; }
+
+  // animação (JS puro, D19): vaga → linhas rotuladas + traço de texto que some na fronteira; os testes acendem na CI
+  const pulse = (i, ai) => { const g = nodes[i].querySelector(ai ? '.glow' : '.ping'); g.classList.remove('pulse'); void g.getBBox(); g.classList.add('pulse'); };
+  let ledK = 0;
+  const lightLed = () => { if (ledK >= leds.length) { leds.forEach(l => l.classList.remove('on')); ledK = 0; } leds[ledK++].classList.add('on'); };
+  const L = []; const speed = V ? 110 : 150;
+  const mk = (type, m, o, to, extra = {}) => {
+    const e = document.createElementNS(NS, type === 't' ? 'rect' : 'circle');
+    e.setAttribute('class', 'pt-' + type);
+    if (type === 't') { e.setAttribute('width', V ? 3 : 8); e.setAttribute('height', V ? 8 : 3); e.setAttribute('rx', 1.5); }
+    else e.setAttribute('r', type === 'v' ? 4 : 2.6);
+    parts.appendChild(e);
+    L.push(Object.assign({ type, m, o, to, e, next: 2, a: 1 }, extra));
+  };
+  const OFF = V ? [-16, 0, 16] : [-11, 0, 11];
+  const spawnVaga = () => mk('v', G.M[0] + half, 0, G.M[1] - half);
+  function onArrive(p) {
+    if (p.type === 'v') {
+      timers.push(setTimeout(() => {
+        if (dead) return;
+        pulse(1, true);
+        OFF.forEach((o, k) => mk('l', G.M[1] + half, o, G.M[6], { lead: k === 1 }));
+        mk('t', G.M[1] + half, V ? 30 : 24, G.B - 4, { dying: true });
+      }, 260));
+      return true;
+    }
+    if (p.type === 't') { p.fade = true; front.classList.add('flash'); timers.push(setTimeout(() => front.classList.remove('flash'), 220)); return false; }
+    if (p.type === 'l' && p.lead) pulse(6);
+    return true;
+  }
+  let last = 0, acc = 0, run = false, raf;
+  function tick(t) {
+    const dt = Math.min(0.05, (t - (last || t)) / 1000); last = t;
+    acc += dt; if (acc > 1.0) { acc = 0; spawnVaga(); }
+    for (let i = L.length - 1; i >= 0; i--) {
+      const p = L[i];
+      if (p.fade) { p.a -= dt * 3; if (p.a <= 0) { p.e.remove(); L.splice(i, 1); continue; } p.e.setAttribute('opacity', p.a); continue; }
+      p.m += speed * dt;
+      if (p.type === 'l') while (p.next < 6 && p.m >= G.M[p.next]) {
+        if (p.next === 4) lightLed();
+        if (p.lead) pulse(p.next);
+        p.next++;
+      }
+      if (p.m >= p.to) { p.m = p.to; if (onArrive(p)) { p.e.remove(); L.splice(i, 1); continue; } }
+      const [x, y] = P(p.m, p.o);
+      if (p.type === 't') { p.e.setAttribute('x', x - (V ? 1.5 : 4)); p.e.setAttribute('y', y - (V ? 4 : 1.5)); }
+      else { p.e.setAttribute('cx', x); p.e.setAttribute('cy', y); }
+    }
+    if (run) raf = requestAnimationFrame(tick);
+  }
+  // os contadores sobem ao entrar na tela, e a animação só roda enquanto o diagrama está visível
+  let counted = false;
+  const vis = new IntersectionObserver(es => es.forEach(en => {
+    if (en.isIntersecting) {
+      if (!counted) { counted = true; svg.querySelectorAll('.cnt[data-n]').forEach(c => {
+        const n = +c.dataset.n; if (!c.dataset.n || !n) return; const t0 = performance.now();
+        const step = t => { if (dead) return; const k = Math.min(1, (t - t0) / 1400), e = 1 - Math.pow(1 - k, 3); c.textContent = fmt(Math.round(n * e)); if (k < 1) requestAnimationFrame(step); };
+        requestAnimationFrame(step); }); }
+      if (!run) { run = true; last = 0; spawnVaga(); raf = requestAnimationFrame(tick); }
+    } else { run = false; cancelAnimationFrame(raf); }
+  }), { threshold: 0.15 });
+  vis.observe(svg);
+  return () => { dead = true; run = false; cancelAnimationFrame(raf); vis.disconnect(); timers.forEach(clearTimeout); };
+}
+function arquitetura() {
+  const host = document.getElementById('fluxo'); if (!host || !AQ) return;
+  const est = { mode: 'fluxo', sel: null }, mq = matchMedia('(max-width: 900px)');
+  let desfaz = () => {};
+  const monta = () => { desfaz(); host.innerHTML = ''; desfaz = fluxo(host, mq.matches, est); };
+  mq.addEventListener('change', monta);
+  monta();
+}
+
 // ---------- render ----------
 let lastW = -1;
 function render() {
@@ -614,6 +876,6 @@ function iaBig() {
     tween(1400, 0, t => b.textContent = Math.round(alvo * t), EASE.outQuint); }), { threshold: 0.5 });
   fio.observe(b);
 }
-art(); iaBig(); render(); colunas(); exemplo();
+art(); iaBig(); render(); colunas(); exemplo(); arquitetura();
 document.fonts && document.fonts.ready.then(render);
 if (window.ResizeObserver) new ResizeObserver(() => { const w = document.querySelector('.wrap').clientWidth; if (Math.abs(w - lastW) > 1) render(); }).observe(document.body);

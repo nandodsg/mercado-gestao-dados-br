@@ -167,6 +167,47 @@ def retrato(c, exemplo: dict) -> dict:
     }
 
 
+# O modelo que roda a classificação é uma escolha de quem publica (não um número): o resto sai de evals/metricas.json.
+MODELO_ESCOLHIDO = ("anthropic/claude-haiku-5.5", "Claude Haiku 5.5")
+# Os três modelos que rotularam a referência; os outros resultados de evals/metricas.json são os candidatos medidos contra ela.
+ROTULADORES_REFERENCIA = ("claude-opus-5-5", "google/gemini-4-argon", "spacexai/grok-4.7")
+
+
+def arquitetura(manifest: dict, cob: dict, n_itens: int, n_consultas: int) -> dict:
+    """Números do capítulo "Arquitetura" (3.1): o que cada estágio do fluxo mostra. Nada é digitado na página: testes do último
+    `dbt build` (dbt/target/run_results.json), arquivos do manifesto, Parquet escritos, consultas do modelo da página e,
+    do que foi medido em evals/, o desempenho do modelo escolhido."""
+    rr = json.loads((RAIZ / "dbt" / "target" / "run_results.json").read_text(encoding="utf-8"))
+    testes = sum(1 for r in rr["results"] if r["unique_id"].startswith("test."))
+    ev = json.loads((RAIZ / "evals" / "metricas.json").read_text(encoding="utf-8"))["resultados"]
+    chave, nome = MODELO_ESCOLHIDO
+    assert chave in ev, f"evals/metricas.json não tem o modelo escolhido {chave}"
+    assert all(r in ev for r in ROTULADORES_REFERENCIA), "evals/metricas.json não tem algum rotulador da referência"
+    ref, cand = ev[chave], [k for k in ev if k not in ROTULADORES_REFERENCIA]
+    assert chave in cand and len(cand) >= 2
+    pt = lambda x, casas: f"{x:.{casas}f}".replace(".", ",")  # noqa: E731
+    return {
+        "vagas": int(manifest["contagens"]["vagas"]), "linhas": int(cob["linhas"]), "rot": int(cob["rotuladas"]),
+        "arquivos": len(manifest["arquivos"]), "testes": testes, "parquet": len(MARTS), "consultas": n_consultas, "itens": n_itens,
+        "ref_linhas": int(ref["linhas"]), "ref_vagas": int(ref["vagas_devolvidas"]), "rotuladores": len(ROTULADORES_REFERENCIA),
+        "candidatos": len(cand), "modelo": nome, "f1": pt(ref["f1_micro"], 2), "usd_mil": pt(ref["usd_por_mil_linhas"], 2),
+    }
+
+
+def arquitetura_lista(a: dict) -> str:
+    """O mesmo fluxo em texto, pra quem abre a página sem JavaScript (o diagrama e os gráficos são desenhados por ele)."""
+    itens = [
+        f"Origem privada: {fmt(a['vagas'])} vagas, com o anúncio inteiro. Fechada; daqui só sai o que o contrato de dados permite.",
+        f"Classificação por IA: {a['modelo']} marca os itens da lista de {a['itens']} em cada linha ({fmt(a['rot'])} de {fmt(a['linhas'])} classificadas). Só o rótulo segue; o texto fica.",
+        f"Exportador e sigilo: {a['arquivos']} arquivos e o manifesto; o texto do anúncio não atravessa a fronteira.",
+        "Repositório público: cada publicação é um commit em data/, um retrato do dado.",
+        f"CI (GitHub Actions): confere o contrato e roda {fmt(a['testes'])} testes; se um falha, nada é publicado.",
+        f"GitHub Pages: página estática e {a['parquet']} tabelas em Parquet.",
+        "Seu navegador: o DuckDB-WASM roda a consulta aqui, sem servidor.",
+    ]
+    return '<ol>' + ''.join(f"<li>{i}</li>" for i in itens) + '</ol>'
+
+
 def conferir_exemplo(c, exemplo: dict) -> None:
     """O exemplo da 1.2 (site/exemplo.json) é inventado, mas só pode citar item da taxonomia e ferramenta do dicionário que existem."""
     itens = {r[0] for r in c.sql("select chave from taxonomia").fetchall()}
@@ -270,6 +311,8 @@ def main() -> int:
     conferir_exemplo(c, exemplo)
     pagina["retrato"] = ret = retrato(c, exemplo)
     pagina["colunas"] = {t: [r[0] for r in c.sql(f"describe {t}").fetchall()] for t in MARTS}
+    modelo = (SITE / "index.modelo.html").read_text(encoding="utf-8")
+    pagina["arq"] = arq = arquitetura(manifest, cob, len(itens), len(set(re.findall(r'data-sql="(\w+)"', modelo))))
 
     # ---------- texto: marcadores do modelo ----------
     gerado = datetime.fromisoformat(manifest["gerado_em"].replace("Z", "+00:00"))
@@ -308,7 +351,7 @@ def main() -> int:
             "<b>Não se sustenta nesta publicação.</b> A direção que o título afirma mudou com o dado novo; o texto espera revisão. "
             "O gráfico abaixo mostra o dado de hoje.")
 
-    modelo = (SITE / "index.modelo.html").read_text(encoding="utf-8")
+    marc["arq_lista"] = arquitetura_lista(arq)
 
     def sub(m: re.Match) -> str:
         return str(marc[m.group(1)])

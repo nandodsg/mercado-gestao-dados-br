@@ -65,7 +65,7 @@
 <!-- ===================== SUMÁRIO ===================== -->
 <section id="s-sumario" data-cap="cap" data-rail="Sumário">
   <div class="label mono rv"><span class="dot"></span>Sumário</div>
-  <h2 data-split>Três capítulos,|<em>do método à consulta livre.</em></h2>
+  <h2 data-split>Quatro capítulos,|<em>do método à consulta livre.</em></h2>
   <div class="sumario">
     <div class="cap rv" data-cap="met">
       <span class="mono">01</span><h3>Metodologia</h3>
@@ -89,12 +89,18 @@
         <li><a href="#ns"><span>—</span><span>O que os dados ainda não sustentam</span></a></li>
       </ol>
     </div>
-    <div class="cap rv" data-cap="exp" style="--d:200ms">
-      <span class="mono">03</span><h3>Exploração livre</h3>
+    <div class="cap rv" data-cap="arq" style="--d:200ms">
+      <span class="mono">03</span><h3>Arquitetura</h3>
       <ol>
-        <li><a href="#s-itens"><span>3.1</span><span>Os {{n_itens}} itens, lado a lado</span></a></li>
-        <li><a href="#s-sql"><span>3.2</span><span>Consulta livre no navegador</span></a></li>
-        <li><a href="#s-baixar"><span>3.3</span><span>Baixar o dado ou consultar de fora</span></a></li>
+        <li><a href="#s-arq"><span>3.1</span><span>Do anúncio à página: onde há IA e onde há uma pessoa</span></a></li>
+      </ol>
+    </div>
+    <div class="cap rv" data-cap="exp" style="--d:300ms">
+      <span class="mono">04</span><h3>Exploração livre</h3>
+      <ol>
+        <li><a href="#s-itens"><span>4.1</span><span>Os {{n_itens}} itens, lado a lado</span></a></li>
+        <li><a href="#s-sql"><span>4.2</span><span>Consulta livre no navegador</span></a></li>
+        <li><a href="#s-baixar"><span>4.3</span><span>Baixar o dado ou consultar de fora</span></a></li>
       </ol>
     </div>
   </div>
@@ -345,9 +351,35 @@
   </div>
 </section>
 
-<!-- ===================== 03 · EXPLORAÇÃO LIVRE ===================== -->
-<section id="s-itens" data-cap="exp" data-rail="3.1 · Os {{n_itens}} itens">
-  <div class="label mono rv"><span class="dot"></span><span class="num">03 · Exploração livre</span> · 3.1</div>
+<!-- ===================== 03 · ARQUITETURA ===================== -->
+<section id="s-arq" data-cap="arq" data-rail="3.1 · Do anúncio à página">
+  <div class="label mono rv"><span class="dot"></span><span class="num">03 · Arquitetura</span> · 3.1</div>
+  <h2 data-split>A IA faz o volume.|<em>Uma pessoa define a régua.</em></h2>
+  <p class="lede rv">Como um anúncio vira os números desta página: sem servidor e sem nenhuma credencial do lado público. A origem dos dados aparece fechada; tudo o que atravessa a fronteira de sigilo está neste repositório, e você pode refazer cada passo.</p>
+  <div class="card rv" id="arq-card" style="padding-top:30px">
+    <div class="flow" id="fluxo"></div>
+    <noscript>{{arq_lista}}</noscript>
+  </div>
+
+  <div class="label mono rv" style="margin-top:96px"><span class="dot"></span><span class="num">03 · Arquitetura</span> · as escolhas</div>
+  <h2 class="h2-menor" data-split>Pequeno de propósito,|<em>e o que faria crescer.</em></h2>
+  <div class="dec rv">
+    <div><span class="mono">01 · Armazenamento</span><b>Arquivos CSV no git, não um banco</b><span class="tx">Poucos arquivos pequenos, um escritor só e uma publicação por semana. Cada commit é um retrato do dado, e o histórico do git guarda todos.</span>
+      <div class="muda"><i>Muda se</i>o volume ou o número de quem escreve crescer.</div></div>
+    <div><span class="mono">02 · Motor</span><b>DuckDB, refeito do zero a cada execução</b><span class="tx">Lê os CSV no lugar e monta as tabelas num arquivo que é jogado fora depois. O que persiste é o CSV. O mesmo motor roda no seu navegador.</span>
+      <div class="muda"><i>Muda se</i>uma consulta deixar de caber na memória de um computador comum.</div></div>
+    <div><span class="mono">03 · Transformação</span><b>dbt pra transformar e testar</b><span class="tx">Resolve a ordem pelas dependências, roda os testes e documenta de onde vem cada coluna. O DuckDB executa; o dbt organiza e confere.</span>
+      <div class="muda"><i>Muda se</i>nada à vista: é a peça mais estável.</div></div>
+    <div><span class="mono">04 · Orquestração</span><b>Sem orquestrador, por enquanto</b><span class="tx">Uma transformação e um encadeamento simples: o commit em <code>data/</code> dispara a CI, e a ordem interna é a do dbt.</span>
+      <div class="muda"><i>Muda se</i>entrar um segundo pipeline, ou etapas com cache e reprocesso parcial.</div></div>
+    <div><span class="mono">05 · Segurança</span><b>CI sem credencial de banco</b><span class="tx">O repositório é público e só lê os próprios arquivos. A única peça que fala com a origem fica do lado privado e publica por commit.</span>
+      <div class="muda"><i>Muda se</i>nunca, por regra: é a guarda que deixa o resto ser aberto.</div></div>
+  </div>
+</section>
+
+<!-- ===================== 04 · EXPLORAÇÃO LIVRE ===================== -->
+<section id="s-itens" data-cap="exp" data-rail="4.1 · Os {{n_itens}} itens">
+  <div class="label mono rv"><span class="dot"></span><span class="num">04 · Exploração livre</span> · 4.1</div>
   <h2 data-split>Os {{n_itens}} itens,|<em>lado a lado.</em></h2>
   <div class="lembrete rv">
     <p><b>Antes de explorar:</b> esta é a amostra da busca de uma pessoa, não uma representação do mercado. Local, regime, portal e setor descrevem onde e como ela procurou.</p>
@@ -365,8 +397,8 @@
   </div>
 </section>
 
-<section id="s-sql" data-cap="exp" data-rail="3.2 · Consulta livre">
-  <div class="label mono rv"><span class="dot"></span><span class="num">03 · Exploração livre</span> · 3.2</div>
+<section id="s-sql" data-cap="exp" data-rail="4.2 · Consulta livre">
+  <div class="label mono rv"><span class="dot"></span><span class="num">04 · Exploração livre</span> · 4.2</div>
   <h2 data-split>Faça a sua pergunta|<em>em SQL, no navegador.</em></h2>
   <div class="card rv">
     <span class="tag mono">Tabelas e colunas que você pode usar</span>
@@ -387,8 +419,8 @@ order by vagas desc;</textarea>
   </div>
 </section>
 
-<section id="s-baixar" data-cap="exp" data-rail="3.3 · Baixar o dado">
-  <div class="label mono rv"><span class="dot"></span><span class="num">03 · Exploração livre</span> · 3.3</div>
+<section id="s-baixar" data-cap="exp" data-rail="4.3 · Baixar o dado">
+  <div class="label mono rv"><span class="dot"></span><span class="num">04 · Exploração livre</span> · 4.3</div>
   <h2 data-split>O dado é seu,|<em>refaça a conta.</em></h2>
   <div class="botoes rv">
     <a class="pill cta mono" href="https://github.com/nandodsg/mercado-gestao-dados-br/tree/main/data">Baixar o dado (CSV) <span class="arr">→</span></a>
