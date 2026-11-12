@@ -24,8 +24,8 @@ from pathlib import Path
 
 COLUNAS = {
     "vagas.csv": ["id_publico", "empresa", "cargo_oficial", "modo", "geografia", "regime", "cidade", "uf", "contrato",
-                  "fonte", "candidatura_tipo", "mes", "url", "faixa_posting", "salario_min", "salario_max",
-                  "salario_moeda", "salario_tipo"],
+                  "fonte", "mes", "data_publicacao", "data_captura", "data_analise", "idioma", "tem_sobre_empresa",
+                  "tem_beneficios", "url", "faixa_posting", "salario_min", "salario_max", "salario_moeda", "salario_tipo"],
     "requisitos.csv": ["id_publico", "ordem", "texto"],
     "benchmarks.csv": ["id_publico", "ordem", "fonte_url", "fonte_nota"],
     "rotulos.csv": ["id_publico", "ordem", "hash_linha", "secao", "natureza", "itens", "ferramentas", "setor", "versao_taxonomia",

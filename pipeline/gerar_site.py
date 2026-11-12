@@ -68,6 +68,116 @@ def aviso_html(texto: str) -> str:
     return f'<div class="banner"><span class="dot"></span><span>{texto}</span></div>'
 
 
+# Fonte da referência salarial: o domínio vira o nome que quem lê reconhece; o que não está na lista soma em "outras".
+FONTES_REF = (("glassdoor", "Glassdoor"), ("roberthalf", "Robert Half"), ("indeed", "Indeed"), ("salario.com.br", "Salario.com.br"),
+              ("vagas.com", "Vagas.com"), ("levels.fyi", "Levels.fyi"))
+NIVEL_NOME = {"coordenador": "Coordenação", "gerente": "Gerência", "alta_gestao": "Alta gestão", "outros": "Outros"}
+REGIME_NOME = {"hibrido": "Híbrido", "presencial": "Presencial", "remoto": "Remoto"}
+IDIOMA_NOME = {"pt": "Português", "en": "Inglês"}
+
+
+def _barras(linhas: list[tuple], vazio: str | None = None, topo: int | None = None, resto: str = "outros") -> list[list]:
+    """[(rótulo, n)] → [[rótulo, n]]; `topo` junta o excedente numa linha só; `vazio` = rótulo de quem não informa (sempre por último, tracejado)."""
+    com = sorted(((k, n) for k, n in linhas if k is not None), key=lambda kn: (-kn[1], str(kn[0])))
+    out = [[k, n] for k, n in com]
+    if topo is not None and len(out) > topo:
+        sobra = out[topo:]
+        out = out[:topo] + [[resto.format(k=len(sobra)), sum(n for _, n in sobra)]]
+    na = sum(n for k, n in linhas if k is None)
+    if na and vazio:
+        out.append([vazio, na, 1])
+    return out
+
+
+def retrato(c, exemplo: dict) -> dict:
+    """Números da subseção "Retrato da amostra" (Metodologia 1.4) e da 1.2: datas, geografia, onde o anúncio está publicado,
+    composição e tamanho do anúncio. Descrevem a busca, não o mercado: nada daqui é achado."""
+    q = lambda s: c.sql(s).fetchall()  # noqa: E731
+    um = lambda s: q(s)[0][0]  # noqa: E731
+
+    def semanal(col: str) -> dict[str, int]:
+        return {str(w): n for w, n in q(f"select date_trunc('week', {col})::date, count(*) from mart_vagas where {col} is not null group by 1")}
+
+    pub, cap, ana = semanal("data_publicacao"), semanal("data_captura"), semanal("data_analise")
+    todas = sorted(set(pub) | set(cap) | set(ana))
+    semanas: list[str] = []
+    if todas:
+        d, fim = datetime.fromisoformat(todas[0]), datetime.fromisoformat(todas[-1])
+        while d <= fim:
+            semanas.append(d.date().isoformat())
+            d += timedelta(days=7)
+    atraso = {
+        "pub_cap": round(um("select median(date_diff('day', data_publicacao, data_captura)) from mart_vagas where data_publicacao is not null") or 0),
+        "n_pub": um("select count(data_publicacao) from mart_vagas"),
+        "sem_pub": um("select count(*) from mart_vagas where data_publicacao is null"),
+        "cap_ana": round(um("select median(date_diff('day', data_captura, data_analise)) from mart_vagas") or 0),
+        "mesmo_dia": um("select count(*) from mart_vagas where data_captura = data_analise"),
+    }
+
+    # onde publicado: ATS lido da URL. ATS com uma vaga só somam em "Outros ATS" (se forem 2 ou mais); LinkedIn, portal e site ficam à parte.
+    fixos = {"LinkedIn": "LinkedIn (vaga no próprio LinkedIn)", "Site de carreiras da empresa": "Site de carreiras da empresa", "Portal de vagas": "Portal de vagas"}
+    ats = q("select ats, count(*) from mart_vagas group by 1")
+    nomeados = [(k, n) for k, n in ats if k is not None and k not in fixos]
+    unicos = [(k, n) for k, n in nomeados if n == 1]
+    outros = []
+    if len(unicos) >= 2:
+        nomeados = [(k, n) for k, n in nomeados if n > 1]
+        outros = [[f"Outros ATS ({len(unicos)}, um cada)", len(unicos)]]
+    barras = _barras(nomeados + [(fixos[k], n) for k, n in ats if k in fixos])
+    barras.sort(key=lambda r: (r[0] == "Portal de vagas", -r[1]))
+    ats_barras = barras + outros
+    sem_link = sum(n for k, n in ats if k is None)
+    if sem_link:
+        ats_barras.append(["Sem link do anúncio", sem_link, 1])
+
+    ref: dict[str, int] = {}
+    for dominio, n in q("select regexp_replace(lower(regexp_extract(fonte_url, 'https?://([^/]+)', 1)), '^www[.]', ''), count(*) from stg_benchmarks group by 1"):
+        nome = next((nm for chave, nm in FONTES_REF if chave in (dominio or "")), "outras")
+        ref[nome] = ref.get(nome, 0) + n
+    ref_barras = sorted([[k, n] for k, n in ref.items() if k != "outras"], key=lambda r: -r[1]) + ([["outras", ref["outras"]]] if "outras" in ref else [])
+
+    # tamanho do anúncio: linhas classificadas por vaga (vagas da comparação, sem repetida), mediana por seção
+    tam = {n: [r[0] for r in q(f"""select count(*) from stg_rotulos r join mart_vagas v using (id_publico)
+                                    where v.nivel = '{n}' and r.id_publico not in (select id_publico from mart_repost)
+                                    group by r.id_publico order by 1""")] for n in NIVEIS}
+    med = lambda sec: round(um(f"select median(n) from (select count(*) n from stg_rotulos where secao = '{sec}' group by id_publico)") or 0)  # noqa: E731
+    quartis = q("select quantile_cont(n, 0.25), quantile_cont(n, 0.5), quantile_cont(n, 0.75) from (select count(*) n from stg_rotulos group by id_publico)")[0]
+    itens_linha = um("select avg(len(string_split(itens, '|'))) from stg_rotulos where itens <> ''")
+
+    return {
+        "semanas": semanas, "pub": pub, "cap": cap, "ana": ana, "atraso": atraso,
+        "uf": _barras(q("select uf, count(*) from mart_vagas group by 1"), "não informado"),
+        "cid": _barras(q("select cidade, count(*) from mart_vagas group by 1"), "não informada", topo=8, resto="outras ({k})"),
+        "ats": ats_barras,
+        "niv": _barras([(NIVEL_NOME.get(k, k), n) for k, n in q("select nivel, count(*) from mart_vagas group by 1")]),
+        "reg": _barras([(REGIME_NOME.get(k, k), n) for k, n in q("select regime, count(*) from mart_vagas group by 1")], "não informado"),
+        "con": _barras(q("select contrato, count(*) from mart_vagas group by 1"), "não informado"),
+        "set": _barras([(k[:1].upper() + k[1:] if k else None, n) for k, n in q("select setor, count(*) from mart_vagas group by 1")],
+                       "não informado", topo=8, resto="outros {k} setores"),
+        "idi": _barras([(IDIOMA_NOME.get(k, k), n) for k, n in q("select idioma, count(*) from mart_vagas group by 1")], "não informado"),
+        "sec": [[nm, um(f"select count(*) from mart_vagas where {col}")] for nm, col in (("Benefícios", "tem_beneficios"), ('"Sobre a empresa"', "tem_sobre_empresa"))],
+        "ref": ref_barras, "ref_total": sum(ref.values()),
+        "tam": tam,
+        "med_secoes": [med("responsabilidades"), med("requisitos"), med("diferenciais")],
+        "n_com_dif": um("select count(distinct id_publico) from stg_rotulos where secao = 'diferenciais'"),
+        "n_classificadas": um("select count(distinct id_publico) from stg_rotulos"),
+        "itens_linha": round(itens_linha or 0, 1),
+        "q1": round(quartis[0]), "mediana_linhas": round(quartis[1]), "q3": round(quartis[2]),
+        "exemplo_linhas": sum(len(ls) for _, ls in exemplo["secoes"]),
+    }
+
+
+def conferir_exemplo(c, exemplo: dict) -> None:
+    """O exemplo da 1.2 (site/exemplo.json) é inventado, mas só pode citar item da taxonomia e ferramenta do dicionário que existem."""
+    itens = {r[0] for r in c.sql("select chave from taxonomia").fetchall()}
+    ferr = {r[0] for r in c.sql("select ferramenta from ferramentas").fetchall()}
+    for _, linhas in exemplo["secoes"]:
+        for texto, natureza, its, fs in linhas:
+            assert natureza in ("responsabilidade", "requisito", "contexto"), f"exemplo: natureza {natureza!r} em {texto!r}"
+            assert set(its) <= itens, f"exemplo: item fora da taxonomia em {texto!r}: {sorted(set(its) - itens)}"
+            assert set(fs) <= ferr, f"exemplo: ferramenta fora do dicionário em {texto!r}: {sorted(set(fs) - ferr)}"
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("saida")
@@ -156,6 +266,11 @@ def main() -> int:
         "difs": difs, "sal": sal, "moda": moda, "sal_txt": sal_txt,
     }
 
+    exemplo = json.loads((SITE / "exemplo.json").read_text(encoding="utf-8"))
+    conferir_exemplo(c, exemplo)
+    pagina["retrato"] = ret = retrato(c, exemplo)
+    pagina["colunas"] = {t: [r[0] for r in c.sql(f"describe {t}").fetchall()] for t in MARTS}
+
     # ---------- texto: marcadores do modelo ----------
     gerado = datetime.fromisoformat(manifest["gerado_em"].replace("Z", "+00:00"))
     local = gerado.astimezone(timezone(timedelta(hours=-3)))  # Brasil sem horário de verão
@@ -175,7 +290,7 @@ def main() -> int:
     marc = {
         "atualizado_em": local.strftime("%d.%m.%Y"),
         "n_vagas": n_vagas, "n_vagas_raw": n_vagas, "n_linhas": fmt(n_linhas), "n_linhas_raw": n_linhas,
-        "n_faixa": raw["n_faixa"], "n_faixa_raw": raw["n_faixa"], "n_itens": len(itens), "n_dims": n_dims,
+        "n_faixa": raw["n_faixa"], "n_faixa_raw": raw["n_faixa"], "n_linhas_rot": fmt(int(cob.get("rotuladas", 0))), "n_linhas_rot_raw": int(cob.get("rotuladas", 0)), "n_itens": len(itens), "n_dims": n_dims,
         "n_comparacao": nc + ng, "nc": nc, "ng": ng, "ferr_top": top,
         "aviso_cobertura": aviso_html(f"<b>Classificação em andamento: {cob_txt}.</b> Os números abaixo podem mudar quando ela terminar.").replace(
             'class="banner"', 'class="banner n"') if parcial else "",
@@ -184,6 +299,8 @@ def main() -> int:
         "ia_h3": ia_h3, "dif_h3": dif_h3, "n_dif": raw["n_dif"],
         "sal_med_c": v["sal_med_c"], "sal_med_g": v["sal_med_g"],
         "bench_fontes": v["bench_fontes"], "bench_dominios": v["bench_dominios"],
+        "n_classificadas": ret["n_classificadas"], "n_sem_rotulo": raw["n_sem_rotulo"], "n_alta_outros": raw["n_outros_niveis"],
+        "exemplo_linhas": ret["exemplo_linhas"], "mediana_linhas": ret["mediana_linhas"], "q1_linhas": ret["q1"], "q3_linhas": ret["q3"],
     }
     for k, ok in cond.items():
         marc[f"virou_{k}"] = "" if ok else " virou"

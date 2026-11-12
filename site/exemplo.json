@@ -1,0 +1,229 @@
+{
+ "titulo": "Coordenação de Dados e Analytics",
+ "meta": "Varejista de moda · São Paulo, SP · híbrido · CLT · exemplo inventado",
+ "sobre": "Somos uma rede de moda com 300 lojas e um e-commerce que cresce todo ano. Acreditamos que dado bem usado aproxima a gente de quem compra.",
+ "beneficios": "Vale-refeição, plano de saúde e odontológico, participação nos lucros, desconto nas lojas, auxílio home office.",
+ "secoes": [
+  [
+   "Responsabilidades",
+   [
+    [
+     "O time de dados foi criado há um ano e atende todas as áreas da empresa",
+     "contexto",
+     [],
+     []
+    ],
+    [
+     "Liderar e desenvolver um time de 6 analistas e engenheiros de dados",
+     "responsabilidade",
+     [
+      "pessoas.liderar_time",
+      "pessoas.desenvolver_pessoas",
+      "pessoas.multidisciplinar"
+     ],
+     []
+    ],
+    [
+     "Acompanhar a rotina do time, os projetos em andamento e os indicadores de entrega",
+     "responsabilidade",
+     [
+      "pessoas.operacao_time",
+      "analytics.kpis_metricas",
+      "negocio.projetos_portfolio"
+     ],
+     []
+    ],
+    [
+     "Priorizar o backlog de demandas junto às áreas de negócio, entendendo o impacto de cada uma",
+     "responsabilidade",
+     [
+      "negocio.roadmap_priorizacao",
+      "negocio.stakeholders",
+      "negocio.visao_negocio"
+     ],
+     []
+    ],
+    [
+     "Garantir a qualidade e a disponibilidade dos pipelines que alimentam os painéis",
+     "responsabilidade",
+     [
+      "gov.qualidade",
+      "eng.observabilidade_operacao",
+      "eng.pipelines"
+     ],
+     []
+    ],
+    [
+     "Evoluir o modelo de dados e a arquitetura da camada analítica",
+     "responsabilidade",
+     [
+      "eng.modelagem",
+      "eng.arquitetura"
+     ],
+     []
+    ],
+    [
+     "Construir e manter os painéis de vendas e estoque em Power BI",
+     "responsabilidade",
+     [
+      "analytics.bi_dashboards",
+      "analytics.kpis_metricas"
+     ],
+     [
+      "Power BI"
+     ]
+    ],
+    [
+     "Traduzir análises em recomendações de negócio para a diretoria comercial",
+     "responsabilidade",
+     [
+      "analytics.analise_insights",
+      "negocio.comunicacao_executiva",
+      "negocio.visao_negocio"
+     ],
+     []
+    ],
+    [
+     "Pôr a mão na massa nas análises mais complexas quando preciso",
+     "responsabilidade",
+     [
+      "pessoas.hands_on",
+      "analytics.analise_insights"
+     ],
+     []
+    ],
+    [
+     "Encontrar usos de IA e de modelos preditivos no atendimento e no planejamento de demanda",
+     "responsabilidade",
+     [
+      "ia.ia_aplicada",
+      "negocio.transformacao_inovacao",
+      "ia.ciencia_dados_ml"
+     ],
+     []
+    ]
+   ]
+  ],
+  [
+   "Requisitos",
+   [
+    [
+     "Formação superior em Estatística, Engenharia, Computação ou áreas afins",
+     "requisito",
+     [
+      "formacao.graduacao"
+     ],
+     []
+    ],
+    [
+     "Cinco anos de experiência em dados, com pelo menos dois liderando times",
+     "requisito",
+     [
+      "experiencia.anos",
+      "experiencia.dados",
+      "pessoas.liderar_time"
+     ],
+     []
+    ],
+    [
+     "SQL avançado e Python para análise e automação",
+     "requisito",
+     [
+      "analytics.analise_insights",
+      "analytics.automacao"
+     ],
+     [
+      "SQL",
+      "Python"
+     ]
+    ],
+    [
+     "Vivência com ferramentas de BI, como Power BI ou Tableau",
+     "requisito",
+     [
+      "analytics.bi_dashboards"
+     ],
+     [
+      "Power BI",
+      "Tableau"
+     ]
+    ],
+    [
+     "Conhecimento de nuvem (Azure ou GCP) e de arquitetura de dados moderna",
+     "requisito",
+     [
+      "eng.plataforma_cloud",
+      "eng.arquitetura"
+     ],
+     [
+      "Azure",
+      "GCP"
+     ]
+    ],
+    [
+     "Boa comunicação com as áreas de negócio e com a liderança",
+     "requisito",
+     [
+      "comportamento.comunicacao",
+      "negocio.stakeholders"
+     ],
+     []
+    ],
+    [
+     "Inglês intermediário",
+     "requisito",
+     [
+      "idioma.ingles"
+     ],
+     []
+    ],
+    [
+     "Experiência no varejo",
+     "requisito",
+     [
+      "experiencia.setor"
+     ],
+     []
+    ]
+   ]
+  ],
+  [
+   "Diferenciais",
+   [
+    [
+     "Pós-graduação ou MBA",
+     "requisito",
+     [
+      "formacao.pos"
+     ],
+     []
+    ],
+    [
+     "Experiência com IA generativa aplicada ao negócio",
+     "requisito",
+     [
+      "ia.genai_llm",
+      "ia.ia_aplicada"
+     ],
+     []
+    ],
+    [
+     "Conhecimento de governança, catálogo de dados e LGPD",
+     "requisito",
+     [
+      "gov.governanca",
+      "gov.catalogo_linhagem",
+      "gov.privacidade_regulacao"
+     ],
+     []
+    ],
+    [
+     "Paixão por varejo e por gente",
+     "requisito",
+     [],
+     []
+    ]
+   ]
+  ]
+ ]
+}

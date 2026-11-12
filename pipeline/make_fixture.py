@@ -12,8 +12,8 @@ from pathlib import Path
 
 SAIDA = Path(__file__).resolve().parent.parent / "tests" / "fixtures"
 CABECALHO_VAGAS = ["id_publico", "empresa", "cargo_oficial", "modo", "geografia", "regime", "cidade", "uf", "contrato",
-                   "fonte", "candidatura_tipo", "mes", "url", "faixa_posting", "salario_min", "salario_max",
-                   "salario_moeda", "salario_tipo"]
+                   "fonte", "mes", "data_publicacao", "data_captura", "data_analise", "idioma", "tem_sobre_empresa",
+                   "tem_beneficios", "url", "faixa_posting", "salario_min", "salario_max", "salario_moeda", "salario_tipo"]
 
 VAGAS = [
     # id, empresa, cargo, regime, cidade, uf, contrato, mes
@@ -74,9 +74,10 @@ def escrever(nome: str, cabecalho: list[str], linhas: list[list]) -> str:
 def main() -> None:
     SAIDA.mkdir(parents=True, exist_ok=True)
     vagas = [
-        [i, e, c, "lideranca", "br", reg, cid, uf, ctr, "linkedin", "externa", mes,
+        [i, e, c, "lideranca", "br", reg, cid, uf, ctr, "linkedin", mes, f"{mes}-02", f"{mes}-09", f"{mes}-09",
+         "en" if i.endswith("3") else "pt", "true" if n % 2 else "false", "false" if n % 3 == 0 else "true",
          f"https://exemplo.invalid/vaga/{i}", "", "", "", "", ""]
-        for i, e, c, reg, cid, uf, ctr, mes in VAGAS
+        for n, (i, e, c, reg, cid, uf, ctr, mes) in enumerate(VAGAS)
     ]
     rotulos = [[v, o, h, sec, nat, it, fe, st, VERSAO_TAXONOMIA, ROTULADOR] for v, o, h, sec, nat, it, fe, st in ROTULOS]
     arquivos = {

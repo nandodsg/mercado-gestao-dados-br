@@ -1,6 +1,6 @@
 {
   "contrato": "v1",
-  "gerado_em": "2026-11-12T00:12:18.978Z",
+  "gerado_em": "2026-11-12T02:30:31.441Z",
   "contagens": {
     "vagas": 110,
     "requisitos": 1637,
@@ -8,7 +8,7 @@
   },
   "arquivos": {
     "vagas.csv": {
-      "sha256": "4f40ca7e22e7f73b8281787f444bddf91a1653665f8219c4f11a3a8afca64540",
+      "sha256": "d668c876be5af230ef7b04eba0ce6ad9a81f02abee9849221c4408d25b555e8a",
       "linhas": 110
     },
     "requisitos.csv": {
@@ -33,8 +33,9 @@
     "rotuladas": 2001
   },
   "notas": [
-    "Universo: vagas de liderança no Brasil analisadas no tracker de uma pessoa, set–nov/2026 (amostra de funil, não do mercado inteiro).",
+    "Universo: vagas de liderança no Brasil analisadas no tracker de uma pessoa, jul–nov/2026 (amostra de funil, não do mercado inteiro).",
     "modo, geografia, regime, cidade, contrato e salario_* são derivados da análise da vaga, não campos do posting.",
+    "data_captura é o dia em que o autor viu o anúncio; data_analise, o dia em que a leitura linha a linha foi feita.",
     "benchmarks.csv é referência de mercado pesquisada por vaga (fonte e nota), nunca o que a vaga paga.",
     "url é a do posting no dia da captura; postings do LinkedIn expiram."
   ]

@@ -1,7 +1,7 @@
-id_publico,empresa,cargo_oficial,modo,geografia,regime,cidade,uf,contrato,fonte,candidatura_tipo,mes,url,faixa_posting,salario_min,salario_max,salario_moeda,salario_tipo
-aaaaaaaaaaa1,Empresa Exemplo A,Coordenador de Dados,lideranca,br,hibrido,Porto Alegre,RS,CLT,linkedin,externa,2026-09,https://exemplo.invalid/vaga/aaaaaaaaaaa1,,,,,
-aaaaaaaaaaa2,Empresa Exemplo B,Gerente de Analytics,lideranca,br,presencial,São Paulo,SP,CLT,linkedin,externa,2026-10,https://exemplo.invalid/vaga/aaaaaaaaaaa2,,,,,
-aaaaaaaaaaa3,Empresa Exemplo C,"Senior Manager, Data Platform",lideranca,br,remoto,,,PJ,linkedin,externa,2026-10,https://exemplo.invalid/vaga/aaaaaaaaaaa3,,,,,
-aaaaaaaaaaa4,Empresa Exemplo D,Head de Dados,lideranca,br,hibrido,São Paulo,SP,CLT,linkedin,externa,2026-10,https://exemplo.invalid/vaga/aaaaaaaaaaa4,,,,,
-aaaaaaaaaaa5,Empresa Exemplo E,Supervisor de BI,lideranca,br,presencial,Porto Alegre,RS,CLT,linkedin,externa,2026-11,https://exemplo.invalid/vaga/aaaaaaaaaaa5,,,,,
-aaaaaaaaaaa6,Empresa Exemplo F,Gerente de Dados e IA,lideranca,br,hibrido,Curitiba,PR,CLT,linkedin,externa,2026-11,https://exemplo.invalid/vaga/aaaaaaaaaaa6,,,,,
+id_publico,empresa,cargo_oficial,modo,geografia,regime,cidade,uf,contrato,fonte,mes,data_publicacao,data_captura,data_analise,idioma,tem_sobre_empresa,tem_beneficios,url,faixa_posting,salario_min,salario_max,salario_moeda,salario_tipo
+aaaaaaaaaaa1,Empresa Exemplo A,Coordenador de Dados,lideranca,br,hibrido,Porto Alegre,RS,CLT,linkedin,2026-09,2026-09-02,2026-09-09,2026-09-09,pt,false,false,https://exemplo.invalid/vaga/aaaaaaaaaaa1,,,,,
+aaaaaaaaaaa2,Empresa Exemplo B,Gerente de Analytics,lideranca,br,presencial,São Paulo,SP,CLT,linkedin,2026-10,2026-10-02,2026-10-09,2026-10-09,pt,true,true,https://exemplo.invalid/vaga/aaaaaaaaaaa2,,,,,
+aaaaaaaaaaa3,Empresa Exemplo C,"Senior Manager, Data Platform",lideranca,br,remoto,,,PJ,linkedin,2026-10,2026-10-02,2026-10-09,2026-10-09,en,false,true,https://exemplo.invalid/vaga/aaaaaaaaaaa3,,,,,
+aaaaaaaaaaa4,Empresa Exemplo D,Head de Dados,lideranca,br,hibrido,São Paulo,SP,CLT,linkedin,2026-10,2026-10-02,2026-10-09,2026-10-09,pt,true,false,https://exemplo.invalid/vaga/aaaaaaaaaaa4,,,,,
+aaaaaaaaaaa5,Empresa Exemplo E,Supervisor de BI,lideranca,br,presencial,Porto Alegre,RS,CLT,linkedin,2026-11,2026-11-02,2026-11-09,2026-11-09,pt,false,true,https://exemplo.invalid/vaga/aaaaaaaaaaa5,,,,,
+aaaaaaaaaaa6,Empresa Exemplo F,Gerente de Dados e IA,lideranca,br,hibrido,Curitiba,PR,CLT,linkedin,2026-11,2026-11-02,2026-11-09,2026-11-09,pt,true,true,https://exemplo.invalid/vaga/aaaaaaaaaaa6,,,,,

@@ -37,6 +37,24 @@ models:
         description: "Normalizado no export (D17): base | total | vazio."
         data_tests:
           - accepted_values: {arguments: {values: ["base", "total"]}}
+      - name: data_publicacao
+        description: "Dia em que o anúncio foi publicado, quando ele traz a data. Vazio = o anúncio não informa."
+      - name: data_captura
+        description: "Dia em que o autor encontrou o anúncio. Descreve a busca, não o anúncio."
+        data_tests: [not_null]
+      - name: data_analise
+        description: "Dia da primeira leitura linha a linha do anúncio."
+        data_tests: [not_null]
+      - name: idioma
+        description: "Idioma do anúncio."
+        data_tests:
+          - accepted_values:
+              arguments: {values: ["pt", "en"]}
+              config: {severity: warn}
+      - name: tem_sobre_empresa
+        description: "O anúncio tem a seção 'sobre a empresa'? Só sim ou não: o texto da seção não é publicado."
+      - name: tem_beneficios
+        description: "O anúncio lista benefícios? Só sim ou não: o texto da seção não é publicado."
 
   - name: stg_requisitos
     description: "Linhas de requisito dos postings, texto literal."
@@ -73,7 +91,7 @@ models:
         data_tests: [not_null]
 
   - name: mart_vagas
-    description: "Vaga + bucket de nível (seed niveis, regra determinística)."
+    description: "Vaga + bucket de nível (seed niveis, regra determinística), o sistema onde o anúncio está publicado (`ats`, lido da URL pelo seed ats_hosts) e o setor da empresa."
     columns:
       - name: id_publico
         data_tests: [not_null, unique]
@@ -178,3 +196,10 @@ seeds:
       - name: bucket
         data_tests:
           - accepted_values: {arguments: {values: ["coordenador", "gerente", "alta_gestao", "outros"]}}
+  - name: ats_hosts
+    description: "Endereço (final do host da URL do anúncio) → sistema onde o anúncio está publicado (ATS ou portal). Lido da URL, que já é pública; vale o padrão mais longo. Endereço fora da lista = página de carreiras da própria empresa."
+    columns:
+      - name: host
+        data_tests: [not_null, unique]
+      - name: ats
+        data_tests: [not_null]

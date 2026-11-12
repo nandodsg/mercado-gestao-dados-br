@@ -138,7 +138,7 @@ são a base das contagens da análise; `analise/achados.md` é refeito pela CI a
 
 1. **Coleta.** Cada vaga entra no app por link ou texto colado (LinkedIn, Gupy, InHire e outros portais) e é lida e
    analisada uma a uma: requisitos do posting, regime, local e a pesquisa de salário de mercado. A coleta começou em
-   setembro de 2026 e continua.
+   julho de 2026 e continua.
 2. **Recorte.** O app olha vagas de vários tipos e países. Para este trabalho entram **somente vagas de liderança em
    dados, analytics e IA no Brasil**, ou seja, cargos cujo posting pede gestão de pessoas, em qualquer situação da vaga
    (inclusive as que já saíram do ar) e desde que tenham passado pela leitura completa. Vagas técnicas sem gestão de
@@ -174,7 +174,7 @@ são a base das contagens da análise; `analise/achados.md` é refeito pela CI a
 
 - **Amostra de uma pessoa, não do mercado.** As vagas são as que apareceram na busca e na rede de uma só pessoa. Não é
   sorteio, não é censo.
-- **Janela curta e crescente.** A coleta começou em setembro de 2026. Com poucas semanas de dados, **não há tendência**,
+- **Janela curta e crescente.** A coleta começou em julho de 2026. Com poucos meses de dados, **não há tendência**,
   só retrato do período acumulado; série temporal só depois de meses de snapshots em `data/`.
 - **A distribuição geográfica não é representativa.** Ela não tem a intenção de refletir a distribuição nacional: mostra
   apenas a preferência de busca do autor. Por isso **não recomendamos análises extensas pela localização da vaga**; o
@@ -195,10 +195,13 @@ Cada arquivo é CSV UTF-8, RFC 4180, `\n`, cabeçalho sempre, célula vazia = au
 contrato, a data de geração, as contagens, a `cobertura` da classificação e o sha256 de cada arquivo; `pipeline/check_data.py` confere tudo isso.
 
 - `vagas.csv` (1 linha por vaga): `id_publico` (12 hex do sha256 da URL normalizada), `empresa`, `cargo_oficial`, `modo`,
-  `geografia`, `regime`, `cidade`, `uf`, `contrato`, `fonte`, `candidatura_tipo`, `mes`, `url`, `faixa_posting`,
-  `salario_min`, `salario_max`, `salario_moeda`, `salario_tipo`. `modo` e `geografia` descrevem o recorte (liderança,
-  Brasil) e hoje têm um único valor; `candidatura_tipo` só se aplica a vagas do LinkedIn (onde fica o formulário de
-  candidatura); `mes` é o mês de publicação ou, na falta dele, da captura.
+  `geografia`, `regime`, `cidade`, `uf`, `contrato`, `fonte`, `mes`, `data_publicacao`, `data_captura`, `data_analise`,
+  `idioma`, `tem_sobre_empresa`, `tem_beneficios`, `url`, `faixa_posting`, `salario_min`, `salario_max`, `salario_moeda`,
+  `salario_tipo`. `modo` e `geografia` descrevem o recorte (liderança, Brasil) e hoje têm um único valor; `mes` é o mês
+  de publicação ou, na falta dele, da captura. As três datas são dias: `data_publicacao` é a do anúncio (vazia quando ele
+  não informa), `data_captura` é o dia em que o autor encontrou o anúncio e `data_analise` o da primeira leitura linha a
+  linha; as duas últimas descrevem a busca, não o anúncio. `idioma` é o do anúncio (`pt` ou `en`). `tem_sobre_empresa` e
+  `tem_beneficios` dizem só se o anúncio traz essas seções (`true` ou `false`); o texto delas não é publicado.
 - `requisitos.csv` (1 linha por linha de requisito): `id_publico`, `ordem`, `texto`.
 - `benchmarks.csv` (1 linha por fonte de benchmark): `id_publico`, `ordem`, `fonte_url`, `fonte_nota`.
 - `rotulos.csv` (1 linha por linha de anúncio classificada, sem o texto): `id_publico`, `ordem`, `hash_linha`, `secao`,
@@ -207,7 +210,7 @@ contrato, a data de geração, as contagens, a `cobertura` da classificação e 
 - `empresas.csv` (1 linha por empresa de `vagas.csv`): `empresa` (como aparece em `vagas.csv`), `empresa_normalizada`,
   `setor` (da lista fechada `dbt/seeds/lista_setores.csv`; o `check_data.py` confere).
 
-Mudança de coluna sobe a versão do contrato. A publicação e este repo concordam sobre a lista; se discordarem, o
+Depois da primeira divulgação, mudança de coluna sobe a versão do contrato; até lá o v1 ainda pode mudar. A publicação e este repo concordam sobre a lista; se discordarem, o
 `check_data.py` falha.
 
 ## Rodando localmente
