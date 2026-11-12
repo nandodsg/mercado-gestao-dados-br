@@ -90,6 +90,20 @@ id_publico,ordem,texto
 06382d0010af,18,"Diferencial: ""plataformas cloud (Azure, GCP ou AWS)"
 06382d0010af,19,"Diferencial: ""Data Products e Analytics Engineering"
 06382d0010af,20,"Diferencial: ""setor de beleza, skincare e bens de consumo"
+077d8cd28ddc,1,Coordenar um time de 4 profissionais
+077d8cd28ddc,2,sistemas de dados que impactam 800+ usuários e rodas 24/7
+077d8cd28ddc,3,"Garantir a saúde operacional de dashboards críticos que alimentam decisões de lideranças sênior (diretores, VPs)"
+077d8cd28ddc,4,"Executar projetos técnicos de modernização e melhoria: refatoração de código, otimização de processos, evolução de arquitetura"
+077d8cd28ddc,5,"Fazer interface com negócio: traduzir demandas comerciais, validar dados, resolver gargalos com integradores externos"
+077d8cd28ddc,6,Orientar o time em problemas técnicos complexos e novos desenvolvimentos
+077d8cd28ddc,7,"acompanhamento de vendas diretas, distribuição indireta e ponto de venda"" (missão)"
+077d8cd28ddc,8,Forte em Power BI: será você que resolve os desafios mais complexos de BI da área
+077d8cd28ddc,9,SQL ou Python/PySpark: capacidade de trabalhar com transformação de dados e automação
+077d8cd28ddc,10,Noções de Databricks (básico basta)
+077d8cd28ddc,11,"Autonomia para aprender: ferramentas novas, frameworks, padrões surgem o tempo todo"
+077d8cd28ddc,12,"Experiência em ambientes corporativos multinacionais"" (diferencial)"
+077d8cd28ddc,13,"Familiaridade com data lakehouse, pipelines de dados, CI/CD"" (diferencial)"
+077d8cd28ddc,14,"Vivência com fornecedores de dados externos e gestão de integrações"" (diferencial)"
 0c209e36504e,1,"Gestão de Pessoas: Liderar equipes multidisciplinares de MarTech e Engenharia de Dados … orientando POs, Tech Leads e Chapter Leads com feedbacks, 1:1s e PDIs"
 0c209e36504e,2,"Experiência em liderança da disciplina de Digital Analytics, especialmente com as ferramentas Google Analytics, Google Tag Manager"
 0c209e36504e,3,"Tagueamento / taxonomia / governança de tracking (o cargo é ""- Tagueamento""; ""Promover práticas de Data Quality focadas no contexto de Digital Analytics"")"
@@ -747,6 +761,17 @@ id_publico,ordem,texto
 69df8231cda0,15,"_diferencial_ ""Vivência em Antifraude, PLDFT, Gestão de Riscos ou Crimes Financeiros"
 69df8231cda0,16,"_diferencial_ ""FICO Platform, FICO Falcon, Feedzai, Graph Analytics e plataformas de prevenção à fraude e lavagem de dinheiro"
 69df8231cda0,17,"_diferencial_ ""Certificações em cloud"
+6b5f6c910f19,1,"Desenvolver planos estratégicos e táticos para aquisição, atualização e expansão de bases em Cadastro Positivo, SCR e Agro"
+6b5f6c910f19,2,"Identificar novos fornecedores e fontes de dados, assegurando SLAs, conformidade e elevados padrões de qualidade e governança"
+6b5f6c910f19,3,"Elaborar reports gerenciais, apresentações e modelos de comunicação técnica para stakeholders internos e externos (incluindo órgãos reguladores e mercado)"
+6b5f6c910f19,4,"Estruturar o modelo de atuação integrada com equipes de Vendas, Consultoria e Centros de Excelência (COE), otimizando fluxos de entrega e ferramentas de D&A"
+6b5f6c910f19,5,Conduzir a estruturação e negociação de contratos complexos e acordos de compartilhamento de dados com foco em resultados de negócio
+6b5f6c910f19,6,Inglês proficiente/avançado
+6b5f6c910f19,7,Experiência prévia com Cadastro Positivo e SCR (Sistema de Informações de Crédito do Banco Central)
+6b5f6c910f19,8,Experiência em liderança e gestão de pessoas
+6b5f6c910f19,9,Domínio de SQL para análise e manipulação de dados
+6b5f6c910f19,10,Vivência em interlocução institucional externa com entidades regulatórias
+6b5f6c910f19,11,Conhecimentos de programação em Python (diferencial)
 6db6aadbd3fc,1,"Liderar a estratégia de Dados e BI como parceiro habilitador do negócio, garantindo o alinhamento das iniciativas com os objetivos estratégicos"
 6db6aadbd3fc,2,"Construir e direcionar o roadmap de dados, identificando oportunidades, priorizando iniciativas e definindo entregas de curto, médio e longo prazo em parceria com as áreas de negócio"
 6db6aadbd3fc,3,"Liderar, desenvolver e engajar o time, promovendo uma cultura de colaboração, autonomia, aprendizado contínuo e alta performance, com foco no desenvolvimento técnico e comportamental das pessoas"
@@ -848,6 +873,28 @@ id_publico,ordem,texto
 7ae19ba2866b,19,"Desejável experiência em ambientes de expansão, transformação ou implantação de novas unidades"
 7ae19ba2866b,20,Atuar em ambiente de **governança familiar**
 7ae19ba2866b,21,"Ensino superior completo em TI, Engenharia, Administração ou correlatas"" · ""Desejável pós/MBA"
+7cd104e00d3d,1,"highly motivated and experienced Data Scientist, Manager, with strong expertise in optimization"
+7cd104e00d3d,2,"leading a team of data scientists, engineers, and machine learning engineers"" / ""Lead a team of data specialists"
+7cd104e00d3d,3,"Design, create, test, and implement complex models and algorithms that drive analytical solutions"
+7cd104e00d3d,4,"Conduct advanced statistical and other analyses to provide actionable insights, identify trends, and measure performance"
+7cd104e00d3d,5,"Coordinate with MIS, Digital Specialists, and Data Engineers to deliver holistic analytical solutions"
+7cd104e00d3d,6,"Establishes and implements organization, function and/or sub-function short to mid-term (1-3 years) strategy"
+7cd104e00d3d,7,"Accountable for the budget, performance and results of a medium-sized team or multiple small teams"
+7cd104e00d3d,8,Develops or contributes to the development of short to mid term (1-3 years) talent optimization plans
+7cd104e00d3d,9,Is recognized as an external thought leader within strategic function or discipline
+7cd104e00d3d,10,"apply methods to valuable authentication, prevent frauds"
+7cd104e00d3d,11,shape data products in alignment with corporate strategy and provide data insights leading to business directions
+7cd104e00d3d,12,"Advanced knowledge in math, analytics and computer science, knowledge of machine learning methods, statistical models, advanced data science programming"
+7cd104e00d3d,13,"Proficient in data science, optimization, machine learning, Python, R, SQL, data analysis"
+7cd104e00d3d,14,"Advice Business on how to structure the problems/hypotheses … into an advanced analytics approach including machine learning and optimization components (e.g., Constraints, penalties, and objective function"
+7cd104e00d3d,15,"It is recommended to understand parallelization, scalability, and complexity analysis"
+7cd104e00d3d,16,"Deep understanding in code optimization, library selection"
+7cd104e00d3d,17,Plays a significant role in developing other juniors
+7cd104e00d3d,18,"acts as a technical consultant to product managers"" / ""Handle most of the day-to-day communications with the product owners"
+7cd104e00d3d,19,Divide their project into workstreams led by Senior Data Scientists and delegate tasks efficiently
+7cd104e00d3d,20,Develop business awareness of possible use cases and help them to understand the necessary concepts of data science
+7cd104e00d3d,21,Ensure timely analysis and testing for regular maintenance of solutions over time
+7cd104e00d3d,22,"Communicate data insights to stakeholders"" / ""Leads all internal meetings as well as weekly or fortnightly reports"
 7dea21fa25b5,1,"Experiência em engenharia de dados, com responsabilidades de liderança"
 7dea21fa25b5,2,"Experiência em gestão de times técnicos, incluindo **liderança de líderes técnicos**"
 7dea21fa25b5,3,Sólido conhecimento em arquiteturas de dados em cloud

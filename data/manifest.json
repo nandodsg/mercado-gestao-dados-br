@@ -1,35 +1,35 @@
 {
   "contrato": "v1",
-  "gerado_em": "2026-11-11T22:46:52.652Z",
+  "gerado_em": "2026-11-12T00:12:18.978Z",
   "contagens": {
-    "vagas": 107,
-    "requisitos": 1590,
-    "benchmarks": 442
+    "vagas": 110,
+    "requisitos": 1637,
+    "benchmarks": 456
   },
   "arquivos": {
     "vagas.csv": {
-      "sha256": "4cb208c79c461f53186b6a86f3202be109d591331fb18b990c549b16c1894cb3",
-      "linhas": 107
+      "sha256": "4f40ca7e22e7f73b8281787f444bddf91a1653665f8219c4f11a3a8afca64540",
+      "linhas": 110
     },
     "requisitos.csv": {
-      "sha256": "74d6875b4e4e38935bd94a142030a2f23a32e5e9327101b9f8b1d31cf8c0153c",
-      "linhas": 1590
+      "sha256": "6bf589d917860d3bf7a0aa7a8b0231ebd9d8a9b17f5adbb0af01de3c4b45a4be",
+      "linhas": 1637
     },
     "benchmarks.csv": {
-      "sha256": "51705dc97509789d7c9f38fad4e75add23bb2f9523f620fee1ecd554d2e5f6ba",
-      "linhas": 442
+      "sha256": "aa0a1673075157a156bc8316898d009ef27961b22f9bb950ee3a531310254dab",
+      "linhas": 456
     },
     "rotulos.csv": {
       "sha256": "57d6ac8d4e5f45610925ff4955b205950cb2fd276bc9c65587463afadb553b77",
       "linhas": 2001
     },
     "empresas.csv": {
-      "sha256": "b254cfe52d6ce9f0c2974b4bf550b356ff5c6f40ee71900fb7abddbed4fe4291",
-      "linhas": 92
+      "sha256": "216fb0600ea915bd9dd4928bc530fc0583ed7f3a484d11e075a0665120a0ca1d",
+      "linhas": 95
     }
   },
   "cobertura": {
-    "linhas": 2492,
+    "linhas": 2537,
     "rotuladas": 2001
   },
   "notas": [
