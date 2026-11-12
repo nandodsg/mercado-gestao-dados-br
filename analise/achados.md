@@ -1,8 +1,8 @@
 # Achados: o que as vagas de gestão de dados pedem, coordenação × gerência
 
 > Arquivo gerado por `analise/achados.py` a partir de `achados.modelo.md`. **Não edite o `.md` gerado**: os números saem
-> dos marts do dbt e se refazem a cada publicação. Publicação usada nesta geração: 2026-11-11. Cobertura da
-> classificação: 80% (2001 de 2492) linhas de anúncio.
+> dos marts do dbt e se refazem a cada publicação. Publicação usada nesta geração: 2026-11-12. Cobertura da
+> classificação: 79% (2001 de 2537) linhas de anúncio.
 
 **Antes de citar:** é a amostra de uma pessoa, não o mercado (ver "Vieses e limites" no README). Cada número traz o
 tamanho da amostra ao lado. As porcentagens são de **vagas** (uma vaga conta uma vez por item, por mais linhas que o
@@ -11,9 +11,9 @@ Diferença entre níveis vem com o p do teste exato de Fisher. Com dezenas de it
 de 0,01 é diferença em que dá pra apoiar uma frase; entre 0,01 e 0,05 é direção, citada junto do achado do mesmo tema;
 acima de 0,05 vai para o fim, em "O que os dados ainda não sustentam".
 
-**Base.** 107 vagas publicadas, 83 com o anúncio classificado: **36 de coordenação e 42 de
+**Base.** 110 vagas publicadas, 83 com o anúncio classificado: **36 de coordenação e 42 de
 gerência**, mais 5 de alta gestão ou fora da gestão de dados, que entram só nos totais. Ficam de fora
-23 vagas cujo anúncio não chegou à classificação e 1 anúncio repetido (a mesma empresa publicando o mesmo texto
+26 vagas cujo anúncio não chegou à classificação e 1 anúncio repetido (a mesma empresa publicando o mesmo texto
 no mesmo nível conta uma vez).
 
 ---
@@ -78,15 +78,15 @@ IA) aparece em 70% (58 de 83) das vagas: 61% (22 de 36) em coordenação e 76% (
 
 ## 6. Nenhum anúncio diz quanto paga
 
-**0 de 107** anúncios declaram faixa salarial. O que se sabe de salário vem de fora do anúncio:
-442 referências de 45 sites (guias salariais, Glassdoor, Indeed e outros), pesquisadas vaga a
+**0 de 110** anúncios declaram faixa salarial. O que se sabe de salário vem de fora do anúncio:
+456 referências de 48 sites (guias salariais, Glassdoor, Indeed e outros), pesquisadas vaga a
 vaga.
 
 | | coordenação | gerência |
 |---|---|---|
-| vagas com referência pesquisada | 43 | 43 |
+| vagas com referência pesquisada | 44 | 44 |
 | mediana do ponto médio da faixa de referência | R$ 16,6 mil | R$ 30,3 mil |
-| vagas cuja referência é a mesma faixa de um guia salarial (a faixa mais repetida) | 9% (4 de 43) | 28% (12 de 43) |
+| vagas cuja referência é a mesma faixa de um guia salarial (a faixa mais repetida) | 9% (4 de 44) | 27% (12 de 44) |
 
 **Isto não é o que as vagas pagam.** É a referência de mercado para o cargo e a cidade. Parte das fontes bloqueia
 leitura automática e veio de resumo de busca, e a mesma faixa de um guia salarial se repete em muitas vagas (última
