@@ -244,7 +244,7 @@ td.n, th.n { text-align: right; }
 .itens .its { display: flex; flex-wrap: wrap; gap: 4px; }
 .itens .its span { font-size: 12.5px; border: 1px solid var(--graphite); border-radius: 96px; padding: 3px 10px; color: var(--bone); }
 .itens .its span i { font-style: normal; color: var(--muted); font-family: var(--f-mono); font-size: 10px; margin-left: 4px; }
-pre.csv { font-size: 11px; margin-top: 14px; background: var(--void); border-radius: 18px; padding: 18px 22px; }
+pre.csv { max-width: 100%; font-size: 11px; margin-top: 14px; background: var(--void); border-radius: 18px; padding: 18px 22px; }
 
 /* ---------- metodologia: retrato da amostra ---------- */
 .desc { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 36px; }
@@ -484,7 +484,7 @@ h3.h3 { font-weight: 400; font-size: clamp(24px, 2.4vw, 32px); letter-spacing: -
   .apanel h3 { font-size: 21px; }
   .apanel p { font-size: 14px; }
   .fab { display: inline-flex; }
-  .sumario, .defs, .arqs, .ex, .desc, .mini, .mini.m2, .stat2, .cont { grid-template-columns: 1fr; gap: 22px; }
+  .sumario, .defs, .arqs, .ex, .desc, .mini, .mini.m2, .stat2, .cont { grid-template-columns: minmax(0, 1fr); gap: 22px; }
   .desc .card { padding: 24px 20px; }
   .painel { position: static; order: -1; }
   .bar { grid-template-columns: 112px 1fr 30px; font-size: 13px; }
@@ -541,19 +541,19 @@ h3.h3 { font-weight: 400; font-size: clamp(24px, 2.4vw, 32px); letter-spacing: -
 .pq .sqlbox .res { overflow-x: auto; }
 .res-t { overflow-x: auto; }
 .res-t table { font-size: 12px; }
-/* "não sustenta" / "falta no dado" */
-.ns-box { border: 1px dashed var(--graphite); border-radius: 22px; padding: 26px 28px; margin-top: 8px; }
-.ns-box .big { font-size: 64px; line-height: 1; letter-spacing: -0.04em; font-weight: 400; margin-top: 0; }
-.ns-box .big small { font-size: 18px; color: var(--mist); letter-spacing: -0.01em; margin-left: 10px; }
-.ns-box p { color: var(--mist); font-size: 15.5px; margin-top: 14px; max-width: 64ch; }
-.ns-box p b { color: var(--bone); font-weight: 500; }
-.ns-box ul { list-style: none; margin-top: 14px; display: grid; gap: 6px; max-width: 460px; }
-.ns-box li { display: flex; justify-content: space-between; gap: 14px; border-bottom: 1px solid var(--hair); padding: 6px 0; font-size: 15px; }
-.ns-box li span:last-child { font-family: var(--f-mono); font-size: 12px; text-align: right; }
-.meter { height: 6px; border-radius: 3px; background: var(--hair); margin-top: 18px; max-width: 420px; position: relative; }
+/* "não sustenta" / "falta no dado": os mesmos números grandes e a mesma tabela dos outros cards */
+.ns2 { margin-top: 4px; }
+.ns2 .big2 { margin-top: 0; }
+.ns2 .big2 + .big2 { margin-top: 22px; }
+.ns2 .res-t { margin-top: 24px; }
+.ns2 .res-t td:first-child { color: var(--bone); }
+.ns2 .res-t td.n { font-family: var(--f-mono); font-size: 12px; }
+.ns-p { color: var(--mist); font-size: 15.5px; margin-top: 18px; max-width: 64ch; }
+.ns-p b { color: var(--bone); font-weight: 500; }
+.meter { height: 6px; border-radius: 3px; background: var(--hair); margin-top: 24px; position: relative; }
 .meter i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: var(--mist); }
 .meter b { position: absolute; top: -5px; width: 1px; height: 16px; background: var(--bone); }
-.ns-box .mt { color: var(--muted); margin-top: 8px; display: block; font-size: 10px; }
+.ns2 .mt { color: var(--muted); margin-top: 8px; display: block; font-size: 10px; }
 .nsres { width: 100%; border-collapse: collapse; margin-top: 18px; font-size: 13px; }
 .nsres th { text-align: left; color: var(--muted); font-weight: 400; padding: 6px 12px 6px 0; border-bottom: 1px solid var(--graphite); font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; }
 .nsres td { padding: 8px 12px 8px 0; border-bottom: 1px solid var(--hair); color: var(--mist); vertical-align: top; }
@@ -592,5 +592,4 @@ h3.h3 { font-weight: 400; font-size: clamp(24px, 2.4vw, 32px); letter-spacing: -
   .hb { grid-template-columns: 1fr; gap: 4px; }
   .cbar { grid-template-columns: 1fr; gap: 4px; }
   .big2 { grid-template-columns: 1fr; }
-  .ns-box { padding: 20px 18px; } .ns-box .big { font-size: 48px; }
 }

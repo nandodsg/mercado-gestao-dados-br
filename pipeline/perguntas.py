@@ -331,6 +331,16 @@ def montar(c, raw: dict, cond: dict, v: dict, pagina: dict, cob_nota: str) -> li
     sal_n = {r[0]: (r[1], r[2]) for r in r40["rows"]}
     sc, sg = sal_n.get("coordenador", (0, 0)), sal_n.get("gerente", (0, 0))
     cond_p4 = cond["c6"]
+    perc4 = lambda a, b: pt(100 * a / b, 0) if b else "0"  # noqa: E731
+    f41 = {r[col(r41, "nivel")]: dict(zip(r41["cols"], r)) for r in r41["rows"]}
+    f43 = {r[col(r43, "nivel")]: dict(zip(r43["cols"], r)) for r in r43["rows"]}
+    pj42 = {r[col(r42, "nivel")]: r[col(r42, "vagas")] for r in r42["rows"] if r[col(r42, "contrato")] == "PJ"}
+    por_vaga = lambda d: pt(d["fontes_citadas"] / d["vagas_com_referencia"], 1) if d.get("vagas_com_referencia") else "0"  # noqa: E731
+    cor_n = {"coordenador": "c", "gerente": "g"}
+    b41 = [{"v": str(f41[n]["fontes_citadas"]), "cor": cor_n[n], "rot": f"{NOME_NIVEL[n]} · fontes citadas em {f41[n]['vagas_com_referencia']} vagas"} for n in ("coordenador", "gerente") if n in f41]
+    b41b = [{"v": por_vaga(f41[n]), "cor": cor_n[n], "rot": f"{NOME_NIVEL[n]} · fontes por vaga com referência, em média"} for n in ("coordenador", "gerente") if n in f41]
+    b42 = [{"v": str(pj42.get(n, 0)), "cor": cor_n[n], "rot": f"{NOME_NIVEL[n]} · vagas que declaram PJ"} for n in ("coordenador", "gerente")]
+    b43 = [{"v": f"{perc4(f43[n]['com_secao_beneficios'], f43[n]['vagas'])}%", "cor": cor_n[n], "rot": f"{NOME_NIVEL[n]} · {f43[n]['com_secao_beneficios']} de {f43[n]['vagas']} vagas têm seção de benefícios"} for n in ("coordenador", "gerente") if n in f43]
     cards.append({
         "id": "p4", "rail": "P4 · Quanto paga?", "sumario": "Quanto paga uma cadeira de gestão de dados, e por que o anúncio não diz?", "label": "Quanto paga",
         "h2": ["Nenhum anúncio", "diz quanto paga."], "virou": not cond_p4,
@@ -349,16 +359,16 @@ def montar(c, raw: dict, cond: dict, v: dict, pagina: dict, cob_nota: str) -> li
                  "Cada linha é uma vaga: a faixa de referência pesquisada pro cargo e a cidade dela. A mesma faixa de um guia salarial se repete em muitas vagas (tracejada): a mediana da gerência, em especial, fica presa a ela. A fonte de cada número está em benchmarks.csv.",
                  ["DESCRITIVO", "desc"]),
             view("1", "As fontes concordam entre si?", f"Ainda não dá pra dizer: o dado publicado diz quantas fontes cada vaga tem ({fontes} nas vagas da comparação), não o valor de cada uma.", "p4_1", "falta",
-                 {"texto": "A referência de cada vaga junta várias fontes, mas o arquivo publicado guarda a fonte e uma nota, não o mínimo e o máximo de cada uma. Sem o valor por fonte, não dá pra medir se elas concordam. <b>Falta no dado</b>, não na amostra.", "n": fontes, "rotulo": "fontes citadas, sem o valor de cada uma"},
+                 {"texto": "A referência de cada vaga junta várias fontes, mas o arquivo publicado guarda a fonte e uma nota, não o mínimo e o máximo de cada uma. Sem o valor por fonte, não dá pra medir se elas concordam. <b>Falta no dado</b>, não na amostra.", "n": fontes, "rotulo": "fontes citadas, sem o valor de cada uma", "blocos": b41, "blocos2": b41b},
                  "fontes citadas por nível", 0, "", ["FALTA NO DADO", "nao"], ["o valor por fonte não está no dado publicado", "o dado ganhar o valor por fonte"]),
             (view("2", "CLT × PJ", f"Ainda não dá pra dizer: só {plural(n_pj, 'vaga declara', 'vagas declaram')} PJ.", "p4_2", "nao",
-                  {"n": n_pj, "min": MIN_PJ, "unidade": "vagas PJ", "grande": "vagas declaram PJ", "itens": [{"label": f"{NOME_NIVEL[r[0]].capitalize()} · {r[1]}", "c": r[2], "g": r[3], "fmt": f"{r[2]} vagas · {r[3]} com referência"} for r in r42["rows"]],
+                  {"n": n_pj, "min": MIN_PJ, "unidade": "vagas PJ", "grande": "vagas declaram PJ", "blocos": b42,
                    "texto": f"A referência salarial muda com o contrato, mas <b>com {n_pj} vagas PJ qualquer comparação seria anedota</b>. O seguimento fica aqui e na lista \"O que os dados ainda não sustentam\"."},
                   "vagas por contrato declarado", 0, f"Mínimo pro gráfico: {MIN_PJ} vagas que declaram PJ.", ["NÃO SUSTENTA", "nao"], [f"{n_pj} vagas PJ", f"{MIN_PJ} vagas PJ"])
              if n_pj < MIN_PJ else
              view("2", "CLT × PJ", f"{n_pj} vagas declaram PJ.", "p4_2", "tabela", {}, "vagas por contrato declarado", 0, "", ["DESCRITIVO", "desc"])),
             view("3", "Quem não diz o salário diz o quê?", f"Ainda não dá pra dizer: o dado publicado só diz se o anúncio tem seção de benefícios ({n_benef} de {n_43} vagas), não o que ela contém.", "p4_3", "falta",
-                 {"texto": "Saber o que o anúncio oferece no lugar do salário pede o texto da seção de benefícios, que não atravessa a fronteira de sigilo. <b>Falta no dado</b>: o contrato de dados só leva se a seção existe.", "n": n_benef, "rotulo": f"de {n_43} vagas têm seção de benefícios"},
+                 {"texto": "Saber o que o anúncio oferece no lugar do salário pede o texto da seção de benefícios, que não atravessa a fronteira de sigilo. <b>Falta no dado</b>: o contrato de dados só leva se a seção existe.", "n": n_benef, "rotulo": f"de {n_43} vagas têm seção de benefícios", "blocos": b43},
                  "anúncios com seção de benefícios", 0, "", ["FALTA NO DADO", "nao"], ["o dado só diz se a seção existe, não o que ela contém", "o dado levar o conteúdo da seção"]),
         ],
     })

@@ -527,24 +527,24 @@ function grupos(box, v) {
   box.querySelectorAll('.tr > span').forEach((b, i) => { b.style.transition = `width ${RM ? 0 : .9}s var(--ease) ${RM ? 0 : i * 0.05}s`; requestAnimationFrame(() => requestAnimationFrame(() => { b.style.width = b.dataset.w + '%'; })); });
 }
 
-// números grandes (P6)
+// números grandes por nível (P6, e o topo dos seguimentos "não sustenta" e "falta no dado")
+const blocosHTML = xs => `<div class="big2">${xs.map(b => `<div><b style="${b.cor ? 'color:' + COR[b.cor] : ''}">${esc(b.v)}</b><span class="mono">${esc(b.rot)}</span></div>`).join('')}</div>`;
 function big(box, v) {
-  const bl = (xs, grande) => `<div class="big2">${xs.map(b => `<div><b style="${b.cor ? 'color:' + COR[b.cor] : ''}">${esc(b.v)}</b><span class="mono">${esc(b.rot)}</span></div>`).join('')}</div>`;
-  box.innerHTML = bl(v.d.blocos) + bl(v.d.blocos2);
+  box.innerHTML = blocosHTML(v.d.blocos) + blocosHTML(v.d.blocos2);
 }
 
-// seguimento que a amostra não sustenta (ou que falta no dado): fica no card, com o que falta
-function naoSustenta(box, v) {
-  const d = v.d, f = Math.min(100, 100 * d.n / d.min);
-  box.innerHTML = `<div class="ns-box fadein"><div class="big">${fmt(d.n)}<small>${esc(d.grande)}</small></div>
-    <ul>${d.itens.map(x => `<li><span>${esc(x.label)}</span><span>${x.fmt ? esc(x.fmt) : `<span style="color:${C.coordenador}">${x.c} coord.</span> · <span style="color:${C.gerente}">${x.g} ger.</span>`}</span></li>`).join('')}</ul>
-    <div class="meter"><i style="width:${f}%"></i><b style="left:100%"></b></div><span class="mono mt">${fmt(d.n)} de ${fmt(d.min)} ${esc(d.unidade)} pro gráfico aparecer</span>
-    <p>${d.texto}</p></div>`;
-}
-function falta(box, v) {
+// seguimento que a amostra não sustenta (ou que falta no dado): fica no card, com os números do que existe, a tabela da consulta e o que falta
+function semGrafico(box, v, medidor) {
   const d = v.d;
-  box.innerHTML = `<div class="ns-box fadein"><div class="big">${fmt(d.n)}<small>${esc(d.rotulo)}</small></div><p>${d.texto}</p></div>`;
+  const blocos = d.blocos || [{ v: fmt(d.n), rot: d.grande }, { v: fmt(d.min), rot: `mínimo pro gráfico aparecer, em ${d.unidade}` }];
+  const lista = d.itens
+    ? `<div class="res-t"><table>${d.itens.map(x => `<tr><td>${esc(x.label)}</td><td class="n">${x.fmt ? esc(x.fmt) : `<span style="color:${C.coordenador}">${x.c} coord.</span> · <span style="color:${C.gerente}">${x.g} ger.</span>`}</td></tr>`).join('')}</table></div>`
+    : `<div class="res-t">${tabela({ cols: v.res.cols, rows: v.res.rows })}</div>`;
+  const meter = medidor ? `<div class="meter"><i style="width:${Math.min(100, 100 * d.n / d.min)}%"></i><b style="left:100%"></b></div><span class="mono mt">${fmt(d.n)} de ${fmt(d.min)} ${esc(d.unidade)} pro gráfico aparecer</span>` : '';
+  box.innerHTML = `<div class="ns2 fadein">${blocosHTML(blocos)}${d.blocos2 ? blocosHTML(d.blocos2) : ''}${meter}${lista}<p class="ns-p">${d.texto}</p></div>`;
 }
+const naoSustenta = (box, v) => semGrafico(box, v, true);
+const falta = (box, v) => semGrafico(box, v, false);
 
 const DESENHA = {
   mapa: mapaCG, nucleo, dif: difBars, nat: stack, hb: hbars, grupos, big, nao: naoSustenta, falta, dumb2,
@@ -654,18 +654,6 @@ let curSec = 0;
     const ajusta = () => { const dx = vv.offsetLeft + vv.width - innerWidth, dy = vv.offsetTop + vv.height - innerHeight;
       fab.style.transform = (Math.abs(dx) > 0.5 || Math.abs(dy) > 0.5) ? `translate3d(${dx}px, ${dy}px, 0)` : ''; };
     vv.addEventListener('resize', ajusta); vv.addEventListener('scroll', ajusta); ajusta();
-  }
-  // ?diag no endereço: mostra no topo da tela as medidas do botão "Sumário" (pra diagnosticar no celular se ele sumir)
-  if (/[?&]diag/.test(location.search)) {
-    const d = document.createElement('pre'); d.style.cssText = 'position:fixed;left:0;top:0;z-index:99;margin:0;padding:4px 6px;font-size:10px;line-height:1.3;background:#fff;color:#000;white-space:pre-wrap;pointer-events:none;max-width:70vw';
-    document.body.appendChild(d);
-    const mede = () => { const r = fab.getBoundingClientRect(), cs = getComputedStyle(fab), vv = window.visualViewport;
-      const no = document.elementFromPoint(Math.min(innerWidth - 2, Math.max(2, r.left + r.width / 2)), Math.min(innerHeight - 2, Math.max(2, r.top + r.height / 2)));
-      d.textContent = `y ${Math.round(scrollY)} · iw ${innerWidth} · sw ${document.documentElement.scrollWidth}
-vv ${vv ? [vv.width, vv.height, vv.scale, vv.offsetLeft, vv.offsetTop].map(n => Math.round(n * 100) / 100).join(' ') : '-'}
-fab ${[r.left, r.top, r.width, r.height].map(Math.round).join(' ')} ${cs.display} ${cs.visibility} ${cs.opacity}
-no ponto: ${no ? no.tagName + '.' + no.className + '#' + no.id : '-'}`; };
-    addEventListener('scroll', mede, { passive: true }); addEventListener('resize', mede); setInterval(mede, 500); mede();
   }
 })();
 
