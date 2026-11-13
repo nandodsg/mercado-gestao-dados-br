@@ -101,6 +101,17 @@ não uma limitação técnica: o mesmo trabalho roda por um gateway de modelos, 
 custo informado por chamada). Quem quiser reproduzir a classificação sem assinatura pode usá-lo, com a própria chave.
 Como a rota por assinatura é disparada e como o resultado volta ao repositório está em `PLAN.md`.
 
+### As dimensões da lista e as seis de conteúdo
+
+Cada item da taxonomia pertence a uma de oito dimensões: gestão de pessoas; estratégia, negócio e gestão; analytics e BI;
+engenharia e plataforma de dados; governança, qualidade e segurança; IA e ciência de dados; formação, idioma e experiência;
+comportamental e condições. O agrupamento saiu da leitura das linhas dos anúncios e foi congelado com a lista, antes da
+classificação. As perguntas sobre o tipo da cadeira (P5) e a amplitude da vaga (P6) usam só as **seis primeiras**, as que dizem
+o que o cargo cobre; as duas últimas dizem quem a pessoa precisa ser e ficam de fora. O tipo da cadeira é a dimensão com mais
+linhas no anúncio (empate: ordem alfabética), e "pede as seis" quer dizer ter ao menos um item de cada uma. A regra é de
+contagem, sem agrupamento automático: está em `consultas/p5_0.sql` e `consultas/p6_0.sql`. A página descreve o mesmo na
+seção de premissas da metodologia (3.1).
+
 ### O que sai da classificação, e o que não sai
 
 `rotulos.csv` tem uma linha por linha de anúncio classificada: `id_publico`, `ordem` (posição da linha no anúncio),

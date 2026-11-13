@@ -302,10 +302,22 @@ def main() -> int:
     pct_cob = round(100 * cob["rotuladas"] / n_linhas) if n_linhas else 0
     cob_txt = f"{fmt(int(cob['rotuladas']))} de {fmt(n_linhas)} linhas ({pct_cob}%)"
     n_dims = len({i["dim"] for i in itens})
+    # dimensões da taxonomia, na ordem da lista; as duas últimas descrevem quem a pessoa precisa ser e ficam de fora de P5 e P6
+    fora_p5_p6 = {"Formação, idioma e experiência", "Comportamental e condições"}
+    por_dim: dict[str, int] = {}
+    for i in itens:
+        por_dim[i["dim"]] = por_dim.get(i["dim"], 0) + 1
+    def li_dim(d: str, n: int) -> str:
+        fora = d in fora_p5_p6
+        return ('<li class="fora">' if fora else "<li>") + (
+            f'<span>{PQ.esc(d)}</span><i>{n} {"item" if n == 1 else "itens"}</i>'
+            f'<em>{"fora de P5 e P6" if fora else "conta em P5 e P6"}</em></li>')
+    dimensoes_lista = '<ul class="dimlist">' + "".join(li_dim(d, n) for d, n in por_dim.items()) + "</ul>"
+    n_dims_conteudo = len([d for d in por_dim if d not in fora_p5_p6])
     marc = {
         "atualizado_em": local.strftime("%d.%m.%Y"),
         "n_vagas": n_vagas, "n_vagas_raw": n_vagas, "n_linhas": fmt(n_linhas), "n_linhas_raw": n_linhas,
-        "n_faixa": raw["n_faixa"], "n_faixa_raw": raw["n_faixa"], "n_linhas_rot": fmt(int(cob.get("rotuladas", 0))), "n_linhas_rot_raw": int(cob.get("rotuladas", 0)), "n_itens": len(itens), "n_dims": n_dims,
+        "n_faixa": raw["n_faixa"], "n_faixa_raw": raw["n_faixa"], "n_linhas_rot": fmt(int(cob.get("rotuladas", 0))), "n_linhas_rot_raw": int(cob.get("rotuladas", 0)), "n_itens": len(itens), "n_dims": n_dims, "n_dims_conteudo": DEZ[n_dims_conteudo] if n_dims_conteudo < len(DEZ) else n_dims_conteudo, "dimensoes_lista": dimensoes_lista,
         "n_comparacao": nc + ng, "nc": nc, "ng": ng, "ferr_top": top,
         "aviso_cobertura": aviso_html(f"<b>Classificação em andamento: {cob_txt}.</b> Os números abaixo podem mudar quando ela terminar.").replace(
             'class="banner"', 'class="banner n"') if parcial else "",

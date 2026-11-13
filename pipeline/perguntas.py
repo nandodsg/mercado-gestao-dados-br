@@ -13,6 +13,7 @@ teste exato de Fisher entre coordenação e gerência, o mesmo que o `app.js` re
 from __future__ import annotations
 
 import html
+import re
 import sys
 from pathlib import Path
 
@@ -69,6 +70,11 @@ def melhor_selo(ps: list[float]) -> list[str]:
 
 def esc(s: str) -> str:
     return html.escape(str(s), quote=True)
+
+
+def marca(s: str) -> str:
+    """Troca `{dim:texto}` por um link pra seção que descreve as dimensões (metodologia, 3.1). Roda sobre texto já escapado."""
+    return re.sub(r"\{dim:([^}]+)\}", lambda m: f'<a class="lk" href="#dimensoes">{m.group(1)}</a>', s)
 
 
 def plural(n: int, um: str, varios: str) -> str:
@@ -399,7 +405,7 @@ def montar(c, raw: dict, cond: dict, v: dict, pagina: dict, cob_nota: str) -> li
         "id": "p5", "rail": "P5 · Que tipos de cadeira?", "sumario": "Que tipos de cadeira de liderança de dados existem?", "label": "Tipos de cadeira",
         "h2": ["Na gerência, a cadeira é de estratégia;", "na coordenação,", "se divide."], "virou": not cond_p5,
         "pergunta": "Que tipos de cadeira de liderança de dados existem?",
-        "lede": "O tipo da cadeira é a dimensão que mais pesa no anúncio, entre as seis de conteúdo: gente, estratégia, engenharia, analytics, IA e governança. "
+        "lede": "O tipo da cadeira é a dimensão que mais pesa no anúncio, entre {dim:as seis de conteúdo}: gente, estratégia, engenharia, analytics, IA e governança. "
                 f"Estratégia lidera a gerência{est_g_txt}; na coordenação nenhuma domina e o tipo se divide entre engenharia, analytics e estratégia.",
         "tk": [
             {"r": "Gerência: o tipo mais comum", "t": topo_g["label"] if topo_g else "—", "n": f"{topo_g['g']} de {ng} vagas · {pt(100 * topo_g['g'] / ng, 0)}%" if topo_g else ""},
@@ -410,7 +416,7 @@ def montar(c, raw: dict, cond: dict, v: dict, pagina: dict, cob_nota: str) -> li
         "views": [
             view("P5", "Quantas de cada tipo, por nível?", (f"{est_t['label']} é o tipo dominante em {est_t['g']} de {ng} vagas de gerência, contra {est_t['c']} de {nc} na coordenação." if est_t else "Sem dado."),
                  "p5_0", "grupos", tipos, "vagas por tipo da cadeira", 1,
-                 "Tipo = a dimensão com mais linhas no anúncio, entre as seis de conteúdo; empate vai pra ordem alfabética. " + base_nota, melhor_selo([x["p"] for x in tipos])),
+                 "Tipo = a dimensão com mais linhas no anúncio, entre {dim:as seis de conteúdo}; empate vai pra ordem alfabética. " + base_nota, melhor_selo([x["p"] for x in tipos])),
             (view("1", "Qual setor pede qual tipo?", f"Ainda não dá pra dizer: só {plural(m_set51, 'setor tem', 'setores têm')} {MIN_SETOR_VAGAS} vagas ou mais com o anúncio classificado.", "p5_1", "nao",
                   {"n": m_set51, "min": MIN_SETORES, "unidade": f"setores com {MIN_SETOR_VAGAS} vagas ou mais", "grande": f"setores com {MIN_SETOR_VAGAS} vagas ou mais",
                    "itens": [{"label": k, "c": n_, "g": 0, "fmt": f"{n_} vagas"} for k, n_ in sorted(setor_tot.items(), key=lambda kv: -kv[1])[:6]],
@@ -419,7 +425,7 @@ def montar(c, raw: dict, cond: dict, v: dict, pagina: dict, cob_nota: str) -> li
              if m_set51 < MIN_SETORES else
              view("1", "Qual setor pede qual tipo?", f"{m_set51} setores têm {MIN_SETOR_VAGAS} vagas ou mais.", "p5_1", "tabela", {}, "vagas por setor e tipo", 0, "", ["DESCRITIVO", "desc"])),
             view("2", "O tipo muda a referência salarial?", a_52, "p5_2", "hb", {"rows": ref_t, "max": max([x["v"] for x in ref_t] + [1]), "moeda": 1}, "referência salarial pesquisada · mediana por tipo", 0,
-                 f"Só tipos com {MIN_N_REF} vagas ou mais com referência. A referência é a pesquisada pro cargo e a cidade, nunca o que a vaga paga.", ["DESCRITIVO", "desc"]),
+                 f"Só tipos com {MIN_N_REF} vagas ou mais com referência. O tipo é a dimensão dominante entre {{dim:as seis de conteúdo}}. A referência é a pesquisada pro cargo e a cidade, nunca o que a vaga paga.", ["DESCRITIVO", "desc"]),
         ],
     })
 
@@ -453,10 +459,10 @@ def montar(c, raw: dict, cond: dict, v: dict, pagina: dict, cob_nota: str) -> li
         "id": "p6", "rail": "P6 · O gestor-unicórnio", "sumario": "O gestor-unicórnio existe? Quão ampla é a vaga?", "label": "O gestor-unicórnio",
         "h2": [f"{titulo6}", "as seis dimensões", "de uma vez."], "virou": not cond_p6,
         "pergunta": "O gestor-unicórnio existe? Quão ampla é a vaga?",
-        "lede": f"Seis dimensões de conteúdo: gente, estratégia, engenharia, analytics, IA e governança. {seis_t} das {n_tot} vagas pedem as seis. "
+        "lede": f"{{dim:Seis dimensões de conteúdo}}: gente, estratégia, engenharia, analytics, IA e governança. {seis_t} das {n_tot} vagas pedem as seis. "
                 f"Na gerência o anúncio é mais amplo ({perc(seis_g, ng)}% contra {perc(seis_c, nc)}%), mas o tamanho é parecido: {pt(ag['itens_mediana'], 0) if ag else 0} itens por vaga na mediana contra {pt(ac['itens_mediana'], 0) if ac else 0}.",
         "tk": [
-            {"r": "Pedem as seis dimensões", "t": f"{seis_t} de {n_tot} vagas", "n": f"{perc(seis_t, n_tot)}% das vagas da comparação"},
+            {"r": "Pedem {dim:as seis dimensões}", "t": f"{seis_t} de {n_tot} vagas", "n": f"{perc(seis_t, n_tot)}% das vagas da comparação"},
             {"r": "Coordenação", "t": f"{perc(seis_c, nc)}% · {seis_c} de {nc}", "n": f"{pp(p_seis)} · {selo_p(p_seis)[0].lower()}"},
             {"r": "Gerência", "t": f"{perc(seis_g, ng)}% · {seis_g} de {ng}", "n": "pedem as seis dimensões"},
             {"r": "Itens por vaga (mediana)", "t": f"{pt(ac['itens_mediana'], 0) if ac else 0} · {pt(ag['itens_mediana'], 0) if ag else 0}", "n": f"de {min(ac['itens_min'], ag['itens_min']) if ac and ag else 0} a {max(ac['itens_max'], ag['itens_max']) if ac and ag else 0} itens"},
@@ -466,10 +472,10 @@ def montar(c, raw: dict, cond: dict, v: dict, pagina: dict, cob_nota: str) -> li
                  {"blocos": [{"v": f"{perc(seis_c, nc)}%", "cor": "c", "rot": f"coordenação · {seis_c} de {nc} pedem as seis"}, {"v": f"{perc(seis_g, ng)}%", "cor": "g", "rot": f"gerência · {seis_g} de {ng} pedem as seis"}],
                   "blocos2": [{"v": pt(ac["itens_mediana"], 0) if ac else "0", "rot": "itens por vaga, mediana, coordenação"}, {"v": pt(ag["itens_mediana"], 0) if ag else "0", "rot": "itens por vaga, mediana, gerência"}]},
                  "vagas que pedem as seis dimensões", 0,
-                 "Dimensões de conteúdo: gestão de pessoas; estratégia, negócio e gestão; engenharia e plataforma; analytics e BI; IA e ciência de dados; governança, qualidade e segurança. Fora: formação e comportamento.", melhor_selo([p_seis])),
-            view("1", "Quantas dimensões uma vaga pede, por nível?", f"A maior parte pede cinco ou seis: {perc(c5_6, nc)}% das vagas de coordenação e {perc(g5_6, ng)}% das de gerência.", "p6_1", "grupos", dist, "vagas por número de dimensões de conteúdo", 1, base_nota, ["DESCRITIVO", "desc"]),
+                 "{dim:Dimensões de conteúdo}: gestão de pessoas; estratégia, negócio e gestão; engenharia e plataforma; analytics e BI; IA e ciência de dados; governança, qualidade e segurança. Fora: formação e comportamento.", melhor_selo([p_seis])),
+            view("1", "Quantas dimensões uma vaga pede, por nível?", f"A maior parte pede cinco ou seis: {perc(c5_6, nc)}% das vagas de coordenação e {perc(g5_6, ng)}% das de gerência.", "p6_1", "grupos", dist, "vagas por número de dimensões de conteúdo", 1, base_nota + " Conta as {dim:dimensões de conteúdo} (seis), sem formação e comportamento.", ["DESCRITIVO", "desc"]),
             view("2", "Vaga mais ampla paga mais?", a_62, "p6_2", "hb", {"rows": amp_rows, "max": max([x["v"] for x in amp_rows] + [1]), "moeda": 1}, "referência salarial pesquisada · mediana por grupo", 0,
-                 f"Só grupos com {MIN_N_REF} vagas ou mais com referência. A referência é a pesquisada pro cargo e a cidade, nunca o que a vaga paga.", ["DESCRITIVO", "desc"]),
+                 f"Só grupos com {MIN_N_REF} vagas ou mais com referência. Grupos: vagas que pedem {{dim:as seis dimensões}} × as outras. A referência é a pesquisada pro cargo e a cidade, nunca o que a vaga paga.", ["DESCRITIVO", "desc"]),
         ],
     })
 
@@ -493,7 +499,7 @@ def html_cards(cards: list[dict]) -> str:
         h2 = "|".join(esc(s) for s in c["h2"][:-1]) + "|<em>" + esc(c["h2"][-1]) + "</em>"
         aviso = ('<div class="banner"><span class="dot"></span><span><b>Não se sustenta nesta publicação.</b> A direção que o título afirma mudou com o dado novo; '
                  'o texto espera revisão. O gráfico abaixo mostra o dado de hoje.</span></div>') if c["virou"] else ""
-        tk = "".join(f'<div><span class="mono">{esc(t["r"])}</span><b>{esc(t["t"])}</b><span class="n">{t["n"]}</span></div>' for t in c["tk"])
+        tk = "".join(f'<div><span class="mono">{marca(esc(t["r"]))}</span><b>{esc(t["t"])}</b><span class="n">{t["n"]}</span></div>' for t in c["tk"])
         lis = []
         for i, vw in enumerate(c["views"]):
             selo = f'<span class="ss"><span class="selo2 {esc(vw["selo"][1])}">{esc(vw["selo"][0])}</span></span>' if vw["selo"] else ""
@@ -504,7 +510,7 @@ def html_cards(cards: list[dict]) -> str:
   <div class="label mono rv"><span class="dot"></span><span class="num">01 · Análises · {pid.upper()}</span> · {esc(c["label"])}</div>
   <h2 data-split>{h2}</h2>
   {aviso}
-  <p class="lede rv"><b>"{esc(c["pergunta"])}"</b> {c["lede"]}</p>
+  <p class="lede rv"><b>"{esc(c["pergunta"])}"</b> {marca(c["lede"])}</p>
   <div class="tk rv">{tk}</div>
   <div class="card rv pq">
     <div class="pg">
@@ -513,7 +519,7 @@ def html_cards(cards: list[dict]) -> str:
         <div class="vh"><span class="tag mono vtag">{esc(v0["tag"])}</span><span class="mono vfile">consultas/{v0["f"]}.sql</span></div>
         <div class="leg"></div>
         <div class="chart" id="c-{pid}"></div>
-        <p class="note vnote">{esc(v0["nota"])}</p>
+        <p class="note vnote">{marca(esc(v0["nota"]))}</p>
         <details class="q-sql"><summary class="pill mono">Consulta</summary></details>
       </div>
     </div>

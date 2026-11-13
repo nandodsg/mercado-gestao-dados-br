@@ -528,6 +528,8 @@ function grupos(box, v) {
 }
 
 // números grandes por nível (P6, e o topo dos seguimentos "não sustenta" e "falta no dado")
+// {dim:texto} vira link pra seção que descreve as dimensões (3.1); mesma regra do gerador
+const marca = t => t.replace(/\{dim:([^}]+)\}/g, '<a class="lk" href="#dimensoes">$1</a>');
 const blocosHTML = xs => `<div class="big2">${xs.map(b => `<div><b style="${b.cor ? 'color:' + COR[b.cor] : ''}">${esc(b.v)}</b><span class="mono">${esc(b.rot)}</span></div>`).join('')}</div>`;
 function big(box, v) {
   box.innerHTML = blocosHTML(v.d.blocos) + blocosHTML(v.d.blocos2);
@@ -588,7 +590,7 @@ function iniciaCards() {
       cur = i; const v = V();
       ol.querySelectorAll('.nqb').forEach((b, j) => { b.classList.toggle('on', j === i); b.setAttribute('aria-pressed', j === i); });
       root.querySelector('.vtag').textContent = v.tag; root.querySelector('.vfile').textContent = 'consultas/' + v.f + '.sql';
-      root.querySelector('.leg').innerHTML = legenda(v); avisoBox.innerHTML = aviso(v); root.querySelector('.vnote').textContent = v.nota;
+      root.querySelector('.leg').innerHTML = legenda(v); avisoBox.innerHTML = aviso(v); root.querySelector('.vnote').innerHTML = marca(esc(v.nota));
       chart.dataset.seen = ''; desenha(); if (det.open) preencheSQL(true);
     }
     ol.addEventListener('click', e => { const b = e.target.closest('.nqb'); if (b) mostra(+b.dataset.i); });

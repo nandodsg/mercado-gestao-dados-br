@@ -201,6 +201,20 @@ td.n, th.n { text-align: right; }
 .defs b { display: block; color: var(--bone); font-weight: 400; font-size: 18px; margin-bottom: 6px; }
 .defs .mono { color: var(--sec); display: block; margin-bottom: 6px; }
 .defs > div:last-child { grid-column: 1 / -1; }
+.defs > div[id] { scroll-margin-top: 90px; }
+.defs > #dimensoes { grid-column: 1 / -1; }
+.defs > #dimensoes p { margin: 0 0 6px; max-width: 720px; }
+.defs > #dimensoes .dimlist { max-width: 720px; }
+.defs > div:target b { color: var(--neon); }
+.lk { color: var(--bone); text-decoration: underline; text-decoration-color: var(--neon); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.lk:hover { color: var(--neon); }
+.dimlist { list-style: none; margin: 14px 0; padding: 0; font-size: 14px; }
+.dimlist li { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 4px 14px; align-items: baseline; border-top: 1px solid var(--graphite); padding: 7px 0; }
+.dimlist li span { color: var(--bone); }
+.dimlist li i { font-style: normal; color: var(--mist); font-family: var(--f-mono); font-size: 12px; }
+.dimlist li em { font-style: normal; color: var(--neon); font-family: var(--f-mono); font-size: 11px; min-width: 112px; text-align: right; }
+.dimlist li.fora span, .dimlist li.fora em { color: var(--muted); }
+@media (max-width: 900px) { .dimlist li { grid-template-columns: minmax(0, 1fr) auto; } .dimlist li em { grid-column: 1 / -1; text-align: left; min-width: 0; } }
 .arqs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
 .arqs span { display: block; border: 1px solid var(--graphite); border-radius: 14px; padding: 10px 12px; font-size: 13px; color: var(--mist); }
 .arqs code { display: block; color: var(--bone); margin-bottom: 4px; }
