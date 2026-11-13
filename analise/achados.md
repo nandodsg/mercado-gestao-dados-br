@@ -1,7 +1,7 @@
 # Achados: o que as vagas de gestão de dados pedem, coordenação × gerência
 
 > Arquivo gerado por `analise/achados.py` a partir de `achados.modelo.md`. **Não edite o `.md` gerado**: os números saem
-> dos marts do dbt e se refazem a cada publicação. Publicação usada nesta geração: 2026-11-12. Cobertura da
+> dos marts do dbt e se refazem a cada publicação. Publicação usada nesta geração: 2026-11-13. Cobertura da
 > classificação: 79% (2001 de 2537) linhas de anúncio.
 
 **Antes de citar:** é a amostra de uma pessoa, não o mercado (ver "Vieses e limites" no README). Cada número traz o
