@@ -3,11 +3,13 @@
 Uso:
   python pipeline/check_data.py [pasta]      # padrão: data
 
-Cinco checagens, nesta ordem, e qualquer falha sai com código 1:
+Seis checagens, nesta ordem, e qualquer falha sai com código 1:
   1. manifest.json existe e o sha256 e o número de linhas de cada CSV batem com o que ele declara;
   2. cada CSV tem exatamente as colunas do contrato v1, na ordem;
   3. `cobertura` do manifest (linhas do anúncio × linhas rotuladas) é um par de inteiros coerente (rotuladas ≤ linhas);
      a fração rotulada é aviso no dbt, não falha aqui: rodada parcial é estado normal;
+  3b. `execucoes_privadas` (contagens do lado fechado que a seção "As execuções" mostra) traz rodadas da classificação
+     (rodadas = concluidas + interrompidas) e verificações sem mudança, tudo inteiro ≥ 0 e sem nenhum outro campo;
   4. `setor` de empresas.csv e de rotulos.csv está na lista fechada de dbt/seeds/lista_setores.csv (em rotulos.csv, vazio e
      "nenhum" também valem);
   5. sigilo (2ª camada, depois da aplicada na publicação): nenhum texto carrega código de achievement/território/inventário
@@ -51,6 +53,23 @@ def carregar_setores() -> set[str]:
         return {r["setor"] for r in csv.DictReader(f)}
 
 
+def inteiro(v) -> bool:
+    return isinstance(v, int) and not isinstance(v, bool) and v >= 0
+
+
+def checar_execucoes(blo) -> list[str]:
+    """Bloco do lado fechado: só contagens acumuladas, nenhum texto, nenhuma data (o que sai daqui vai pra página)."""
+    if not isinstance(blo, dict) or set(blo) != {"classificacao", "verificacoes_sem_mudanca"}:
+        return [f"execucoes_privadas {blo!r}: esperado {{classificacao, verificacoes_sem_mudanca}}"]
+    cl = blo["classificacao"]
+    if not (isinstance(cl, dict) and set(cl) == {"rodadas", "concluidas", "interrompidas"}
+            and all(inteiro(cl[k]) for k in cl) and cl["rodadas"] == cl["concluidas"] + cl["interrompidas"]):
+        return [f"execucoes_privadas.classificacao {cl!r}: esperado {{rodadas, concluidas, interrompidas}} inteiros ≥ 0, rodadas = concluidas + interrompidas"]
+    if not inteiro(blo["verificacoes_sem_mudanca"]):
+        return [f"execucoes_privadas.verificacoes_sem_mudanca {blo['verificacoes_sem_mudanca']!r}: esperado inteiro ≥ 0"]
+    return []
+
+
 def main() -> int:
     setores = carregar_setores()
     pasta = Path(sys.argv[1] if len(sys.argv) > 1 else "data")
@@ -67,6 +86,8 @@ def main() -> int:
     if not (isinstance(cob, dict) and isinstance(cob.get("linhas"), int) and isinstance(cob.get("rotuladas"), int)
             and 0 <= cob["rotuladas"] <= cob["linhas"]):
         erros.append(f"cobertura {cob!r}: esperado {{linhas, rotuladas}} inteiros com 0 ≤ rotuladas ≤ linhas")
+
+    erros += checar_execucoes(manifest.get("execucoes_privadas"))
 
     for nome, colunas in COLUNAS.items():
         caminho = pasta / nome

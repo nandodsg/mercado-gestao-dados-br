@@ -18,6 +18,7 @@ on:
 
 permissions:
   contents: read
+  actions: read # o gerador lê o histórico de execuções deste repo (seção 4.3 da página)
   pages: write
   id-token: write
 
@@ -33,6 +34,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # o gerador lê o git log de data/manifest.json (publicações do dado)
       - name: Dado real disponível?
         id: dados
         run: |
@@ -59,6 +62,8 @@ jobs:
           dbt build --project-dir dbt --profiles-dir dbt --vars "{data_dir: data}"
       - name: Gerar a página
         if: steps.dados.outputs.real == 'true'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           python pipeline/gerar_site.py _site --dados data
           cp -r data _site/data

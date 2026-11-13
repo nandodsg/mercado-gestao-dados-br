@@ -28,6 +28,8 @@ RAIZ = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(RAIZ / "analise"))
 import achados as A  # noqa: E402
 import perguntas as PQ  # noqa: E402  (os seis cards de pergunta executiva; as consultas moram em consultas/)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import execucoes as EX  # noqa: E402  (seção 4.3: testes do último dbt build, execuções do Actions, contagens do lado fechado)
 
 DB = RAIZ / "dbt" / "target" / "mercado.duckdb"
 SITE = RAIZ / "site"
@@ -333,6 +335,11 @@ def main() -> int:
 
     marc["arq_lista"] = arquitetura_lista(arq)
 
+    # ---------- 4.3 As execuções: retrato do build e das Actions, gerado agora (D53) ----------
+    exe = EX.montar(c, manifest)
+    retrato_exe = exe.pop("retrato")
+    marc.update(exe)
+
     # ---------- os seis cards de pergunta (Análises): cada vista é um arquivo de consultas/ ----------
     cards = PQ.montar(c, raw, cond, v, pagina, marc["cob_nota"])
     pagina["perguntas"] = {cd["id"]: {"views": cd["views"]} for cd in cards}
@@ -355,6 +362,7 @@ def main() -> int:
     for f in SITE.iterdir():
         if f.is_file() and f.name not in ("index.modelo.html", "index.html"):
             shutil.copy2(f, saida / f.name)
+    (saida / "dados" / "execucoes.json").write_text(json.dumps(retrato_exe, ensure_ascii=False, indent=1, default=str), encoding="utf-8", newline="\n")
     (saida / "dados" / "pagina.json").write_text(json.dumps(pagina, ensure_ascii=False, separators=(",", ":"), default=str), encoding="utf-8", newline="\n")
     shutil.copytree(PQ.CONSULTAS, saida / "consultas")
     for t in MARTS:

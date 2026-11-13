@@ -96,6 +96,7 @@ def main() -> None:
                       "benchmarks": info["benchmarks.csv"]["linhas"]},
         "arquivos": info,
         "cobertura": COBERTURA,
+        "execucoes_privadas": {"classificacao": {"rodadas": 2, "concluidas": 1, "interrompidas": 1}, "verificacoes_sem_mudanca": 0},
         "notas": ["FIXTURE: dados fictícios pra testar o pipeline, não são vagas reais."],
     }
     (SAIDA / "manifest.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

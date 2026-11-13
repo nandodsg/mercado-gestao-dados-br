@@ -21,7 +21,7 @@ Portuguese).*
 |---|---|---|
 | `data/` | os CSVs do dataset (`vagas.csv`, `requisitos.csv`, `benchmarks.csv`, `rotulos.csv`, `empresas.csv`) e o `manifest.json` | **só a automação de publicação**, 1 commit por publicação, semanal |
 | `dbt/` | projeto dbt sobre DuckDB: staging lê `data/*.csv`, marts por nível, testes | código |
-| `pipeline/` | Python: conferência do contrato e do sigilo (`check_data.py`), gerador da página (`gerar_site.py`, `perguntas.py`), conferência das consultas (`check_consultas.py`) e o exemplo da rota alternativa de classificação | código |
+| `pipeline/` | Python: conferência do contrato e do sigilo (`check_data.py`), gerador da página (`gerar_site.py`, `perguntas.py`, e `execucoes.py` + `frases_testes.py` pra seção 4.3), conferência das consultas (`check_consultas.py`) e o exemplo da rota alternativa de classificação | código |
 | `consultas/` | uma consulta SQL por vista das perguntas da página (P1–P6), rodáveis no seu DuckDB sobre os Parquet publicados; ver `consultas/README.md` | código |
 | `site/` | o modelo, o CSS e o JavaScript da página pública (o `index.html` sai do gerador, nunca é editado) | código |
 | `tests/fixtures/` | dados **fictícios** no mesmo formato, pra CI rodar antes da 1ª publicação | `pipeline/make_fixture.py` |
@@ -80,6 +80,17 @@ por tabela apontando pras URLs, então qualquer consulta de `consultas/` roda no
 ```bash
 duckdb -c ".read consultas/_views.sql" -c ".read consultas/p1_2.sql"
 ```
+
+**As execuções (seção 4.3).** O último capítulo da página mostra o próprio pipeline funcionando, como um painel de controle, em dois
+painéis. O **(a)** é o resultado do `dbt build` que gerou a página (lido de `dbt/target/run_results.json` e `manifest.json`): o resumo
+de ok, avisos e erros, e a lista dos testes agrupada pela tabela que eles conferem, cada um com uma frase do que confere
+(`pipeline/frases_testes.py`; teste novo sem frase, ou tabela nova sem nome de leitor, quebra o build). O **(b)** é o histórico das
+execuções dos dois fluxos deste repositório, com as falhas incluídas: vem da API do GitHub Actions (o fluxo usa o `GITHUB_TOKEN`
+dele com `actions: read`, sem segredo novo) e do `git log` de `data/manifest.json`, que dá uma publicação do dado por commit. O
+retrato é gerado a cada publicação da página, e cada linha leva ao histórico ao vivo no GitHub. Os dois fluxos fazem o checkout
+completo (`fetch-depth: 0`) por causa do `git log`. O gerador também grava `dados/execucoes.json` com os mesmos números do painel.
+O que acontece do lado privado e não deixa commit (rodadas da classificação, verificações semanais sem mudança) entra como
+contagens no bloco `execucoes_privadas` do `manifest.json`, abaixo.
 
 Pra ver a página localmente, depois do `dbt build`:
 
@@ -214,6 +225,12 @@ são a base das contagens da análise; `analise/achados.md` é refeito pela CI a
 
 Cada arquivo é CSV UTF-8, RFC 4180, `\n`, cabeçalho sempre, célula vazia = ausente. `manifest.json` traz a versão do
 contrato, a data de geração, as contagens, a `cobertura` da classificação e o sha256 de cada arquivo; `pipeline/check_data.py` confere tudo isso.
+
+`manifest.json` também traz `execucoes_privadas`, só com contagens do que roda fora deste repositório e não deixa commit:
+`classificacao` (`rodadas`, `concluidas`, `interrompidas`; `rodadas = concluidas + interrompidas`) e `verificacoes_sem_mudanca`
+(quantas verificações semanais compararam o dado e não acharam diferença, até a última publicação). São inteiros ≥ 0 e nenhum
+outro campo é aceito; o `check_data.py` exige o bloco. As rodadas e as verificações só viram número aqui na publicação seguinte,
+porque o bloco sozinho nunca dispara um commit.
 
 - `vagas.csv` (1 linha por vaga): `id_publico` (12 hex do sha256 da URL normalizada), `empresa`, `cargo_oficial`, `modo`,
   `geografia`, `regime`, `cidade`, `uf`, `contrato`, `fonte`, `mes`, `data_publicacao`, `data_captura`, `data_analise`,

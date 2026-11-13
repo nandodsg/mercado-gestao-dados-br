@@ -1063,3 +1063,16 @@ function render() {
 art(); iniciaCards(); render(); colunas(); exemplo(); arquitetura();
 document.fonts && document.fonts.ready.then(render);
 if (window.ResizeObserver) new ResizeObserver(() => { const w = document.querySelector('.wrap').clientWidth; if (Math.abs(w - lastW) > 1) render(); }).observe(document.body);
+
+// ---------- 4.3 As execuções (Item 21): filtros dos dois painéis. Sem JavaScript, os painéis aparecem inteiros (os filtros ficam escondidos) ----------
+(() => {
+  const raiz = document.getElementById('s-exec'); if (!raiz) return;
+  raiz.classList.add('exe-js');
+  raiz.querySelectorAll('.exe-filtros').forEach(f => { f.hidden = false; });
+  [['data-fa', 'data-pane-a'], ['data-fb', 'data-pane-b']].forEach(([botao, painel]) => {
+    raiz.querySelectorAll(`[${botao}]`).forEach(b => b.addEventListener('click', () => {
+      raiz.querySelectorAll(`[${botao}]`).forEach(x => x.classList.toggle('on', x === b));
+      raiz.querySelectorAll(`[${painel}]`).forEach(p => p.classList.toggle('on', p.getAttribute(painel) === b.getAttribute(botao)));
+    }));
+  });
+})();

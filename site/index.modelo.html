@@ -73,7 +73,7 @@
       <a class="degrau" data-cap="ana" href="#p1"><span class="n">01</span><span class="t">Análises</span><span class="d">Seis perguntas de quem contrata e de quem quer a cadeira, cada uma com a resposta, o gráfico e a consulta que a sustenta.</span><span class="p">Pra todo mundo</span></a>
       <a class="degrau" data-cap="exp" href="#s-itens"><span class="n">02</span><span class="t">Exploração livre</span><span class="d">Os {{n_itens}} itens lado a lado, SQL no seu navegador e o dado pra baixar.</span><span class="p">Pra quem quer recortar</span></a>
       <a class="degrau" data-cap="met" href="#s-premissas"><span class="n">03</span><span class="t">Metodologia</span><span class="d">As regras do jogo, um anúncio virando linhas, a amostra e os limites antes de citar.</span><span class="p">Pra quem quer conferir</span></a>
-      <a class="degrau" data-cap="arq" href="#s-arq"><span class="n">04</span><span class="t">Arquitetura</span><span class="d">Do anúncio à página: onde há IA, onde há uma pessoa e as escolhas técnicas.</span><span class="p">Pra quem é de dados</span></a>
+      <a class="degrau" data-cap="arq" href="#s-arq"><span class="n">04</span><span class="t">Arquitetura</span><span class="d">Do anúncio à página: onde há IA, onde há uma pessoa, as escolhas técnicas e o que rodou.</span><span class="p">Pra quem é de dados</span></a>
     </div>
   </div>
 
@@ -133,6 +133,7 @@
       <ol>
         <li><a href="#s-arq"><span>4.1</span><span>Do anúncio à página: onde há IA e onde há uma pessoa</span></a></li>
         <li><a href="#s-escolhas"><span>4.2</span><span>As escolhas: pequeno de propósito</span></a></li>
+        <li><a href="#s-exec"><span>4.3</span><span>As execuções: testes e publicações</span></a></li>
       </ol>
     </div>
   </div>
@@ -383,6 +384,21 @@ order by vagas desc;</textarea>
     <div><span class="mono">05 · Segurança</span><b>CI sem credencial de banco</b><span class="tx">O repositório é público e só lê os próprios arquivos. A única peça que fala com a origem fica do lado privado e publica por commit.</span>
       <div class="muda"><i>Muda se</i>nunca, por regra: é a guarda que deixa o resto ser aberto.</div></div>
   </div>
+</section>
+
+<section id="s-exec" class="exe" data-cap="arq" data-rail="4.3 · As execuções">
+  <div class="label mono rv"><span class="dot"></span><span class="num">04 · Arquitetura</span> · 4.3</div>
+  <h2 class="h2-menor" data-split>O que rodou, quando,|<em>e o que passou.</em></h2>
+  <p class="lede rv">Cada mudança no código ou no dado dispara o GitHub Actions: confere o contrato, roda os testes do dbt e, se tudo passa, refaz esta página. Aqui estão o resultado do último build e o histórico das execuções, <b>com as falhas incluídas</b>. É um retrato tirado quando a página foi gerada; o histórico ao vivo fica no GitHub.</p>
+  <div class="exe-retrato rv">
+    <span class="mono">Retrato desta publicação</span>
+    <span>{{exe_hora}} (Brasília)</span><span class="sep">·</span>
+    <span>commit <code>{{exe_sha}}</code></span>
+    <a class="pill mono sm vivo" href="https://github.com/{{exe_repo}}/actions">Ver ao vivo no GitHub ↗</a>
+  </div>
+  {{exe_painel_a}}
+  {{exe_painel_b}}
+  {{exe_fechado}}
 </section>
 
 <div style="height:96px"></div>

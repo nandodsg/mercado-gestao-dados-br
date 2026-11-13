@@ -25,12 +25,15 @@ on:
 
 permissions:
   contents: write # só pra commitar analise/achados.md na main (passo final); PR e fixture nunca commitam
+  actions: read # o gerador lê o histórico de execuções deste repo (seção 4.3 da página)
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # o gerador lê o git log de data/manifest.json (publicações do dado)
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -60,6 +63,7 @@ jobs:
       - name: Gerador da página roda (teste, num diretório temporário)
         env:
           DATA_DIR: ${{ steps.dados.outputs.dir }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           python pipeline/gerar_site.py "$RUNNER_TEMP/site" --dados "$DATA_DIR"
           test -s "$RUNNER_TEMP/site/index.html" && test -s "$RUNNER_TEMP/site/dados/pagina.json" && test -s "$RUNNER_TEMP/site/app.js"
