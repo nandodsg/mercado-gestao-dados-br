@@ -1,6 +1,6 @@
 {
   "contrato": "v1",
-  "gerado_em": "2026-11-12T02:30:31.441Z",
+  "gerado_em": "2026-11-13T10:46:26.931Z",
   "contagens": {
     "vagas": 110,
     "requisitos": 1637,
@@ -31,6 +31,14 @@
   "cobertura": {
     "linhas": 2537,
     "rotuladas": 2001
+  },
+  "execucoes_privadas": {
+    "classificacao": {
+      "rodadas": 6,
+      "concluidas": 5,
+      "interrompidas": 1
+    },
+    "verificacoes_sem_mudanca": 1
   },
   "notas": [
     "Universo: vagas de liderança no Brasil analisadas no tracker de uma pessoa, jul–nov/2026 (amostra de funil, não do mercado inteiro).",
