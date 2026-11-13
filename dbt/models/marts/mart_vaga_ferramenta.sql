@@ -7,7 +7,8 @@ select
     f.ferramenta,
     count(*)                                                as n_linhas,
     count(*) filter (where f.natureza = 'responsabilidade') as n_responsabilidade,
-    count(*) filter (where f.natureza = 'requisito')        as n_requisito
+    count(*) filter (where f.natureza = 'requisito')        as n_requisito,
+    count(*) filter (where f.secao = 'diferenciais')       as n_diferencial
 from {{ ref('stg_rotulo_ferramentas') }} f
 join {{ ref('mart_vagas') }} v on v.id_publico = f.id_publico
 where f.id_publico in (select id_publico from {{ ref('mart_vaga_item') }})

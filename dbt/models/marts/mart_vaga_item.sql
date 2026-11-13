@@ -9,7 +9,8 @@ select
     t.item,
     count(*)                                          as n_linhas,
     count(*) filter (where i.natureza = 'responsabilidade') as n_responsabilidade,
-    count(*) filter (where i.natureza = 'requisito')        as n_requisito
+    count(*) filter (where i.natureza = 'requisito')        as n_requisito,
+    count(*) filter (where i.secao = 'diferenciais')       as n_diferencial
 from {{ ref('stg_rotulo_itens') }} i
 join {{ ref('mart_vagas') }} v on v.id_publico = i.id_publico
 join {{ ref('taxonomia') }} t on t.chave = i.item

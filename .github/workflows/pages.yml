@@ -13,7 +13,7 @@ name: pages
 on:
   push:
     branches: [main]
-    paths: ["site/**", "data/**", "dbt/**", "analise/**", "pipeline/**", "requirements.txt", ".github/workflows/pages.yml"]
+    paths: ["site/**", "data/**", "dbt/**", "analise/**", "pipeline/**", "consultas/**", "requirements.txt", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
 permissions:
@@ -62,6 +62,9 @@ jobs:
         run: |
           python pipeline/gerar_site.py _site --dados data
           cp -r data _site/data
+      - name: Consultas de consultas/ batem com a página (se cair, a página não é trocada)
+        if: steps.dados.outputs.real == 'true'
+        run: python pipeline/check_consultas.py _site
       - uses: actions/configure-pages@v5
         if: steps.dados.outputs.real == 'true'
       - uses: actions/upload-pages-artifact@v3

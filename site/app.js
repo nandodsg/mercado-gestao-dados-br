@@ -167,7 +167,7 @@ function dumb(box, rows, o = {}) {
 // ---------- pontos acesos ----------
 function waffle(box, chave) {
   box.innerHTML = ''; const st = stage(box);
-  const W = box.clientWidth, narrow = W < 600, it = IT[chave];
+  const W = box.clientWidth, narrow = W < 600, it = typeof chave === 'string' ? IT[chave] : { c: chave.c[0], g: chave.g[0] };
   const grupos = [['coordenador', it.c, NC], ['gerente', it.g, NG]];
   const cols = narrow ? 9 : 12, gap = narrow ? Math.min(30, (W - 10) / cols) : Math.min(34, (W / 2 - 60) / cols), r = Math.max(0, gap * 0.36);  // caixa ainda sem largura (1º desenho, antes do layout): raio 0, o desenho seguinte refaz
   const blocos = grupos.map(([, , n]) => Math.ceil(n / cols) * gap);
@@ -221,14 +221,14 @@ function salario(box) {
   const s = el('svg', { viewBox: `0 0 ${W} ${H}`, height: H, role: 'img', 'aria-label': 'Faixa de referência salarial pesquisada por vaga, coordenação e gerência' }, box);
   const X = v => (W - 8) * v / max;
   for (let v = 0; v <= max; v += 10000) {
-    el('line', { x1: X(v), x2: X(v), y1: top - 6, y2: H, stroke: '#e4e4df', 'stroke-width': 1 }, s);
+    el('line', { x1: X(v), x2: X(v), y1: top - 6, y2: H, stroke: '#2a2727', 'stroke-width': 1 }, s);
     txt(s, X(v), 12, narrow ? (v === 0 ? '0' : v === max ? (v / 1000) + ' MIL' : String(v / 1000)) : v === 0 ? 'R$ 0' : (v / 1000) + ' MIL',
-      { 'text-anchor': v === 0 ? 'start' : v === max ? 'end' : 'middle', class: 'tick', style: 'fill:#6b6865' });
+      { 'text-anchor': v === 0 ? 'start' : v === max ? 'end' : 'middle', class: 'tick' });
   }
   let y0 = top + 26, gi = 0;
   grupos.forEach(g => {
     const yTop = y0, b0 = gi * 700, nrep = g.xs.filter(g.rep).length;
-    const rot = { style: `letter-spacing:${narrow ? '.03em;font-size:10px' : '.1em'};fill:#1d1a1a;font-weight:400` };
+    const rot = { style: `letter-spacing:${narrow ? '.03em;font-size:10px' : '.1em'};fill:#d9d9d9;font-weight:400` };
     if (narrow) { txt(s, 0, yTop - 25, `${NOME[g.k].toUpperCase()} · ${g.xs.length} VAGAS`, rot); txt(s, 0, yTop - 13, `${nrep} NA FAIXA REPETIDA`, rot); }
     else txt(s, 0, yTop - 12, `${NOME[g.k].toUpperCase()} · ${g.xs.length} VAGAS · ${nrep} NA FAIXA REPETIDA`, rot);
     const lines = g.xs.map((v, i) => {
@@ -238,8 +238,8 @@ function salario(box) {
       return ln;
     });
     const yb = yTop + g.xs.length * rowH;
-    const ml = el('line', { x1: X(g.med), x2: X(g.med), y1: yTop - 4, y2: yTop - 4, stroke: '#000', 'stroke-width': 1.5 }, s);
-    const mt = txt(s, X(g.med), yb + 22, 'MEDIANA ' + (DATA.sal_txt[g.k] || brl(g.med)).toUpperCase(), { 'text-anchor': 'middle', style: 'fill:#000;letter-spacing:.06em;font-weight:400' });
+    const ml = el('line', { x1: X(g.med), x2: X(g.med), y1: yTop - 4, y2: yTop - 4, stroke: '#ffffff', 'stroke-width': 1.5 }, s);
+    const mt = txt(s, X(g.med), yb + 22, 'MEDIANA ' + (DATA.sal_txt[g.k] || brl(g.med)).toUpperCase(), { 'text-anchor': 'middle', style: 'fill:#ffffff;letter-spacing:.06em;font-weight:400' });
     st.add(700, b0 + 150 + g.xs.length * 22 + 300, t => { set(ml, { y2: lerp(yTop - 4, yb + 8, t) }); mt.style.opacity = t; }, EASE.out);
     const hit = el('rect', { x: 0, y: yTop, width: W, height: g.xs.length * rowH, fill: 'transparent' }, s);
     let on = null;
@@ -251,7 +251,6 @@ function salario(box) {
     y0 = yb + gapG; gi++;
   });
   st.done(); io.observe(box);
-  document.getElementById('leg-sal').innerHTML = `<span><i style="background:${C.coordenador}"></i>Coordenação</span><span><i style="background:${C.gerente}"></i>Gerência</span><span style="color:#1d1a1a"><span class="dashl"></span>faixa repetida de um guia salarial</span>`;
 }
 
 // ---------- 10 · explorar ----------
@@ -302,40 +301,6 @@ select coalesce(ats, 'sem link do anúncio') as ats,
 from mart_vagas
 group by 1
 order by vagas desc;` },
-  a1: { sql: itemSQL(chavesDe(ROWS.a1)), p: 'pedem' },
-  a2: { sql: itemSQL(chavesDe(ROWS.a2)), p: 'pedem' },
-  a3: { sql: `-- Python citado pelo nome no anúncio, por nível
-with base as (
-  select distinct id_publico, nivel
-  from mart_vaga_item
-  where nivel in ('coordenador', 'gerente')
-)
-select b.nivel,
-       count(*) as vagas,
-       count(f.id_publico) as citam_python,
-       round(100.0 * citam_python / vagas) as pct
-from base b
-left join mart_vaga_ferramenta f
-  on f.id_publico = b.id_publico
- and f.ferramenta = 'Python'
-group by b.nivel
-order by b.nivel;`, p: 'citam_python' },
-  a4: { sql: itemSQL([ROWS.a4]), p: 'pedem' },
-  a5: { sql: `-- vagas com algum item de IA, por nível
-select nivel, count(distinct id_publico) as vagas_com_ia
-from mart_vaga_item
-where item_chave like 'ia.%'
-group by nivel
-order by vagas_com_ia desc;` },
-  a6: { sql: `-- referência salarial pesquisada: mediana do ponto médio da faixa
-select nivel,
-       count(*) as vagas,
-       median((salario_min + salario_max) / 2) as mediana
-from mart_vagas
-where nivel in ('coordenador', 'gerente')
-  and salario_min is not null
-  and id_publico not in (select id_publico from mart_repost)
-group by nivel;` },
   ns: { sql: itemSQL(chavesDe(ROWS.ns)), p: 'pedem' },
 };
 
@@ -422,6 +387,227 @@ document.querySelectorAll('details.q-sql[data-sql]').forEach(d => {
   });
 });
 
+// ---------- cards de pergunta executiva (P1–P6): cada seguimento é uma consulta de consultas/ e o gráfico responde a pergunta dele ----------
+// Os números e o texto de cada vista vêm de DATA.perguntas (montado na publicação por pipeline/perguntas.py, a partir dos mesmos
+// arquivos .sql que a página mostra e que a CI confere). O p é o do teste de Fisher, refeito aqui sobre as contagens.
+const PQ = DATA.perguntas || {};
+const COR = { c: C.coordenador, g: C.gerente, m: '#d9d9d9' };
+const pctN = (k, n) => n ? Math.round(100 * k / n) : 0;
+const CARDS = [];
+
+// halteres: linhas {label, xa, na, xb, nb}. Com `grupos`, separa "igual nos dois níveis" de "muda de um nível pro outro" pela régua.
+function halteres(box, rows, o = {}) {
+  box.innerHTML = ''; const st = stage(box);
+  const W = Math.max(320, box.clientWidth), nar = W < 560, L = nar ? 0 : (o.L || 270), Rm = nar ? 6 : 168, rowH = nar ? 58 : 36, top = 22, gapG = 34;
+  const cA = o.colA || C.coordenador, cB = o.colB || C.gerente, nA = o.nameA || 'Coordenação', nB = o.nameB || 'Gerência';
+  rows = rows.map(r => ({ ...r, pa: 100 * r.xa / r.na, pb: 100 * r.xb / r.nb, p: fisher(r.xa, r.na, r.xb, r.nb) }));
+  let ordem;
+  if (o.grupos) {
+    const igual = rows.filter(r => r.p >= 0.05).sort((a, b) => (b.xa + b.xb) - (a.xa + a.xb));
+    const muda = rows.filter(r => r.p < 0.05).sort((a, b) => Math.abs(b.pb - b.pa) - Math.abs(a.pb - a.pa));
+    ordem = [...igual.map(r => [r, 'igual']), ...muda.map(r => [r, 'muda'])];
+  } else ordem = rows.map(r => [r, '']);
+  const ngr = new Set(ordem.map(x => x[1]).filter(Boolean)).size;
+  const H = top + ordem.length * rowH + gapG * ngr + 10;
+  const s = el('svg', { viewBox: `0 0 ${W} ${H}`, height: H, role: 'img', 'aria-label': ordem.map(([r]) => `${r.label}: ${nA} ${Math.round(r.pa)}%, ${nB} ${Math.round(r.pb)}%`).join('; ') }, box);
+  const X = v => L + 18 + (W - L - Rm - 36) * v / 100;
+  [0, 25, 50, 75, 100].forEach(v => { el('line', { x1: X(v), x2: X(v), y1: top - 6, y2: H - 4, stroke: '#2a2727' }, s); txt(s, X(v), 12, v + '%', { 'text-anchor': 'middle', class: 'tick' }); });
+  let y0 = top, last = '';
+  ordem.forEach(([r, grp], i) => {
+    if (grp && grp !== last) { y0 += gapG * (last ? 1 : 0.85); txt(s, 0, y0 - 10, grp === 'igual' ? 'IGUAL NOS DOIS NÍVEIS' : 'MUDA DE UM NÍVEL PRO OUTRO', { class: 'grp' }); last = grp; }
+    const [stx, sc] = selo(r.p), yR = y0, y = nar ? yR + 34 : yR + rowH / 2; y0 += rowH;
+    const g = el('g', { class: 'row' }, s);
+    txt(g, 0, nar ? yR + 14 : y + 5, r.label, { class: 'term' });
+    const lo = Math.min(r.pa, r.pb), hi = Math.max(r.pa, r.pb);
+    const ln = el('line', { y1: y, y2: y, stroke: '#5c5a57', 'stroke-width': 2 }, g);
+    const ca = el('circle', { cy: y, r: 6.5, fill: cA, stroke: '#1d1a1a', 'stroke-width': 2 }, g);
+    const cb = el('circle', { cy: y, r: 6.5, fill: cB, stroke: '#1d1a1a', 'stroke-width': 2 }, g);
+    const esq = lo >= 22;
+    const v = txt(g, 0, y + 4, `${Math.round(r.pa)}% · ${Math.round(r.pb)}%`, { class: 'val', style: 'fill:#d9d9d9', 'text-anchor': esq ? 'end' : 'start' });
+    const sl = txt(g, W, nar ? yR + 14 : y + 4, nar && sc === '#9a9a96' ? '' : stx, { 'text-anchor': 'end', class: 'tick', style: `fill:${sc};letter-spacing:.1em` });
+    st.add(1000, 120 + i * 60, k => { set(ca, { cx: X(r.pa * k) }); set(cb, { cx: X(r.pb * k) }); set(ln, { x1: X(lo * k), x2: X(hi * k) });
+      set(v, { x: esq ? X(lo * k) - 13 : X(hi * k) + 13 }); v.style.opacity = Math.max(0, k * 2 - 1); sl.style.opacity = k; }, EASE.outQuint);
+    const hit = el('rect', { x: 0, y: yR, width: W, height: rowH, fill: 'transparent' }, g);
+    hit.addEventListener('mouseenter', () => { s.classList.add('hovering'); g.classList.add('on'); });
+    hit.addEventListener('mousemove', ev => showTip(ev, `<b>${esc(r.label)}</b><br>${sw(cA)}${nA} ${Math.round(r.pa)}% · ${r.xa} de ${r.na}<br>${sw(cB)}${nB} ${Math.round(r.pb)}% · ${r.xb} de ${r.nb}<br>${pTxt(r.p)} · ${stx.toLowerCase()}`));
+    hit.addEventListener('mouseleave', () => { s.classList.remove('hovering'); g.classList.remove('on'); hideTip(); });
+  });
+  st.done(); io.observe(box);
+}
+const mapaCG = (box, v) => halteres(box, v.d.map(r => ({ label: r.label, xa: r.c, na: NC, xb: r.g, nb: NG })), { grupos: true });
+const dumb2 = (box, v) => halteres(box, v.d.rows.map(r => ({ label: r.label, xa: r.a, na: r.na, xb: r.b, nb: r.nb })),
+  { colA: '#ffffff', colB: '#9a9a96', nameA: v.d.legA, nameB: v.d.legB, grupos: false });
+
+// núcleo: o % de cada nível com a faixa de 95% (Wilson, calculada na consulta)
+function nucleo(box, v) {
+  box.innerHTML = ''; const st = stage(box); const rows = v.d;
+  const W = Math.max(320, box.clientWidth), nar = W < 560, L = nar ? 0 : 270, Rm = nar ? 6 : 60, rowH = nar ? 66 : 44, top = 22;
+  const H = top + rows.length * rowH + 4;
+  const s = el('svg', { viewBox: `0 0 ${W} ${H}`, height: H, role: 'img', 'aria-label': 'Itens que mais de 60% das vagas pedem nos dois níveis, com a faixa de 95%' }, box);
+  const X = x => L + 18 + (W - L - Rm - 36) * x / 100;
+  [0, 25, 50, 75, 100].forEach(x => { el('line', { x1: X(x), x2: X(x), y1: top - 6, y2: H - 4, stroke: '#2a2727' }, s); txt(s, X(x), 12, x + '%', { 'text-anchor': 'middle', class: 'tick' }); });
+  rows.forEach((r, i) => {
+    const yR = top + i * rowH, base = nar ? yR + 30 : yR + rowH / 2 - 6, g = el('g', { class: 'row' }, s);
+    txt(g, 0, nar ? yR + 14 : base + 10, r.label, { class: 'term' });
+    [[r.c, NC, C.coordenador, base], [r.g, NG, C.gerente, base + 12]].forEach(([d, n, col, y], j) => {
+      const [k, lo, hi] = d, p0 = 100 * k / n;
+      const band = el('line', { y1: y, y2: y, stroke: col, 'stroke-width': 4, 'stroke-linecap': 'round', opacity: .45 }, g);
+      const dot = el('circle', { cy: y, r: 5, fill: col, stroke: '#1d1a1a', 'stroke-width': 1.5 }, g);
+      st.add(900, 150 + i * 70 + j * 60, t => { set(band, { x1: X(lerp(p0, lo, t)), x2: X(lerp(p0, hi, t)) }); set(dot, { cx: X(p0) }); dot.style.opacity = t; }, EASE.outQuint);
+    });
+    const p = fisher(r.c[0], NC, r.g[0], NG), hit = el('rect', { x: 0, y: yR, width: W, height: rowH, fill: 'transparent' }, g);
+    hit.addEventListener('mouseenter', () => { s.classList.add('hovering'); g.classList.add('on'); });
+    hit.addEventListener('mousemove', ev => showTip(ev, `<b>${esc(r.label)}</b><br>${sw(C.coordenador)}Coordenação ${pctN(r.c[0], NC)}% (${r.c[1]}–${r.c[2]}%)<br>${sw(C.gerente)}Gerência ${pctN(r.g[0], NG)}% (${r.g[1]}–${r.g[2]}%)<br>${pTxt(p)} · ${p < 0.05 ? 'as faixas não se cruzam por inteiro' : 'as faixas se cruzam'}`));
+    hit.addEventListener('mouseleave', () => { s.classList.remove('hovering'); g.classList.remove('on'); hideTip(); });
+  });
+  st.done(); io.observe(box);
+}
+
+// diferença em pontos (gerência − coordenação); a barra cheia passa na régua, a tracejada não
+function difBars(box, v) {
+  box.innerHTML = ''; const st = stage(box); const rows = v.d;
+  const W = Math.max(320, box.clientWidth), nar = W < 560, L = nar ? 0 : 270, Rm = nar ? 6 : 150, rowH = nar ? 50 : 27, top = 24;
+  const H = top + rows.length * rowH + 8;
+  const s = el('svg', { viewBox: `0 0 ${W} ${H}`, height: H, role: 'img', 'aria-label': 'Diferença em pontos percentuais entre gerência e coordenação, por item' }, box);
+  const M = Math.max(45, Math.ceil(Math.max(...rows.map(r => Math.abs(r.d)), 1) / 5) * 5 + 2), X = x => L + 10 + (W - L - Rm - 20) * (x + M) / (2 * M);
+  [-40, -20, 0, 20, 40].filter(x => Math.abs(x) <= M).forEach(x => { el('line', { x1: X(x), x2: X(x), y1: top - 6, y2: H - 4, stroke: x === 0 ? '#5c5a57' : '#2a2727' }, s); txt(s, X(x), 12, (x > 0 ? '+' : '') + x, { 'text-anchor': 'middle', class: 'tick' }); });
+  rows.forEach((r, i) => {
+    const p = fisher(r.c, NC, r.g, NG), [stx, sc] = selo(p), strong = p < 0.05, yR = top + i * rowH, y = nar ? yR + 32 : yR + rowH / 2, col = r.d > 0 ? C.gerente : C.coordenador;
+    const g = el('g', { class: 'row' }, s);
+    txt(g, 0, nar ? yR + 14 : y + 5, r.label, { class: 'term', style: strong ? '' : 'fill:#9a9a96' });
+    const bar = el('rect', { y: y - 7, height: 14, rx: 3, fill: strong ? col : 'transparent', stroke: col, 'stroke-width': strong ? 0 : 1, 'stroke-dasharray': strong ? '' : '3 3', opacity: strong ? 1 : .55 }, g);
+    const val = txt(g, 0, y + 4, (r.d > 0 ? '+' : '') + r.d, { class: 'val', style: `fill:${strong ? '#ffffff' : '#9a9a96'}`, 'text-anchor': r.d > 0 ? 'start' : 'end' });
+    const sl = txt(g, W, nar ? yR + 14 : y + 4, nar && !strong ? '' : stx, { 'text-anchor': 'end', class: 'tick', style: `fill:${sc};letter-spacing:.1em` });
+    st.add(900, 120 + i * 40, k => { const a = X(0), b = X(r.d * k); set(bar, { x: Math.min(a, b), width: Math.max(0.01, Math.abs(b - a)) });
+      set(val, { x: r.d > 0 ? b + 8 : b - 8 }); val.style.opacity = Math.max(0, k * 2 - 1); sl.style.opacity = k; }, EASE.outQuint);
+    const hit = el('rect', { x: 0, y: yR, width: W, height: rowH, fill: 'transparent' }, g);
+    hit.addEventListener('mouseenter', () => { s.classList.add('hovering'); g.classList.add('on'); });
+    hit.addEventListener('mousemove', ev => showTip(ev, `<b>${esc(r.label)}</b><br>${sw(C.coordenador)}Coordenação ${pctN(r.c, NC)}% · ${r.c} de ${NC}<br>${sw(C.gerente)}Gerência ${pctN(r.g, NG)}% · ${r.g} de ${NG}<br>${r.d > 0 ? '+' : ''}${r.d} pontos · ${pTxt(p)} · ${stx.toLowerCase()}`));
+    hit.addEventListener('mouseleave', () => { s.classList.remove('hovering'); g.classList.remove('on'); hideTip(); });
+  });
+  st.done(); io.observe(box);
+}
+
+// barras empilhadas por linha (onde o item aparece no anúncio)
+function stack(box, v) {
+  box.innerHTML = ''; const wrap = document.createElement('div'); wrap.className = 'stks'; box.appendChild(wrap);
+  v.d.forEach((r, i) => {
+    const col = COR[r.cor] || COR.m, d = document.createElement('div');
+    d.innerHTML = `<div class="stk-h"><span><i style="background:${col}"></i>${esc(r.label)}</span><span class="mono">${r.total} ${r.total === 1 ? 'vaga' : 'vagas'}</span></div><div class="stk"></div><div class="stk-l"></div>`;
+    wrap.appendChild(d);
+    const stk = d.querySelector('.stk'), lg = d.querySelector('.stk-l');
+    r.segs.forEach(([nome, k, op], j) => {
+      const c = op === 0 ? '#5c5a57' : col, o = op === 0 ? 1 : op, seg = document.createElement('div');
+      seg.style.cssText = `background:${c};opacity:${o};width:0;transition:width ${RM ? 0 : .9}s var(--ease) ${RM ? 0 : 0.15 * j + 0.1 * i}s`;
+      seg.textContent = k >= 3 ? k : ''; seg.title = `${nome}: ${k} de ${r.total}`;
+      stk.appendChild(seg);
+      requestAnimationFrame(() => requestAnimationFrame(() => { seg.style.width = (r.total ? 100 * k / r.total : 0) + '%'; }));
+      lg.insertAdjacentHTML('beforeend', `<span><i style="background:${c};opacity:${o}"></i>${esc(nome)} · ${k}</span>`);
+    });
+  });
+}
+
+// barras horizontais simples: {label, v, txt, cor, op}
+function hbars(box, v) {
+  box.innerHTML = '';
+  const rows = v.d.rows, max = v.d.max || 1;
+  box.innerHTML = '<div class="hbs">' + rows.map(r => `<div class="hb"><span class="hl">${esc(r.label)}</span><span class="ht"><i data-w="${(100 * r.v / max).toFixed(1)}" style="background:${COR[r.cor] || COR.m};opacity:${r.op ?? 1}"></i></span><span class="hv">${esc(r.txt)}</span></div>`).join('') + '</div>';
+  box.querySelectorAll('.ht i').forEach((b, i) => { b.style.transition = `width ${RM ? 0 : .9}s var(--ease) ${RM ? 0 : i * 0.07}s`; requestAnimationFrame(() => requestAnimationFrame(() => { b.style.width = b.dataset.w + '%'; })); });
+}
+
+// contagens por categoria, coordenação × gerência (barras pareadas)
+function grupos(box, v) {
+  const rows = v.d, max = Math.max(1, ...rows.map(r => Math.max(r.c / NC, r.g / NG)));
+  box.innerHTML = '<div class="cbars">' + rows.map(r => {
+    const p = fisher(r.c, NC, r.g, NG);
+    return `<div class="cbar" title="${esc(r.label)}: coordenação ${r.c} de ${NC} · gerência ${r.g} de ${NG} · ${pTxt(p)}"><span>${esc(r.label)}</span><div class="tr">
+      <span style="background:${C.coordenador}" data-w="${(80 * r.c / NC / max).toFixed(1)}"><em>${r.c} · ${pctN(r.c, NC)}%</em></span>
+      <span style="background:${C.gerente}" data-w="${(80 * r.g / NG / max).toFixed(1)}"><em>${r.g} · ${pctN(r.g, NG)}%</em></span></div></div>`;
+  }).join('') + '</div>';
+  box.querySelectorAll('.tr > span').forEach((b, i) => { b.style.transition = `width ${RM ? 0 : .9}s var(--ease) ${RM ? 0 : i * 0.05}s`; requestAnimationFrame(() => requestAnimationFrame(() => { b.style.width = b.dataset.w + '%'; })); });
+}
+
+// números grandes (P6)
+function big(box, v) {
+  const bl = (xs, grande) => `<div class="big2">${xs.map(b => `<div><b style="${b.cor ? 'color:' + COR[b.cor] : ''}">${esc(b.v)}</b><span class="mono">${esc(b.rot)}</span></div>`).join('')}</div>`;
+  box.innerHTML = bl(v.d.blocos) + bl(v.d.blocos2);
+}
+
+// seguimento que a amostra não sustenta (ou que falta no dado): fica no card, com o que falta
+function naoSustenta(box, v) {
+  const d = v.d, f = Math.min(100, 100 * d.n / d.min);
+  box.innerHTML = `<div class="ns-box fadein"><div class="big">${fmt(d.n)}<small>${esc(d.grande)}</small></div>
+    <ul>${d.itens.map(x => `<li><span>${esc(x.label)}</span><span>${x.fmt ? esc(x.fmt) : `<span style="color:${C.coordenador}">${x.c} coord.</span> · <span style="color:${C.gerente}">${x.g} ger.</span>`}</span></li>`).join('')}</ul>
+    <div class="meter"><i style="width:${f}%"></i><b style="left:100%"></b></div><span class="mono mt">${fmt(d.n)} de ${fmt(d.min)} ${esc(d.unidade)} pro gráfico aparecer</span>
+    <p>${d.texto}</p></div>`;
+}
+function falta(box, v) {
+  const d = v.d;
+  box.innerHTML = `<div class="ns-box fadein"><div class="big">${fmt(d.n)}<small>${esc(d.rotulo)}</small></div><p>${d.texto}</p></div>`;
+}
+
+const DESENHA = {
+  mapa: mapaCG, nucleo, dif: difBars, nat: stack, hb: hbars, grupos, big, nao: naoSustenta, falta, dumb2,
+  waffle: (box, v) => waffle(box, v.d),
+  salario: box => salario(box),
+  tabela: (box, v) => { box.innerHTML = '<div class="res-t">' + tabela({ cols: v.res.cols, rows: v.res.rows }) + '</div>'; },
+};
+function legenda(v) {
+  if (v.leg === 1) return `<span><i style="background:${C.coordenador}"></i>Coordenação, ${NC} vagas</span><span><i style="background:${C.gerente}"></i>Gerência, ${NG} vagas</span>`;
+  if (v.leg === 2) return `<span><i class="sq" style="background:${C.coordenador}"></i>mais pedido na coordenação</span><span><i class="sq" style="background:${C.gerente}"></i>mais pedido na gerência</span><span><i class="sq" style="border:1px dashed #9a9a96;background:transparent"></i>sem diferença clara</span>`;
+  if (v.leg === 4) return `<span><i style="background:${C.coordenador}"></i>Coordenação</span><span><i style="background:${C.gerente}"></i>Gerência</span><span><span class="dashl"></span>faixa repetida de um guia salarial</span>`;
+  if (v.leg === 3) return `<span><i style="background:#ffffff"></i>${esc(v.d.legA)}</span><span><i style="background:#9a9a96"></i>${esc(v.d.legB)}</span>`;
+  return '';
+}
+function aviso(v) {
+  if (v.tipo !== 'salario') return '';
+  const b = v.d;
+  return `<div class="warn"><b>Isto não é o que as vagas pagam.</b> É a referência de mercado pro cargo e a cidade de cada vaga, de ${fmt(b.fontes)} referências em ${fmt(b.dominios)} sites (guias salariais, Glassdoor, Indeed e outros). Parte das fontes bloqueia leitura automática e veio de resumo de busca.</div>`;
+}
+
+function iniciaCards() {
+  document.querySelectorAll('.pq').forEach(root => {
+    const sec = root.closest('section'), spec = PQ[sec.dataset.p]; if (!spec) return;
+    const chart = root.querySelector('.chart'), ol = root.querySelector('.nq ol'), det = root.querySelector('details.q-sql'), view = root.querySelector('.view');
+    const avisoBox = document.createElement('div'); avisoBox.className = 'vaviso'; chart.before(avisoBox);
+    let cur = 0, box = null, digitando = 0;
+    const V = () => spec.views[cur];
+    const desenha = () => { const v = V(); chart.innerHTML = ''; chart.classList.remove('fadein'); void chart.offsetWidth; chart.classList.add('fadein'); (DESENHA[v.tipo] || (() => {}))(chart, v); };
+    async function preencheSQL(animar) {
+      if (!box) return; const v = V(), pre = box.querySelector('pre'), out = box.querySelector('.res');
+      box.querySelector('.fn').textContent = 'consultas/' + v.f + '.sql';
+      if (RM || !animar) pre.innerHTML = hl(v.sql);
+      else { const id = ++digitando; pre.innerHTML = '<span class="cur"></span>';
+        tween(Math.min(1400, v.sql.length * 6), 100, t => { if (id !== digitando) return; const n = Math.round(v.sql.length * t); pre.innerHTML = hl(v.sql.slice(0, n)) + (t < 1 ? '<span class="cur"></span>' : ''); }, t => t); }
+      out.innerHTML = '<span class="mono" style="color:var(--muted)">rodando…</span>';
+      const i0 = cur;
+      try { const r = await rodar(v.sql); if (i0 === cur) out.innerHTML = tabela(r); }
+      catch (e) { console.error(e); if (i0 === cur) out.innerHTML = FORA + tabela(v.res); }
+    }
+    function mostra(i) {
+      cur = i; const v = V();
+      ol.querySelectorAll('.nqb').forEach((b, j) => { b.classList.toggle('on', j === i); b.setAttribute('aria-pressed', j === i); });
+      root.querySelector('.vtag').textContent = v.tag; root.querySelector('.vfile').textContent = 'consultas/' + v.f + '.sql';
+      root.querySelector('.leg').innerHTML = legenda(v); avisoBox.innerHTML = aviso(v); root.querySelector('.vnote').textContent = v.nota;
+      chart.dataset.seen = ''; desenha(); if (det.open) preencheSQL(true);
+    }
+    ol.addEventListener('click', e => { const b = e.target.closest('.nqb'); if (b) mostra(+b.dataset.i); });
+    det.addEventListener('toggle', () => {
+      if (!det.open) return;
+      if (!box) {
+        box = document.createElement('div'); box.className = 'sqlbox';
+        box.innerHTML = `<div class="hdr mono"><span class="fn"></span><span>DuckDB · roda no seu navegador &nbsp; <button type="button" class="btn-mini copiar">copiar SQL</button> &nbsp; <button type="button" class="btn-mini run">▶ rodar de novo</button></span></div><pre></pre><div class="res"></div>`;
+        det.appendChild(box);
+        box.querySelector('.run').addEventListener('click', () => preencheSQL(false));
+        box.querySelector('.copiar').addEventListener('click', ev => { navigator.clipboard && navigator.clipboard.writeText(V().sql).then(() => { ev.target.textContent = 'copiado'; setTimeout(() => ev.target.textContent = 'copiar SQL', 1500); }); });
+      }
+      preencheSQL(true);
+    });
+    CARDS.push({ desenha });
+    mostra(0);
+  });
+}
+
 // ---------- navegação: rail de bolas, sumário no celular, barra de progresso na cor do capítulo (Item 18) ----------
 const secs = [...document.querySelectorAll('section[data-rail]')];
 const CAPCOR = { cap: '--c-cap', met: '--c-met', ana: '--c-ana', arq: '--c-arq', exp: '--c-exp' };
@@ -453,6 +639,7 @@ let curSec = 0;
   fab.addEventListener('click', () => {
     const aqui = secs[curSec];
     folha.innerHTML = '<div class="grab"></div><div class="mono" style="color:var(--muted)">Sumário · você está em ' + esc(aqui.dataset.rail) + '</div>' +
+      `<div class="scap" data-cap="cap"><span class="mono">00 · O projeto</span><a href="#s-projeto" class="${aqui.id === 's-projeto' ? 'cur' : ''}"><i></i>O que é, o que tem aqui e quem fez</a></div>` +
       [...document.querySelectorAll('.sumario .cap')].map(c => `<div class="scap" data-cap="${c.dataset.cap}"><span class="mono">${esc(c.querySelector('.mono').textContent)} · ${esc(c.querySelector('h3').textContent)}</span>` +
         [...c.querySelectorAll('li a')].map(a => { const [n, t] = [a.children[0].textContent, a.children[1].textContent], h = a.getAttribute('href');
           return `<a href="${h}" class="${h === '#' + aqui.id ? 'cur' : ''}"><i></i>${esc(n === '—' ? t : n + ' ' + t)}</a>`; }).join('') + '</div>').join('');
@@ -461,9 +648,28 @@ let curSec = 0;
   folha.addEventListener('click', e => { if (e.target.closest('a')) fecha(); });
   dim.addEventListener('click', fecha);
   addEventListener('keydown', e => { if (e.key === 'Escape') fecha(); });
+  // o botão fica no canto da parte visível da tela: com a barra do navegador que encolhe, ou com zoom por pinça, o `fixed` do layout pode sair da tela
+  if (window.visualViewport) {
+    const vv = window.visualViewport;
+    const ajusta = () => { const dx = vv.offsetLeft + vv.width - innerWidth, dy = vv.offsetTop + vv.height - innerHeight;
+      fab.style.transform = (Math.abs(dx) > 0.5 || Math.abs(dy) > 0.5) ? `translate3d(${dx}px, ${dy}px, 0)` : ''; };
+    vv.addEventListener('resize', ajusta); vv.addEventListener('scroll', ajusta); ajusta();
+  }
+  // ?diag no endereço: mostra no topo da tela as medidas do botão "Sumário" (pra diagnosticar no celular se ele sumir)
+  if (/[?&]diag/.test(location.search)) {
+    const d = document.createElement('pre'); d.style.cssText = 'position:fixed;left:0;top:0;z-index:99;margin:0;padding:4px 6px;font-size:10px;line-height:1.3;background:#fff;color:#000;white-space:pre-wrap;pointer-events:none;max-width:70vw';
+    document.body.appendChild(d);
+    const mede = () => { const r = fab.getBoundingClientRect(), cs = getComputedStyle(fab), vv = window.visualViewport;
+      const no = document.elementFromPoint(Math.min(innerWidth - 2, Math.max(2, r.left + r.width / 2)), Math.min(innerHeight - 2, Math.max(2, r.top + r.height / 2)));
+      d.textContent = `y ${Math.round(scrollY)} · iw ${innerWidth} · sw ${document.documentElement.scrollWidth}
+vv ${vv ? [vv.width, vv.height, vv.scale, vv.offsetLeft, vv.offsetTop].map(n => Math.round(n * 100) / 100).join(' ') : '-'}
+fab ${[r.left, r.top, r.width, r.height].map(Math.round).join(' ')} ${cs.display} ${cs.visibility} ${cs.opacity}
+no ponto: ${no ? no.tagName + '.' + no.className + '#' + no.id : '-'}`; };
+    addEventListener('scroll', mede, { passive: true }); addEventListener('resize', mede); setInterval(mede, 500); mede();
+  }
 })();
 
-// ---------- 1.2 · do anúncio às linhas (exemplo inventado, site/exemplo.json) ----------
+// ---------- 3.2 · do anúncio às linhas (exemplo inventado, site/exemplo.json) ----------
 async function exemplo() {
   const paper = document.getElementById('paper'); if (!paper) return;
   const EX = await (await fetch('exemplo.json')).json();
@@ -496,7 +702,7 @@ async function exemplo() {
   o.observe(ex);
 }
 
-// ---------- 1.4 · retrato da amostra (descreve a busca, não o mercado) ----------
+// ---------- 3.4 · retrato da amostra (descreve a busca, não o mercado) ----------
 const RT = DATA.retrato;
 const barIO = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; barIO.unobserve(e.target); e.target.querySelectorAll('.fl').forEach(f => f.style.width = f.dataset.w); }), { threshold: 0.12 });
 function barras(id, rows, tot) {
@@ -573,7 +779,7 @@ function tamanho(box) {
   st.done(); io.observe(box);
 }
 
-// ---------- 3.2 · tabelas e colunas, e a consulta livre ----------
+// ---------- 2.2 · tabelas e colunas, e a consulta livre ----------
 const AMBAR = new Set(['uf', 'cidade', 'regime', 'contrato', 'fonte', 'ats', 'setor', 'mes', 'data_publicacao', 'data_captura', 'data_analise', 'idioma', 'tem_sobre_empresa', 'tem_beneficios']);
 function colunas() {
   document.getElementById('colunas').innerHTML = '<div class="tabcols">' + Object.entries(DATA.colunas).map(([t, cols]) =>
@@ -591,7 +797,7 @@ function colunas() {
   ta.addEventListener('keydown', e => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); roda(); } });
 }
 
-// ---------- 3.1 · arquitetura: o fluxo do dado, animado (Item 14) ----------
+// ---------- 4.1 · arquitetura: o fluxo do dado, animado (Item 14) ----------
 // Todos os números vêm de DATA.arq (calculado na publicação por pipeline/gerar_site.py); nada é digitado aqui.
 const AQ = DATA.arq;
 const NUM = ['zero', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez'];
@@ -631,7 +837,7 @@ const DET = [
     g: 'Só implanta sobre dado real e completo.', w: '<code>pipeline/gerar_site.py</code>' },
   { h: 'A consulta roda no seu navegador.',
     p: [`O DuckDB-WASM lê os Parquet e responde as ${AQ.consultas} consultas da página e a consulta livre, aqui, sem servidor. Se ele não carregar, os gráficos continuam, porque os números já vêm prontos.`],
-    g: 'Nenhuma pergunta sua sai do navegador.', w: 'Exploração livre, 4.2' },
+    g: 'Nenhuma pergunta sua sai do navegador.', w: 'Exploração livre, 2.2' },
 ];
 const USOS = [
   { t: `A lista de ${AQ.itens} itens`, m: 'propôs a lista lendo as linhas dos anúncios', p: 'revisou item a item, escreveu a regra de borda de cada um e congelou a versão', w: 'rotulagem/taxonomia.md', s: 1 },
@@ -854,28 +1060,16 @@ function arquitetura() {
 }
 
 // ---------- render ----------
-let lastW = -1;
+let lastW = -1, renderizado = false;
 function render() {
   lastW = document.querySelector('.wrap').clientWidth;
   base(document.getElementById('c-base'));
-  dumb(document.getElementById('c-a1'), ROWS.a1);
-  dumb(document.getElementById('c-a2'), ROWS.a2);
-  dumb(document.getElementById('c-a3'), ROWS.a3);
-  waffle(document.getElementById('c-a4'), ROWS.a4);
-  hbar(document.getElementById('c-a5a'), [{ label: 'em responsabilidades', x: DATA.ia.resp, n: DATA.ia.tot, hl: true }, { label: 'em requisitos', x: DATA.ia.req, n: DATA.ia.tot }], { L: 190 });
-  dumb(document.getElementById('c-a5b'), ROWS.a5b, { L: 200 });
-  hbar(document.getElementById('c-a5c'), DATA.difs.map(([l, x], i) => ({ label: l, x, n: DATA.ia.ndif, hl: i === 0 })));
-  salario(document.getElementById('c-sal'));
+  if (renderizado) CARDS.forEach(c => c.desenha());
   dumb(document.getElementById('c-ns'), ROWS.ns);
   explorar();
   retrato();
+  renderizado = true;
 }
-function iaBig() {
-  const b = document.getElementById('ia-big'), alvo = Math.round(100 * DATA.ia.tot / DATA.ia.base);
-  const fio = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; fio.unobserve(b);
-    tween(1400, 0, t => b.textContent = Math.round(alvo * t), EASE.outQuint); }), { threshold: 0.5 });
-  fio.observe(b);
-}
-art(); iaBig(); render(); colunas(); exemplo(); arquitetura();
+art(); iniciaCards(); render(); colunas(); exemplo(); arquitetura();
 document.fonts && document.fonts.ready.then(render);
 if (window.ResizeObserver) new ResizeObserver(() => { const w = document.querySelector('.wrap').clientWidth; if (Math.abs(w - lastW) > 1) render(); }).observe(document.body);

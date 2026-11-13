@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mercado de dados: o que se pede de quem lidera times de dados no Brasil</title>
+<title>O Mercado para Gestores de Dados: o que se pede de quem lidera times de dados no Brasil</title>
 <meta name="description" content="O que {{n_vagas}} vagas de coordenação e gerência em dados pedem, lido anúncio por anúncio. Dado aberto e consulta aberta, coordenação × gerência.">
-<meta property="og:title" content="Mercado de dados: coordenação × gerência">
+<meta property="og:title" content="O Mercado para Gestores de Dados: coordenação × gerência">
 <meta property="og:description" content="O que as empresas brasileiras pedem de quem lidera times de dados, lido linha por linha. Dado aberto, consulta aberta.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#000000">
@@ -37,78 +37,193 @@
 <div class="folha" id="folha" role="dialog" aria-label="Sumário" hidden></div>
 
 <!-- ===================== CAPA ===================== -->
-<section id="s-capa" data-cap="cap" data-rail="Capa" style="padding-top:0">
-  <h1 class="word" id="word" aria-label="Mercado de dados"><span class="ln" data-t="Mercado"></span><span class="ln" data-t="de dados"></span></h1>
-
-  <div class="wrap">
+<section id="s-capa" class="capa" data-cap="cap" data-rail="Capa" style="padding-top:0">
+  <h1 class="word" id="word" aria-label="O Mercado para Gestores de Dados"><span class="ln" data-t="O Mercado"></span><span class="ln" data-t="para Gestores"></span><span class="ln" data-t="de Dados"></span></h1>
+  <div class="wrap capa-pe">
     {{aviso_cobertura}}
-    <div class="manifesto">
-      <p class="l rv" style="--d:900ms">O que as empresas brasileiras pedem de quem lidera times de dados, lido anúncio por anúncio e linha por linha, separando coordenação de gerência.</p>
-      <p class="r rv" style="--d:1050ms">Os dados nascem de um app de acompanhamento de vagas que o autor desenvolveu. É a amostra de uma busca real, não um censo do mercado: cada número mostra o seu n, e o dado bruto está aberto pra você refazer a conta.</p>
-    </div>
-
-    <div class="pad">
-      <div class="art">
-        <svg id="art" viewBox="0 0 600 440" role="img" aria-label="{{n_linhas_rot}} linhas de anúncio classificadas, {{n_vagas}} vagas e {{n_faixa}} anúncios com faixa salarial"></svg>
-        <div class="facts" id="facts">
-          <div class="rv"><b data-n="{{n_vagas_raw}}">{{n_vagas}}</b><span>vagas de liderança em dados no Brasil, lidas por inteiro</span></div>
-          <div class="rv" style="--d:150ms"><b data-n="{{n_linhas_rot_raw}}">{{n_linhas_rot}}</b><span>linhas de anúncio classificadas, uma a uma, numa lista fechada de {{n_itens}} itens</span></div>
-          <div class="rv" style="--d:300ms"><b data-n="{{n_faixa_raw}}" data-suf=" de {{n_vagas}}">{{n_faixa}} de {{n_vagas}}</b><span>anúncios declaram faixa salarial</span></div>
-        </div>
-      </div>
-    </div>
+    <a class="cue mono" href="#s-projeto"><i>↓</i> O projeto</a>
   </div>
 </section>
 
 <div class="wrap">
 
-<!-- ===================== SUMÁRIO ===================== -->
-<section id="s-sumario" data-cap="cap" data-rail="Sumário">
-  <div class="label mono rv"><span class="dot"></span>Sumário</div>
-  <h2 data-split>Quatro capítulos,|<em>do método à consulta livre.</em></h2>
-  <div class="sumario">
-    <div class="cap rv" data-cap="met">
-      <span class="mono">01</span><h3>Metodologia</h3>
-      <ol>
-        <li><a href="#s-premissas"><span>1.1</span><span>Premissas e especificações</span></a></li>
-        <li><a href="#s-exemplo"><span>1.2</span><span>Do anúncio às linhas: um exemplo</span></a></li>
-        <li><a href="#s-amostra"><span>1.3</span><span>A amostra</span></a></li>
-        <li><a href="#s-descritiva"><span>1.4</span><span>Retrato da amostra</span></a></li>
-        <li><a href="#s-limites"><span>1.5</span><span>Limites antes de citar</span></a></li>
-      </ol>
+<!-- ===================== O PROJETO ===================== -->
+<section id="s-projeto" data-cap="cap" data-rail="O projeto">
+  <div class="label mono rv"><span class="dot"></span>O projeto</div>
+  <h2 data-split>Uma busca real,|<em>lida linha por linha.</em></h2>
+  <div class="manifesto">
+    <p class="l rv">O que as empresas brasileiras pedem de quem lidera times de dados, lido anúncio por anúncio e linha por linha, separando coordenação de gerência.</p>
+    <p class="r rv" style="--d:150ms">Os dados nascem de um app de acompanhamento de vagas que eu desenvolvi. É a amostra de uma busca real, não um censo do mercado: cada número mostra o seu n, e o dado bruto está aberto pra você refazer a conta.</p>
+  </div>
+  <div class="art">
+    <svg id="art" viewBox="0 0 600 440" role="img" aria-label="{{n_linhas_rot}} linhas de anúncio classificadas, {{n_vagas}} vagas e {{n_faixa}} anúncios com faixa salarial"></svg>
+    <div class="facts" id="facts">
+      <div class="rv"><b data-n="{{n_vagas_raw}}">{{n_vagas}}</b><span>vagas de liderança em dados no Brasil, lidas por inteiro</span></div>
+      <div class="rv" style="--d:150ms"><b data-n="{{n_linhas_rot_raw}}">{{n_linhas_rot}}</b><span>linhas de anúncio classificadas, uma a uma, numa lista fechada de {{n_itens}} itens</span></div>
+      <div class="rv" style="--d:300ms"><b data-n="{{n_faixa_raw}}" data-suf=" de {{n_vagas}}">{{n_faixa}} de {{n_vagas}}</b><span>anúncios declaram faixa salarial</span></div>
     </div>
-    <div class="cap rv" data-cap="ana" style="--d:100ms">
-      <span class="mono">02</span><h3>Análises</h3>
-      <ol>
-        <li><a href="#a1"><span>A1</span><span>O que todo anúncio pede?</span></a></li>
-        <li><a href="#a2"><span>A2</span><span>O que muda de um nível pro outro?</span></a></li>
-        <li><a href="#a3"><span>A3</span><span>E a ferramenta?</span></a></li>
-        <li><a href="#a4"><span>A4</span><span>Quem lidera ainda executa?</span></a></li>
-        <li><a href="#a5"><span>A5</span><span>Onde a IA entra?</span></a></li>
-        <li><a href="#a6"><span>A6</span><span>Quanto paga?</span></a></li>
-        <li><a href="#ns"><span>—</span><span>O que os dados ainda não sustentam</span></a></li>
-      </ol>
+  </div>
+
+  <div class="sub mono rv"><span class="dot"></span>O que tem aqui · e por que nessa ordem</div>
+  <h3 class="h3 rv">As respostas primeiro. O motor, lá embaixo.</h3>
+  <p class="lede rv">Quem chega querendo saber o que muda de coordenação pra gerência, quanto de técnico ainda se pede ou se IA já virou exigência encontra isso logo depois do sumário, sem atravessar o método antes. A parte técnica fica mais pra baixo de propósito: é onde quem é de dados mergulha pra conferir de onde saiu cada número (e, se quiser, discordar com o dado na mão).</p>
+  <div class="escada rv">
+    <div class="prof" aria-hidden="true"><span class="mono">Pra<br>todo<br>mundo</span><span class="mono">Pra<br>quem é<br>de dados</span></div>
+    <div class="degraus">
+      <a class="degrau" data-cap="ana" href="#p1"><span class="n">01</span><span class="t">Análises</span><span class="d">Seis perguntas de quem contrata e de quem quer a cadeira, cada uma com a resposta, o gráfico e a consulta que a sustenta.</span><span class="p">Pra todo mundo</span></a>
+      <a class="degrau" data-cap="exp" href="#s-itens"><span class="n">02</span><span class="t">Exploração livre</span><span class="d">Os {{n_itens}} itens lado a lado, SQL no seu navegador e o dado pra baixar.</span><span class="p">Pra quem quer recortar</span></a>
+      <a class="degrau" data-cap="met" href="#s-premissas"><span class="n">03</span><span class="t">Metodologia</span><span class="d">As regras do jogo, um anúncio virando linhas, a amostra e os limites antes de citar.</span><span class="p">Pra quem quer conferir</span></a>
+      <a class="degrau" data-cap="arq" href="#s-arq"><span class="n">04</span><span class="t">Arquitetura</span><span class="d">Do anúncio à página: onde há IA, onde há uma pessoa e as escolhas técnicas.</span><span class="p">Pra quem é de dados</span></a>
     </div>
-    <div class="cap rv" data-cap="arq" style="--d:200ms">
-      <span class="mono">03</span><h3>Arquitetura</h3>
-      <ol>
-        <li><a href="#s-arq"><span>3.1</span><span>Do anúncio à página: onde há IA e onde há uma pessoa</span></a></li>
-      </ol>
+  </div>
+
+  <div class="sub mono rv"><span class="dot"></span>Quem fez</div>
+  <div class="autor rv">
+    <div>
+      <div class="nome">Fernando Carlini Guimarães</div>
+      <span class="onde mono">Porto Alegre · dados, IA e liderança</span>
+      <div class="links">
+        <a class="pill mono" href="https://www.linkedin.com/in/fernando-carlini-guimaraes/">LinkedIn ↗</a>
+        <a class="pill mono" href="https://github.com/nandodsg">GitHub ↗</a>
+      </div>
     </div>
-    <div class="cap rv" data-cap="exp" style="--d:300ms">
-      <span class="mono">04</span><h3>Exploração livre</h3>
-      <ol>
-        <li><a href="#s-itens"><span>4.1</span><span>Os {{n_itens}} itens, lado a lado</span></a></li>
-        <li><a href="#s-sql"><span>4.2</span><span>Consulta livre no navegador</span></a></li>
-        <li><a href="#s-baixar"><span>4.3</span><span>Baixar o dado ou consultar de fora</span></a></li>
-      </ol>
+    <div>
+      <p>Sou designer de formação que virou gente de dados, e passei os últimos anos liderando times de dados. Este projeto nasceu da minha própria busca pela próxima cadeira de liderança: li cada uma dessas vagas inteira, e o app que acompanha a busca também fui eu que fiz (quem procura vaga de dados acaba montando um pipeline pra isso, né? hehe).</p>
+      <div class="ia">
+        <span class="mono">Autoria assistida por IA</span>
+        <p>As perguntas, a lista de itens, as regras de leitura e a régua são minhas, e fui eu que revisei a referência que mede o modelo. Agentes de IA (Claude Code) escreveram a maior parte do código e dos textos sob a minha direção, e um modelo de linguagem classifica as linhas novas toda semana. Onde entra a IA e onde entra uma pessoa está contado em detalhe na <a href="#s-arq">Arquitetura (4.1)</a>.</p>
+      </div>
+      <p style="margin-top:22px">Achou um erro, ou tem uma pergunta que esses dados deveriam responder? <b>Me chama no LinkedIn!</b></p>
     </div>
   </div>
 </section>
 
-<!-- ===================== 01 · METODOLOGIA ===================== -->
-<section id="s-premissas" data-cap="met" data-rail="1.1 · Premissas">
-  <div class="label mono rv"><span class="dot"></span><span class="num">01 · Metodologia</span> · 1.1</div>
+<!-- ===================== SUMÁRIO ===================== -->
+<section id="s-sumario" data-cap="cap" data-rail="Sumário">
+  <div class="label mono rv"><span class="dot"></span>Sumário</div>
+  <h2 data-split>Quatro capítulos,|<em>da resposta ao motor.</em></h2>
+  <a class="zero rv" href="#s-projeto"><span class="mono">↑ 00 · O projeto</span><span>o que é, o que tem aqui e quem fez</span></a>
+  <div class="sumario">
+    <div class="cap rv" data-cap="ana">
+      <span class="mono">01</span><h3>Análises</h3><span class="para">Pra todo mundo</span>
+      <ol>
+        {{sumario_analises}}
+      </ol>
+    </div>
+    <div class="cap rv" data-cap="exp" style="--d:100ms">
+      <span class="mono">02</span><h3>Exploração livre</h3><span class="para">Pra quem quer recortar</span>
+      <ol>
+        <li><a href="#s-itens"><span>2.1</span><span>Os {{n_itens}} itens, lado a lado</span></a></li>
+        <li><a href="#s-sql"><span>2.2</span><span>Consulta livre no navegador</span></a></li>
+        <li><a href="#s-baixar"><span>2.3</span><span>Baixar o dado ou consultar de fora</span></a></li>
+      </ol>
+    </div>
+    <div class="cap rv" data-cap="met" style="--d:200ms">
+      <span class="mono">03</span><h3>Metodologia</h3><span class="para">Pra quem quer conferir</span>
+      <ol>
+        <li><a href="#s-premissas"><span>3.1</span><span>Premissas e especificações</span></a></li>
+        <li><a href="#s-exemplo"><span>3.2</span><span>Do anúncio às linhas: um exemplo</span></a></li>
+        <li><a href="#s-amostra"><span>3.3</span><span>A amostra</span></a></li>
+        <li><a href="#s-descritiva"><span>3.4</span><span>Retrato da amostra</span></a></li>
+        <li><a href="#s-limites"><span>3.5</span><span>Limites antes de citar</span></a></li>
+      </ol>
+    </div>
+    <div class="cap rv" data-cap="arq" style="--d:300ms">
+      <span class="mono">04</span><h3>Arquitetura</h3><span class="para">Pra quem é de dados</span>
+      <ol>
+        <li><a href="#s-arq"><span>4.1</span><span>Do anúncio à página: onde há IA e onde há uma pessoa</span></a></li>
+        <li><a href="#s-escolhas"><span>4.2</span><span>As escolhas: pequeno de propósito</span></a></li>
+      </ol>
+    </div>
+  </div>
+  <div class="profsum mono rv"><span>Pra todo mundo</span><span class="ln"></span><span>Pra quem é de dados</span></div>
+</section>
+
+<!-- ===================== 01 · ANÁLISES ===================== -->
+<div class="comoler rv" data-cap="ana" style="margin-top:80px">
+  <span class="mono t">Como ler</span>
+  <div class="itens">
+    <span><i class="c" style="background:var(--s-coord)"></i>coordenação</span>
+    <span><i class="c" style="background:var(--s-ger)"></i>gerência</span>
+    <span>% de vagas: cada vaga conta uma vez por item</span>
+    <span><span class="selo2 firme">diferença firme</span><span class="selo2 dir">direção</span><span class="selo2">sem diferença clara</span></span>
+    <span>contagens são piso</span>
+    <span>base: {{nc}} de coordenação × {{ng}} de gerência</span>
+  </div>
+  <a class="pill mono" href="#s-premissas">↓ O método (3.1)</a>
+</div>
+
+{{cards}}
+
+<section id="ns" data-cap="ana" data-rail="O que não sustenta">
+  <div class="label mono rv"><span class="dot"></span><span class="num">01 · Análises</span> · O que parece, mas ainda não é</div>
+  <h2 data-split>O que os dados|<em>ainda não sustentam.</em></h2>
+  <p class="lede rv">Diferenças que parecem grandes, mas que a amostra não separa do acaso. Servem pra levantar pergunta, não pra afirmar. Com mais vagas, alguma delas pode virar achado, ou sumir.</p>
+  <div class="card rv">
+    <span class="tag mono">% das vagas que pedem · sem diferença clara</span>
+    <div class="chart" id="c-ns"></div>
+    <div class="warn"><b>Fora daqui, de propósito: localização, setor da empresa e tendência no tempo.</b> A distribuição geográfica e a de setores refletem a busca do autor, não o mercado, e a janela de coleta ainda é curta pra falar de tendência. Elas aparecem só no retrato da amostra (3.4) e na exploração livre.</div>
+    <details class="q-sql" data-sql="ns"><summary class="pill mono">Consulta</summary></details>
+  </div>
+  {{ns_tabela}}
+</section>
+
+<!-- ===================== 02 · EXPLORAÇÃO LIVRE ===================== -->
+<section id="s-itens" data-cap="exp" data-rail="2.1 · Os {{n_itens}} itens">
+  <div class="label mono rv"><span class="dot"></span><span class="num">02 · Exploração livre</span> · 2.1</div>
+  <h2 data-split>Os {{n_itens}} itens,|<em>lado a lado.</em></h2>
+  <div class="lembrete rv">
+    <p><b>Antes de explorar:</b> esta é a amostra da busca de uma pessoa, não uma representação do mercado. Local, regime, portal e setor descrevem onde e como ela procurou.</p>
+    <a class="pill mono" href="#s-descritiva">↓ Rever o retrato da amostra (3.4)</a>
+  </div>
+  <p class="lede rv">Cada linha de anúncio foi classificada numa lista fechada de {{n_itens}} itens, em {{n_dims}} dimensões. Aqui estão todos, coordenação × gerência. Muitas comparações ao mesmo tempo produzem alguma diferença por acaso: por isso a régua é mais dura que o usual.</p>
+  <div class="card rv">
+    <div class="ctrl">
+      <div class="chips" id="chips"></div>
+      <div class="chips" id="sort"></div>
+    </div>
+    <div class="chart" id="c-ex"></div>
+    <div style="margin-top:22px"><button class="pill mono" id="mais" type="button">Mostrar os {{n_itens}}</button></div>
+    <p class="note">Base: {{nc}} × {{ng}}.{{cob_nota}} "Outro" (o que não cabe na lista) fica de fora. Definição e regra de borda de cada item em <code>rotulagem/taxonomia.md</code>.</p>
+  </div>
+</section>
+
+<section id="s-sql" data-cap="exp" data-rail="2.2 · Consulta livre">
+  <div class="label mono rv"><span class="dot"></span><span class="num">02 · Exploração livre</span> · 2.2</div>
+  <h2 data-split>Faça a sua pergunta|<em>em SQL, no navegador.</em></h2>
+  <div class="card rv">
+    <span class="tag mono">Tabelas e colunas que você pode usar</span>
+    <div id="colunas"></div>
+    <div class="lembrete" style="margin-top:20px">
+      <p>As colunas em âmbar descrevem a busca, não o mercado: use pra recortar, não pra concluir sobre o país.</p>
+      <a class="pill mono" href="#s-descritiva">↓ Retrato da amostra (3.4)</a>
+    </div>
+    <div class="consulta">
+      <label class="mono" for="sql-livre">Sua consulta (DuckDB, roda no seu navegador)</label>
+      <textarea id="sql-livre" spellcheck="false" rows="6">select nivel, count(*) as vagas
+from mart_vagas
+group by nivel
+order by vagas desc;</textarea>
+      <div class="acoes"><button class="pill mono" id="sql-rodar" type="button">▶ Rodar</button><span class="mono dica">ou Ctrl + Enter</span></div>
+      <div class="res" id="sql-res" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section id="s-baixar" data-cap="exp" data-rail="2.3 · Baixar o dado">
+  <div class="label mono rv"><span class="dot"></span><span class="num">02 · Exploração livre</span> · 2.3</div>
+  <h2 data-split>O dado é seu,|<em>refaça a conta.</em></h2>
+  <div class="botoes rv">
+    <a class="pill cta mono" href="https://github.com/nandodsg/mercado-gestao-dados-br/tree/main/data">Baixar o dado (CSV) <span class="arr">→</span></a>
+    <a class="pill mono" href="https://github.com/nandodsg/mercado-gestao-dados-br/blob/main/analise/achados.md">Achados em texto</a>
+    <a class="pill mono" href="https://github.com/nandodsg/mercado-gestao-dados-br">Ver o código</a>
+  </div>
+  <p class="note rv">Consultar de fora sem baixar: <code id="url-parquet">select * from 'dados/mart_vagas.parquet'</code> no DuckDB. Dado CC BY 4.0 · código MIT.</p>
+</section>
+
+<!-- ===================== 03 · METODOLOGIA ===================== -->
+<section id="s-premissas" data-cap="met" data-rail="3.1 · Premissas">
+  <div class="label mono rv"><span class="dot"></span><span class="num">03 · Metodologia</span> · 3.1</div>
   <h2 data-split>As regras do jogo,|<em>antes de qualquer número.</em></h2>
   <div class="defs">
     <div class="rv"><span class="mono">Recorte</span><b>O que conta como liderança</b>O anúncio pede gestão de pessoas num time de dados. Cargo de produto ou de software sem time de dados fica fora da comparação, mesmo com "gerente" no título.</div>
@@ -134,8 +249,8 @@
   <div class="warn rv"><b>Como ler os gráficos.</b> <span style="color:var(--s-coord)">●</span> coordenação &nbsp; <span style="color:var(--s-ger)">●</span> gerência. As porcentagens são de vagas: uma vaga conta uma vez por item, por mais linhas que o citem. A classificação tende a deixar de marcar mais do que a marcar à toa: trate as contagens como piso.</div>
 </section>
 
-<section id="s-exemplo" data-cap="met" data-rail="1.2 · Do anúncio às linhas">
-  <div class="label mono rv"><span class="dot"></span><span class="num">01 · Metodologia</span> · 1.2</div>
+<section id="s-exemplo" data-cap="met" data-rail="3.2 · Do anúncio às linhas">
+  <div class="label mono rv"><span class="dot"></span><span class="num">03 · Metodologia</span> · 3.2</div>
   <h2 data-split>Uma vaga vira {{exemplo_linhas}} linhas,|<em>e cada linha vira itens.</em></h2>
   <p class="lede rv">Um exemplo inventado, com <b>{{exemplo_linhas}} linhas</b>. A vaga típica desta amostra tem <b>{{mediana_linhas}}</b> (metade das vagas tem entre {{q1_linhas}} e {{q3_linhas}}). Siga os quatro passos que todo anúncio atravessa antes de virar número.</p>
   <div class="passos rv" id="passos">
@@ -164,8 +279,8 @@
   </div>
 </section>
 
-<section id="s-amostra" data-cap="met" data-rail="1.3 · A amostra">
-  <div class="label mono rv"><span class="dot"></span><span class="num">01 · Metodologia</span> · 1.3</div>
+<section id="s-amostra" data-cap="met" data-rail="3.3 · A amostra">
+  <div class="label mono rv"><span class="dot"></span><span class="num">03 · Metodologia</span> · 3.3</div>
   <h2 data-split>{{n_vagas}} vagas publicadas,|<em>{{n_comparacao}} na comparação.</em></h2>
   <p class="lede rv">A comparação usa as vagas de coordenação e de gerência com o anúncio classificado. Alta gestão e vagas fora da gestão de dados entram só nos totais: são poucas pra quebrar. Um anúncio repetido (mesma empresa, mesmo texto, mesmo nível) conta uma vez.</p>
   <div class="card rv">
@@ -181,8 +296,8 @@
   </div>
 </section>
 
-<section id="s-descritiva" data-cap="met" data-rail="1.4 · Retrato da amostra">
-  <div class="label mono rv"><span class="dot"></span><span class="num">01 · Metodologia</span> · 1.4</div>
+<section id="s-descritiva" data-cap="met" data-rail="3.4 · Retrato da amostra">
+  <div class="label mono rv"><span class="dot"></span><span class="num">03 · Metodologia</span> · 3.4</div>
   <h2 data-split>Como é a amostra,|<em>antes de qualquer conclusão.</em></h2>
   <p class="lede rv">Quando os anúncios foram publicados e lidos, onde ficam, onde estão publicados e como são. Tudo aqui descreve a busca que gerou os dados: <b>serve pra entender a amostra, não o mercado</b>, e nada desta seção vira achado.</p>
   <div class="desc">
@@ -230,8 +345,8 @@
   </div>
 </section>
 
-<section id="s-limites" data-cap="met" data-rail="1.5 · Limites">
-  <div class="label mono rv"><span class="dot"></span><span class="num">01 · Metodologia</span> · 1.5</div>
+<section id="s-limites" data-cap="met" data-rail="3.5 · Limites">
+  <div class="label mono rv"><span class="dot"></span><span class="num">03 · Metodologia</span> · 3.5</div>
   <h2 data-split>Quatro limites|<em>que a amostra carrega.</em></h2>
   <div class="bias">
     <div class="rv"><span class="mono">01</span><b>Funil de uma pessoa</b>São as vagas que uma busca real encontrou e leu, não todas as vagas do país.</div>
@@ -241,127 +356,19 @@
   </div>
 </section>
 
-<!-- ===================== 02 · ANÁLISES ===================== -->
-<section class="achado{{virou_c1}}" id="a1" data-cap="ana" data-rail="A1 · O que todo anúncio pede?">
-  <div class="label mono rv"><span class="dot"></span><span class="num">02 · Análises · A1</span> · O que todo anúncio pede?</div>
-  <h2 data-split>O núcleo é gente e negócio,|<em>nos dois níveis.</em></h2>
-  {{aviso_c1}}
-  <p class="lede rv">Três itens aparecem em quase toda vaga, e quase na mesma proporção em coordenação e gerência. Nenhuma ferramenta chega perto: a mais citada pelo nome, {{ferr_top}}, fica abaixo dos três. O que separa os níveis está no resto do anúncio.</p>
-  <div class="card rv">
-    <div class="accent"></div>
-    <span class="tag mono">% das vagas que pedem</span>
-    <div class="chart" id="c-a1"></div>
-    <p class="note">Base: {{nc}} vagas de coordenação e {{ng}} de gerência com o anúncio classificado.{{cob_nota}} {{ferr_top}} conta a citação do nome em qualquer linha do anúncio (ferramentas, na seção 1.1).</p>
-    <details class="q-sql" data-sql="a1"><summary class="pill mono">Consulta</summary></details>
-  </div>
-</section>
-
-<section class="achado{{virou_c2}}" id="a2" data-cap="ana" data-rail="A2 · O que muda de nível?">
-  <div class="label mono rv"><span class="dot"></span><span class="num">02 · Análises · A2</span> · O que muda de um nível pro outro?</div>
-  <h2 data-split>Coordenação opera o time.|Gerência decide|<em>para onde ele vai.</em></h2>
-  {{aviso_c2}}
-  <p class="lede rv">As duas maiores diferenças entre os níveis, e as duas únicas com força estatística folgada. O anúncio de gerência descreve quem desenha a área; o de coordenação, quem faz ela rodar.</p>
-  <div class="card rv">
-    <div class="accent"></div>
-    <span class="tag mono">% das vagas que pedem</span>
-    <div class="chart" id="c-a2"></div>
-    <p class="note">Base: {{nc}} × {{ng}}.{{cob_nota}} Operação do time = rotina, entregas e acompanhamento do time. Estratégia e visão = definir a direção da área.</p>
-    <details class="q-sql" data-sql="a2"><summary class="pill mono">Consulta</summary></details>
-  </div>
-</section>
-
-<section class="achado{{virou_c3}}" id="a3" data-cap="ana" data-rail="A3 · E a ferramenta?">
-  <div class="label mono rv"><span class="dot"></span><span class="num">02 · Análises · A3</span> · E a ferramenta?</div>
-  <h2 data-split>Python é pedido|<em>de coordenação.</em></h2>
-  {{aviso_c3}}
-  <p class="lede rv">Python é a única ferramenta em que os níveis se separam com folga. SQL e nuvem citada pelo nome não se separam do acaso. Citar o nome é diferente de exigir (pode estar num diferencial ou numa lista de exemplos), e quem não nomeia pode pedir por outro termo: trate como piso.</p>
-  <div class="card rv">
-    <div class="accent"></div>
-    <span class="tag mono">% das vagas que citam pelo nome</span>
-    <div class="chart" id="c-a3"></div>
-    <p class="note">Base: {{nc}} × {{ng}}.{{cob_nota}} Regra determinística sobre o anúncio inteiro (<code>dbt/seeds/ferramentas.csv</code>), publicada na coluna <code>ferramentas</code> de <code>rotulos.csv</code>. "Nuvem" = AWS, Azure ou GCP, qualquer uma.</p>
-    <details class="q-sql" data-sql="a3"><summary class="pill mono">Consulta</summary></details>
-  </div>
-</section>
-
-<section class="achado{{virou_c4}}" id="a4" data-cap="ana" data-rail="A4 · Quem lidera ainda executa?">
-  <div class="label mono rv"><span class="dot"></span><span class="num">02 · Análises · A4</span> · Quem lidera ainda executa?</div>
-  <h2 data-split>Metade pede mão na massa,|<em>nos dois níveis.</em></h2>
-  {{aviso_c4}}
-  <p class="lede rv">Mão na massa é o gestor que também executa, codifica, constrói. Cerca de metade dos anúncios pede isso, e subir de nível não muda a conta.</p>
-  <div class="card rv">
-    <span class="tag mono">Cada ponto é uma vaga · aceso = pede mão na massa</span>
-    <div class="chart" id="c-a4"></div>
-    <p class="note">Base: {{nc}} × {{ng}}.{{cob_nota}}</p>
-    <details class="q-sql" data-sql="a4"><summary class="pill mono">Consulta</summary></details>
-  </div>
-</section>
-
-<section class="achado{{virou_c5}}" id="a5" data-cap="ana" data-rail="A5 · Onde a IA entra?">
-  <div class="label mono rv"><span class="dot"></span><span class="num">02 · Análises · A5</span> · Onde a IA entra?</div>
-  <h2 data-split>IA já está na maioria das vagas,|<em>mais como tarefa do que|como pré-requisito.</em></h2>
-  {{aviso_c5}}
-  <p class="lede rv">Algum item de IA (ciência de dados e ML, IA aplicada ao negócio, IA generativa, agentes, MLOps, governança de IA) aparece em {{ia_dez}} de cada dez vagas. Ele aparece mais no que a pessoa vai fazer do que no que ela já precisa saber.</p>
-  <div class="two" style="margin-top:36px">
-    <div class="card rv">
-      <span class="tag mono">Vagas com algum item de IA</span>
-      <div class="big"><span id="ia-big">{{ia_pct}}</span>%<small id="ia-big-n">{{ia_tot_n}} de {{ia_base}} vagas</small></div>
-      <div class="chart" id="c-a5a" style="margin-top:28px"></div>
-      <p class="note">Base: {{ia_base}} vagas com o anúncio classificado, todos os níveis.{{cob_nota}} Uma vaga pode ter IA nas duas seções.</p>
-    </div>
-    <div class="card rv" style="--d:120ms">
-      <span class="tag mono">Por nível</span>
-      <p class="h3">{{ia_h3}}</p>
-      <div class="chart" id="c-a5b"></div>
-      <details class="q-sql" data-sql="a5"><summary class="pill mono">Consulta</summary></details>
-    </div>
-  </div>
-  <div class="card rv">
-    <span class="tag mono">O que mais aparece em "diferenciais"</span>
-    <p class="h3">{{dif_h3}}</p>
-    <div class="chart" id="c-a5c"></div>
-    <p class="note">Base: {{n_dif}} vagas que têm seção de diferenciais, somando os dois níveis. Os itens de IA estão somados numa linha só.</p>
-  </div>
-</section>
-
-<section class="achado{{virou_c6}}" id="a6" data-cap="ana" data-rail="A6 · Quanto paga?">
-  <div class="label mono rv"><span class="dot"></span><span class="num">02 · Análises · A6</span> · Quanto paga?</div>
-  <h2 data-split>Nenhum anúncio|<em>diz quanto paga.</em></h2>
-  {{aviso_c6}}
-  <p class="lede rv" id="lede-sal"><b>{{n_faixa}} de {{n_vagas}}</b> anúncios declaram faixa salarial. O que se sabe de salário vem de fora do anúncio: a referência de mercado pesquisada vaga a vaga põe o meio da faixa em <b>{{sal_med_c}}</b> na coordenação e <b>{{sal_med_g}}</b> na gerência, por mês.</p>
-  <div class="card bone rv">
-    <span class="tag mono">Referência salarial pesquisada por vaga · R$ por mês</span>
-    <div class="warn"><b>Isto não é o que as vagas pagam.</b> É a referência de mercado pro cargo e a cidade de cada vaga, de {{bench_fontes}} referências em {{bench_dominios}} sites (guias salariais, Glassdoor, Indeed e outros). Parte das fontes bloqueia leitura automática e veio de resumo de busca.</div>
-    <div class="legend mono" id="leg-sal"></div>
-    <div class="chart" id="c-sal"></div>
-    <p class="note">Cada linha é uma vaga: a faixa de referência pesquisada pro cargo e a cidade dela. A mesma faixa de um guia salarial se repete em muitas vagas (tracejada): a mediana da gerência, em especial, fica presa a ela. A fonte de cada número está em <code>benchmarks.csv</code>.</p>
-    <details class="q-sql" data-sql="a6"><summary class="pill mono">Consulta</summary></details>
-  </div>
-</section>
-
-<section id="ns" data-cap="ana" data-rail="O que não sustenta">
-  <div class="label mono rv"><span class="dot"></span><span class="num">02 · Análises</span> · O que parece, mas ainda não é</div>
-  <h2 data-split>O que os dados|<em>ainda não sustentam.</em></h2>
-  <p class="lede rv">Diferenças que parecem grandes, mas que a amostra não separa do acaso. Servem pra levantar pergunta, não pra afirmar. Com mais vagas, alguma delas pode virar achado, ou sumir.</p>
-  <div class="card rv">
-    <span class="tag mono">% das vagas que pedem · sem diferença clara</span>
-    <div class="chart" id="c-ns"></div>
-    <div class="warn"><b>Fora daqui, de propósito: localização, setor da empresa e tendência no tempo.</b> A distribuição geográfica e a de setores refletem a busca do autor, não o mercado, e a janela de coleta ainda é curta pra falar de tendência. Elas aparecem só no retrato da amostra (1.4) e na exploração livre.</div>
-    <details class="q-sql" data-sql="ns"><summary class="pill mono">Consulta</summary></details>
-  </div>
-</section>
-
-<!-- ===================== 03 · ARQUITETURA ===================== -->
-<section id="s-arq" data-cap="arq" data-rail="3.1 · Do anúncio à página">
-  <div class="label mono rv"><span class="dot"></span><span class="num">03 · Arquitetura</span> · 3.1</div>
+<!-- ===================== 04 · ARQUITETURA ===================== -->
+<section id="s-arq" data-cap="arq" data-rail="4.1 · Do anúncio à página">
+  <div class="label mono rv"><span class="dot"></span><span class="num">04 · Arquitetura</span> · 4.1</div>
   <h2 data-split>A IA faz o volume.|<em>Uma pessoa define a régua.</em></h2>
   <p class="lede rv">Como um anúncio vira os números desta página: sem servidor e sem nenhuma credencial do lado público. A origem dos dados aparece fechada; tudo o que atravessa a fronteira de sigilo está neste repositório, e você pode refazer cada passo.</p>
   <div class="card rv" id="arq-card" style="padding-top:30px">
     <div class="flow" id="fluxo"></div>
     <noscript>{{arq_lista}}</noscript>
   </div>
+</section>
 
-  <div class="label mono rv" style="margin-top:96px"><span class="dot"></span><span class="num">03 · Arquitetura</span> · as escolhas</div>
+<section id="s-escolhas" data-cap="arq" data-rail="4.2 · As escolhas">
+  <div class="label mono rv"><span class="dot"></span><span class="num">04 · Arquitetura</span> · 4.2</div>
   <h2 class="h2-menor" data-split>Pequeno de propósito,|<em>e o que faria crescer.</em></h2>
   <div class="dec rv">
     <div><span class="mono">01 · Armazenamento</span><b>Arquivos CSV no git, não um banco</b><span class="tx">Poucos arquivos pequenos, um escritor só e uma publicação por semana. Cada commit é um retrato do dado, e o histórico do git guarda todos.</span>
@@ -375,59 +382,6 @@
     <div><span class="mono">05 · Segurança</span><b>CI sem credencial de banco</b><span class="tx">O repositório é público e só lê os próprios arquivos. A única peça que fala com a origem fica do lado privado e publica por commit.</span>
       <div class="muda"><i>Muda se</i>nunca, por regra: é a guarda que deixa o resto ser aberto.</div></div>
   </div>
-</section>
-
-<!-- ===================== 04 · EXPLORAÇÃO LIVRE ===================== -->
-<section id="s-itens" data-cap="exp" data-rail="4.1 · Os {{n_itens}} itens">
-  <div class="label mono rv"><span class="dot"></span><span class="num">04 · Exploração livre</span> · 4.1</div>
-  <h2 data-split>Os {{n_itens}} itens,|<em>lado a lado.</em></h2>
-  <div class="lembrete rv">
-    <p><b>Antes de explorar:</b> esta é a amostra da busca de uma pessoa, não uma representação do mercado. Local, regime, portal e setor descrevem onde e como ela procurou.</p>
-    <a class="pill mono" href="#s-descritiva">↑ Rever o retrato da amostra</a>
-  </div>
-  <p class="lede rv">Cada linha de anúncio foi classificada numa lista fechada de {{n_itens}} itens, em {{n_dims}} dimensões. Aqui estão todos, coordenação × gerência. Muitas comparações ao mesmo tempo produzem alguma diferença por acaso: por isso a régua é mais dura que o usual.</p>
-  <div class="card rv">
-    <div class="ctrl">
-      <div class="chips" id="chips"></div>
-      <div class="chips" id="sort"></div>
-    </div>
-    <div class="chart" id="c-ex"></div>
-    <div style="margin-top:22px"><button class="pill mono" id="mais" type="button">Mostrar os {{n_itens}}</button></div>
-    <p class="note">Base: {{nc}} × {{ng}}.{{cob_nota}} "Outro" (o que não cabe na lista) fica de fora. Definição e regra de borda de cada item em <code>rotulagem/taxonomia.md</code>.</p>
-  </div>
-</section>
-
-<section id="s-sql" data-cap="exp" data-rail="4.2 · Consulta livre">
-  <div class="label mono rv"><span class="dot"></span><span class="num">04 · Exploração livre</span> · 4.2</div>
-  <h2 data-split>Faça a sua pergunta|<em>em SQL, no navegador.</em></h2>
-  <div class="card rv">
-    <span class="tag mono">Tabelas e colunas que você pode usar</span>
-    <div id="colunas"></div>
-    <div class="lembrete" style="margin-top:20px">
-      <p>As colunas em âmbar descrevem a busca, não o mercado: use pra recortar, não pra concluir sobre o país.</p>
-      <a class="pill mono" href="#s-descritiva">↑ Retrato da amostra</a>
-    </div>
-    <div class="consulta">
-      <label class="mono" for="sql-livre">Sua consulta (DuckDB, roda no seu navegador)</label>
-      <textarea id="sql-livre" spellcheck="false" rows="6">select nivel, count(*) as vagas
-from mart_vagas
-group by nivel
-order by vagas desc;</textarea>
-      <div class="acoes"><button class="pill mono" id="sql-rodar" type="button">▶ Rodar</button><span class="mono dica">ou Ctrl + Enter</span></div>
-      <div class="res" id="sql-res" aria-live="polite"></div>
-    </div>
-  </div>
-</section>
-
-<section id="s-baixar" data-cap="exp" data-rail="4.3 · Baixar o dado">
-  <div class="label mono rv"><span class="dot"></span><span class="num">04 · Exploração livre</span> · 4.3</div>
-  <h2 data-split>O dado é seu,|<em>refaça a conta.</em></h2>
-  <div class="botoes rv">
-    <a class="pill cta mono" href="https://github.com/nandodsg/mercado-gestao-dados-br/tree/main/data">Baixar o dado (CSV) <span class="arr">→</span></a>
-    <a class="pill mono" href="https://github.com/nandodsg/mercado-gestao-dados-br/blob/main/analise/achados.md">Achados em texto</a>
-    <a class="pill mono" href="https://github.com/nandodsg/mercado-gestao-dados-br">Ver o código</a>
-  </div>
-  <p class="note rv">Consultar de fora sem baixar: <code id="url-parquet">select * from 'dados/mart_vagas.parquet'</code> no DuckDB. Dado CC BY 4.0 · código MIT.</p>
 </section>
 
 <div style="height:96px"></div>

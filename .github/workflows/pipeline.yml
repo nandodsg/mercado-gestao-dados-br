@@ -7,7 +7,8 @@
 # esqueleto continuar testado.
 #
 # O gerador da página (`pipeline/gerar_site.py`) também roda aqui, num diretório temporário e sobre a mesma pasta de dados
-# (fixture ou real): é o teste dele. Quem publica a página é o workflow `pages`, só sobre dado real.
+# (fixture ou real): é o teste dele, e `check_consultas.py` roda cada consultas/*.sql sobre os Parquet que saíram desse diretório
+# e compara com o `pagina.json`. Quem publica a página é o workflow `pages`, só sobre dado real.
 #
 # Depois do dbt build, sobre dado real, `analise/achados.py` refaz `analise/achados.md` (números saídos dos marts, texto do
 # modelo `achados.modelo.md`) e o job commita o arquivo se mudou. É o único commit que este workflow faz, só na main e só
@@ -16,7 +17,7 @@ name: pipeline
 
 on:
   push:
-    paths: ["data/**", "pipeline/**", "dbt/**", "tests/**", "analise/**", "site/**", "requirements.txt", ".github/workflows/pipeline.yml"]
+    paths: ["data/**", "pipeline/**", "dbt/**", "tests/**", "analise/**", "site/**", "consultas/**", "requirements.txt", ".github/workflows/pipeline.yml"]
   pull_request:
   schedule:
     - cron: "0 9 * * 1" # segunda 09h UTC, 3h depois do cron semanal de publicação
@@ -62,6 +63,8 @@ jobs:
         run: |
           python pipeline/gerar_site.py "$RUNNER_TEMP/site" --dados "$DATA_DIR"
           test -s "$RUNNER_TEMP/site/index.html" && test -s "$RUNNER_TEMP/site/dados/pagina.json" && test -s "$RUNNER_TEMP/site/app.js"
+      - name: Consultas de consultas/ rodam sobre os Parquet e batem com a página
+        run: python pipeline/check_consultas.py "$RUNNER_TEMP/site"
       - name: Regerar analise/achados.md (só dado real)
         if: steps.dados.outputs.dir == 'data'
         run: python analise/achados.py

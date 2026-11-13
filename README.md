@@ -21,7 +21,8 @@ Portuguese).*
 |---|---|---|
 | `data/` | os CSVs do dataset (`vagas.csv`, `requisitos.csv`, `benchmarks.csv`, `rotulos.csv`, `empresas.csv`) e o `manifest.json` | **só a automação de publicação**, 1 commit por publicação, semanal |
 | `dbt/` | projeto dbt sobre DuckDB: staging lê `data/*.csv`, marts por nível, testes | código |
-| `pipeline/` | Python: conferência do contrato e do sigilo (`check_data.py`) e o exemplo da rota alternativa de classificação | código |
+| `pipeline/` | Python: conferência do contrato e do sigilo (`check_data.py`), gerador da página (`gerar_site.py`, `perguntas.py`), conferência das consultas (`check_consultas.py`) e o exemplo da rota alternativa de classificação | código |
+| `consultas/` | uma consulta SQL por vista das perguntas da página (P1–P6), rodáveis no seu DuckDB sobre os Parquet publicados; ver `consultas/README.md` | código |
 | `site/` | o modelo, o CSS e o JavaScript da página pública (o `index.html` sai do gerador, nunca é editado) | código |
 | `tests/fixtures/` | dados **fictícios** no mesmo formato, pra CI rodar antes da 1ª publicação | `pipeline/make_fixture.py` |
 | `PLAN.md` | decisões do pipeline, com data e motivo | código |
@@ -67,11 +68,20 @@ Parquet. **Os números são os do dado, nunca digitados**: se a direção de um 
 aviso em vez de afirmar o contrário.
 
 Cada gráfico tem uma consulta ao lado, em SQL, que roda no navegador com DuckDB-WASM (carregado de um CDN) sobre os mesmos
-Parquet. Se o CDN estiver fora do ar, a consulta avisa e a página continua inteira, porque os números já vêm do
+Parquet. As perguntas da seção Análises (P1 a P6) têm cada seguimento num arquivo de `consultas/`, o mesmo SQL que a página
+mostra e roda; a CI roda cada arquivo de novo sobre os Parquet publicados e compara com o `pagina.json`
+(`pipeline/check_consultas.py`). Se o CDN estiver fora do ar, a consulta avisa e a página continua inteira, porque os números já vêm do
 `pagina.json`. Enquanto `data/` não tiver o contrato completo, o `pages` não implanta nada e a versão anterior continua no ar;
 a página nunca é publicada sobre dado fictício.
 
-Pra ver localmente, depois do `dbt build`:
+**Rodar as consultas fora da página.** Os quatro marts estão publicados em Parquet, e `consultas/_views.sql` cria uma vista
+por tabela apontando pras URLs, então qualquer consulta de `consultas/` roda no seu DuckDB sem baixar nada:
+
+```bash
+duckdb -c ".read consultas/_views.sql" -c ".read consultas/p1_2.sql"
+```
+
+Pra ver a página localmente, depois do `dbt build`:
 
 ```bash
 python pipeline/gerar_site.py _site --dados data
