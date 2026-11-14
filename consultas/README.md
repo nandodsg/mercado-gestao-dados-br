@@ -8,7 +8,7 @@ que ela própria publica.
 ## Rodar no seu DuckDB, sem baixar nada
 
 Os quatro marts que as consultas leem estão publicados em
-`https://nandodsg.github.io/mercado-gestao-dados-br/dados/` (`mart_vaga_item.parquet`, `mart_vaga_ferramenta.parquet`,
+`https://mercado.fernandocarliniguimaraes.com/dados/` (`mart_vaga_item.parquet`, `mart_vaga_ferramenta.parquet`,
 `mart_vagas.parquet`, `mart_repost.parquet`). O arquivo [`_views.sql`](_views.sql) cria uma vista por tabela apontando pra
 essas URLs; depois é só ler a consulta que quiser:
 
