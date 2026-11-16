@@ -22,6 +22,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:wght@400;500&family=Martian+Mono:wght@200;400;600&display=swap" rel="stylesheet">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="estilo.css">
+<!-- Contagem de visitas sem cookie (GoatCounter): um painel para os sites do domínio, com o endereço na frente do caminho -->
+<script>window.goatcounter = {path: function(p) { return location.host + p }}</script>
+<script data-goatcounter="https://nandodsg.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <noscript><style>.word .ln::after { content: attr(data-t); } .rv, h2 .l > span, .word .ch { opacity: 1; transform: none; }</style></noscript>
 <!-- GERADO por pipeline/gerar_site.py a partir de site/index.modelo.html. Os números e as condições dos achados saem dos marts do dbt
      (analise/achados.py); nada aqui é digitado à mão. Edite o modelo, nunca o index.html gerado. -->
@@ -35,7 +38,7 @@
   <div class="live mono"><span class="dot pulse"></span><span id="atualizado"><span class="pre">Atualizado em </span>{{atualizado_em}}</span></div>
   <div class="right">
     <a class="pill mono" href="#s-baixar">Baixar o dado</a>
-    <a class="pill pill-round mono" href="https://github.com/nandodsg/mercado-gestao-dados-br" aria-label="Repositório no GitHub"><span>↗</span></a>
+    <a class="pill pill-round mono" data-goatcounter-click="mercado:github" href="https://github.com/nandodsg/mercado-gestao-dados-br" aria-label="Repositório no GitHub"><span>↗</span></a>
   </div>
 </nav>
 
@@ -91,7 +94,7 @@
       <div class="nome">Fernando Carlini Guimarães</div>
       <span class="onde mono">Porto Alegre · dados, IA e liderança</span>
       <div class="links">
-        <a class="pill mono" href="https://www.linkedin.com/in/fernando-carlini-guimaraes/">LinkedIn ↗</a>
+        <a class="pill mono" data-goatcounter-click="mercado:linkedin" href="https://www.linkedin.com/in/fernando-carlini-guimaraes/">LinkedIn ↗</a>
         <a class="pill mono" href="https://github.com/nandodsg">GitHub ↗</a>
       </div>
     </div>
@@ -223,9 +226,9 @@ order by vagas desc;</textarea>
   <div class="label mono rv"><span class="dot"></span><span class="num">02 · Exploração livre</span> · 2.3</div>
   <h2 data-split>O dado é seu,|<em>refaça a conta.</em></h2>
   <div class="botoes rv">
-    <a class="pill cta mono" href="https://github.com/nandodsg/mercado-gestao-dados-br/tree/main/data">Baixar o dado (CSV) <span class="arr">→</span></a>
-    <a class="pill mono" href="https://github.com/nandodsg/mercado-gestao-dados-br/blob/main/analise/achados.md">Achados em texto</a>
-    <a class="pill mono" href="https://github.com/nandodsg/mercado-gestao-dados-br">Ver o código</a>
+    <a class="pill cta mono" data-goatcounter-click="mercado:baixar-dado" href="https://github.com/nandodsg/mercado-gestao-dados-br/tree/main/data">Baixar o dado (CSV) <span class="arr">→</span></a>
+    <a class="pill mono" data-goatcounter-click="mercado:achados" href="https://github.com/nandodsg/mercado-gestao-dados-br/blob/main/analise/achados.md">Achados em texto</a>
+    <a class="pill mono" data-goatcounter-click="mercado:github" href="https://github.com/nandodsg/mercado-gestao-dados-br">Ver o código</a>
   </div>
   <p class="note rv">Consultar de fora sem baixar: <code id="url-parquet">select * from 'dados/mart_vagas.parquet'</code> no DuckDB. Dado CC BY 4.0 · código MIT.</p>
 </section>
@@ -392,6 +395,7 @@ order by vagas desc;</textarea>
     <div><span class="mono">05 · Segurança</span><b>CI sem credencial de banco</b><span class="tx">O repositório é público e só lê os próprios arquivos. A única peça que fala com a origem fica do lado privado e publica por commit.</span>
       <div class="muda"><i>Muda se</i>nunca, por regra: é a guarda que deixa o resto ser aberto.</div></div>
   </div>
+  <p class="note rv">A página conta visitas sem cookie, com o <a class="lk" href="https://www.goatcounter.com/">GoatCounter</a>: quantas pessoas abriram e quais botões clicaram, sem guardar quem é quem. Por isso não tem aviso de cookie.</p>
 </section>
 
 <section id="s-exec" class="exe" data-cap="arq" data-rail="4.3 · As execuções">

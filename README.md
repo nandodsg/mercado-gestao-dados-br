@@ -67,6 +67,9 @@ A página (`site/`) é estática, sem servidor. A cada publicação o workflow `
 Parquet. **Os números são os do dado, nunca digitados**: se a direção de um achado mudar numa publicação, a página mostra o
 aviso em vez de afirmar o contrário.
 
+A página conta visitas sem cookie, com o [GoatCounter](https://www.goatcounter.com/): quantas pessoas abriram e quais
+botões clicaram, sem guardar quem é quem.
+
 Cada gráfico tem uma consulta ao lado, em SQL, que roda no navegador com DuckDB-WASM (carregado de um CDN) sobre os mesmos
 Parquet. As perguntas da seção Análises (P1 a P6) têm cada seguimento num arquivo de `consultas/`, o mesmo SQL que a página
 mostra e roda; a CI roda cada arquivo de novo sobre os Parquet publicados e compara com o `pagina.json`
