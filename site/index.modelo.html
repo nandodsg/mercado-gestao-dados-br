@@ -22,7 +22,7 @@
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="estilo.css">
 <!-- Contagem de visitas sem cookie (GoatCounter): um painel para os sites do domínio, com o endereço na frente do caminho -->
-<script>window.goatcounter = {path: function(p) { return location.host + p }}</script>
+<script>window.goatcounter = {path: function(p) { return location.host + p.split("?")[0] }}</script>
 <script data-goatcounter="https://nandodsg.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <noscript><style>.word .ln::after { content: attr(data-t); } .rv, h2 .l > span, .word .ch { opacity: 1; transform: none; }</style></noscript>
 <!-- GERADO por pipeline/gerar_site.py a partir de site/index.modelo.html. Os números e as condições dos achados saem dos marts do dbt
