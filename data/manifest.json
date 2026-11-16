@@ -1,6 +1,6 @@
 {
   "contrato": "v1",
-  "gerado_em": "2026-11-13T10:46:26.931Z",
+  "gerado_em": "2026-11-16T06:36:54.691Z",
   "contagens": {
     "vagas": 110,
     "requisitos": 1637,
@@ -20,8 +20,8 @@
       "linhas": 456
     },
     "rotulos.csv": {
-      "sha256": "57d6ac8d4e5f45610925ff4955b205950cb2fd276bc9c65587463afadb553b77",
-      "linhas": 2001
+      "sha256": "876b51fea31625ecd51aa72b12e21119c3befec9b7db9e05d371bd9141962356",
+      "linhas": 2537
     },
     "empresas.csv": {
       "sha256": "216fb0600ea915bd9dd4928bc530fc0583ed7f3a484d11e075a0665120a0ca1d",
@@ -30,12 +30,12 @@
   },
   "cobertura": {
     "linhas": 2537,
-    "rotuladas": 2001
+    "rotuladas": 2537
   },
   "execucoes_privadas": {
     "classificacao": {
-      "rodadas": 6,
-      "concluidas": 5,
+      "rodadas": 7,
+      "concluidas": 6,
       "interrompidas": 1
     },
     "verificacoes_sem_mudanca": 1
