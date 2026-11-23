@@ -1,4 +1,5 @@
 empresa,empresa_normalizada,setor
+99 (DiDi Global),99,logística e mobilidade
 AB InBev,AB InBev,bens de consumo (CPG)
 Ab Inbev,AB InBev,bens de consumo (CPG)
 Accenture,Accenture,consultoria
@@ -6,6 +7,7 @@ Adimax,Adimax,bens de consumo (CPG)
 Aegea Saneamento,Aegea,energia e saneamento
 Afya,Afya,educação
 Alpargatas,Alpargatas,bens de consumo (CPG)
+Alvarez & Marsal,Alvarez & Marsal,consultoria
 Ambev Tech,Ambev Tech,bens de consumo (CPG)
 ArcelorMittal,ArcelorMittal,indústria
 Azul,Azul,logística e mobilidade
@@ -16,6 +18,7 @@ BR Media Group,BR Media Group,"mídia, marketing e publicidade"
 BRK Ambiental,BRK Ambiental,energia e saneamento
 BTG Pactual,BTG Pactual,financeiro
 BYD do Brasil,BYD,indústria
+Banco BBC Digital,Banco BBC Digital,financeiro
 Blip,Blip,tecnologia e software
 Bradesco,Bradesco,financeiro
 Bridge & Co,Bridge & Co,consultoria
@@ -38,11 +41,16 @@ Deloitte,Deloitte,consultoria
 EVER Trade Marketing,EVER,"mídia, marketing e publicidade"
 EY,EY,consultoria
 Energisa,Energisa,energia e saneamento
+Engesoftware Tecnologia S.A,Engesoftware,tecnologia e software
 Equifax,Equifax,financeiro
 Estapar,Estapar,logística e mobilidade
+Ferrero,Ferrero,bens de consumo (CPG)
 Flash,Flash,financeiro
+Fundação Butantan,Fundação Butantan,saúde
+Gallagher,Gallagher,seguros e previdência
 Globo,Globo,"mídia, marketing e publicidade"
 Grupo Boticário,Grupo Boticário,bens de consumo (CPG)
+Grupo Carrefour Brasil,Carrefour,varejo e e-commerce
 Grupo QuintoAndar,QuintoAndar,imobiliário
 Grupo WE,Grupo WE,"mídia, marketing e publicidade"
 Hering,Hering,varejo e e-commerce
@@ -53,9 +61,11 @@ Irmandade da Santa Casa de Misericórdia de Curitiba,Santa Casa de Curitiba,saú
 Itaú Unibanco,Itaú Unibanco,financeiro
 JCDecaux Brasil,JCDecaux,"mídia, marketing e publicidade"
 Junto Seguros,Junto Seguros,seguros e previdência
+KPMG,KPMG,consultoria
 Klavi,Klavi,financeiro
 Lefosse,Lefosse,serviços
 Lenovo,Lenovo,tecnologia e software
+Lilly,Eli Lilly,saúde
 Loft,Loft,imobiliário
 Memed,Memed,saúde
 Movida,Movida,logística e mobilidade
@@ -64,6 +74,7 @@ Nestlé,Nestlé,bens de consumo (CPG)
 Omnicom Media Brazil,Omnicom Media,"mídia, marketing e publicidade"
 Omnicom media,Omnicom Media,"mídia, marketing e publicidade"
 PagBank,PagBank,financeiro
+Pague Menos,Pague Menos,varejo e e-commerce
 PicPay,PicPay,financeiro
 Poliedro Educação,Poliedro,educação
 Porto,Porto,seguros e previdência
@@ -76,16 +87,22 @@ RedeBrasil,RedeBrasil,varejo e e-commerce
 Riachuelo,Riachuelo,varejo e e-commerce
 Robbin,Robbin,financeiro
 Sem Parar (Corpay),Sem Parar,financeiro
+Serasa Experian,Serasa Experian,financeiro
 Shopee,Shopee,varejo e e-commerce
 Sicredi (CAS),Sicredi CAS,financeiro
 Sicredi Aliança,Sicredi Aliança,financeiro
+Sicredi Celeiro Centro Norte,Sicredi Celeiro Centro Norte,financeiro
 SulAmérica,SulAmérica,seguros e previdência
 TELUS Digital,TELUS Digital,tecnologia e software
+TIM Brasil,TIM Brasil,telecom
 TOTVS,TOTVS,tecnologia e software
 Trinus.co,Trinus,imobiliário
 UOL,UOL,consultoria
 Unidas,Unidas,logística e mobilidade
+Unimed Fortaleza,Unimed Fortaleza,saúde
 V4 Company,V4 Company,"mídia, marketing e publicidade"
+Vale Base Metals,Vale,indústria
+Vertiv,Vertiv,indústria
 Vivara,Vivara,varejo e e-commerce
 Vivo,Vivo,telecom
 Votorantim Cimentos,Votorantim Cimentos,indústria
@@ -94,3 +111,4 @@ Whirlpool,Whirlpool,indústria
 Zup Innovation,Zup,tecnologia e software
 eQuiv,eQuiv,consultoria
 frete.com,Frete.com,logística e mobilidade
+iFood,iFood,varejo e e-commerce
